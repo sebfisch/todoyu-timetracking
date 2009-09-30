@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<attributes>
+		<attribute name="action">?ext=timetracking&amp;controller=tasktab</attribute>
+		<attribute name="name">timetrack</attribute>
+		<attribute name="onsubmit">return false</attribute>
+	</attributes>
+	<hiddenFields>
+		<field name="id" />
+		<field name="id_task" />
+	</hiddenFields>
+	<fieldsets>
+		<fieldset name="fieldset">
+			<legend>Edit timetracking record</legend>
+			<class>myFieldsetClass</class>
+			<elements>
+				<field type="dateinput" name="date_create">
+					<label>LLL:timetracking.tasktab.date_create</label>
+				</field>
+				<field type="timeinput" name="workload_tracked">
+					<label>LLL:timetracking.tasktab.workload_tracked</label>
+				</field>
+				<field type="timeinput" name="workload_chargeable">
+					<label>LLL:timetracking.tasktab.workload_chargeable</label>
+				</field>
+				<field type="textinput" name="comment">
+					<label>LLL:timetracking.tasktab.comment</label>
+				</field>
+			</elements>
+		</fieldset>
+		<fieldset name="buttons">
+			<legend>Actions</legend>
+			<class>buttons</class>
+			<elements>
+				<field type="button" name="save">
+					<label></label>
+					<type>button</type>
+					<text>LLL:core.save</text>
+					<class>buttonSave</class>
+					<hasIcon>1</hasIcon>
+					<onclick>Todoyu.Ext.timetracking.Task.saveTrack(#id_task#, #id#)</onclick>
+				</field>
+				<field type="button" name="cancel">
+					<label></label>
+					<type>button</type>
+					<text>LLL:core.cancel</text>
+					<class>buttonCancel</class>
+					<hasIcon>1</hasIcon>
+					<onclick>Todoyu.Ext.timetracking.Task.cancelTrackEditing(#id_task#)</onclick>
+				</field>
+			</elements>
+		</fieldset>
+	</fieldsets>
+</form>

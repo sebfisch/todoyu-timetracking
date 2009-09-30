@@ -1,0 +1,281 @@
+	/* Task contextmenu */
+#contextmenu .task-timetrackstart {
+	background-image:url(../img/icons.png) !important;
+	background-position:3px -58px;
+}
+
+#contextmenu .task-timetrackstop {
+	background-image:url(../img/icons.png) !important;
+	background-position:3px -88px;
+}
+
+
+	/* Task injections */
+.task.running span.headLabel .date,
+.task.running span.headLabel .title,
+.task.running span.headLabel .tasknumber {
+	font-weight:bold;
+}
+
+.task .infoIcons .overtimed {
+	background:url(../img/icons.png) no-repeat 1px -298px;
+	width:14px !important;
+}
+
+
+/* Timetracking tab in task */
+.taskTabs div.timetracking {
+	background:#fff;
+}
+.taskTabs div.timetracking button span.hasIcon {
+	background: url(../img/icons.png) no-repeat 3px -27px;
+}
+
+.taskTabs div.timetracking button span.stopButton {
+	background-position: 3px 3px !important;
+}
+
+
+
+/* Headlet */
+#headlet-timetracking {
+	width:150px;
+	height:29px;
+	padding:2px;
+	background-color:#F6F6F6;
+	border:1px solid #DDD;
+}
+
+#headlet-timetracking .task {
+	width:120px;
+	overflow:hidden;
+}
+
+#headlet-timetracking .innertask {
+	width:500px;
+}
+
+#headlet-timetracking .time {
+	width:120px;
+}
+
+#headlet-timetracking .ctrl {
+	float:right !important;
+	width:20px;
+	height:30px;
+	cursor:pointer;
+	background:url('../img/icons.png') no-repeat -2px -180px;
+}
+
+
+.timetrackform button {
+	float:left;
+	margin-right:20px;
+}
+
+.timetrackform .elapsedTime {
+	float:left;
+	padding:0 0 0 5px;
+	line-height:30px;
+}
+
+button span.timetrackPlayButton,
+.timetrackform button span.playButton {
+	background: url(../img/icons.png) no-repeat 5px -27px;
+}
+input.playButton {
+	padding: 2px 11px 1px 25px;
+	background: url(../../../../core/assets/img/sprite-button_bgs.png) no-repeat 0 -192px;
+}
+
+
+button span.timetrackStopButton,
+.timetrackform button span.stopButton {
+	background: url(../img/icons.png) no-repeat 5px -209px;
+}
+
+input.stopButton {
+	padding: 2px 11px 1px 25px;
+	background: url(../../../../core/assets/img/sprite-button_bgs.png) no-repeat 0 -168px;
+}
+
+#panel input.playButton {
+	padding: 0;
+	background: url(../../../../core/assets/img/sprite-button_icons.png) no-repeat 0 -288px;
+}
+
+#panel input.stopButton {
+	padding: 0;
+	background: url(../../../../core/assets/img/sprite-button_icons.png) no-repeat 0 -256px;
+}
+
+
+/* time track box*/
+#taskList .activeTabContent .timetrackform {
+	padding-bottom: 10px;
+}
+
+#taskList .activeTabContent .timetrackform input {
+	margin-right: 20px;
+}
+
+#taskList .activeTabContent .timetrackform a.timing {
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	height: 16px;
+	width: 16px;
+	background: url(../../../../core/assets/img/sprite-icons.png) no-repeat 0 -1095px;
+}
+
+.task .taskTabs .timetracks {
+	padding:0 0 5px 0;
+	background:#fff;
+}
+
+.task .taskTabs .timetracks ul {
+	margin: 0;
+	padding: 0;
+}
+
+.task .taskTabs .timetracks ul li {
+	padding: 2px 5px;
+}
+
+.task .taskTabs .timetracks ul li.odd {
+}
+
+.task .taskTabs .timetracks ul li span {
+	float:none;
+}
+
+.task .taskTabs .timetracks ul li button span {
+	float:left; /* reset */
+}
+
+.task .taskTabs .timetracks .notracksyet {
+	padding-left:5px;
+}
+
+.task .taskTabs .timetracks span.timteTrackComment {
+	position: relative;
+	display: block;
+	margin: -18px 0 0 0;
+	padding: 0 0 0 220px;
+}
+
+.task .taskTabs .newForm .taskOptionBlock {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+/* Inline edit test */
+
+/* old ? */
+#timetrack-form .formElement {
+	float:left;
+	clear:none;
+}
+
+#timetrack-form .formLabel {
+	width:100%;
+	text-align:left;
+}
+
+#timetrack-form .formLabel label {
+	font-size:9px;
+}
+
+#timetrack-form .formField {
+	float:left;
+	clear:both;
+}
+
+#timetrack-form input {
+	border:1px solid #EEE;
+}
+
+#timetrack-form div.fieldname-date_create {
+	width:80px;
+}
+
+#timetrack-form div.fieldname-date_create .formField {
+	width:80px;
+}
+
+#timetrack-form div.fieldname-date_create input {
+	width:50px;
+}
+
+#timetrack-form div.fieldname-date_create span {
+	display:inline;
+}
+
+#timetrack-form div.fieldname-workload_tracked {
+	width:70px;
+}
+
+#timetrack-form div.fieldname-workload_tracked input {
+	width:50px;
+}
+
+#timetrack-form div.fieldname-workload_chargeable {
+	width:70px;
+}
+
+#timetrack-form div.fieldname-workload_chargeable input {
+	width:50px;
+}
+
+#timetrack-form div.fieldname-comment {
+	width:270px;
+}
+
+#timetrack-form div.fieldname-comment input {
+	width:270px;
+}
+
+#timetrack-form div.fieldname-save {
+	margin-top:10px;
+}
+
+
+
+
+/* Panel */
+
+#timetrackingPanel {
+	position: absolute;
+	right: 2px;
+	background-color:#F6F8F9;
+	padding:2px 12px 4px 12px;
+	border:1px solid #A7B6C1;
+	border-width:0 2px 1px 2px;
+}
+
+#timetrackingPanel ul li {
+	float: left;
+	margin-left: 10px;
+	padding-left: 10px;
+}
+
+#timetrackingPanel ul li.first {
+	margin: 0;
+	padding: 0;
+}
+
+#timetrackingPanel ul li.tasktitle {
+	display: block;
+	width: 210px;
+	height: 27px;
+	overflow: hidden;
+}

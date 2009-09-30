@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locallang>
+	<labels lang="en">
+		<label index="title">Timetracking</label>
+		<label index="tracked_time">Tracked time</label>
+		<label index="notracksyet">No timetracks yet.</label>
+		<label index="tasktab.date_create">Date</label>
+		<label index="tasktab.workload_tracked">Workload</label>
+		<label index="tasktab.workload_chargeable">Chargeable</label>
+		<label index="tasktab.comment">Comment</label>
+		<label index="tasktab.time_elapsed">Elapsed time</label>
+		<label index="tasktab.toggle">Scheduled times on/off</label>
+		<label index="start">Start</label>
+		<label index="startTimetracking">Start timetracking</label>
+		<label index="stop">Stop</label>
+		<label index="stopTimetracking">Stop timetracking</label>
+	</labels>
+	<labels lang="de">
+		<label index="title">Zeiterfassung</label>
+		<label index="tracked_time">Bearbeitete Zeit</label>
+		<label index="notracksyet">Es wurden noch keine Zeiten erfasst.</label>
+		<label index="tasktab.date_create">Datum</label>
+		<label index="tasktab.workload_tracked">Effektive Zeit</label>
+		<label index="tasktab.workload_chargeable">Verrechenbar</label>
+		<label index="tasktab.comment">Kommentar</label>
+		<label index="tasktab.time_elapsed">Vergangene Zeit</label>
+		<label index="tasktab.toggle">Erfasste Zeiten ein/ausklappen</label>
+		<label index="start">Start</label>
+		<label index="startTimetracking">Zeiterfassung starten</label>
+		<label index="stop">Stopp</label>
+		<label index="stopTimetracking">Zeiterfassung stoppen</label>
+	</labels>
+</locallang>

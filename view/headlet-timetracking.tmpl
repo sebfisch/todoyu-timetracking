@@ -1,0 +1,18 @@
+{extends "core/view/headlet.tmpl"}
+
+{block "headlet"}
+
+	<div class="button">
+		<button class="button" onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.stopTask({$idTask})">
+			<span class="hasIcon editFiltersButton">Stop</span>
+			<span class="rgt"><!-- right --></span>
+		</button>
+	</div>
+	<div class="label">{$label}</div>
+	<div class="time">
+		<span id="{$id}-time-tracked">{HourMinSec $tracked}</span> + 
+		<span id="{$id}-time-tracking">{HourMinSec $tracking}</span>
+		<span id="{$id}-time-percent">{if $showPercent}(<span id="{$id}-time-percent-value">{$percent}</span>%){/if}</span>		
+	</div>
+
+{/block}
