@@ -86,16 +86,16 @@ class TodoyuTimetrackingManager {
 	public static function saveWorkloadRecord(array $data)	{
 		Todoyu::db()->doInsert(self::TABLE, $data);
 	}
-	
-	
+
+
 	public static function XXXaddTrackedWorkloadToTask($date, $idTask, $workloadTracked, $workloadChargeable = 0, $comment = '', $idUser = 0) {
 		$date				= intval($date);
 		$idTask				= intval($idTask);
 		$workloadTracked	= intval($workloadTracked);
 		$workloadChargeable	= intval($workloadChargeable);
-		
+
 		$trackedTime		= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, $date, $idUser);
-		
+
 		if( $trackedTime === 0 ) {
 			$data	= array(
 				'date_update'		=> NOW,
@@ -106,13 +106,13 @@ class TodoyuTimetrackingManager {
 				'workload_chargeable'=>$workloadChargeable,
 				'comment'			=> $comment
 			);
-			
+
 			Todoyu::db()->addRecord(self::TABLE, $data);
 		} else {
-			
+
 		}
 	}
-	
+
 
 
 
@@ -126,10 +126,12 @@ class TodoyuTimetrackingManager {
 		$idTask	= intval($idTask);
 
 		$icons	= array();
-		if( ! self::isTaskOvertimed($idTask) ) {
-			$icons[]= array('id'		=> 'task-' . $idTask . '-overtimed',
-							'class'		=> 'overtimed',
-							'label'		=> Label('LLL:task.attr.overtimed'));
+		if( self::isTaskOvertimed($idTask) ) {
+			$icons[] = array(
+				'id'		=> 'task-' . $idTask . '-overtimed',
+				'class'		=> 'overtimed',
+				'label'		=> Label('LLL:task.attr.overtimed')
+			);
 		}
 
 		return $icons;
@@ -147,9 +149,9 @@ class TodoyuTimetrackingManager {
 		$idTask		= intval($idTask);
 
 		$trackedTime= TodoyuTimetracking::getTrackedTaskTimeTotal($idTask);
-		$taskData	= TodoyuTaskManager::getTaskArray($idTask);
+		$task		= TodoyuTaskManager::getTask($idTask);
 
-		return $trackedTime > intval($taskData['estimated_worktime']);
+		return $trackedTime > intval($task->get('estimated_workload'));
 	}
 
 
