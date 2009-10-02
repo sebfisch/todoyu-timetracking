@@ -273,6 +273,17 @@ class TodoyuTimetracking {
 
 
 	/**
+	 * Get tracked time of all tasks tracked today by current user
+	 *
+	 * @return	Integer
+	 */
+	public static function getTodayTrackedTime() {
+		return self::getTrackedTaskTimeOfDay(0, NOW, userid());
+	}
+
+
+
+	/**
 	 * Get tracked time of current tracking
 	 *
 	 * @return	Integer
