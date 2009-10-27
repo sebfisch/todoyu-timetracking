@@ -29,26 +29,22 @@
 if( ! defined('TODOYU') ) die('NO ACCESS');
 
 
-	// declare ext ID, path
+
+	// Declare ext ID, path
 define('EXTID_TIMETRACKING', 119);
 define('PATH_EXT_TIMETRACKING', PATH_EXT . '/timetracking');
 
-	// request configurations
+	// Register module locales
+TodoyuLocale::register('timetracking', PATH_EXT_TIMETRACKING . '/locale/ext.xml');
+
+	// Request configurations
 require_once( PATH_EXT_TIMETRACKING . '/config/extension.php' );
 require_once( PATH_EXT_TIMETRACKING . '/config/hooks.php' );
 
-	// register localization files
-TodoyuLocale::register('timetracking', PATH_EXT_TIMETRACKING . '/locale/ext.xml');
-
-
-
-
-
+	// add JS inits
 if( TodoyuAuth::isLoggedIn() ) {
 	TodoyuTimetrackingManager::addTimetrackingJsInitToPage();
-		// add JS oload-functions
 //	TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.timetracking.Headlet.register.bind(Todoyu.Ext.timetracking.Headlet)');
 }
-
 
 ?>
