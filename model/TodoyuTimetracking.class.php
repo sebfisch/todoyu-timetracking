@@ -233,6 +233,7 @@ class TodoyuTimetracking {
 
 
 
+
 	/**
 	 * Get total tracked time of a task
 	 *
@@ -279,6 +280,29 @@ class TodoyuTimetracking {
 	 */
 	public static function getTodayTrackedTime() {
 		return self::getTrackedTaskTimeOfDay(0, NOW, userid());
+	}
+
+
+
+	/**
+	 * Get all tracks of an user in a date range
+	 *
+	 * @param	Integer		$dateStart
+	 * @param	Integer		$dateEnd
+	 * @param	Integer		$idUser
+	 * @return	Array
+	 */
+	public static function getUserTracks($dateStart, $dateEnd, $idUser = 0) {
+		$dateStart	= intval($dateStart);
+		$dateEnd	= intval($dateEnd);
+		$idUser		= userid($idUser);
+
+		$fields	= '*';
+		$table	= self::TABLE;
+		$where	= ' id_user	= ' . $idUser . ' AND
+					date_create BETWEEN ' . $dateStart . ' AND ' . $dateEnd;
+
+		return Todoyu::db()->getArray($fields, $table, $where);
 	}
 
 
@@ -390,6 +414,26 @@ class TodoyuTimetracking {
 	 */
 	public static function isTrackableStatus($status) {
 		return in_array($status, $GLOBALS['CONFIG']['EXT']['timetracking']['trackableStatus']);
+	}
+
+
+
+	/**
+	 * Check if an item is trackable. At the moment, only task are trackable, but not containers
+	 *
+	 * @param	Integer		$type
+	 * @param	Integer		$status
+	 * @return	Bool
+	 */
+	public static function isTrackable($type, $status) {
+		$type	= intval($type);
+		$status	= intval($status);
+
+		if( $type === TASK_TYPE_TASK ) {
+			return self::isTrackableStatus($status);
+		} else {
+			return false;
+		}
 	}
 
 
