@@ -42,6 +42,11 @@ Todoyu.Ext.timetracking.Task = {
 	start: function(idTask) {
 		this.ext.start(idTask);
 		this.setRunningStyle(idTask, true);
+		
+		if( Todoyu.Ext.project.Task.getStatus(idTask) !== 2 ) {
+			console.log('Set running');
+		}
+		
 	},
 
 
