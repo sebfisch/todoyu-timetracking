@@ -40,13 +40,7 @@ Todoyu.Ext.timetracking.Task = {
 	 * @param unknown_type idTask
 	 */
 	start: function(idTask) {
-		this.ext.start(idTask);
-		this.setRunningStyle(idTask, true);
-		
-		if( Todoyu.Ext.project.Task.getStatus(idTask) !== 2 ) {
-			console.log('Set running');
-		}
-		
+		this.ext.start(idTask);		
 	},
 
 
@@ -80,7 +74,17 @@ Todoyu.Ext.timetracking.Task = {
 	 * @param unknown_type start
 	 */
 	onClockToggle: function(idTask, start) {
-		if( this.isTaskTrackingTabVisible(idTask) ) {
+		if( start ) {
+			Todoyu.Ext.project.Task.refresh(idTask);		
+		} else {
+			this.setRunningStyle(idTask, false);
+			if( this.isTaskTrackingTabLoaded(idTask) ) {
+				this.updateTab(idTask);
+			}		
+		}
+		
+		/*
+		if( this.isTaskTrackingTabLoaded(idTask) ) {
 			if( start ) {
 				this.updateTabControl(idTask);
 				this.setRunningStyle(idTask, true);
@@ -89,6 +93,7 @@ Todoyu.Ext.timetracking.Task = {
 				this.setRunningStyle(idTask, false);
 			}
 		}
+		*/
 	},
 
 
@@ -109,7 +114,7 @@ Todoyu.Ext.timetracking.Task = {
 
 
 
-	isTaskTrackingTabVisible: function(idTask) {
+	isTaskTrackingTabLoaded: function(idTask) {
 		return Todoyu.exists('task-' + idTask + '-tabcontent-timetracking');
 	},
 
