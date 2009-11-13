@@ -1,5 +1,5 @@
 /* ------------------------------
-	task contextmenu
+	Task contextmenu
    ------------------------------ */
 
 #contextmenu .task-timetrackstart {
@@ -36,8 +36,10 @@
 	background-position: 3px 3px !important;
 }
 
+
+
 /* ---------------------
-	headlet
+	Headlet
    --------------------- */
 
 #headlet-timetracking {
@@ -240,8 +242,10 @@ input.stopButton {
 	margin-top:10px;
 }
 
+
+
 /* ------------------
-	panel
+	Panel
    ------------------ */
 
 #timetrackingPanel {
