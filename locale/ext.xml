@@ -17,21 +17,5 @@
 		<label index="currentTask">CURRENT TASK</label>
 		<label index="showCurrentTaskInProject">Show task in project</label>
 	</labels>
-	<labels lang="de">
-		<label index="title">Zeiterfassung</label>
-		<label index="tracked_time">Bearbeitete Zeit</label>
-		<label index="notracksyet">Es wurden noch keine Zeiten erfasst.</label>
-		<label index="tasktab.date_create">Datum</label>
-		<label index="tasktab.workload_tracked">Effektive Zeit</label>
-		<label index="tasktab.workload_chargeable">Verrechenbar</label>
-		<label index="tasktab.comment">Kommentar</label>
-		<label index="tasktab.time_elapsed">Vergangene Zeit</label>
-		<label index="tasktab.toggle">Erfasste Zeiten ein/ausklappen</label>
-		<label index="start">Start</label>
-		<label index="startTimetracking">Zeiterfassung starten</label>
-		<label index="stop">Stopp</label>
-		<label index="stopTimetracking">Zeiterfassung stoppen</label>
-		<label index="currentTask">AKTUELLER TASK</label>
-		<label index="showCurrentTaskInProject">Task im Projekt anzeigen</label>
-	</labels>
+	<labels lang="de"></labels>
 </locallang>
