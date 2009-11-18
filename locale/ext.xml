@@ -14,6 +14,8 @@
 		<label index="startTimetracking">Start timetracking</label>
 		<label index="stop">Stop</label>
 		<label index="stopTimetracking">Stop timetracking</label>
+		<label index="currentTask">CURRENT TASK</label>
+		<label index="showCurrentTaskInProject">Show task in project</label>
 	</labels>
 	<labels lang="de">
 		<label index="title">Zeiterfassung</label>
@@ -29,5 +31,7 @@
 		<label index="startTimetracking">Zeiterfassung starten</label>
 		<label index="stop">Stopp</label>
 		<label index="stopTimetracking">Zeiterfassung stoppen</label>
+		<label index="currentTask">AKTUELLER TASK</label>
+		<label index="showCurrentTaskInProject">Task im Projekt anzeigen</label>
 	</labels>
 </locallang>

@@ -1,7 +1,7 @@
 <ul>
-	<li class="first"><strong>AKTUELLER TASK</strong></li>
+	<li class="first"><strong>{Label timetracking.currentTask}</strong></li>
 	<li class="tasktitle">
-		<a href="javascript:void(0)" onclick="Todoyu.goTo('project', 'view', { 'project':{$task.id_project},'task':{$task.id}}, 'task_{$task.id}')">
+		<a title="{Label timetracking.showCurrentTaskInProject}" href="javascript:void(0)" onclick="Todoyu.goTo('project', 'view', { 'project':{$task.id_project},'task':{$task.id}}, 'task_{$task.id}')">
 			({$task.id_project}.{$task.id}) {$task.title}
 		</a>
 	</li>
@@ -10,7 +10,7 @@
 		<span id="timetracking-panel-clock">{HourMinSec $trackedTime} ({$percent}%)</span>
 	</li>
 	<li>
-		<input type="button" name="timetrack_stop" onClick="Todoyu.Ext.timetracking.stop({$task.id}, 'panel')" class="button stopButton" value="Stop"/>
+		<input type="button" name="timetrack_stop" onClick="Todoyu.Ext.timetracking.stop({$task.id}, 'panel')" class="button stopButton" value="{Label timetracking.stop}"/>
 	</li>
 </ul>
 <script>
