@@ -130,7 +130,7 @@ class TodoyuTimetrackingManager {
 			$icons[] = array(
 				'id'		=> 'task-' . $idTask . '-overtimed',
 				'class'		=> 'overtimed',
-				'label'		=> Label('LLL:task.attr.overtimed')
+				'label'		=> 'LLL:task.attr.overtimed'
 			);
 		}
 
@@ -203,13 +203,11 @@ class TodoyuTimetrackingManager {
 	 */
 	public static function calculateBillableTime($trackedWorkload)	{
 		$trackedWorkload			=intval($trackedWorkload);
-		$fifteenMinutesInSeconds	= 15 * 60;
+		$fifteenMinutesInSeconds	= 900;
 
 		return ceil( $trackedWorkload / $fifteenMinutesInSeconds) * $fifteenMinutesInSeconds;
 	}
 
-
 }
-
 
 ?>
