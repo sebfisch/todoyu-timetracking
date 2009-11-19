@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locallang>
 	<labels lang="en">
+		<label index="ext.title">Timetracking</label>
 		<label index="title">Timetracking</label>
 		<label index="tracked_time">Tracked time</label>
 		<label index="notracksyet">No timetracks yet.</label>
