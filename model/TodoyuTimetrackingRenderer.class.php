@@ -116,8 +116,7 @@ class TodoyuTimetrackingRenderer {
 
 			// Construct form object
 		$xmlPath	= PATH_EXT_TIMETRACKING . '/config/form/track.xml';
-		$form		= new TodoyuForm($xmlPath);
-		$form		= TodoyuFormHook::callBuildForm($xmlPath, $form, $idTrack);
+		$form		= TodoyuFormManager::getForm($xmlPath, $idTrack);
 
 			// Load form data
 		$formData	= TodoyuTimetracking::getTrack($idTrack);
