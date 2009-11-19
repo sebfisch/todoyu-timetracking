@@ -68,13 +68,13 @@ class TodoyuTimetrackingRenderer {
 		);
 
 		if( TodoyuTimetracking::isTaskRunning($idTask) ) {
-			$data['buttonLabel']	= 'LLL:timetracking.stop';
+			$data['buttonLabel']	= 'LLL:core.stop';
 			$data['function']		= 'stop';
 			$data['class']			= 'stopButton';
 			$data['running']		= true;
 			$data['trackedTime']	= TodoyuTimetracking::getTrackedTime();
 		} else {
-			$data['buttonLabel']	= 'LLL:timetracking.start';
+			$data['buttonLabel']	= 'LLL:core.start';
 			$data['function']		= 'start';
 			$data['class']			= 'playButton';
 			$data['running']		= false;

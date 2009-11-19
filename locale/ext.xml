@@ -11,9 +11,7 @@
 		<label index="tasktab.comment">Comment</label>
 		<label index="tasktab.time_elapsed">Elapsed time</label>
 		<label index="tasktab.toggle">Scheduled times on/off</label>
-		<label index="start">Start</label>
 		<label index="startTimetracking">Start timetracking</label>
-		<label index="stop">Stop</label>
 		<label index="stopTimetracking">Stop timetracking</label>
 		<label index="currentTask">CURRENT TASK</label>
 		<label index="showCurrentTaskInProject">Show task in project</label>
