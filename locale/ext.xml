@@ -4,7 +4,7 @@
 		<label index="ext.title">Timetracking</label>
 		<label index="title">Timetracking</label>
 		<label index="tracked_time">Tracked time</label>
-		<label index="notracksyet">No timetracks yet.</label>
+		<label index="noTracksYet">No timetracks yet.</label>
 		<label index="tasktab.date_create">Date</label>
 		<label index="tasktab.workload_tracked">Workload</label>
 		<label index="tasktab.workload_chargeable">Chargeable</label>
