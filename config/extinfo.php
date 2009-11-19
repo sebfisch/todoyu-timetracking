@@ -28,8 +28,8 @@ $CONFIG['EXT']['timetracking']['info'] = array(
 	'title'				=> 'Timetracking',
 	'description' 		=> 'User based timetracking for tasks',
 	'author' 			=> array(
-		'name'		=> 'Fabian Erni',
-		'email'		=> 'ferni@snowflake.ch',
+		'name'		=> 'Todoyu Core Team',
+		'email'		=> 'team@todoyu.com',
 		'company'	=> 'Snowflake Productions, Zürich'
 	),
 	'dependencies' 		=> 'user, project',
