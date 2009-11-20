@@ -3,16 +3,15 @@
 	<labels lang="en">
 		<label index="ext.title">Timetracking</label>
 		<label index="title">Timetracking</label>
-		<label index="tracked_time">Tracked time</label>
 		<label index="noTracksYet">No timetracks yet.</label>
-		<label index="tasktab.date_create">Date</label>
-		<label index="tasktab.workload_tracked">Workload</label>
-		<label index="tasktab.workload_chargeable">Chargeable</label>
-		<label index="tasktab.comment">Comment</label>
+		<label index="attr.date_create">Date</label>
+		<label index="attr.workload_tracked">Workload</label>
+		<label index="attr.workload_chargeable">Chargeable</label>
+		<label index="attr.comment">Comment</label>
 		<label index="tasktab.time_elapsed">Elapsed time</label>
 		<label index="tasktab.toggle">Scheduled times on/off</label>
-		<label index="startTimetracking">Start timetracking</label>
-		<label index="stopTimetracking">Stop timetracking</label>
+		<label index="start">Start timetracking</label>
+		<label index="stop">Stop timetracking</label>
 		<label index="currentTask">CURRENT TASK</label>
 		<label index="showCurrentTaskInProject">Show task in project</label>
 	</labels>

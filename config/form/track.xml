@@ -15,16 +15,16 @@
 			<class>myFieldsetClass</class>
 			<elements>
 				<field type="dateinput" name="date_create">
-					<label>LLL:timetracking.tasktab.date_create</label>
+					<label>LLL:timetracking.attr.date_create</label>
 				</field>
 				<field type="timeinput" name="workload_tracked">
-					<label>LLL:timetracking.tasktab.workload_tracked</label>
+					<label>LLL:timetracking.attr.workload_tracked</label>
 				</field>
 				<field type="timeinput" name="workload_chargeable">
-					<label>LLL:timetracking.tasktab.workload_chargeable</label>
+					<label>LLL:timetracking.attr.workload_chargeable</label>
 				</field>
 				<field type="textinput" name="comment">
-					<label>LLL:timetracking.tasktab.comment</label>
+					<label>LLL:timetracking.attr.comment</label>
 				</field>
 			</elements>
 		</fieldset>
