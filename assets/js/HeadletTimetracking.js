@@ -70,6 +70,12 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		this.updatePercent();
 	},
 
+
+
+	/**
+	 * Enter description here...
+	 *
+	 */
 	hide: function() {
 		Effect.SlideUp('headlettimetracking');
 	},
@@ -127,6 +133,31 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 */
 	stopTask: function(idTask) {
 		this.ext.stop(idTask);
-	}
+	},
 
+
+
+	/**
+	 *	Go to given task
+	 *
+	 *	@param	Integer	idProject
+	 *	@param	Integer	idTask
+	 */
+	goToTask: function(idProject, idTask) {
+		if( this.isTaskInCurrentView(idTask) ) {
+			$('task-' + idTask).scrollToElement();
+		} else {
+			Todoyu.Ext.project.goToTaskInProject(idTask, idProject);
+		}
+	},
+
+
+	/**
+	 *	Check if given task is exists in current view
+	 *
+	 *	@param	Integer	idTask
+	 */
+	isTaskInCurrentView: function(idTask) {
+		return Todoyu.exists('task-' + idTask);
+	}
 };

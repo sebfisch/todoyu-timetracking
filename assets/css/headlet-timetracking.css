@@ -25,6 +25,7 @@ div#headlettimetracking div.button button span.rgt {
 div#headlettimetracking div.label {
 	margin:5px 0 0 20px;
 	font-weight:bold;
+	cursor: pointer;
 }
 
 div#headlettimetracking div.time {
