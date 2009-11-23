@@ -41,10 +41,5 @@ TodoyuLocale::register('timetracking', PATH_EXT_TIMETRACKING . '/locale/ext.xml'
 require_once( PATH_EXT_TIMETRACKING . '/config/extension.php' );
 require_once( PATH_EXT_TIMETRACKING . '/config/hooks.php' );
 
-	// add JS inits
-if( TodoyuAuth::isLoggedIn() ) {
-	TodoyuTimetrackingManager::addTimetrackingJsInitToPage();
-//	TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.timetracking.Headlet.register.bind(Todoyu.Ext.timetracking.Headlet)');
-}
 
 ?>
