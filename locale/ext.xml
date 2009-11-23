@@ -14,6 +14,7 @@
 		<label index="stop">Stop timetracking</label>
 		<label index="currentTask">CURRENT TASK</label>
 		<label index="showCurrentTaskInProject">Show task in project</label>
+<!--  ......................................... added after 20091122 -->
 	</labels>
 	<labels lang="de"></labels>
 </locallang>
