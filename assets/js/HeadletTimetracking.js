@@ -116,7 +116,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		var url		= Todoyu.getUrl('timetracking', 'headlet');
 		var options	= {
 			'parameters': {
-				'action': 'update'
+				'action':	'update'
 			}
 		};
 		var target	= 'headlettimetracking';

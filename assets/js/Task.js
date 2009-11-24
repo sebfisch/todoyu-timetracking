@@ -142,8 +142,8 @@ Todoyu.Ext.timetracking.Task = {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
 		var options	= {
 			'parameters': {
-				'action': 'update',
-				'task':	idTask
+				'action':	'update',
+				'task':		idTask
 			}
 		};
 		var target	= 'task-' + idTask + '-tabcontent-timetracking';
@@ -160,8 +160,8 @@ Todoyu.Ext.timetracking.Task = {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
 		var options	= {
 			'parameters': {
-				'action': 'tracklist',
-				'task':	idTask
+				'action':	'tracklist',
+				'task':		idTask
 			}
 		};
 		var target	= 'task-' + idTask + '-timetracks' ;
@@ -179,7 +179,7 @@ Todoyu.Ext.timetracking.Task = {
 		var options	= {
 			'parameters': {
 				'action':	'control',
-				'task':	idTask
+				'task':		idTask
 			}
 		};
 		var target	= 'task-' + idTask + '-timetrack-control' ;
@@ -198,8 +198,8 @@ Todoyu.Ext.timetracking.Task = {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
 		var options	= {
 			'parameters': {
-				'action': 'edittrack',
-				'track': idTrack
+				'action':	'edittrack',
+				'track':	idTrack
 			},
 			'onComplete': this.onEditFormLoaded.bind(this, idTask, idTrack)
 		};

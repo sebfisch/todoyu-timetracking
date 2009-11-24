@@ -109,8 +109,8 @@ Todoyu.Ext.timetracking = {
 		var url		= Todoyu.getUrl('timetracking', 'track');
 		var options	= {
 			'parameters': {
-				'task': idTask,
-				'action': start ? 'start' : 'stop'
+				'task':		idTask,
+				'action':	start ? 'start' : 'stop'
 			},
 			'onComplete': this.onTrackingRequestSended.bind(this, idTask, start)
 		};
