@@ -8,7 +8,7 @@
 			<span class="rgt"><!-- right --></span>
 		</button>
 	</div>
-	<div class="label" onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.goToTask({$idProject}, {$idTask})">{$taskNumber} {$label}</div>
+	<div class="label" onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.goToTask({$idProject}, {$idTask})">{$taskNumber} {htmlencode $label|truncate:43}</div>
 	<div class="time">
 		<span id="{$id}-time-tracked">{HourMinSec $tracked}</span> +
 		<span id="{$id}-time-tracking">{HourMinSec $tracking}</span>
