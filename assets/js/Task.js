@@ -61,7 +61,6 @@ Todoyu.Ext.timetracking.Task = {
 	 * Register timetracking clock callbacks
 	 */
 	registerClockCallbacks: function() {
-		console.log('registerClockCallbacks');
 		this.ext.registerToggleCallback(this.onClockToggle.bind(this));
 		this.ext.registerClockCallback(this.onClockTick.bind(this));
 	},
@@ -75,7 +74,6 @@ Todoyu.Ext.timetracking.Task = {
 	 * @param unknown_type start
 	 */
 	onClockToggle: function(idTask, start) {
-		console.log('toggle');
 		if( start ) {
 			Todoyu.Ext.project.Task.refresh(idTask);		
 		} else {
@@ -84,18 +82,6 @@ Todoyu.Ext.timetracking.Task = {
 				this.updateTab(idTask);
 			}		
 		}
-		
-		/*
-		if( this.isTaskTrackingTabLoaded(idTask) ) {
-			if( start ) {
-				this.updateTabControl(idTask);
-				this.setRunningStyle(idTask, true);
-			} else {
-				this.updateTab(idTask);
-				this.setRunningStyle(idTask, false);
-			}
-		}
-		*/
 	},
 
 

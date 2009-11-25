@@ -3,10 +3,7 @@
 {block "headlet"}
 
 	<div class="button">
-		<button class="button" onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.stopTask({$idTask})">
-			<span class="hasIcon editFiltersButton">{Label core.stop}</span>
-			<span class="rgt"><!-- right --></span>
-		</button>
+		{Button label="core.stop" class="stopTracking" onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.stopTask($idTask)"}
 	</div>
 	<div class="label" onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.goToTask({$idProject}, {$idTask})">{$taskNumber} {htmlencode $label|truncate:43}</div>
 	<div class="time">
