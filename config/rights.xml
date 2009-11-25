@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rights labels="ext/timetracking/locale/rights.xml">
+	
+	<section key="general">
+		<allow right="use" />
+	</section>
+		
+</rights>
