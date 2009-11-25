@@ -39,12 +39,13 @@ class TodoyuTimetrackingRenderer {
 		$control	= TodoyuTimetrackingRenderer::renderTaskTabControl($idTask);
 		$list		= TodoyuTimetrackingRenderer::renderTaskTabList($idTask);
 
-		TodoyuPage::addExtAssets('timetracking');
+//		TodoyuPage::addExtAssets('timetracking');
 
-		$data	= array('idTask'	=> $idTask,
-						'control'	=> $control,
-						'list'		=> $list
-						);
+		$data	= array(
+			'idTask'	=> $idTask,
+			'control'	=> $control,
+			'list'		=> $list
+		);
 
 		return render('ext/timetracking/view/tasktab.tmpl', $data);
 	}
@@ -61,6 +62,7 @@ class TodoyuTimetrackingRenderer {
 		$idTask	= intval($idTask);
 		$task	= TodoyuTaskManager::getTask($idTask);
 
+		$tmpl	= 'ext/timetracking/view/tasktab-control.tmpl';
 		$data	= array(
 			'idTask' => $idTask,
 			'totalTrackedTime'	=> TodoyuTimetracking::getTrackedTaskTimeTotal($idTask),
@@ -70,18 +72,18 @@ class TodoyuTimetrackingRenderer {
 		if( TodoyuTimetracking::isTaskRunning($idTask) ) {
 			$data['buttonLabel']	= 'LLL:core.stop';
 			$data['function']		= 'stop';
-			$data['class']			= 'stopButton';
+			$data['class']			= 'stopTracking';
 			$data['running']		= true;
 			$data['trackedTime']	= TodoyuTimetracking::getTrackedTime();
 		} else {
 			$data['buttonLabel']	= 'LLL:core.start';
 			$data['function']		= 'start';
-			$data['class']			= 'playButton';
+			$data['class']			= 'startTracking';
 			$data['running']		= false;
 			$data['trackedTime']	= 0;
 		}
 
-		return render('ext/timetracking/view/tasktab-control.tmpl', $data);
+		return render($tmpl, $data);
 	}
 
 

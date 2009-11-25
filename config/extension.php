@@ -19,12 +19,9 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-//$CONFIG['EXT']['project']['renderer']['content'][] 	= 'TodoyuTimetracking::renderProjectTreeInfo';
-
-TodoyuContextMenuManager::registerFunction('task', 'TodoyuTimetracking::getContextMenuItems', 100);
-
-
-
+/**
+ * Trackable task status
+ */
 $CONFIG['EXT']['timetracking']['trackableStatus'] = array(
 	STATUS_PLANNING,
 	STATUS_OPEN,
@@ -38,17 +35,25 @@ $CONFIG['EXT']['timetracking']['trackableStatus'] = array(
 );
 
 
-TodoyuTaskManager::registerTaskTab('timetracking', 'TodoyuTimetrackingTask::getTabLabel', 'TodoyuTimetrackingTask::getTabContent', 10);
+if( allowed('timetracking', 'use') && allowed('timetracking', 'track') ) {
+	/**
+	 * Register context menu function for task
+	 */
+	TodoyuContextMenuManager::registerFunction('task', 'TodoyuTimetracking::getContextMenuItems', 100);
+
+	/**
+	 * Register timetracking headlet
+	 */
+	TodoyuHeadletManager::registerLeft('TodoyuHeadletTimetracking');
+}
 
 
-TodoyuHookManager::registerHook('project', 'taskinfo', 'TodoyuTimetrackingManager::addTimetrackingInfosToTask');
+if( allowed('timetracking', 'use') && allowed('timetracking', 'seeTaskTab') ) {
+	/**
+	 * Register tab for task
+	 */
+	TodoyuTaskManager::registerTaskTab('timetracking', 'TodoyuTimetrackingTask::getTabLabel', 'TodoyuTimetrackingTask::getTabContent', 10);
+}
 
-//$CONFIG['EXT']['project']['hooks']['taskinfo'][] = 'TodoyuTimetrackingManager::addTimetrackingInfosToTask';
-
-
-//$CONFIG['FE']['PAGE']['finish'][] = 'TodoyuTimetracking::addTimetrackingJs';
-
-
-TodoyuHeadletManager::registerLeft('TodoyuHeadletTimetracking');
 
 ?>

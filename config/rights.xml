@@ -4,5 +4,13 @@
 	<section key="general">
 		<allow right="use" />
 	</section>
+	
+	<section key="task">
+		<allow right="track" />
+		<allow right="seeTaskTab" />
+		<allow right="seeTracks" />
+		<allow right="editOwn" />
+		<allow right="editAll" />
+	</section>
 		
 </rights>

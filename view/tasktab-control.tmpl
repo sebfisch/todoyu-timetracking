@@ -1,9 +1,6 @@
 <div class="tabBlock timetrackingButtons">
 {if $trackable}
-	<button id="task-{$idTask}-timetracking-button" type="submit" onclick="Todoyu.Ext.timetracking.Task.{$function}({$idTask})" class="button">
-		<span class="hasIcon {$class}">{Label $buttonLabel}</span>
-		<span class="rgt"><!-- right --></span>
-	</button>
+	{Button label=$buttonLabel id="task-$idTask-timetracking-button" class=$class onclick="Todoyu.Ext.timetracking.Task.$function($idTask)"}
 {/if}
 	<div class="elapsedTime">
 		<a onclick="Todoyu.Ext.timetracking.Task.toggleList({$idTask})" href="javascript:void(0)" id="task-{$idTask}-timetrack-trigger-1">

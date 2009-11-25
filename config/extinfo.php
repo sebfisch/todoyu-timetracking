@@ -32,8 +32,6 @@ $CONFIG['EXT']['timetracking']['info'] = array(
 		'email'		=> 'team@todoyu.com',
 		'company'	=> 'Snowflake Productions, Zürich'
 	),
-	'dependencies' 		=> 'user, project',
-	'conflicts'			=> '',
 	'state' 			=> 'beta',
 	'version' => '0.1.0',
 	'constraints' => array(
@@ -41,12 +39,7 @@ $CONFIG['EXT']['timetracking']['info'] = array(
 			'user'			=> '0.1.0',
 			'project' 		=> '0.1.0'
 		),
-		'conflicts' => array(
-
-		),
-		'suggests' => array(
-
-		)
+		'conflicts' => array()
 	)
 );
 

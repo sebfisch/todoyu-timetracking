@@ -56,14 +56,14 @@ Todoyu.Ext.timetracking = {
 	 * @param unknown_type currentTrackedTime
 	 * @param unknown_type currentTaskEstimatedWorkload
 	 */
-	initWithTask: function(currentTask, currentTrackedTime, currentTaskEstimatedWorkload) {
+	initWithTask: function(idTask, trackedTime, estimatedWorkload) {
 		this.init();
 
-		this.task	= currentTask;
-		this.time	= currentTrackedTime;
-		this.estimatedTime = currentTaskEstimatedWorkload;
+		this.task			= idTask;
+		this.time			= trackedTime;
+		this.estimatedTime	= estimatedWorkload;
 
-		this.start(currentTask, true);
+		this.start(idTask, true);
 	},
 
 

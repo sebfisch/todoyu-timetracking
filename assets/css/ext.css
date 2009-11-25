@@ -28,12 +28,13 @@
 .taskTabs div.timetracking {
 	background:#fff;
 }
-.taskTabs div.timetracking button span.hasIcon {
-	background: url(../img/icons.png) no-repeat 3px -27px;
+
+button.startTracking .icon {
+	background:url(../img/icons.png) no-repeat 0 -30px;
 }
 
-.taskTabs div.timetracking button span.stopButton {
-	background-position: 3px 3px !important;
+button.stopTracking .icon {
+	background:url(../img/icons.png) no-repeat 0 0;
 }
 
 

@@ -19,8 +19,12 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-TodoyuHookManager::registerHook('project', 'infoIcons', 'TodoyuTimetrackingManager::getProjectTaskInfoIcons');
+if( allowed('timetracking', 'use') ) {
+	TodoyuHookManager::registerHook('project', 'infoIcons', 'TodoyuTimetrackingManager::getProjectTaskInfoIcons');
 
-TodoyuHookManager::registerHook('project', 'taskDataBeforeRendering', 'TodoyuTimetrackingTask::modifyTaskRenderData');
+	TodoyuHookManager::registerHook('project', 'taskDataBeforeRendering', 'TodoyuTimetrackingTask::modifyTaskRenderData');
+
+	TodoyuHookManager::registerHook('project', 'taskinfo', 'TodoyuTimetrackingManager::addTimetrackingInfosToTask');
+}
 
 ?>

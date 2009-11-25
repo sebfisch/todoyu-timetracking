@@ -41,5 +41,4 @@ TodoyuLocale::register('timetracking', PATH_EXT_TIMETRACKING . '/locale/ext.xml'
 require_once( PATH_EXT_TIMETRACKING . '/config/extension.php' );
 require_once( PATH_EXT_TIMETRACKING . '/config/hooks.php' );
 
-
 ?>

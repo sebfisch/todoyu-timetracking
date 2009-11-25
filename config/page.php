@@ -1,7 +1,7 @@
 <?php
 
 	// add JS inits
-if( TodoyuAuth::isLoggedIn() ) {
+if( allowed('timetracking', 'use') ) {
 	TodoyuTimetrackingManager::addTimetrackingJsInitToPage();
 }
 

@@ -180,6 +180,10 @@ class TodoyuTimetrackingManager {
 
 
 
+	/**
+	 * Add timetracking js init to page
+	 *
+	 */
 	public static function addTimetrackingJsInitToPage() {
 		if( TodoyuTimetracking::isTrackingActive() && ! TodoyuRequest::isAjaxRequest() ) {
 			$idTask	= TodoyuTimetracking::getTaskID();
@@ -193,6 +197,7 @@ class TodoyuTimetrackingManager {
 
 		TodoyuPage::addJsOnloadedFunction($init);
 	}
+
 
 
 	/**

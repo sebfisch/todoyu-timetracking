@@ -3,6 +3,12 @@
 	<labels lang="en">
 		<label index="section.general">General settings</label>
 		<label index="right.use">Use timetracking</label>
+		<label index="section.task">Task tracking</label>
+		<label index="right.track">Track time</label>
+		<label index="right.seeTaskTab">See task tab</label>
+		<label index="right.seeTracks">See tracked time on task</label>
+		<label index="right.editOwn">Can edit OWN tracks on task</label>
+		<label index="right.editAll">Can edit ALL tracks on task</label>
 	</labels>
 	<labels lang="de"></labels>
 </locallang>
