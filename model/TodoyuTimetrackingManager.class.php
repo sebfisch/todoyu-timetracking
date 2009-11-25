@@ -181,7 +181,7 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Add timetracking js init to page
+	 * Add timetracking JS init to page
 	 *
 	 */
 	public static function addTimetrackingJsInitToPage() {
