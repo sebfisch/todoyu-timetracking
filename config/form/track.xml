@@ -15,16 +15,16 @@
 			<class>myFieldsetClass</class>
 			<elements>
 				<field type="dateinput" name="date_create">
-					<label>LLL:timetracking.attr.date_create</label>
+					<label>timetracking.attr.date_create</label>
 				</field>
 				<field type="timeinput" name="workload_tracked">
-					<label>LLL:timetracking.attr.workload_tracked</label>
+					<label>timetracking.attr.workload_tracked</label>
 				</field>
 				<field type="timeinput" name="workload_chargeable">
-					<label>LLL:timetracking.attr.workload_chargeable</label>
+					<label>timetracking.attr.workload_chargeable</label>
 				</field>
 				<field type="textinput" name="comment">
-					<label>LLL:timetracking.attr.comment</label>
+					<label>timetracking.attr.comment</label>
 				</field>
 			</elements>
 		</fieldset>
@@ -32,20 +32,10 @@
 			<legend>Actions</legend>
 			<class>buttons</class>
 			<elements>
-				<field type="button" name="save">
-					<label></label>
-					<type>button</type>
-					<text>LLL:core.save</text>
-					<class>buttonSave</class>
-					<hasIcon>1</hasIcon>
+				<field type="saveButton" name="save">
 					<onclick>Todoyu.Ext.timetracking.Task.saveTrack(#id_task#, #id#)</onclick>
 				</field>
-				<field type="button" name="cancel">
-					<label></label>
-					<type>button</type>
-					<text>LLL:core.cancel</text>
-					<class>buttonCancel</class>
-					<hasIcon>1</hasIcon>
+				<field type="cancelButton" name="cancel">
 					<onclick>Todoyu.Ext.timetracking.Task.cancelTrackEditing(#id_task#)</onclick>
 				</field>
 			</elements>
