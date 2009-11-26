@@ -24,8 +24,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Enter description here...
-	 *
+	 * Initialize timetracking headlet (register timetracking).
 	 */
 	init: function() {
 		this.registerTimetracking();
@@ -34,7 +33,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Enter description here...
+	 * Register timetracking.
 	 */
 	registerTimetracking: function() {
 		this.ext.registerToggleCallback(this.onToggle.bind(this));
@@ -44,10 +43,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Enter description here...
+	 * Handle toggeling of timetracking (headlet). If timetrack started: show it, otherwise: hide it
 	 *
-	 * @param unknown_type idTask
-	 * @param unknown_type start
+	 * @param	Integer	idTask
+	 * @param	Boolean	start
 	 */
 	onToggle: function(idTask, start) {
 		if( start === true ) {
@@ -60,10 +59,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Enter description here...
+	 * Handle update event of clock inside timetracking headlet
 	 *
-	 * @param unknown_type idTask
-	 * @param unknown_type time
+	 * @param	Integer	idTask
+	 * @param	Time	time
 	 */
 	onClockUpdate: function(idTask, time) {
 		this.updateTime(time);
@@ -73,8 +72,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Enter description here...
-	 *
+	 * Evoke slide-up effect of headlet to hide it
 	 */
 	hide: function() {
 		Effect.SlideUp('headlettimetracking');
@@ -83,9 +81,9 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Enter description here...
+	 * Update displayed tracked time count inside headlet
 	 *
-	 * @param unknown_type time
+	 * @param	Time	time
 	 */
 	updateTime: function(time) {
 		$('headlettimetracking-time-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
@@ -94,8 +92,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Enter description here...
-	 *
+	 * Update (used amount of estimated task workload in) percent inside headlet
 	 */
 	updatePercent: function() {
 		var percentContainer = 'headlettimetracking-time-percent-value';
@@ -109,8 +106,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Enter description here...
-	 *
+	 * Update timetracking headlet. Evokes rerendering of the headlet.
 	 */
 	update: function() {
 		var url		= Todoyu.getUrl('timetracking', 'headlet');
@@ -127,9 +123,9 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Enter description here...
+	 * Stop timetracking of given task
 	 *
-	 * @param unknown_type idTask
+	 * @param	Integer	idTask
 	 */
 	stopTask: function(idTask) {
 		this.ext.stop(idTask);

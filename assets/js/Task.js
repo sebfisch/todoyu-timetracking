@@ -125,6 +125,7 @@ Todoyu.Ext.timetracking.Task = {
 			} else {
 				$('task-' + idTask).removeClassName('running');
 			}
+			this.updateTab(idTask);
 		}
 	},
 
