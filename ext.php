@@ -26,10 +26,6 @@
  * @subpackage	Search
  */
 
-if( ! defined('TODOYU') ) die('NO ACCESS');
-
-
-
 	// Declare ext ID, path
 define('EXTID_TIMETRACKING', 119);
 define('PATH_EXT_TIMETRACKING', PATH_EXT . '/timetracking');
@@ -38,7 +34,7 @@ define('PATH_EXT_TIMETRACKING', PATH_EXT . '/timetracking');
 TodoyuLocale::register('timetracking', PATH_EXT_TIMETRACKING . '/locale/ext.xml');
 
 	// Request configurations
-require_once( PATH_EXT_TIMETRACKING . '/config/extension.php' );
-require_once( PATH_EXT_TIMETRACKING . '/config/hooks.php' );
+require_once( PATH_EXT_TIMETRACKING . '/config/extension.php');
+require_once( PATH_EXT_TIMETRACKING . '/config/hooks.php');
 
 ?>
