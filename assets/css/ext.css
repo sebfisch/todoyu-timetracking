@@ -29,11 +29,13 @@
 	background:#fff;
 }
 
-button.startTracking .icon {
+button.startTracking .icon,
+div.tabBlock .timetrackingButtons button.startTracking .icon {
 	background:url(../img/icons.png) no-repeat 0 -30px;
 }
 
-button.stopTracking .icon {
+button.stopTracking .icon,
+div.tabBlock .timetrackingButtons button.stopTracking .icon {
 	background:url(../img/icons.png) no-repeat 0 0;
 }
 
