@@ -14,7 +14,19 @@
 		<label index="stop">Stop timetracking</label>
 		<label index="currentTask">CURRENT TASK</label>
 		<label index="showCurrentTaskInProject">Show task in project</label>
-<!--  ......................................... added after 20091122 -->
 	</labels>
 	<labels lang="de"></labels>
+		<label index="ext.title">Zeiterfassung</label>
+		<label index="title">Zeiterfassung</label>
+		<label index="noTracksYet">Noch keine Zeiterfassungen.</label>
+		<label index="attr.date_create">Datum</label>
+		<label index="attr.workload_tracked">Arbeitsaufwand</label>
+		<label index="attr.workload_chargeable">Verrechenbar</label>
+		<label index="attr.comment">Kommentar</label>
+		<label index="tasktab.time_elapsed">Verstrichene Zeit</label>
+		<label index="tasktab.toggle">Geplante Zeiten an/aus</label>
+		<label index="start">Zeiterfassung starten</label>
+		<label index="stop">Zeiterfassung stoppen</label>
+		<label index="currentTask">AKTUELLE AUFGABE</label>
+		<label index="showCurrentTaskInProject">Aufgabe im Projekt anzeigen</label>
 </locallang>
