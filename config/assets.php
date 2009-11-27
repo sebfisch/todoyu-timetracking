@@ -26,7 +26,7 @@
  * @subpackage	Timetracking
  */
 
-if( ! defined('TODOYU') ) die('NO ACCESS');
+
 
 
 $CONFIG['EXT']['timetracking']['assets'] = array(
