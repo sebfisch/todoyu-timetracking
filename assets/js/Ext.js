@@ -123,9 +123,9 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Enter description here...
 	 *
-	 * @param unknown_type idTask
-	 * @param unknown_type started
-	 * @param unknown_type response
+	 * @param Integer	idTask
+	 * @param Boolean	started
+	 * @param Object	response
 	 */
 	onTrackingRequestSended: function(idTask, started, response) {
 		if( started ) {
