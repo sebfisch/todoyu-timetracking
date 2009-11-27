@@ -3,17 +3,17 @@
 	<labels lang="en">
 		<label index="ext.title">Timetracking</label>
 		<label index="title">Timetracking</label>
-		<label index="noTracksYet">No timetracks yet.</label>
+		<label index="noTracksYet">No Timetracks yet</label>
 		<label index="attr.date_create">Date</label>
 		<label index="attr.workload_tracked">Workload</label>
 		<label index="attr.workload_chargeable">Chargeable</label>
 		<label index="attr.comment">Comment</label>
-		<label index="tasktab.time_elapsed">Elapsed time</label>
+		<label index="tasktab.time_elapsed">Elapsed Time</label>
 		<label index="tasktab.toggle">Scheduled times on/off</label>
-		<label index="start">Start timetracking</label>
-		<label index="stop">Stop timetracking</label>
-		<label index="currentTask">CURRENT TASK</label>
-		<label index="showCurrentTaskInProject">Show task in project</label>
+		<label index="start">Start Timetracking</label>
+		<label index="stop">Stop Timetracking</label>
+		<label index="currentTask">Current Task</label>
+		<label index="showCurrentTaskInProject">Show Task In Project</label>
 	</labels>
 	<labels lang="de"></labels>
 		<label index="ext.title">Zeiterfassung</label>
@@ -27,6 +27,6 @@
 		<label index="tasktab.toggle">Geplante Zeiten an/aus</label>
 		<label index="start">Zeiterfassung starten</label>
 		<label index="stop">Zeiterfassung stoppen</label>
-		<label index="currentTask">AKTUELLE AUFGABE</label>
+		<label index="currentTask">Aktuelle Aufgabe</label>
 		<label index="showCurrentTaskInProject">Aufgabe im Projekt anzeigen</label>
 </locallang>
