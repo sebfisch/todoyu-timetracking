@@ -73,7 +73,7 @@ class TodoyuTimetracking {
 	 * @return	Array
 	 */
 	public static function getTaskArray() {
-		return TodoyuTaskManager::getTaskArray(self::getTaskID());
+		return TodoyuTaskManager::getTaskData(self::getTaskID());
 	}
 
 
