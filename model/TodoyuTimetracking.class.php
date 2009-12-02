@@ -49,9 +49,9 @@ class TodoyuTimetracking {
 	 * @return	ID
 	 */
 	public static function getTaskID() {
-		$ttSession = TodoyuSessionManager::get(self::SESS_KEY);
+		$path	= self::SESS_KEY . '/task';
 
-		return intval($ttSession['task']);
+		return intval(TodoyuSession::get(path));
 	}
 
 
@@ -84,9 +84,9 @@ class TodoyuTimetracking {
 	 * @return	Integer
 	 */
 	public static function getCurrentTrackingStart() {
-		$timetracking = TodoyuSessionManager::get(self::SESS_KEY);
+		$path	= self::SESS_KEY . '/time';
 
-		return intval($timetracking['time']);
+		return intval(TodoyuSession::get(path));
 	}
 
 
@@ -165,7 +165,7 @@ class TodoyuTimetracking {
 				self::updateRecord($dayWorkload['id'], $workload);
 			}
 
-			TodoyuSessionManager::remove(self::SESS_KEY);
+			TodoyuSession::remove(self::SESS_KEY);
 
 			return true;
 		} else {
@@ -451,7 +451,7 @@ class TodoyuTimetracking {
 			'time'	=> NOW
 		);
 
-		TodoyuSessionManager::set(self::SESS_KEY, $data);
+		TodoyuSession::set(self::SESS_KEY, $data);
 	}
 
 
