@@ -86,7 +86,7 @@ class TodoyuTimetracking {
 	public static function getCurrentTrackingStart() {
 		$path	= self::SESS_KEY . '/time';
 
-		return intval(TodoyuSession::get(path));
+		return intval(TodoyuSession::get($path));
 	}
 
 

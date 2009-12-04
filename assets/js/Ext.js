@@ -121,7 +121,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 * Enter description here...
+	 * Handler when tracking request has been sent (started or stoped)
 	 *
 	 * @param Integer	idTask
 	 * @param Boolean	started
