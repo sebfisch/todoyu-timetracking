@@ -2,9 +2,9 @@
 	<ul class="ulList tracksList overflow">
 	{foreach $tracks track}
 			<li id="task-{$idTask}-track-{$track.id}" class="listItem {cycle values="odd,event"} {ifIsCurrentUser $track.id_user}contextmenutrack{/ifIsCurrentUser}">
-		{ifIsCurrentUser $track.id_user}
+		{if allowed('timetracking','editOwn') || allowed('timetracking','editAll')}
 					<a href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$idTask}, {$track.id})">
-		{/ifIsCurrentUser}
+		{/if}
 				<span>{date_format $track.date_create "%d.%m.%y"}  - {HourMinSec $track.workload_tracked} - {$track.firstname} {$track.lastname}</span>
 		{if $track.comment}
 					<span class="timteTrackComment">{htmlencode $track.comment}</span>
