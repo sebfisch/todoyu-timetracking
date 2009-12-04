@@ -39,15 +39,14 @@ class TodoyuTimetrackingRenderer {
 		$control	= TodoyuTimetrackingRenderer::renderTaskTabControl($idTask);
 		$list		= TodoyuTimetrackingRenderer::renderTaskTabList($idTask);
 
-//		TodoyuPage::addExtAssets('timetracking');
-
+		$tmpl	= 'ext/timetracking/view/tasktab.tmpl';
 		$data	= array(
 			'idTask'	=> $idTask,
 			'control'	=> $control,
 			'list'		=> $list
 		);
 
-		return render('ext/timetracking/view/tasktab.tmpl', $data);
+		return render($tmpl, $data);
 	}
 
 

@@ -51,7 +51,7 @@ class TodoyuTimetracking {
 	public static function getTaskID() {
 		$path	= self::SESS_KEY . '/task';
 
-		return intval(TodoyuSession::get(path));
+		return intval(TodoyuSession::get($path));
 	}
 
 
