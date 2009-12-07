@@ -20,7 +20,11 @@
 
 Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
-	ext: Todoyu.Ext.timetracking,
+	/**
+	 *	Ext shortcut
+	 */
+	ext:	Todoyu.Ext.timetracking,
+
 
 
 	/**
@@ -146,6 +150,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 			Todoyu.Ext.project.goToTaskInProject(idTask, idProject);
 		}
 	},
+
 
 
 	/**

@@ -20,7 +20,10 @@
 
 Todoyu.Ext.timetracking.Task = {
 
-	ext: Todoyu.Ext.timetracking,
+	/**
+	 *	Ext shortcut
+	 */
+	ext:	Todoyu.Ext.timetracking,
 
 
 

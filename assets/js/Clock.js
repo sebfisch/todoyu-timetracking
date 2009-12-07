@@ -24,18 +24,22 @@
 
 Todoyu.Ext.timetracking.Clock = {
 
-	ext: Todoyu.Ext.timetracking,
+	/**
+	 *	Ext shortcut
+	 */
+	ext:	Todoyu.Ext.timetracking,
 
 	/**
 	 * Areas to display the clock
 	 */
-	//displayAreas: [],
+//	displayAreas:	[],
 
-	//callbacks: [],
+//	callbacks:		[],
 	/**
 	 * Peridical executer
 	 */
-	pe: null,
+	pe:		null,
+
 
 
 	/**
