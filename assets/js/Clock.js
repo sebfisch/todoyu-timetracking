@@ -75,7 +75,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Enter description here...
 	 *
-	 * @param unknown_type periodicalExecuter
+	 *	@param unknown_type periodicalExecuter
 	 */
 	onClockTick: function(periodicalExecuter) {
 		this.ext.onClockTick();
@@ -99,8 +99,8 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Show a new clock in a display area. Can be initialized with a start time
 	 *
-	 * @param	String		idDisplayArea
-	 * @param	Integer		startTime
+	 *	@param	String		idDisplayArea
+	 *	@param	Integer		startTime
 	 */
 	showClock: function(idDisplayArea, startTime) {
 		this.addDisplayArea(idDisplayArea);
@@ -138,7 +138,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Enter description here...
 	 *
-	 * @param unknown_type callback
+	 *	@param unknown_type callback
 	 */
 	addCallback: function(callback) {
 		this.callbacks.push(callback);
@@ -161,7 +161,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Add a new display area to the list of updated elements
 	 *
-	 * @param	String		idDisplayArea
+	 *	@param	String		idDisplayArea
 	 */
 	addDisplayArea: function(idDisplayArea) {
 		this.displayAreas.push(idDisplayArea);
@@ -173,7 +173,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Call updater function for all registered display areas
 	 *
-	 * @param	PeriodicalExecuter	pe
+	 *	@param	PeriodicalExecuter	pe
 	 */
 	refreshAreas: function(pe) {
 		this.displayAreas.each(function(idDisplayArea) {
@@ -186,8 +186,8 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Update a display area with the current time
 	 *
-	 * @param	String		idDisplayArea
-	 * @param	Integer		seconds
+	 *	@param	String		idDisplayArea
+	 *	@param	Integer		seconds
 	 */
 	updateDisplayArea: function(idDisplayArea, seconds) {
 		var timeString = Todoyu.Helper.timestampFormat(seconds, ':');
@@ -205,4 +205,5 @@ Todoyu.Ext.timetracking.Clock = {
 				'minutes':	Math.floor((this.getTime()-Math.floor(this.getTime()/3600)*3600)/60),
 				'seconds':	this.getTime() - (Math.floor(this.getTime()/3600)*3600) - (Math.floor((this.getTime()-Math.floor(this.getTime()/3600)*3600)/60)*60)};
 	}
+
 };

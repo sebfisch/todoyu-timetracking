@@ -36,7 +36,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Start timetracking of given task
 	 *
-	 * @param Integert idTask
+	 *	@param Integert idTask
 	 */
 	start: function(idTask) {
 		this.ext.start(idTask);		
@@ -47,7 +47,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Stop timetracking of given task, reset timetrack button style
 	 *
-	 * @param Integer idTask
+	 *	@param Integer idTask
 	 */
 	stop: function(idTask) {
 		this.ext.stop();
@@ -88,8 +88,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Event handler: 'onClockTick': evoked on each tick of the clock showing the current time of the current running timetrack
 	 *
-	 * @param	Integer	idTask
-	 * @param	Time	time
+	 *	@param	Integer	idTask
+	 *	@param	Time	time
 	 */
 	onClockTick: function(idTask, time) {
 		var el = $('task-' + idTask + '-timetrack-currentsession');
@@ -284,7 +284,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Toggle timetracks list visibility
 	 * 
-	  *	@param	Integer	idTask
+	 *	@param	Integer	idTask
 	 */
 	toggleList: function(idTask) {
 		Todoyu.Ui.toggle('task-' + idTask + '-timetracks');

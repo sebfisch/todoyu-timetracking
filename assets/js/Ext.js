@@ -52,9 +52,9 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Enter description here...
 	 *
-	 * @param unknown_type currentTask
-	 * @param unknown_type currentTrackedTime
-	 * @param unknown_type currentTaskEstimatedWorkload
+	 *	@param unknown_type currentTask
+	 *	@param unknown_type currentTrackedTime
+	 *	@param unknown_type currentTaskEstimatedWorkload
 	 */
 	initWithTask: function(idTask, trackedTime, estimatedWorkload) {
 		this.init();
@@ -123,9 +123,9 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Handler when tracking request has been sent (started or stoped)
 	 *
-	 * @param Integer	idTask
-	 * @param Boolean	started
-	 * @param Object	response
+	 *	@param Integer	idTask
+	 *	@param Boolean	started
+	 *	@param Object	response
 	 */
 	onTrackingRequestSended: function(idTask, started, response) {
 		if( started ) {
@@ -195,7 +195,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 *	Register new callback to be evoked on clock event
 	 *
-	 * @param unknown_type func
+	 *	@param unknown_type func
 	 */
 	registerClockCallback: function(func) {
 		this._callbacks['clock'].push(func);

@@ -45,8 +45,8 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Handle toggeling of timetracking (headlet). If timetrack started: show it, otherwise: hide it
 	 *
-	 * @param	Integer	idTask
-	 * @param	Boolean	start
+	 *	@param	Integer	idTask
+	 *	@param	Boolean	start
 	 */
 	onToggle: function(idTask, start) {
 		if( start === true ) {
@@ -61,8 +61,8 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Handle update event of clock inside timetracking headlet
 	 *
-	 * @param	Integer	idTask
-	 * @param	Time	time
+	 *	@param	Integer	idTask
+	 *	@param	Time	time
 	 */
 	onClockUpdate: function(idTask, time) {
 		this.updateTime(time);
@@ -83,7 +83,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Update displayed tracked time count inside headlet
 	 *
-	 * @param	Time	time
+	 *	@param	Time	time
 	 */
 	updateTime: function(time) {
 		$('headlettimetracking-time-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
@@ -125,7 +125,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Stop timetracking of given task
 	 *
-	 * @param	Integer	idTask
+	 *	@param	Integer	idTask
 	 */
 	stopTask: function(idTask) {
 		this.ext.stop(idTask);
