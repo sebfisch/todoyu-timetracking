@@ -23,6 +23,7 @@ div#headlettimetracking div.button button span.rgt {
 }
 
 div#headlettimetracking div.label {
+	font-weight:bold;
 	background-color:#efefef;
 	padding:2px 2px 4px 2px;
 	margin:5px 8px 0 8px;
