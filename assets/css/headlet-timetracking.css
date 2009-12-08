@@ -2,7 +2,7 @@ div#headlettimetracking {
 	left:0;
 	right:0;
 	z-index:1000;
-	width:355px;
+	width:284px;
 	margin:0 auto;
 	padding:0 0 5px 0;
 	background:#e1e1e1 url(../img/bg_headlettimetracking.png) no-repeat 0 100%;
@@ -10,7 +10,7 @@ div#headlettimetracking {
 }
 
 div#headlettimetracking div.button {
-	margin:5px 10px 0 0;
+	margin:-12px 10px 0 0;
 	float:right;
 }
 
@@ -23,11 +23,12 @@ div#headlettimetracking div.button button span.rgt {
 }
 
 div#headlettimetracking div.label {
-	margin:5px 0 0 20px;
-	font-weight:bold;
+	background-color:#efefef;
+	padding:2px 2px 4px 2px;
+	margin:5px 8px 0 8px;
 	cursor: pointer;
 }
 
 div#headlettimetracking div.time {
-	margin:0 0 0 20px;
+	margin:2px 8px 0 8px;
 }
