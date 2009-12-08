@@ -143,45 +143,21 @@ class TodoyuTimetrackingRenderer {
 			return '';
 		}
 
+		$tmpl		= 'ext/timetracking/view/panel.tmpl';
+
 		$task		= TodoyuTimetracking::getTask();
 		$trackedTime= TodoyuTimetracking::getTrackedTime();
-		$percent	= $trackedTime == 0 || $task->estimated_workload == 0 ? 0 : floor(($trackedTime/$task->estimated_workload)*100);
+		$percent	= $trackedTime == 0 || $task->estimated_workload == 0 ? 0 : floor(($trackedTime/$task->estimated_workload) * 100);
 
-		$data	= array('task'			=> $task->getTemplateData(0),
-						'totalTime'		=> TodoyuTimetracking::getTrackedTaskTimeTotal($task->id),
-						'trackedTime'	=> $trackedTime,
-						'percent'		=> $percent
-						);
-
-		return render('ext/timetracking/view/panel.tmpl', $data);
-	}
-
-
-
-	/**
-	 * Render timetracking headlet with running clock
-	 *
-	 * @return	String
-	 */
-	public static function renderHeadlet() {
 		$data	= array(
-			'id'		=> 'timetracking',
-			'attributes'=> 'style="display:none"'
+			'task'			=> $task->getTemplateData(0),
+			'totalTime'		=> TodoyuTimetracking::getTrackedTaskTimeTotal($task->id),
+			'trackedTime'	=> $trackedTime,
+			'percent'		=> $percent
 		);
 
-		if( TodoyuTimetracking::isTrackingActive() ) {
-			$task	= TodoyuTimetracking::getTask();
-
-			$data['idTask']		= $task->id;
-			$data['task']		= $task->getTitle();
-			$data['time']		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id);
-			$data['tracked']	= TodoyuTimetracking::getTrackedTime();
-			$data['attributes']	= 'style="display:block"';
-		}
-
-		return render('ext/timetracking/view/headlet.tmpl', $data);
+		return ''; //render($tmpl, $data);
 	}
-
 
 }
 

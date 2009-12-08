@@ -12,7 +12,7 @@
 		<span id="{$id}-time-percent">{if $showPercent}(<span id="{$id}-time-percent-value">{$percent}</span>%){/if}</span>
 	</div>
 
-	<div class="button">
+	<div class="button" title="{Label timetracking.stop}">
 		{Button label="core.stop" class="stopTracking" onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.stopTask($idTask)"}
 	</div>
 
