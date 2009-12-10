@@ -48,11 +48,11 @@ if( allowed('timetracking', 'use') && allowed('timetracking', 'track') ) {
 }
 
 
-if( allowed('timetracking', 'use') && allowed('timetracking', 'seeTaskTab') ) {
+if( allowed('timetracking', 'seeTaskTab') ) {
 	/**
 	 * Register tab for task
 	 */
-	TodoyuTaskManager::registerTaskTab('timetracking', 'TodoyuTimetrackingTask::getTabLabel', 'TodoyuTimetrackingTask::getTabContent', 10);
+	TodoyuTaskManager::addTaskTab('timetracking', 'TodoyuTimetrackingTask::getTabLabel', 'TodoyuTimetrackingTask::getTabContent', 10);
 }
 
 
