@@ -19,8 +19,20 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
+/**
+ * Timetrack tasktab action controller
+ *
+ * @package		Todoyu
+ * @subpackage	Timetracking
+ */
 class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 
+	/**
+	 * Get task tab content
+	 *
+	 * @param	Array		$params
+	 * @return	String
+	 */
 	public function updateAction(array $params) {
 		$idTask	= intval($params['task']);
 
@@ -29,6 +41,12 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 
 
 
+	/**
+	 * Get tracklist content
+	 *
+	 * @param	Array		$params
+	 * @return	String
+	 */
 	public function tracklistAction(array $params) {
 		$idTask	= intval($params['task']);
 
@@ -37,6 +55,12 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 
 
 
+	/**
+	 * Get tab controll panel content
+	 *
+	 * @param	Array		$params
+	 * @return	String
+	 */
 	public function controlAction(array $params) {
 		$idTask	= intval($params['task']);
 
@@ -45,6 +69,12 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 
 
 
+	/**
+	 * Get form to edit a task track
+	 *
+	 * @param	Array		$params
+	 * @return	String
+	 */
 	public function edittrackAction(array $params) {
 		$idTrack= intval($params['track']);
 
@@ -53,6 +83,12 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 
 
 
+	/**
+	 * Save updated task track data
+	 *
+	 * @param	Array		$params
+	 * @return	String
+	 */
 	public function updatetrackAction(array $params) {
 		$formData	= $params['timetrack'];
 		$idTask		= intval($formData['id_task']);

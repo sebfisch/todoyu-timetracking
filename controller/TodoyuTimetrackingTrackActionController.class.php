@@ -19,8 +19,19 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
+/**
+ * Timetrack task action controller
+ *
+ * @package		Todoyu
+ * @subpackage	Timetracking
+ */
 class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 
+	/**
+	 * Start timetracking for task
+	 *
+	 * @param	Array		$params
+	 */
 	public function startAction(array $params) {
 		$idTask	= intval($params['task']);
 
@@ -28,6 +39,12 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 	}
 
 
+
+	/**
+	 * Stop currently tracked task
+	 *
+	 * @param	Array		$params
+	 */
 	public function stopAction(array $params) {
 		TodoyuTimetracking::stopTask();
 	}

@@ -5,6 +5,7 @@
 		<label index="title">Timetracking</label>
 		<label index="noTracksYet">No Timetracks yet</label>
 		<label index="attr.date_create">Date</label>
+		<label index="attr.date_track">Date</label>
 		<label index="attr.workload_tracked">Workload</label>
 		<label index="attr.workload_chargeable">Chargeable</label>
 		<label index="attr.comment">Comment</label>
@@ -20,6 +21,7 @@
 		<label index="title">Zeiterfassung</label>
 		<label index="noTracksYet">Noch keine Zeiterfassungen.</label>
 		<label index="attr.date_create">Datum</label>
+		<label index="attr.date_track">Datum</label>
 		<label index="attr.workload_tracked">Arbeitsaufwand</label>
 		<label index="attr.workload_chargeable">Verrechenbar</label>
 		<label index="attr.comment">Kommentar</label>

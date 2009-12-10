@@ -50,9 +50,9 @@ class TodoyuTimetrackingTask {
 					u.lastname';
 		$tables	= 	self::TABLE . ' t,
 					ext_user_user u';
-		$where	= '	t.id_task = ' . $idTask . ' AND
-					t.id_user = u.id';
-		$order	= '	t.date_create DESC';
+		$where	= '	t.id_task 			= ' . $idTask . ' AND
+					t.id_user_create 	= u.id';
+		$order	= '	t.date_track DESC';
 
 		return Todoyu::db()->getArray($fields, $tables, $where, '', $order);
 	}
@@ -91,15 +91,16 @@ class TodoyuTimetrackingTask {
 	 *
 	 * @param	Array	$formData
 	 */
-	public static function saveTabInlineForm($formData) {
+	public static function saveTabInlineForm(array $formData) {
 		$idTrack	= intval($formData['id']);
-		$data		= array('date_update'		=> NOW,
-							'date_create'		=> TodoyuTime::parseDate($formData['date_create']),
-							'workload_tracked'	=> TodoyuTime::parseTime($formData['workload_tracked']),
-							'workload_chargeable'=>TodoyuTime::parseTime($formData['workload_chargeable']),
-							'comment'			=> $formData['comment']);
+		$data		= array(
+			'date_track'			=> TodoyuTime::parseDate($formData['date_track']),
+			'workload_tracked'		=> TodoyuTime::parseTime($formData['workload_tracked']),
+			'workload_chargeable'	=> TodoyuTime::parseTime($formData['workload_chargeable']),
+			'comment'				=> $formData['comment']
+		);
 
-		TodoyuTimetracking::updateTrack($idTrack, $data);
+		TodoyuTimetracking::updateRecord($idTrack, $data);
 	}
 
 

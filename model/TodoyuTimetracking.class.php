@@ -159,10 +159,10 @@ class TodoyuTimetracking {
 			$trackedTime= self::getTrackedTime();
 
 			if( $dayWorkload === false ) {
-				self::addRecord($idTask, $trackedTime);
+				self::addTracking($idTask, $trackedTime);
 			} else {
 				$workload = $dayWorkload['workload_tracked'] + $trackedTime;
-				self::updateRecord($dayWorkload['id'], $workload);
+				self::updateTracking($dayWorkload['id'], $workload);
 			}
 
 			TodoyuSession::remove(self::SESS_KEY);
@@ -199,7 +199,7 @@ class TodoyuTimetracking {
 		$fields	= 'workload_tracked';
 		$table	= self::TABLE;
 
-		$where	= '	date_create BETWEEN ' . $dateStart . ' AND ' . $dateEnd	;
+		$where	= '	date_track BETWEEN ' . $dateStart . ' AND ' . $dateEnd	;
 
 		if( $idTask > 0 ) {
 			$where .= ' AND id_task	= ' . $idTask;
@@ -207,7 +207,7 @@ class TodoyuTimetracking {
 
 			// If check is only for a single user, limit result
 		if( $idUser !== 0 ) {
-			$where .= ' AND id_user = ' . $idUser;
+			$where .= ' AND id_user_create = ' . $idUser;
 		}
 
 			// If check for chargeable time is requested, get this column to
@@ -299,8 +299,8 @@ class TodoyuTimetracking {
 
 		$fields	= '*';
 		$table	= self::TABLE;
-		$where	= ' id_user	= ' . $idUser . ' AND
-					date_create BETWEEN ' . $dateStart . ' AND ' . $dateEnd;
+		$where	= ' id_user_create	= ' . $idUser . ' AND
+					date_track BETWEEN ' . $dateStart . ' AND ' . $dateEnd;
 
 		return Todoyu::db()->getArray($fields, $table, $where);
 	}
@@ -335,16 +335,33 @@ class TodoyuTimetracking {
 
 
 	/**
+	 * Add new track record
+	 *
+	 * @param	Array		$data
+	 * @return	Integer		Track record ID
+	 */
+	public static function addRecord(array $data) {
+		unset($data['id']);
+
+		$data['date_update']= NOW;
+		$data['date_track']	= NOW;
+
+		return TodoyuRecordManager::addRecord(self::TABLE, $data);
+	}
+
+
+
+	/**
 	 * Update a track record
 	 *
 	 * @param	Integer		$idTrack
 	 * @param	Array		$data
 	 * @return	Boolean
 	 */
-	public static function updateTrack($idTrack, array $data) {
+	public static function updateRecord($idTrack, array $data) {
 		$idTrack = intval($idTrack);
 
-		return Todoyu::db()->updateRecord('ext_timetracking_track', $idTrack, $data) === 1;
+		return TodoyuRecordManager::updateRecord(self::TABLE, $idTrack, $data) === 1;
 	}
 
 
@@ -357,21 +374,22 @@ class TodoyuTimetracking {
 	 * @return	Integer
 	 */
 
-	private static function addRecord($idTask, $timeTracked, $timeChargeable = 0) {
+	private static function addTracking($idTask, $timeTracked, $timeChargeable = 0) {
 		$idTask			= intval($idTask);
 		$timeTracked	= intval($timeTracked);
 		$timeChargeable	= intval($timeChargeable);
 
-		$fieldValues= array(
+		$data = array(
 			'date_create'		=> NOW,
 			'date_update'		=> NOW,
+			'date_track'		=> NOW,
 			'id_task'			=> $idTask,
-			'id_user'			=> userid(),
+			'id_user_create'	=> userid(),
 			'workload_tracked'	=> $timeTracked,
 			'workload_chargeable'=>$timeChargeable
 		);
 
-		return Todoyu::db()->doInsert(self::TABLE, $fieldValues);
+		return Todoyu::db()->doInsert(self::TABLE, $data);
 	}
 
 
@@ -385,23 +403,24 @@ class TodoyuTimetracking {
 	 * @param	String		$comment
 	 * @return	Boolean
 	 */
-	private static function updateRecord($idRecord, $workloadTracked, $chargeableWorkload = null, $comment = null) {
-		$idRecord		= intval($idRecord);
+	private static function updateTracking($idTrack, $workloadTracked, $chargeableWorkload = null, $comment = null) {
+		$idTrack		= intval($idTrack);
 		$workloadTracked= intval($workloadTracked);
 
-		$fieldValues= array(
+		$data = array(
 			'date_update'		=> NOW,
+			'date_track'		=> NOW,
 			'workload_tracked'	=> $workloadTracked
 		);
 
 		if( !is_null($chargeableWorkload) ) {
-			$fieldValues['workload_chargeable'] = intval($chargeableWorkload);
+			$data['workload_chargeable'] = intval($chargeableWorkload);
 		}
 		if( !is_null($comment) ) {
-			$fieldValues['comment'] = $comment;
+			$data['comment'] = $comment;
 		}
 
-		return Todoyu::db()->doUpdateRecord(self::TABLE, $idRecord, $fieldValues);
+		return self::updateRecord($idTrack, $data);
 	}
 
 
@@ -469,11 +488,11 @@ class TodoyuTimetracking {
 
 		$fields	= '*';
 		$table	= self::TABLE;
-		$where	= '	id_user		= ' . userid() . ' AND
-					id_task		= ' . $idTask . ' AND
-					date_create BETWEEN ' . $range['start'] . ' AND ' . $range['end'];
+		$where	= '	id_user_create	= ' . userid() . ' AND
+					id_task			= ' . $idTask . ' AND
+					date_track BETWEEN ' . $range['start'] . ' AND ' . $range['end'];
 
-		return Todoyu::db()->doSelectRow($fields, $table, $where);
+		return Todoyu::db()->getRecordByQuery($fields, $table, $where);
 	}
 
 
@@ -505,9 +524,9 @@ class TodoyuTimetracking {
 	/**
 	 * Get tracked task IDs
 	 *
-	 * @param	Integer	$timeStart
-	 * @param	Integer	$timeEnd
-	 * @param	Integer	$idUser
+	 * @param	Integer		$timeStart
+	 * @param	Integer		$timeEnd
+	 * @param	Integer		$idUser
 	 * @return	Array
 	 */
 	public static function getTrackedTaskIDs($timeStart = 0, $timeEnd = 0, $idUser = 0) {
@@ -522,7 +541,7 @@ class TodoyuTimetracking {
 		$field	= 'id_task';
 		$table	= self::TABLE;
 		$where	= '	date_update BETWEEN ' . $timeStart . ' AND ' . $timeEnd . ' AND
-					id_user	= ' . $idUser;
+					id_user_create	= ' . $idUser;
 		$group	= 'id_task';
 		$order	= 'date_create';
 

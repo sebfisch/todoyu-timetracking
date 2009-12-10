@@ -25,7 +25,6 @@
  * @package		Todoyu
  * @subpackage	Timetracking
  */
-
 class TodoyuTimetrackingManager {
 
 	/**
@@ -100,7 +99,7 @@ class TodoyuTimetrackingManager {
 			$data	= array(
 				'date_update'		=> NOW,
 				'date_create'		=> NOW,
-				'id_user'			=> userid($idUser),
+				'id_user_create'	=> userid($idUser),
 				'id_task'			=> $idTask,
 				'workload_tracked'	=> $workloadTracked,
 				'workload_chargeable'=>$workloadChargeable,
