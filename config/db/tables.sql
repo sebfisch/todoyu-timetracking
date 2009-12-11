@@ -2,7 +2,6 @@
 -- Table structure for table `ext_timetracking_track`
 --
 
-DROP TABLE IF EXISTS `ext_timetracking_track`;
 CREATE TABLE `ext_timetracking_track` (
   `id` int(11) NOT NULL auto_increment,
   `date_update` int(10) unsigned NOT NULL,
