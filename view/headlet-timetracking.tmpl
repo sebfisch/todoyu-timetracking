@@ -1,9 +1,9 @@
 {extends "core/view/headlet.tmpl"}
 
 {block "headlet"}
-	
+
 	<div class="label" title="{htmlencode $label}" onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.goToTask({$idProject}, {$idTask})">
-		{$taskNumber} {htmlencode $label|truncate:43}
+		{$taskNumber} {htmlspecialchars truncate($label 38 break=true)}
 	</div>
 
 	<div class="time">

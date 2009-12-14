@@ -28,7 +28,7 @@
 		<label index="tasktab.time_elapsed">Verstrichene Zeit</label>
 		<label index="tasktab.toggle">Geplante Zeiten an/aus</label>
 		<label index="start">Zeiterfassung starten</label>
-		<label index="stop">Zeiterfassung stoppen</label>
+		<label index="stop">Zeiterf. stoppen</label>
 		<label index="currentTask">Aktuelle Aufgabe</label>
 		<label index="showCurrentTaskInProject">Aufgabe im Projekt anzeigen</label>
 </locallang>

@@ -54,8 +54,6 @@ class TodoyuHeadletTimetracking extends TodoyuHeadlet {
 		if( TodoyuTimetracking::isTrackingActive() ) {
 			$task	= TodoyuTimetracking::getTask();
 
-
-
 			$data['idTask']		= $task->id;
 			$data['idProject']	= $task->id_project;
 			$data['label']		= $task->getFullTitle();
