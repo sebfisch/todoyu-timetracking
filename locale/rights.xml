@@ -10,5 +10,14 @@
 		<label index="right.editOwn">Can edit OWN tracks on task</label>
 		<label index="right.editAll">Can edit ALL tracks on task</label>
 	</labels>
-	<labels lang="de"></labels>
+	<labels lang="de">
+		<label index="section.general">Allgemeine Einstellungen</label>
+		<label index="right.use">Benutze Zeiterfassung</label>
+		<label index="section.task">Zeiterfassung Aufgaben</label>
+		<label index="right.track">Zeit erfassen</label>
+		<label index="right.seeTaskTab">Sieht Aufgabentab</label>
+		<label index="right.seeTracks">Sieht erfasste Zeit im Aufgabentab</label>
+		<label index="right.editOwn">Kann SELBST ERFASSTE Zeiten bearbeiten</label>
+		<label index="right.editAll">Kann ALLE Zeiten bearbeiten</label>
+	</labels>
 </locallang>
