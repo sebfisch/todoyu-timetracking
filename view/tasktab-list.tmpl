@@ -1,18 +1,18 @@
 {if sizeof($tracks) > 0}
 	<ul class="ulList tracksList overflow">
 	{foreach $tracks track}
-			<li id="task-{$idTask}-track-{$track.id}" class="listItem {cycle values="odd,event"} {ifIsCurrentUser $track.id_user_create}contextmenutrack{/ifIsCurrentUser}">
+		<li id="task-{$idTask}-track-{$track.id}" class="listItem {cycle values="odd,event"} {if isUserID($track.id_user_create)}contextmenuTrack{/if}">
 		{if allowed('timetracking','editOwn') || allowed('timetracking','editAll')}
-					<a href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$idTask}, {$track.id})">
+			<a href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$idTask}, {$track.id})">
 		{/if}
-				<span>{date_format $track.date_track "%d.%m.%y"}  - {HourMinSec $track.workload_tracked} - {$track.firstname} {$track.lastname}</span>
+			<span>{date_format $track.date_track "%d.%m.%y"}  - {HourMinSec $track.workload_tracked} - {$track.firstname} {$track.lastname}</span>
 		{if $track.comment}
-					<span class="timteTrackComment">{htmlencode $track.comment}</span>
+			<span class="timteTrackComment">{htmlencode $track.comment}</span>
 		{/if}
-		{ifIsCurrentUser $track.id_user_create}
-					</a>
-		{/ifIsCurrentUser}
-			</li>
+		{if isUserID($track.id_user_create)}
+			</a>
+		{/if}
+		</li>
 	{/foreach}
 	</ul>
 {else}
