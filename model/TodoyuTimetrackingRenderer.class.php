@@ -131,34 +131,6 @@ class TodoyuTimetrackingRenderer {
 		return $form->render();
 	}
 
-
-
-	/**
-	 * Render timetrack panel for current tracked task
-	 *
-	 * @return	String
-	 */
-	public static function renderPanel() {
-		if( ! TodoyuTimetracking::isTrackingActive() ) {
-			return '';
-		}
-
-		$tmpl		= 'ext/timetracking/view/panel.tmpl';
-
-		$task		= TodoyuTimetracking::getTask();
-		$trackedTime= TodoyuTimetracking::getTrackedTime();
-		$percent	= $trackedTime == 0 || $task->estimated_workload == 0 ? 0 : floor(($trackedTime/$task->estimated_workload) * 100);
-
-		$data	= array(
-			'task'			=> $task->getTemplateData(0),
-			'totalTime'		=> TodoyuTimetracking::getTrackedTaskTimeTotal($task->id),
-			'trackedTime'	=> $trackedTime,
-			'percent'		=> $percent
-		);
-
-		return ''; //render($tmpl, $data);
-	}
-
 }
 
 ?>
