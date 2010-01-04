@@ -10,7 +10,7 @@
 		<right name="seeTaskTab" />
 		<right name="seeTracks" />
 		<right name="editOwn" />
-		<right name="editAll" require="editAll" />
+		<right name="editAll" require="editOwn" />
 	</section>
 		
 </rights>

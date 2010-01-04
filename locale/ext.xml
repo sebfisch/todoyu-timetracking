@@ -16,7 +16,7 @@
 		<label index="currentTask">Current Task</label>
 		<label index="showCurrentTaskInProject">Show Task In Project</label>
 	</labels>
-	<labels lang="de"></labels>
+	<labels lang="de">
 		<label index="ext.title">Zeiterfassung</label>
 		<label index="title">Zeiterfassung</label>
 		<label index="noTracksYet">Noch keine Zeiterfassungen.</label>
@@ -31,4 +31,5 @@
 		<label index="stop">Zeiterf. stoppen</label>
 		<label index="currentTask">Aktuelle Aufgabe</label>
 		<label index="showCurrentTaskInProject">Aufgabe im Projekt anzeigen</label>
+	</labels>
 </locallang>
