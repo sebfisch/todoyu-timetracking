@@ -3,7 +3,7 @@
 {block "headlet"}
 
 	<div class="label" title="{htmlencode $label}" onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.goToTask({$idProject}, {$idTask})">
-		{$taskNumber} {htmlspecialchars truncate($label 38 break=true)}
+		{$taskNumber} - {htmlspecialchars truncate($labelTitle 110 break=true)}
 	</div>
 
 	<div class="time">

@@ -2,7 +2,7 @@ div#headlettimetracking {
 	left:0;
 	right:0;
 	z-index:1000;
-	width:284px;
+	width:355px;
 	margin:0 auto;
 	padding:0 0 5px 0;
 	background:#e1e1e1 url(../img/bg_headlettimetracking.png) no-repeat 0 100%;
@@ -10,8 +10,9 @@ div#headlettimetracking {
 }
 
 div#headlettimetracking div.button {
-	margin:-12px 10px 0 0;
-	float:right;
+	position:absolute;
+	right:5px;
+	bottom:2px;
 }
 
 div#headlettimetracking div.button button span.editFiltersButton {
@@ -25,12 +26,15 @@ div#headlettimetracking div.button button span.editFiltersButton {
 div#headlettimetracking div.label {
 	font-weight:bold;
 	background-color:#efefef;
-	padding:2px 2px 4px 2px;
-	margin:5px 8px 0 8px;
+	margin:2px 2px 25px 2px;
+	padding:2px 2px 2px 2px;
 	cursor: pointer;
+	width:auto;
 }
 
 div#headlettimetracking div.time {
-	margin:2px 8px 0 8px;
+	position:absolute;
+	left:5px;
+	bottom:7px;
 }
 
