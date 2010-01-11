@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locallang>
 	<labels lang="en">
-		<label index="section.general">General settings</label>
-		<label index="right.use">Use timetracking</label>
-		<label index="section.task">Task tracking</label>
-		<label index="right.track">Track time</label>
-		<label index="right.seeTaskTab">See task tab</label>
-		<label index="right.seeTracks">See tracked time on task</label>
-		<label index="right.editOwn">Can edit OWN tracks on task</label>
-		<label index="right.editAll">Can edit ALL tracks on task</label>
+		<label index="general">General settings</label>
+		<label index="general.use">Use timetracking</label>
+		<label index="task">Task tracking</label>
+		<label index="task.track">Track time</label>
+		<label index="task.seeTaskTab">See task tab</label>
+		<label index="task.seeTracks">See tracked time on task</label>
+		<label index="task.editOwn">Can edit OWN tracks on task</label>
+		<label index="task.editAll">Can edit ALL tracks on task</label>
 	</labels>
 	<labels lang="de">
-		<label index="section.general">Allgemeine Einstellungen</label>
-		<label index="right.use">Benutze Zeiterfassung</label>
-		<label index="section.task">Zeiterfassung Aufgaben</label>
-		<label index="right.track">Zeit erfassen</label>
-		<label index="right.seeTaskTab">Sieht Aufgabentab</label>
-		<label index="right.seeTracks">Sieht erfasste Zeit im Aufgabentab</label>
-		<label index="right.editOwn">Kann SELBST ERFASSTE Zeiten bearbeiten</label>
-		<label index="right.editAll">Kann ALLE Zeiten bearbeiten</label>
+		<label index="general">Allgemeine Einstellungen</label>
+		<label index="general.use">Benutze Zeiterfassung</label>
+		<label index="task">Zeiterfassung Aufgaben</label>
+		<label index="task.track">Zeit erfassen</label>
+		<label index="task.seeTaskTab">Sieht Aufgabentab</label>
+		<label index="task.seeTracks">Sieht erfasste Zeit im Aufgabentab</label>
+		<label index="task.editOwn">Kann SELBST ERFASSTE Zeiten bearbeiten</label>
+		<label index="task.editAll">Kann ALLE Zeiten bearbeiten</label>
 	</labels>
 </locallang>

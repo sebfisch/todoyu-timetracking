@@ -1,10 +1,10 @@
-{restrict 'timetracking' 'track'}
+{restrict 'timetracking' 'task:track'}
 <div id="task-{$idTask}-timetrack-control" class="timetrackform tabBlock overflow">{$control}</div>
 {/restrict}
-{restrict 'timetracking' 'seeTracks'}
+{restrict 'timetracking' 'task:seeTracks'}
 <div id="task-{$idTask}-timetracks" class="timetracks">{$list}</div>
 {/restrict}
 <div class="clear"><!-- --></div>
-{if allowed('timetracking','editOwn') || allowed('timetracking','editAll')}
+{if allowed('timetracking','task:editOwn') || allowed('timetracking','task:editAll')}
 <div id="task-{$idTask}-timetrackedit" class="tbBlock" style="display:none">{$editform}</div>
 {/if}

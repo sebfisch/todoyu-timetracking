@@ -35,7 +35,7 @@ $CONFIG['EXT']['timetracking']['trackableStatus'] = array(
 );
 
 
-if( allowed('timetracking', 'use') && allowed('timetracking', 'track') ) {
+if( allowed('timetracking', 'general:use') && allowed('timetracking', 'task:track') ) {
 	/**
 	 * Register context menu function for task
 	 */
@@ -48,7 +48,7 @@ if( allowed('timetracking', 'use') && allowed('timetracking', 'track') ) {
 }
 
 
-if( allowed('timetracking', 'seeTaskTab') ) {
+if( allowed('timetracking', 'task:seeTaskTab') ) {
 	/**
 	 * Register tab for task
 	 */

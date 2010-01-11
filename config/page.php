@@ -1,7 +1,7 @@
 <?php
 
 	// add JS inits
-if( allowed('timetracking', 'use') ) {
+if( allowed('timetracking', 'general:use') ) {
 	TodoyuTimetrackingManager::addTimetrackingJsInitToPage();
 }
 
