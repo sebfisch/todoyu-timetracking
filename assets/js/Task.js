@@ -72,8 +72,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Event handler 'onClockToggle': evoked on toggle (start / stop) of clock with current running timetracking
 	 *
-	 *	@param	Integer	idTask
-	 *	@param	Boolean	start
+	 *	@param	Integer		idTask
+	 *	@param	Boolean		start
 	 */
 	onClockToggle: function(idTask, start) {
 		if( start ) {
@@ -125,17 +125,17 @@ Todoyu.Ext.timetracking.Task = {
 	 *	@param	Integer	idTask
 	 * 	@param	Boolean	running
 	 */
-	setRunningStyle: function(idTask, running) {
+	setRunningStyle: function(idTask, running) {		
 		if( Todoyu.exists('task-' + idTask) ) {
 			if( running ) {
 				$('task-' + idTask).addClassName('running');
 			} else {
 				$('task-' + idTask).removeClassName('running');
-			}
+			}			
 			this.updateTab(idTask);
 		}
 	},
-
+	
 
 
 	/**
@@ -152,8 +152,10 @@ Todoyu.Ext.timetracking.Task = {
 			}
 		};
 		var target	= 'task-' + idTask + '-tabcontent-timetracking';
-
-		Todoyu.Ui.update(target, url, options);
+		
+		if( Todoyu.exists(target) ) {
+			Todoyu.Ui.update(target, url, options);
+		}
 	},
 
 

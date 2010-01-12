@@ -103,26 +103,6 @@ class TodoyuTimetrackingTask {
 		TodoyuTimetracking::updateRecord($idTrack, $data);
 	}
 
-
-
-	/**
-	 * Modify task data array just before task is rendered
-	 * Hook: taskDataBeforeRendering
-	 *
-	 * @param	Array		$taskData
-	 * @param	Integer		$idTask
-	 * @return	Array		$taskData
-	 */
-	public static function modifyTaskRenderData(array $taskData, $idTask) {
-		$idTask	= intval($idTask);
-
-		if( TodoyuTimetracking::isTaskRunning($idTask) ) {
-			$taskData['task']['class'] .= ' running';
-		}
-
-		return $taskData;
-	}
-
 }
 
 ?>

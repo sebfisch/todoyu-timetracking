@@ -76,9 +76,16 @@ Todoyu.Ext.timetracking = {
 	start: function(idTask, noRequest) {
 		noRequest	= noRequest === true;
 
+/*
 		if( this.isTracking() && noRequest === false ) {
 			this.stop(noRequest);
 		}
+*/
+
+		if( noRequest === false ) {
+			this.removeAllRunningStyles();
+		}
+		
 
 			// Set task ID
 		this.task = idTask;
@@ -97,6 +104,7 @@ Todoyu.Ext.timetracking = {
 	 *	Stop tracking time to given task
 	 */
 	stop: function() {
+		this.removeAllRunningStyles();
 		this.sendTrackRequest(this.task, false);
 	},
 
@@ -295,5 +303,14 @@ Todoyu.Ext.timetracking = {
 		} else {
 			return 0;
 		}
+	},
+	
+	
+	
+	/**
+	 * Remove the running class from all div elements (no task is marked as running anymore)
+	 */
+	removeAllRunningStyles: function() {
+		$$('div.running').invoke('removeClassName', 'running');
 	}
 };
