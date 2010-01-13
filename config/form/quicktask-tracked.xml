@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+
+	<fieldsets>
+
+		<fieldset name="fieldset">
+			<elements>
+
+				<field type="timeinput" name="workload_done">
+					<label>timetracking.quicktask.workload_done</label>
+				</field>
+
+			</elements>
+		</fieldset>
+
+	</fieldsets>
+</form>

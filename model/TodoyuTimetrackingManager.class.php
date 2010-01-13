@@ -206,10 +206,72 @@ class TodoyuTimetrackingManager {
 	 * @param	Integer	$trackedWorkload
 	 */
 	public static function calculateBillableTime($trackedWorkload)	{
-		$trackedWorkload			=intval($trackedWorkload);
-		$fifteenMinutesInSeconds	= 900;
+		$trackedWorkload		= intval($trackedWorkload);
+		$fifteenMinutesInSeconds= 900;
 
 		return ceil( $trackedWorkload / $fifteenMinutesInSeconds) * $fifteenMinutesInSeconds;
+	}
+
+
+
+
+	/**
+	 * Add timetracking fields to quicktask
+	 *
+	 * @param	TodoyuForm		$form
+	 * @param	Integer			$idTask
+	 */
+	public static function addWorkloadFieldToQuicktask(TodoyuForm $form, $idTask) {
+		$xmlPath	= 'ext/timetracking/config/form/quicktask-tracked.xml';
+		$insertForm	= TodoyuFormManager::getForm($xmlPath);
+		$field		= $insertForm->getField('workload_done');
+
+		$form->getFieldset('main')->addField('workload_done', $field, 'after:id_worktype');
+	}
+
+
+
+	/**
+	 * Handle (save) special fields added to quicktask by timetracking
+	 *
+	 * @param	Array		$data
+	 * @param	Integer		$idTask
+	 * @return	Array
+	 */
+	public static function handleQuicktaskFormSave(array $data, $idTask) {
+		$idTask			= intval($idTask);
+		$workloadDone	= intval($data['workload_done']);
+
+		if( $workloadDone > 0 ) {
+			self::addTrackedWorkload($idTask, $workloadDone);
+		}
+
+		unset($data['workload_done']);
+
+		return $data;
+	}
+
+
+
+	/**
+	 * Add already tracked (seconds of) workload to workload record of given task.
+	 *
+	 *	@param	Integer	$idTask
+	 *	@param	Integer	$workload
+	 */
+	protected static function addTrackedWorkload($idTask, $workload) {
+		$idTask		= intval($idTask);
+		$workload	= intval($workload);
+
+		$data	= array(
+			'id_user_create'	=> TodoyuAuth::getUserID(),
+			'id_task'			=> $idTask,
+			'date_create'		=> NOW,
+			'date_update'		=> NOW,
+			'workload_tracked'	=> $workload
+		);
+
+		self::saveWorkloadRecord($data);
 	}
 
 }
