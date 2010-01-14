@@ -10,6 +10,11 @@
 					<label>timetracking.quicktask.workload_done</label>
 				</field>
 
+				<field type="checkbox" name="start_tracking">
+					<label>timetracking.start</label>
+					<onchange>Todoyu.Ext.project.QuickTask.preventStartDone('start', this)</onchange>
+				</field>
+
 			</elements>
 		</fieldset>
 

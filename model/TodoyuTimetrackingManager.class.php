@@ -216,6 +216,7 @@ class TodoyuTimetrackingManager {
 
 
 	/**
+	 * Formhook
 	 * Add timetracking fields to quicktask
 	 *
 	 * @param	TodoyuForm		$form
@@ -224,14 +225,20 @@ class TodoyuTimetrackingManager {
 	public static function addWorkloadFieldToQuicktask(TodoyuForm $form, $idTask) {
 		$xmlPath	= 'ext/timetracking/config/form/quicktask-tracked.xml';
 		$insertForm	= TodoyuFormManager::getForm($xmlPath);
-		$field		= $insertForm->getField('workload_done');
 
-		$form->getFieldset('main')->addField('workload_done', $field, 'after:id_worktype');
+		$workloadDone	= $insertForm->getField('workload_done');
+		$startTracking	= $insertForm->getField('start_tracking');
+
+		$form->getFieldset('main')->addField('workload_done', $workloadDone, 'after:id_worktype');
+		$form->getFieldset('main')->addField('start_tracking', $startTracking, 'after:workload_done');
+
+		$form->getField('task_done')->setAttribute('onchange', 'Todoyu.Ext.project.QuickTask.preventStartDone(\'done\', this)');
 	}
 
 
 
 	/**
+	 * Formhook
 	 * Handle (save) special fields added to quicktask by timetracking
 	 *
 	 * @param	Array		$data
@@ -242,11 +249,17 @@ class TodoyuTimetrackingManager {
 		$idTask			= intval($idTask);
 		$workloadDone	= intval($data['workload_done']);
 
+			// Save already done workload
 		if( $workloadDone > 0 ) {
 			self::addTrackedWorkload($idTask, $workloadDone);
 		}
-
 		unset($data['workload_done']);
+
+			// 'Start tracking' checked? set status accordingly
+		if( intval($data['start_tracking']) === 1 ) {
+			$data['status'] = STATUS_PROGRESS;
+		}
+		unset($data['start_tracking']);
 
 		return $data;
 	}
