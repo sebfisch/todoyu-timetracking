@@ -27,7 +27,7 @@ $CONFIG['EXT']['timetracking']['trackableStatus'] = array(
 	STATUS_OPEN,
 	STATUS_PROGRESS,
 	STATUS_CONFIRM,
-	STATUS_DONE,
+	//STATUS_DONE,
 	STATUS_ACCEPTED,
 	STATUS_REJECTED,
 	STATUS_WARRANTY,
@@ -40,11 +40,6 @@ if( allowed('timetracking', 'general:use') && allowed('timetracking', 'task:trac
 	 * Register context menu function for task
 	 */
 	TodoyuContextMenuManager::registerFunction('task', 'TodoyuTimetracking::getContextMenuItems', 100);
-
-	/**
-	 * Register timetracking headlet
-	 */
-	TodoyuHeadletManager::registerLeft('TodoyuHeadletTimetracking');
 }
 
 
