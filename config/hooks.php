@@ -20,7 +20,7 @@
 ***************************************************************/
 
 if( allowed('timetracking', 'general:use') ) {
-	TodoyuHookManager::registerHook('project', 'infoIcons', 'TodoyuTimetrackingManager::getProjectTaskInfoIcons');
+	TodoyuHookManager::registerHook('project', 'taskIcons', 'TodoyuTimetrackingManager::getTaskIcons');
 
 	TodoyuHookManager::registerHook('project', 'taskinfo', 'TodoyuTimetrackingManager::addTimetrackingInfosToTask');
 

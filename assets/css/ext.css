@@ -19,8 +19,8 @@
 	font-weight:bold;
 }
 
-.task .additionalStuff .overtimed {
-	background:url(../img/icons.png) no-repeat 1px -298px;
+.task .taskIcons .overtimed {
+	background:url(../img/icons.png) no-repeat 0 -296px;
 	width:14px !important;
 }
 
