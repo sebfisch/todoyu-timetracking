@@ -31,7 +31,7 @@ define('EXTID_TIMETRACKING', 119);
 define('PATH_EXT_TIMETRACKING', PATH_EXT . '/timetracking');
 
 	// Register module locales
-TodoyuLocale::register('timetracking', PATH_EXT_TIMETRACKING . '/locale/ext.xml');
+TodoyuLanguage::register('timetracking', PATH_EXT_TIMETRACKING . '/locale/ext.xml');
 
 	// Request configurations
 require_once( PATH_EXT_TIMETRACKING . '/config/extension.php');
