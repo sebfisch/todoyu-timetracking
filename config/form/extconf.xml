@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<attributes>
+		<attribute name="name">config</attribute>
+	</attributes>
+	<hiddenFields>
+		<field name="dummy" noStorage="true" />
+	</hiddenFields>
+	<fieldsets>
+
+		<fieldset name="config">
+
+			<elements>
+				<field type="checkbox" name="stopOnLogout">
+					<label>timetracking.extconf.stopOnLogout</label>
+				</field>
+
+			</elements>
+
+		</fieldset>
+
+	</fieldsets>
+</form>

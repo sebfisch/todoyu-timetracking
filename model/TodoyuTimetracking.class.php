@@ -44,14 +44,45 @@ class TodoyuTimetracking {
 
 
 	/**
+	 * Get current tracking record
+	 *
+	 * @return	Array		Or FALSE if no task is tracked
+	 */
+	private static function getCurrentTracking() {
+		$field	= '*';
+		$table	= 'ext_timetracking_tracking';
+		$where	= 'id_user_create	= ' . TodoyuAuth::getUserID();
+		$order	= 'date_create DESC';
+
+		return Todoyu::db()->getRecordByQuery($field, $table, $where, '', $order);
+	}
+
+
+	private static function setCurrentTracking($idTask) {
+		$data	= array(
+			'id_task'	=> intval($idTask)
+		);
+
+		TodoyuRecordManager::addRecord('ext_timetracking_tracking', $data);
+	}
+
+	private static function removeCurrentTracking() {
+		$table	= 'ext_timetracking_tracking';
+		$where	= 'id_user_create	= ' . TodoyuAuth::getUserID();
+
+		Todoyu::db()->doDelete($table, $where);
+	}
+
+
+	/**
 	 * Get ID of current running task
 	 *
 	 * @return	ID
 	 */
 	public static function getTaskID() {
-		$path	= self::SESS_KEY . '/task';
+		$record	= self::getCurrentTracking();
 
-		return intval(TodoyuSession::get($path));
+		return intval($record['id_task']);
 	}
 
 
@@ -84,9 +115,9 @@ class TodoyuTimetracking {
 	 * @return	Integer
 	 */
 	public static function getCurrentTrackingStart() {
-		$path	= self::SESS_KEY . '/time';
+		$record	= self::getCurrentTracking();
 
-		return intval(TodoyuSession::get($path));
+		return intval($record['date_create']);
 	}
 
 
@@ -140,7 +171,7 @@ class TodoyuTimetracking {
 				// Register task as tracked in session
 			self::setRunningTask($idTask);
 		} else {
-			// Return error status
+				// Return error status
 			//echo "NOT TRACKABLE";
 		}
 	}
@@ -165,7 +196,7 @@ class TodoyuTimetracking {
 				self::updateTracking($dayWorkload['id'], $workload);
 			}
 
-			TodoyuSession::remove(self::SESS_KEY);
+			self::removeCurrentTracking();
 
 			return true;
 		} else {
@@ -329,7 +360,7 @@ class TodoyuTimetracking {
 	public static function getTrack($idTrack) {
 		$idTrack	= intval($idTrack);
 
-		return Todoyu::db()->getRecord('ext_timetracking_track', $idTrack);
+		return TodoyuRecordManager::getRecordData(self::TABLE, $idTrack);
 	}
 
 
@@ -341,9 +372,6 @@ class TodoyuTimetracking {
 	 * @return	Integer		Track record ID
 	 */
 	public static function addRecord(array $data) {
-		unset($data['id']);
-
-		$data['date_update']= NOW;
 		$data['date_track']	= NOW;
 
 		return TodoyuRecordManager::addRecord(self::TABLE, $data);
@@ -380,16 +408,13 @@ class TodoyuTimetracking {
 		$timeChargeable	= intval($timeChargeable);
 
 		$data = array(
-			'date_create'		=> NOW,
-			'date_update'		=> NOW,
 			'date_track'		=> NOW,
 			'id_task'			=> $idTask,
-			'id_user_create'	=> userid(),
 			'workload_tracked'	=> $timeTracked,
 			'workload_chargeable'=>$timeChargeable
 		);
 
-		return Todoyu::db()->doInsert(self::TABLE, $data);
+		return TodoyuRecordManager::addRecord(self::TABLE, $data);
 	}
 
 
@@ -432,7 +457,7 @@ class TodoyuTimetracking {
 	 * @return	Boolean
 	 */
 	public static function isTrackableStatus($status) {
-		return in_array($status, $GLOBALS['CONFIG']['EXT']['timetracking']['trackableStatus']);
+		return in_array($status, TodoyuArray::assure($GLOBALS['CONFIG']['EXT']['timetracking']['trackableStatus']));
 	}
 
 
@@ -465,12 +490,7 @@ class TodoyuTimetracking {
 	private static function setRunningTask($idTask) {
 		$idTask	= intval($idTask);
 
-		$data	= array(
-			'task'	=> $idTask,
-			'time'	=> NOW
-		);
-
-		TodoyuSession::set(self::SESS_KEY, $data);
+		self::setCurrentTracking($idTask);
 	}
 
 
@@ -550,25 +570,22 @@ class TodoyuTimetracking {
 
 
 
-
 	/**
-	 * Callback just before page is rendered. If a timetracking is active, add
-	 * the inline JS code to start the clock
+	 * Hook. Called when user logs out
+	 * If configured, stop tracking
 	 *
 	 */
-	public static function addTimetrackingJs() {
-		if( self::isTrackingActive() ) {
-			$idTask		= self::getTaskID();
-			$tracked	= self::getTrackedTime();
-			$estWorkload= self::getTask()->get('estimated_workload');
+	public static function onLogout() {
+		$extConf	= TodoyuExtConfManager::getExtConf('timetracking');
 
-			TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.timetracking.startClock.bind(Todoyu.Ext.timetracking, ' . $idTask . ', ' . $tracked . ', ' . $estWorkload . ')');
-
-//			TodoyuPage::addJsInlines('Todoyu.Ext.timetracking.startClock.bind((' . $idTask . ', ' . $tracked . ');');
-
+			// Check if timetracking stop if configured for logout
+		if( intval($extConf['stopOnLogout']) === 1 ) {
+				// Check if timetracking is active
+			if( self::isTrackingActive() ) {
+					// Stop current task (and save tracked time)
+				self::stopTask();
+			}
 		}
-
-		TodoyuPage::addJsInlines('Todoyu.Ext.timetracking.Task.register();');
 	}
 }
 

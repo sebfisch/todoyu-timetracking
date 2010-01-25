@@ -16,6 +16,7 @@
 		<label index="currentTask">Current Task</label>
 		<label index="showCurrentTaskInProject">Show Task In Project</label>
 		<label index="quicktask.workload_done">Already worked time</label>
+		<label index="extconf.stopOnLogout">Stop tracking if user logs off</label>
 	</labels>
 	<labels lang="de">
 		<label index="ext.title">Zeiterfassung</label>
