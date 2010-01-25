@@ -115,7 +115,10 @@ input.stopButton {
 }
 
 
-/* time track box*/
+
+/* --------------------
+    Time track box
+   -------------------- */
 #taskList .activeTabContent .timetrackform {
 	padding-bottom:10px;
 }
