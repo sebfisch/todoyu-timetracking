@@ -130,6 +130,25 @@ class TodoyuTimetrackingRenderer {
 			// Render
 		return $form->render();
 	}
+	
+	
+	
+	/**
+	 * 
+	 * @param	Integer	$idTrack
+	 * @return	String
+	 */
+	public static function renderTaskTrack($idTrack)	{
+		$idTrack	= intval($idTrack);
+		
+		$tmpl	= 'ext/timetracking/view/tasktab-track.tmpl';
+		
+		$data = array(
+			'track'		=> array_merge(TodoyuTimetracking::getTrack($idTrack),TodoyuTimetracking::getTrackUserData($idTrack))
+		);
+		
+		return render($tmpl, $data);
+	}
 
 }
 

@@ -362,6 +362,28 @@ class TodoyuTimetracking {
 
 		return TodoyuRecordManager::getRecordData(self::TABLE, $idTrack);
 	}
+	
+	
+	
+	/**
+	 * Loads user firstname and lastname of given track
+	 * 
+	 * @param	Integer	$idTrack
+	 * @return	Array
+	 */
+	public static function getTrackUserData($idTrack)	{
+		$idTrack= intval($idTrack);
+
+		$fields	= ' u.firstname,
+					u.lastname';
+		$tables	= 	self::TABLE . ' t,
+					ext_user_user u';
+		$where	= '	t.id 				= ' . $idTrack . ' AND
+					t.id_user_create 	= u.id';
+		$order	= '	t.date_track DESC';
+
+		return Todoyu::db()->getRecordByQuery($fields, $tables, $where, '', $order);
+	}
 
 
 

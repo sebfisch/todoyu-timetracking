@@ -167,7 +167,6 @@ input.stopButton {
 }
 
 .task .taskTabs .timetracks span.timteTrackComment {
-	position:relative;
 	display:block;
 	margin:-18px 0 0 0;
 	padding:0 0 0 220px;

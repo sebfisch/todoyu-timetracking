@@ -262,7 +262,7 @@ Todoyu.Ext.timetracking.Task = {
 	 * 	@param	Object	response
 	 */
 	onTrackSaved: function(idTask, idTrack, response) {
-		this.updateTabContent(idTask, response.responseText);
+		this.updateTrackContent(idTask, idTrack, response.responseText);
 	},
 
 
@@ -272,8 +272,8 @@ Todoyu.Ext.timetracking.Task = {
 	 * 
 	  *	@param	Integer	idTask
 	 */
-	cancelTrackEditing: function(idTask) {
-		this.updateTrackList(idTask);
+	cancelTrackEditing: function(idTask, idTrack) {
+		this.updateTrack(idTask, idTrack);
 	},
 
 
@@ -284,8 +284,8 @@ Todoyu.Ext.timetracking.Task = {
 	  *	@param	Integer	idTask
 	 * 	@param	String	tabContent
 	 */
-	updateTabContent: function(idTask, tabContent) {
-		$('task-' + idTask + '-tabcontent-timetracking').update(tabContent);
+	updateTrackContent: function(idTask, idTrack, tabContent) {
+		$('task-' + idTask + '-track-' + idTrack).replace(tabContent);
 	},
 
 
@@ -297,6 +297,27 @@ Todoyu.Ext.timetracking.Task = {
 	 */
 	toggleList: function(idTask) {
 		Todoyu.Ui.toggle('task-' + idTask + '-timetracks');
-	}
+	},
+	
+	
+	
+	/**
+	 * Updates a single track
+	 * 
+	 * @param	Integer	idTask
+	 * @param	Integer	idTrack
+	 */
+	updateTrack: function(idTask, idTrack){
+		var url		= Todoyu.getUrl('timetracking', 'tasktab');
+		var options	= {
+			'parameters': {
+				'action':	'trackcontent',
+				'idTrack':	idTrack
+			}
+		};
+		
+		var target 	= 'task-' + idTask + '-track-' + idTrack;
 
+		Todoyu.Ui.replace(target, url, options);
+	}
 };

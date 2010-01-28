@@ -36,7 +36,7 @@
 					<onclick>Todoyu.Ext.timetracking.Task.saveTrack(#id_task#, #id#)</onclick>
 				</field>
 				<field type="cancelButton" name="cancel">
-					<onclick>Todoyu.Ext.timetracking.Task.cancelTrackEditing(#id_task#)</onclick>
+					<onclick>Todoyu.Ext.timetracking.Task.cancelTrackEditing(#id_task#, #id#)</onclick>
 				</field>
 			</elements>
 		</fieldset>
