@@ -68,14 +68,17 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Start tracking time to given task
+	 *	Start tracking time on given task
 	 *
-	 *	@param	unknown_type	idTask
-	 *	@param	unknown_type	noRequest
+	 *	@param	Integer	idTask
+	 *	@param	Boolean	noRequest
 	 */
 	start: function(idTask, noRequest) {
 		noRequest	= noRequest === true;
 
+		if ( this.task != 0 ) {
+			this.Task.stop(this.task);
+		}
 /*
 		if( this.isTracking() && noRequest === false ) {
 			this.stop(noRequest);
