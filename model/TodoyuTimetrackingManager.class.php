@@ -282,6 +282,7 @@ class TodoyuTimetrackingManager {
 			'id_task'			=> $idTask,
 			'date_create'		=> NOW,
 			'date_update'		=> NOW,
+			'date_track'		=> NOW,
 			'workload_tracked'	=> $workload
 		);
 
