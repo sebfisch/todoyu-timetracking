@@ -85,33 +85,9 @@ div.tabBlock .timetrackingButtons button.stopTracking .icon {
 	line-height:30px;
 }
 
-button span.timetrackPlayButton,
-.timetrackform button span.playButton {
-	background:url(../img/icons.png) no-repeat 5px -27px;
-}
-input.playButton {
-	padding:2px 11px 1px 25px;
-	background:url(../../../../core/assets/img/sprite-button_bgs.png) no-repeat 0 -192px;
-}
-
 button span.timetrackStopButton,
 .timetrackform button span.stopButton {
 	background:url(../img/icons.png) no-repeat 5px -209px;
-}
-
-input.stopButton {
-	padding:2px 11px 1px 25px;
-	background:url(../../../../core/assets/img/sprite-button_bgs.png) no-repeat 0 -168px;
-}
-
-#panel input.playButton {
-	padding:0;
-	background:url(../../../../core/assets/img/sprite-button_icons.png) no-repeat 0 -288px;
-}
-
-#panel input.stopButton {
-	padding:0;
-	background:url(../../../../core/assets/img/sprite-button_icons.png) no-repeat 0 -256px;
 }
 
 
