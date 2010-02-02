@@ -15,10 +15,6 @@ div#headlettimetracking div.button {
 	bottom:2px;
 }
 
-div#headlettimetracking div.button button span.editFiltersButton {
-	background:url(../img/icons.png) no-repeat 7px 3px;
-}
-
 #timetracking-stop-current-task span.rgt {
 	background-color:#E7E7E7 !important;
 }
