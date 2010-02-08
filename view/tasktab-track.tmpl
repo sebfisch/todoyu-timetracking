@@ -2,7 +2,9 @@
 	{if allowed('timetracking','task:editOwn') || allowed('timetracking','task:editAll')}
 		<a class="editableItem" href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})">
 	{/if}
-		<span>{date_format $track.date_track "%d.%m.%y"}  - {HourMinSec $track.workload_tracked} - {$track.firstname} {$track.lastname}</span>
+		<span>
+			{date_format $track.date_track "%d.%m.%y"}  - {HourMinSec $track.workload_tracked} - <span style="display:inline;" class="noIcon quickInfoUser" id="track_userowner-{$track.id}-{$track.id_user_create}">{$track.lastname}, {$track.firstname}</span> 
+		</span>
 	{if $track.comment}
 		<span class="timteTrackComment">{htmlencode $track.comment}</span>
 	{/if}
