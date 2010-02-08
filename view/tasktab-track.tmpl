@@ -5,9 +5,7 @@
 		<span class="dateWithTime">
 			{date_format $track.date_track "%d.%m.%y"}  - {HourMinSec $track.workload_tracked}
 		</span>
-		<span class="userName quickInfoUser" id="track_userowner-{$track.id}-{$track.id_user_create}">
-			- {$track.lastname}, {$track.firstname}
-		</span>
+		<span class="userName">{userLabel idPrefix="track_userowner" idRecord="$track.id" idUser="$track.id_user_create"}</span>
 	{if $track.comment}
 		<span class="taskComment timteTrackComment">{htmlencode $track.comment}</span>
 	{/if}
