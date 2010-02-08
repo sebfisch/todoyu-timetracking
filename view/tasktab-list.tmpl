@@ -1,6 +1,8 @@
 {if sizeof($tracks) > 0}
-	<ul class="ulList tracksList overflow">
+	<ul class="ulList tracksList ulListDotted overflow">
+	{$class='even'}
 	{foreach $tracks track}
+		{if $class=='odd'}{$class='even'}{else}{$class='odd'}{/if}
 		{include ext/timetracking/view/tasktab-track.tmpl}
 	{/foreach}
 	</ul>
