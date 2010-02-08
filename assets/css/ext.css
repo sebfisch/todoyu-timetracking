@@ -124,14 +124,11 @@ button span.timetrackStopButton,
 }
 
 .task .taskTabs .timetracks ul li {
-	padding:2px 5px;
 }
 
-.task .taskTabs .timetracks ul li.odd {
-}
-
-.task .taskTabs .timetracks ul li span {
-	float:none;
+.task .taskTabs .timetracks ul li a.editableItem {
+	background-position: -58px -358px;
+	line-height:20px;
 }
 
 .task .taskTabs .timetracks ul li button span {
@@ -143,9 +140,6 @@ button span.timetrackStopButton,
 }
 
 .task .taskTabs .timetracks span.timteTrackComment {
-	display:block;
-	margin:-18px 0 0 0;
-	padding:0 0 0 220px;
 }
 
 .task .taskTabs .newForm .taskOptionBlock {
@@ -153,74 +147,14 @@ button span.timetrackStopButton,
 	padding-bottom:10px;
 }
 
-/* Inline edit test */
 
-/* old ? */
-#timetrack-form .formElement {
-	float:left;
-	clear:none;
-}
 
-#timetrack-form .formLabel {
-	width:100%;
-	text-align:left;
-}
+/* --------------------
+    Time Form
+   -------------------- */
 
-#timetrack-form .formLabel label {
-	font-size:9px;
-}
-
-#timetrack-form .formField {
-	float:left;
-	clear:both;
-}
-
-#timetrack-form input {
-	border:1px solid #EEE;
-}
-
-#timetrack-form div.fieldname-date_create {
-	width:80px;
-}
-
-#timetrack-form div.fieldname-date_create .formField {
-	width:80px;
-}
-
-#timetrack-form div.fieldname-date_create input {
-	width:50px;
-}
-
-#timetrack-form div.fieldname-date_create span {
-	display:inline;
-}
-
-#timetrack-form div.fieldname-workload_tracked {
-	width:70px;
-}
-
-#timetrack-form div.fieldname-workload_tracked input {
-	width:50px;
-}
-
-#timetrack-form div.fieldname-workload_chargeable {
-	width:70px;
-}
-
-#timetrack-form div.fieldname-workload_chargeable input {
-	width:50px;
-}
-
-#timetrack-form div.fieldname-comment {
-	width:270px;
-}
-
-#timetrack-form div.fieldname-comment input {
-	width:270px;
-}
-
-#timetrack-form div.fieldname-save {
-	margin-top:10px;
+.task .taskTabs .timetracks ul form {
+	background:#fff; /* not view hover effekt */
 }
 
 

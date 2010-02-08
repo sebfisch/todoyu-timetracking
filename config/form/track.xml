@@ -4,6 +4,7 @@
 		<attribute name="action">?ext=timetracking&amp;controller=tasktab</attribute>
 		<attribute name="name">timetrack</attribute>
 		<attribute name="onsubmit">return false</attribute>
+		<attribute name="class">formTimeTrack overflow</attribute>
 	</attributes>
 	<hiddenFields>
 		<field name="id" />

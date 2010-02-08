@@ -1,14 +1,17 @@
 <li id="task-{$track.id_task}-track-{$track.id}" class="listItem {$class} {if isUserID($track.id_user_create)}contextmenuTrack{/if}">
 	{if allowed('timetracking','task:editOwn') || allowed('timetracking','task:editAll')}
-		<a class="editableItem" href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})">
+		<a class="editableItem hasIcon iconEdit overflow" href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})">
 	{/if}
-		<span>
-			{date_format $track.date_track "%d.%m.%y"}  - {HourMinSec $track.workload_tracked} - <span style="display:inline;" class="noIcon quickInfoUser" id="track_userowner-{$track.id}-{$track.id_user_create}">{$track.lastname}, {$track.firstname}</span> 
+		<span class="dateWithTime">
+			{date_format $track.date_track "%d.%m.%y"}  - {HourMinSec $track.workload_tracked}
+		</span>
+		<span class="userName quickInfoUser" id="track_userowner-{$track.id}-{$track.id_user_create}">
+			- {$track.lastname}, {$track.firstname}
 		</span>
 	{if $track.comment}
-		<span class="timteTrackComment">{htmlencode $track.comment}</span>
+		<span class="taskComment timteTrackComment">{htmlencode $track.comment}</span>
 	{/if}
-	{if isUserID($track.id_user_create)}
+	{if allowed('timetracking','task:editOwn') || allowed('timetracking','task:editAll')}
 		</a>
 	{/if}
 </li>
