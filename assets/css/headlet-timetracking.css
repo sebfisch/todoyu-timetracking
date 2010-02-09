@@ -5,7 +5,7 @@ div#headlettimetracking {
 	width:230px;
 	margin:0 auto;
 	padding:0 0 5px 0;
-	background:#e1e1e1 url(../img/bg_headlettimetracking.png) no-repeat 0 100%;
+	background:#e1e1e1 url(../img/bg-headlettimetracking.png) no-repeat 0 100%;
 	border:none;
 }
 
@@ -16,7 +16,7 @@ div#headlettimetracking div.button {
 }
 
 #timetracking-stop-current-task span.rgt {
-	background-color:#E7E7E7 !important;
+	background-color:#e7e7e7 !important;
 }
 
 div#headlettimetracking div.label {
@@ -33,4 +33,3 @@ div#headlettimetracking div.time {
 	left:5px;
 	bottom:7px;
 }
-
