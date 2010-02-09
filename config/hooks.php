@@ -24,6 +24,8 @@ if( allowed('timetracking', 'general:use') ) {
 
 	TodoyuHookManager::registerHook('project', 'taskinfo', 'TodoyuTimetrackingManager::addTimetrackingInfosToTask');
 
+	TodoyuHookManager::registerHook('project', 'taskHeaderExtras', 'TodoyuTimetrackingManager::addTimetrackingHeaderExtrasToTask');
+
 		// Quicktask: add timetracking fields
 	TodoyuFormHook::registerBuildForm('ext/project/config/form/quicktask.xml', 'TodoyuTimetrackingManager::addWorkloadFieldToQuicktask');
 		// Quicktask: Save timetracking fields

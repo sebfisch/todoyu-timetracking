@@ -62,6 +62,27 @@ class TodoyuTimetrackingManager {
 
 
 	/**
+	 * Add billingtime to taskHeaderExtra
+	 * Hook: dataModifier
+	 *
+	 * @param	Array		$extras
+	 * @param	Integer		$idTask
+	 * @return	Array
+	 */
+	public static function addTimetrackingHeaderExtrasToTask(array $extras, $idTask) {
+		$time	= TodoyuTimeTracking::getTrackedTaskTime($idTask, 0, 0, true);
+
+		$extras['billableTime']	= array(
+			'key'		=> 'billingtime',
+			'content'	=> TodoyuTime::sec2hour($time)
+		);
+
+		return $extras;
+	}
+
+
+
+	/**
 	 * calculates the string given in format hh:mm:ss (hh:mm) in seconds
 	 *
 	 * @param	String	$string

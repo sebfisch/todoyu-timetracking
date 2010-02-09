@@ -251,7 +251,7 @@ class TodoyuTimetracking {
 		$time	= 0;
 
 		foreach($tracks as $track) {
-			$time += $checkChargeableTime ? $track['workload_chargeable'] : $track['workload_tracked'];
+			$time += $checkChargeableTime && $track['workload_chargeable'] != 0 ? $track['workload_chargeable'] : $track['workload_tracked'];
 		}
 
 			// If task is running, add
