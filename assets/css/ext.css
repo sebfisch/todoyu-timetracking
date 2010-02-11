@@ -4,12 +4,12 @@
 
 #contextmenu .task-timetrackstart {
 	background-image:url(../img/icons.png) !important;
-	background-position:3px -58px;
+	background-position:4px -28px;
 }
 
 #contextmenu .task-timetrackstop {
 	background-image:url(../img/icons.png) !important;
-	background-position:3px -88px;
+	background-position:4px 2px;
 }
 
 	/* Task injections */
