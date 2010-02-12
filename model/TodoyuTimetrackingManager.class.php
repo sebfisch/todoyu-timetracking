@@ -135,7 +135,6 @@ class TodoyuTimetrackingManager {
 
 
 
-
 	/**
 	 * Get project task info icons
 	 *
@@ -163,7 +162,7 @@ class TodoyuTimetrackingManager {
 	/**
 	 * Check whether task is overtimed
 	 *
-	 * @param	Integer	$idTask
+	 * @param	Integer		$idTask
 	 * @return	Boolean
 	 */
 	public static function isTaskOvertimed($idTask) {
@@ -178,10 +177,10 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Get Estimate
+	 * Get Estimated workload of given task
 	 *
-	 * @param unknown_type $idTask
-	 * @return unknown
+	 * @param	Integer	$idTask
+	 * @return	Integer
 	 */
 	public static function getEstimatedTaskWorkload($idTask = 0) {
 		$idTask		= intval($idTask);
@@ -203,7 +202,6 @@ class TodoyuTimetrackingManager {
 
 	/**
 	 * Add timetracking JS init to page
-	 *
 	 */
 	public static function addTimetrackingJsInitToPage() {
 		if( TodoyuTimetracking::isTrackingActive() && ! TodoyuRequest::isAjaxRequest() ) {
@@ -291,8 +289,8 @@ class TodoyuTimetrackingManager {
 	/**
 	 * Add already tracked (seconds of) workload to workload record of given task.
 	 *
-	 *	@param	Integer	$idTask
-	 *	@param	Integer	$workload
+	 * @param	Integer	$idTask
+	 * @param	Integer	$workload
 	 */
 	protected static function addTrackedWorkload($idTask, $workload) {
 		$idTask		= intval($idTask);
