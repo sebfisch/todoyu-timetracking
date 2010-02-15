@@ -65,11 +65,11 @@ class TodoyuTimetrackingTaskFilter {
 			$tables	= array(
 				'ext_project_task',
 				'ext_timetracking_track',
-				'ext_user_mm_user_group'
+				'ext_contact_mm_person_role'
 			);
 			$where	= '	ext_timetracking_track.id_task = ext_project_task.id AND
-						ext_timetracking_track.id_user_create = ext_user_mm_user_group.id_user AND
-						ext_user_mm_user_group.id_group IN(' . implode(',', $groupIDs) . ')';
+						ext_timetracking_track.id_user_create = ext_contact_mm_person_role.id_user AND
+						ext_contact_mm_person_role.id_group IN(' . implode(',', $groupIDs) . ')';
 
 			$queryParts = array(
 				'tables'=> $tables,

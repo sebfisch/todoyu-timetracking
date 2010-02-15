@@ -377,7 +377,7 @@ class TodoyuTimetracking {
 		$fields	= '	u.firstname,
 					u.lastname';
 		$tables	= 	self::TABLE . ' t,
-					ext_user_user u';
+					ext_contact_person u';
 		$where	= '	t.id 				= ' . $idTrack . ' AND
 					t.id_user_create 	= u.id';
 		$order	= '	t.date_track DESC';
