@@ -297,7 +297,7 @@ class TodoyuTimetrackingManager {
 		$workload	= intval($workload);
 
 		$data	= array(
-			'id_user_create'	=> TodoyuAuth::getUserID(),
+			'id_user_create'	=> TodoyuAuth::getPersonID(),
 			'id_task'			=> $idTask,
 			'date_create'		=> NOW,
 			'date_update'		=> NOW,

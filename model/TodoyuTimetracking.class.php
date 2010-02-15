@@ -51,7 +51,7 @@ class TodoyuTimetracking {
 	private static function getCurrentTracking() {
 		$field	= '*';
 		$table	= 'ext_timetracking_tracking';
-		$where	= 'id_user_create	= ' . TodoyuAuth::getUserID();
+		$where	= 'id_user_create	= ' . TodoyuAuth::getPersonID();
 		$order	= 'date_create DESC';
 
 		return Todoyu::db()->getRecordByQuery($field, $table, $where, '', $order);
@@ -68,7 +68,7 @@ class TodoyuTimetracking {
 
 	private static function removeCurrentTracking() {
 		$table	= 'ext_timetracking_tracking';
-		$where	= 'id_user_create	= ' . TodoyuAuth::getUserID();
+		$where	= 'id_user_create	= ' . TodoyuAuth::getPersonID();
 
 		Todoyu::db()->doDelete($table, $where);
 	}
@@ -310,7 +310,7 @@ class TodoyuTimetracking {
 	 * @return	Integer
 	 */
 	public static function getTodayTrackedTime() {
-		return self::getTrackedTaskTimeOfDay(0, NOW, userid());
+		return self::getTrackedTaskTimeOfDay(0, NOW, personid());
 	}
 
 
@@ -530,7 +530,7 @@ class TodoyuTimetracking {
 
 		$fields	= '*';
 		$table	= self::TABLE;
-		$where	= '	id_user_create	= ' . userid() . ' AND
+		$where	= '	id_user_create	= ' . personid() . ' AND
 					id_task			= ' . $idTask . ' AND
 					date_track BETWEEN ' . $range['start'] . ' AND ' . $range['end'];
 
