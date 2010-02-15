@@ -51,7 +51,7 @@ class TodoyuTimetracking {
 	private static function getCurrentTracking() {
 		$field	= '*';
 		$table	= 'ext_timetracking_tracking';
-		$where	= 'id_user_create	= ' . TodoyuAuth::getPersonID();
+		$where	= 'id_person_create	= ' . TodoyuAuth::getPersonID();
 		$order	= 'date_create DESC';
 
 		return Todoyu::db()->getRecordByQuery($field, $table, $where, '', $order);
@@ -68,7 +68,7 @@ class TodoyuTimetracking {
 
 	private static function removeCurrentTracking() {
 		$table	= 'ext_timetracking_tracking';
-		$where	= 'id_user_create	= ' . TodoyuAuth::getPersonID();
+		$where	= 'id_person_create	= ' . TodoyuAuth::getPersonID();
 
 		Todoyu::db()->doDelete($table, $where);
 	}
@@ -238,7 +238,7 @@ class TodoyuTimetracking {
 
 			// If check is only for a single user, limit result
 		if( $idUser !== 0 ) {
-			$where .= ' AND id_user_create = ' . $idUser;
+			$where .= ' AND id_person_create = ' . $idUser;
 		}
 
 			// If check for chargeable time is requested, get this column to
@@ -326,11 +326,11 @@ class TodoyuTimetracking {
 	public static function getUserTracks($dateStart, $dateEnd, $idUser = 0) {
 		$dateStart	= intval($dateStart);
 		$dateEnd	= intval($dateEnd);
-		$idUser		= userid($idUser);
+		$idUser		= personid($idUser);
 
 		$fields	= '*';
 		$table	= self::TABLE;
-		$where	= ' id_user_create	= ' . $idUser . ' AND
+		$where	= ' id_person_create	= ' . $idUser . ' AND
 					date_track BETWEEN ' . $dateStart . ' AND ' . $dateEnd;
 
 		return Todoyu::db()->getArray($fields, $table, $where);
@@ -379,7 +379,7 @@ class TodoyuTimetracking {
 		$tables	= 	self::TABLE . ' t,
 					ext_contact_person u';
 		$where	= '	t.id 				= ' . $idTrack . ' AND
-					t.id_user_create 	= u.id';
+					t.id_person_create 	= u.id';
 		$order	= '	t.date_track DESC';
 
 		return Todoyu::db()->getRecordByQuery($fields, $tables, $where, '', $order);
@@ -530,7 +530,7 @@ class TodoyuTimetracking {
 
 		$fields	= '*';
 		$table	= self::TABLE;
-		$where	= '	id_user_create	= ' . personid() . ' AND
+		$where	= '	id_person_create	= ' . personid() . ' AND
 					id_task			= ' . $idTask . ' AND
 					date_track BETWEEN ' . $range['start'] . ' AND ' . $range['end'];
 
@@ -572,7 +572,7 @@ class TodoyuTimetracking {
 	 * @return	Array
 	 */
 	public static function getTrackedTaskIDs($timeStart = 0, $timeEnd = 0, $idUser = 0) {
-		$idUser		= userid($idUser);
+		$idUser		= personid($idUser);
 		$timeStart	= intval($timeStart);
 		$timeEnd	= intval($timeEnd);
 
@@ -583,7 +583,7 @@ class TodoyuTimetracking {
 		$field	= 'id_task';
 		$table	= self::TABLE;
 		$where	= '	date_update BETWEEN ' . $timeStart . ' AND ' . $timeEnd . ' AND
-					id_user_create	= ' . $idUser;
+					id_person_create	= ' . $idUser;
 		$group	= 'id_task';
 		$order	= 'date_create';
 

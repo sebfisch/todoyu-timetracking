@@ -45,7 +45,7 @@ class TodoyuTimetrackingTaskFilter {
 			);
 			$compare= $negate ? '!=' : '=';
 			$where	= '	ext_timetracking_track.id_task = ext_project_task.id AND
-						ext_timetracking_track.id_user_create ' . $compare . ' ' . $idUser;
+						ext_timetracking_track.id_person_create ' . $compare . ' ' . $idUser;
 
 			$queryParts = array(
 				'tables'=> $tables,
@@ -68,8 +68,8 @@ class TodoyuTimetrackingTaskFilter {
 				'ext_contact_mm_person_role'
 			);
 			$where	= '	ext_timetracking_track.id_task = ext_project_task.id AND
-						ext_timetracking_track.id_user_create = ext_contact_mm_person_role.id_user AND
-						ext_contact_mm_person_role.id_group IN(' . implode(',', $groupIDs) . ')';
+						ext_timetracking_track.id_person_create = ext_contact_mm_person_role.id_person AND
+						ext_contact_mm_person_role.id_role IN(' . implode(',', $groupIDs) . ')';
 
 			$queryParts = array(
 				'tables'=> $tables,

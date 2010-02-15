@@ -51,7 +51,7 @@ class TodoyuTimetrackingTask {
 		$tables	= 	self::TABLE . ' t,
 					ext_contact_person u';
 		$where	= '	t.id_task 			= ' . $idTask . ' AND
-					t.id_user_create 	= u.id';
+					t.id_person_create 	= u.id';
 		$order	= '	t.date_track DESC';
 
 		return Todoyu::db()->getArray($fields, $tables, $where, '', $order);
