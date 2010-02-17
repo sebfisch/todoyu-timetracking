@@ -26,11 +26,8 @@
  * @subpackage	Timetracking
  */
 
-
-
-
 $CONFIG['EXT']['timetracking']['assets'] = array(
-		// default: loaded all over the installation always
+		// Default: loaded all over the installation always
 	'default' => array(
 		'js' => array(
 			array(
@@ -51,7 +48,7 @@ $CONFIG['EXT']['timetracking']['assets'] = array(
 	),
 
 
-		// public assets: basis assets for this extension
+		// Public assets: basis assets for this extension
 	'public' => array(
 		'js' => array(
 
@@ -61,6 +58,9 @@ $CONFIG['EXT']['timetracking']['assets'] = array(
 		)
 	),
 
+	// Assets of panel widgets
+
+		// Timetracking headlet
 	'headlet-timetracking' => array(
 		'js' => array(
 			array(
@@ -78,7 +78,7 @@ $CONFIG['EXT']['timetracking']['assets'] = array(
 
 );
 
-
+	// Register timetracking JS to project extension assets
 $CONFIG['EXT']['project']['assets']['public']['js'][] = array(
 	'file'		=> 'ext/timetracking/assets/js/Task.js',
 	'position'	=> 101
