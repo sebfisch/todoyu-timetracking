@@ -35,8 +35,12 @@ $CONFIG['EXT']['timetracking']['assets'] = array(
 				'position'	=> 100
 			),
 			array(
-				'file'		=> 'ext/timetracking/assets/js/Clock.js',
+				'file'		=> 'ext/timetracking/assets/js/TimetrackingTask.js',
 				'position'	=> 101
+			),
+			array(
+				'file'		=> 'ext/timetracking/assets/js/TimetrackingClock.js',
+				'position'	=> 105
 			)
 		),
 		'css' => array(
@@ -76,16 +80,6 @@ $CONFIG['EXT']['timetracking']['assets'] = array(
 		)
 	)
 
-);
-
-	// Register timetracking JS to project extension assets
-$CONFIG['EXT']['project']['assets']['public']['js'][] = array(
-	'file'		=> 'ext/timetracking/assets/js/Task.js',
-	'position'	=> 101
-);
-$CONFIG['EXT']['portal']['assets']['public']['js'][] = array(
-	'file'		=> 'ext/timetracking/assets/js/Task.js',
-	'position'	=> 101
 );
 
 ?>
