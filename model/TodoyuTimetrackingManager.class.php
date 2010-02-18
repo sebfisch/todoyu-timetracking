@@ -214,7 +214,7 @@ class TodoyuTimetrackingManager {
 			$init	= 'Todoyu.Ext.timetracking.init.bind(Todoyu.Ext.timetracking)';
 		}
 
-		TodoyuPage::addJsOnloadedFunction($init);
+		TodoyuPage::addJsOnloadedFunction($init, 100);
 	}
 
 

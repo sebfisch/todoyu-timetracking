@@ -37,7 +37,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadlet {
 
 		TodoyuPage::addExtAssets('timetracking', 'headlet-timetracking');
 
-		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.timetracking.Headlet.Timetracking.init.bind(Todoyu.Ext.timetracking.Headlet.Timetracking)');
+		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.timetracking.Headlet.Timetracking.init.bind(Todoyu.Ext.timetracking.Headlet.Timetracking)', 100);
 
 		$this->setupData();
 	}
