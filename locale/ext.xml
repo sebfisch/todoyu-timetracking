@@ -16,10 +16,10 @@
 		<label index="currentTask">Current Task</label>
 		<label index="showCurrentTaskInProject">Show Task In Project</label>
 		<label index="quicktask.workload_done">Already worked time</label>
-		<label index="extconf.stopOnLogout">Stop tracking if user logs off</label>
+		<label index="extconf.stopOnLogout">Stop tracking if persons logs off</label>
 		<label index="search.label">Timetracking</label>
-		<label index="filter.timetrackedUser">User has tracked time</label>
-		<label index="filter.timetrackedGroups">Groups have tracked time</label>
+		<label index="filter.timetrackedPerson">Person has tracked time</label>
+		<label index="filter.timetrackedRoles">Roles have tracked time</label>
 	</labels>
 	<labels lang="de">
 		<label index="ext.title">Zeiterfassung</label>
@@ -38,7 +38,7 @@
 		<label index="showCurrentTaskInProject">Aufgabe im Projekt anzeigen</label>
 		<label index="quicktask.workload_done">Schon gearbeitete Zeit</label>
 		<label index="search.label">Zeiterfassung</label>
-		<label index="filter.timetrackedUser">Benutzer hat Zeit erfasst</label>
-		<label index="filter.timetrackedGroups">Gruppen haben Zeit erfasst</label>
+		<label index="filter.timetrackedPerson">Person hat Zeit erfasst</label>
+		<label index="filter.timetrackedRoles">Rollen haben Zeit erfasst</label>
 	</labels>
 </locallang>

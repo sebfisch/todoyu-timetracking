@@ -20,16 +20,16 @@
 ***************************************************************/
 
 /**
- * Task where an user has tracked time
+ * Task where an person has tracked time
  */
-$CONFIG['FILTERS']['TASK']['widgets']['timetrackedUser'] = array(
-	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_timetrackedUser',
-	'label'		=> 'LLL:timetracking.filter.timetrackedUser',
+$CONFIG['FILTERS']['TASK']['widgets']['timetrackedPerson'] = array(
+	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_timetrackedPerson',
+	'label'		=> 'LLL:timetracking.filter.timetrackedPerson',
 	'optgroup'	=> 'LLL:timetracking.search.label',
 	'widget'	=> 'textinput',
 	'wConf' => array(
 		'autocomplete'	=> true,
-		'FuncRef'		=> 'TodoyuPersonFilterDataSource::autocompleteUsers',
+		'FuncRef'		=> 'TodoyuPersonFilterDataSource::autocompletePersons',
 		'FuncParams'	=> array(),
 		'LabelFuncRef'	=> 'TodoyuPersonFilterDataSource::getLabel',
 		'negation'		=> 'default'

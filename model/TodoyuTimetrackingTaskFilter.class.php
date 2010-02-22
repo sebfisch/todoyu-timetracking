@@ -28,24 +28,24 @@
 class TodoyuTimetrackingTaskFilter {
 
 	/**
-	 * Filter condition: Task which have tracks of the user
+	 * Filter condition: Task which have tracks of the person
 	 *
-	 * @param	Integer		$idUser
+	 * @param	Integer		$idPerson
 	 * @param	Bool		$negate
 	 * @return	Array		Or FALSE
 	 */
-	public static function Filter_timetrackedUser($idUser, $negate = false) {
-		$idUser		= intval($idUser);
+	public static function Filter_timetrackedPerson($idPerson, $negate = false) {
+		$idPerson	= intval($idPerson);
 		$queryParts	= false;
 
-		if( $idUser !== 0 ) {
+		if( $idPerson !== 0 ) {
 			$tables	= array(
 				'ext_project_task',
 				'ext_timetracking_track'
 			);
 			$compare= $negate ? '!=' : '=';
 			$where	= '	ext_timetracking_track.id_task = ext_project_task.id AND
-						ext_timetracking_track.id_person_create ' . $compare . ' ' . $idUser;
+						ext_timetracking_track.id_person_create ' . $compare . ' ' . $idPerson;
 
 			$queryParts = array(
 				'tables'=> $tables,

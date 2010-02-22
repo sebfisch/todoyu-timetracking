@@ -108,19 +108,19 @@ class TodoyuTimetrackingManager {
 	}
 
 
-	public static function XXXaddTrackedWorkloadToTask($date, $idTask, $workloadTracked, $workloadChargeable = 0, $comment = '', $idUser = 0) {
+	public static function XXXaddTrackedWorkloadToTask($date, $idTask, $workloadTracked, $workloadChargeable = 0, $comment = '', $idPerson = 0) {
 		$date				= intval($date);
 		$idTask				= intval($idTask);
 		$workloadTracked	= intval($workloadTracked);
 		$workloadChargeable	= intval($workloadChargeable);
 
-		$trackedTime		= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, $date, $idUser);
+		$trackedTime		= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, $date, $idPerson);
 
 		if( $trackedTime === 0 ) {
 			$data	= array(
 				'date_update'		=> NOW,
 				'date_create'		=> NOW,
-				'id_person_create'	=> personid($idUser),
+				'id_person_create'	=> personid($idPerson),
 				'id_task'			=> $idTask,
 				'workload_tracked'	=> $workloadTracked,
 				'workload_chargeable'=>$workloadChargeable,

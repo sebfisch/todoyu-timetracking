@@ -146,7 +146,7 @@ class TodoyuTimetrackingRenderer {
 		$data = array(
 			'track'		=> array_merge(
 				TodoyuTimetracking::getTrack($idTrack),
-				TodoyuTimetracking::getTrackUserData($idTrack)
+				TodoyuTimetracking::getTrackPersonData($idTrack)
 			)
 		);
 
