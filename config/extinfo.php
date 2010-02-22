@@ -25,21 +25,22 @@
 
 
 $CONFIG['EXT']['timetracking']['info'] = array(
-	'title'				=> 'Timetracking',
-	'description' 		=> 'User based timetracking for tasks',
-	'author' 			=> array(
+	'title'			=> 'Timetracking',
+	'description' 	=> 'Person based timetracking for tasks',
+	'author' 		=> array(
 		'name'		=> 'Todoyu Core Team',
 		'email'		=> 'team@todoyu.com',
 		'company'	=> 'Snowflake Productions, Zürich'
 	),
-	'state' 			=> 'beta',
-	'version' => '0.1.0',
+	'state' 		=> 'beta',
+	'version' 		=> '0.2.0',
 	'constraints' => array(
 		'depends' => array(
-			'user'			=> '0.1.0',
-			'project' 		=> '0.1.0'
+			'contact'		=> '0.2.0',
+			'project' 		=> '0.2.0'
 		),
-		'conflicts' => array()
+		'conflicts' => array(
+		)
 	)
 );
 
