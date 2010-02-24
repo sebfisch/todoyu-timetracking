@@ -92,6 +92,10 @@ div.tabBlock .timetrackingButtons button.stopTracking .icon {
 /* --------------------
     Time track task tab
    -------------------- */
+div.task div.taskTabs ul li.timetracking span.icon {
+	background:url(../img/icons.png) no-repeat 0 -205px;
+}
+
 #taskList .activeTabContent .timetrackform {
 	padding-bottom:10px;
 }

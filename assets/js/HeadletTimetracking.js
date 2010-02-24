@@ -24,6 +24,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 *	Ext shortcut
 	 */
 	ext:	Todoyu.Ext.timetracking,
+	
+	button: null,
+	
+	info: null,
 
 
 
@@ -31,19 +35,29 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * Initialize timetracking headlet (register timetracking).
 	 */
 	init: function() {
-		this.registerTimetracking();
-	},
-
-
-
-	/**
-	 * Register timetracking.
-	 */
-	registerTimetracking: function() {
+			// Register timetracking
 		this.ext.registerToggleCallback(this.onToggle.bind(this));
 		this.ext.registerClockCallback(this.onClockUpdate.bind(this));
+		
+			// Register button observer
+		this.button	= $('headlet-Timetracking').down('div.button');
+		this.info	= $('headlet-Timetracking').down('div.info');
+		
+		//this.button.observe('mouseover', this.onButtonHover.bindAsEventListener(this));
+		this.button.observe('click', this.onButtonClick.bindAsEventListener(this));
 	},
-
+	
+	onButtonHover: function(event) {
+		this.info.setStyle({
+			'display': 'block'
+		});
+		this.info.focus();
+	},
+	
+	onButtonClick: function(event) {
+		console.log('click');
+	},
+	
 
 
 	/**
