@@ -57,7 +57,7 @@ class TodoyuTimetrackingTaskFilter {
 	}
 
 
-	public static function Filter_timetrackedGroups($groupIDs, $negate = false) {
+	public static function Filter_timetrackedRoles($groupIDs, $negate = false) {
 		$queryParts	= false;
 		$groupIDs	= TodoyuArray::intExplode(',', $groupIDs, true, true);
 

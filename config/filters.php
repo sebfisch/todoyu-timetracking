@@ -37,9 +37,9 @@ $CONFIG['FILTERS']['TASK']['widgets']['timetrackedPerson'] = array(
 );
 
 
-$CONFIG['FILTERS']['TASK']['widgets']['timetrackedGroups'] = array(
-	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_timetrackedGroups',
-	'label'		=> 'LLL:timetracking.filter.timetrackedGroups',
+$CONFIG['FILTERS']['TASK']['widgets']['timetrackedRoles'] = array(
+	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_timetrackedRoles',
+	'label'		=> 'LLL:timetracking.filter.timetrackedRoles',
 	'optgroup'	=> 'LLL:timetracking.search.label',
 	'widget'	=> 'select',
 	'wConf'		=> array(
