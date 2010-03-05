@@ -140,7 +140,12 @@ div.task div.taskTabs ul li.timetracking span.icon {
 	padding-left:5px;
 }
 
-.task .taskTabs .timetracks span.timteTrackComment {
+.task .taskTabs .timetracks .userName {
+	width:150px;
+}
+
+.task .taskTabs .timetracks span.timeTrackComment {
+	padding-left:5px;
 }
 
 .task .taskTabs .newForm .taskOptionBlock {

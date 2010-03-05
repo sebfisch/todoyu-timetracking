@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locallang>
 	<labels lang="en">
-		<label index="ext.title">Timetracking</label>
-		<label index="title">Timetracking</label>
-		<label index="noTracksYet">No Timetracks yet</label>
+		<label index="ext.title">Time Tracking</label>
+		<label index="title">Time Tracking</label>
+		<label index="noTracksYet">No Time Tracks yet</label>
 		<label index="attr.date_create">Date</label>
 		<label index="attr.date_track">Date</label>
 		<label index="attr.workload_tracked">Workload</label>
 		<label index="attr.workload_chargeable">Chargeable</label>
 		<label index="attr.comment">Comment</label>
-		<label index="tasktab.time_elapsed">Elapsed Time</label>
-		<label index="tasktab.toggle">Scheduled times on/off</label>
-		<label index="start">Start Timetracking</label>
-		<label index="stop">Stop Timetracking</label>
+		<label index="tasktab.time_elapsed">Total Tracked Time</label>
+		<label index="tasktab.toggle">Scheduled Times on/off</label>
+		<label index="tasktab.edit">Click Here to Edit This Record</label>
+		<label index="start">Start Time Tracking</label>
+		<label index="stop">Stop Time Tracking</label>
 		<label index="currentTask">Current Task</label>
-		<label index="showCurrentTaskInProject">Show Task In Project</label>
-		<label index="quicktask.workload_done">Already worked time</label>
-		<label index="extconf.stopOnLogout">Stop tracking if persons logs off</label>
-		<label index="search.label">Timetracking</label>
-		<label index="filter.timetrackedPerson">Person has tracked time</label>
-		<label index="filter.timetrackedRoles">Roles have tracked time</label>
+		<label index="showCurrentTaskInProject">Show Task in Project</label>
+		<label index="quicktask.workload_done">Already Worked Time</label>
+		<label index="extconf.stopOnLogout">Stop Tracking if Persons Logs Off</label>
+		<label index="search.label">Time Tracking</label>
+		<label index="filter.timetrackedPerson">Person has Tracked Time</label>
+		<label index="filter.timetrackedRoles">Roles have Tracked Time</label>
 	</labels>
 	<labels lang="de">
 		<label index="ext.title">Zeiterfassung</label>
@@ -30,8 +31,9 @@
 		<label index="attr.workload_tracked">Arbeitsaufwand</label>
 		<label index="attr.workload_chargeable">Verrechenbar</label>
 		<label index="attr.comment">Kommentar</label>
-		<label index="tasktab.time_elapsed">Verstrichene Zeit</label>
+		<label index="tasktab.time_elapsed">Total erfasste Zeit</label>
 		<label index="tasktab.toggle">Geplante Zeiten an/aus</label>
+		<label index="tasktab.edit">Klicken Sie hier um diesen Eintrag zu bearbeiten</label>
 		<label index="start">Zeiterfassung starten</label>
 		<label index="stop">Zeiterf. stoppen</label>
 		<label index="currentTask">Aktuelle Aufgabe</label>
