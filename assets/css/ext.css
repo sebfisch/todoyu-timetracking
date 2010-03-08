@@ -140,6 +140,10 @@ div.task div.taskTabs ul li.timetracking span.icon {
 	padding-left:5px;
 }
 
+
+.task .taskTabs .timetracks .dateWithTime {
+	width:130px;
+}
 .task .taskTabs .timetracks .userName {
 	width:150px;
 }
