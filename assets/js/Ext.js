@@ -40,7 +40,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 * Enter description here...
+	 * Init task timetracking
 	 *
 	 */
 	init: function() {
@@ -50,11 +50,11 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 * Enter description here...
+	 * Init task timetracking, start tracking time of given task
 	 *
-	 *	@param unknown_type currentTask
-	 *	@param unknown_type currentTrackedTime
-	 *	@param unknown_type currentTaskEstimatedWorkload
+	 * @param Integer		idTask
+	 * @param Integer		trackedTime
+	 * @param Integer		estimatedWorkload
 	 */
 	initWithTask: function(idTask, trackedTime, estimatedWorkload) {
 		this.init();
@@ -67,11 +67,12 @@ Todoyu.Ext.timetracking = {
 	},
 
 
+
 	/**
-	 *	Start tracking time on given task
+	 * Start tracking time on given task
 	 *
-	 *	@param	Integer	idTask
-	 *	@param	Boolean	noRequest
+	 * @param	Integer	idTask
+	 * @param	Boolean	noRequest
 	 */
 	start: function(idTask, noRequest) {
 		noRequest	= noRequest === true;
@@ -88,7 +89,6 @@ Todoyu.Ext.timetracking = {
 		if( noRequest === false ) {
 			this.removeAllRunningStyles();
 		}
-		
 
 			// Set task ID
 		this.task = idTask;
@@ -104,7 +104,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Stop tracking time to given task
+	 * Stop tracking time to given task
 	 */
 	stop: function() {
 		this.removeAllRunningStyles();
@@ -114,7 +114,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Send track request
+	 * Send track request
 	 */
 	sendTrackRequest: function(idTask, start) {
 		var url		= Todoyu.getUrl('timetracking', 'track');
@@ -134,9 +134,9 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Handler when tracking request has been sent (started or stoped)
 	 *
-	 *	@param Integer	idTask
-	 *	@param Boolean	started
-	 *	@param Object	response
+	 * @param Integer	idTask
+	 * @param Boolean	started
+	 * @param Object	response
 	 */
 	onTrackingRequestSended: function(idTask, started, response) {
 		if( started ) {
@@ -152,7 +152,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Fire all registered start callbacks
+	 * Fire all registered start callbacks
 	 */
 	fireStartCallbacks: function() {
 		this._callbacks.toggle.each(function(func){
@@ -163,7 +163,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Fire all registered stop callbacks
+	 * Fire all registered stop callbacks
 	 */
 	fireStopCallbacks: function() {
 		this._callbacks.toggle.each(function(func){
@@ -174,7 +174,9 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Toggle timetracking	of given task
+	 * Toggle timetracking	of given task
+	 * 
+	 * @param	Integer		idTask
 	 */
 	toggle: function(idTask) {
 		if( this.task === idTask ) {
@@ -187,7 +189,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Check wether time is being currently tracked
+	 * Check wether time is being currently tracked
 	 */
 	isTracking: function() {
 		return this.task > 0;
@@ -195,7 +197,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Register new callback function to be evoked on timetrack toggeling
+	 * Register new callback function to be evoked on timetrack toggeling
 	 */
 	registerToggleCallback: function(func) {
 		this._callbacks.toggle.push(func);
@@ -204,9 +206,9 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Register new callback to be evoked on clock event
+	 * Register new callback to be evoked on clock event
 	 *
-	 *	@param unknown_type func
+	 * @param unknown_type func
 	 */
 	registerClockCallback: function(func) {
 		this._callbacks.clock.push(func);
@@ -216,7 +218,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Fire all registered clock callbacks
+	 * Fire all registered clock callbacks
 	 */
 	fireClockCallbacks: function() {
 		this._callbacks.clock.each(function(func){
@@ -227,7 +229,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Reset timetracking - stop track, reinit. time
+	 * Reset timetracking - stop track, reinit. time
 	 */
 	reset: function() {
 		this.task = 0;
@@ -238,7 +240,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Handle clockUpdate event
+	 * Handle clockUpdate event
 	 */
 	onClockTick: function() {
 		this.time++;
@@ -249,7 +251,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Get parts of current time
+	 * Get parts of current time
 	 */
 	getTimeParts: function() {
 		return Todoyu.Time.getTimeParts(this.time);
@@ -258,7 +260,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 *	Get current tracked time formated
+	 * Get current tracked time formated
 	 */
 	getTimeFormatted: function() {
 		return Todoyu.Time.timeFormatSeconds(this.time);
@@ -268,7 +270,6 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Enter description here...
-	 *
 	 */
 	getTime: function() {
 		return this.time;
@@ -278,7 +279,6 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Enter description here...
-	 *
 	 */
 	getEstimatedTime: function() {
 		return this.estimatedTime;
@@ -288,7 +288,6 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Enter description here...
-	 *
 	 */
 	hasEstimatedTime: function() {
 		return this.getEstimatedTime() > 0;
@@ -298,7 +297,6 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Enter description here...
-	 *
 	 */
 	getPercentOfTime: function() {
 		if( this.hasEstimatedTime() ) {
@@ -307,13 +305,14 @@ Todoyu.Ext.timetracking = {
 			return 0;
 		}
 	},
-	
-	
-	
+
+
+
 	/**
-	 * Remove the running class from all div elements (no task is marked as running anymore)
+	 * Remove the 'running' class from all DIV elements (no task is marked as running anymore)
 	 */
 	removeAllRunningStyles: function() {
 		$$('div.running').invoke('removeClassName', 'running');
 	}
+
 };

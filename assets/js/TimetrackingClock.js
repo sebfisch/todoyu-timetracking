@@ -67,8 +67,7 @@ Todoyu.Ext.timetracking.Clock = {
 
 
 	/**
-	 * Enter description here...
-	 *
+	 * @todo	comment
 	 */
 	isRunning: function() {
 		return this.pe !== null;
@@ -77,9 +76,9 @@ Todoyu.Ext.timetracking.Clock = {
 
 
 	/**
-	 * Enter description here...
+	 * @todo	comment
 	 *
-	 *	@param unknown_type periodicalExecuter
+	 * @param unknown_type periodicalExecuter
 	 */
 	onClockTick: function(periodicalExecuter) {
 		this.ext.onClockTick();
@@ -87,24 +86,17 @@ Todoyu.Ext.timetracking.Clock = {
 
 
 
-
-
-
-
-
-
-
-
-
 //	setTime: function(time) {
 //		Todoyu.Ext.timetracking.setTime(time);
 //	},
 
+
+
 	/**
 	 * Show a new clock in a display area. Can be initialized with a start time
 	 *
-	 *	@param	String		idDisplayArea
-	 *	@param	Integer		startTime
+	 * @param	String		idDisplayArea
+	 * @param	Integer		startTime
 	 */
 	showClock: function(idDisplayArea, startTime) {
 		this.addDisplayArea(idDisplayArea);
@@ -120,8 +112,9 @@ Todoyu.Ext.timetracking.Clock = {
 
 
 	/**
-	 * Enter description here...
+	 * Get current tracked task
 	 *
+	 * @todo	check: used?
 	 */
 	getTask: function() {
 		return Todoyu.Ext.timetracking.getTask();
@@ -130,8 +123,9 @@ Todoyu.Ext.timetracking.Clock = {
 
 
 	/**
-	 * Enter description here...
-	 *
+	 * Get currently tracked time
+	 * 
+	 * @return	Integer
 	 */
 	getTime: function() {
 		return Todoyu.Ext.timetracking.getTime();
@@ -142,7 +136,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Enter description here...
 	 *
-	 *	@param unknown_type callback
+	 * @param unknown_type callback
 	 */
 	addCallback: function(callback) {
 		this.callbacks.push(callback);
@@ -152,7 +146,6 @@ Todoyu.Ext.timetracking.Clock = {
 
 	/**
 	 * Enter description here...
-	 *
 	 */
 	callCallbacks: function() {
 		this.callbacks.each(function(callback) {
@@ -165,7 +158,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Add a new display area to the list of updated elements
 	 *
-	 *	@param	String		idDisplayArea
+	 * @param	String		idDisplayArea
 	 */
 	addDisplayArea: function(idDisplayArea) {
 		this.displayAreas.push(idDisplayArea);
@@ -177,7 +170,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Call updater function for all registered display areas
 	 *
-	 *	@param	PeriodicalExecuter	pe
+	 * @param	PeriodicalExecuter	pe
 	 */
 	refreshAreas: function(pe) {
 		this.displayAreas.each(function(idDisplayArea) {
@@ -190,8 +183,8 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Update a display area with the current time
 	 *
-	 *	@param	String		idDisplayArea
-	 *	@param	Integer		seconds
+	 * @param	String		idDisplayArea
+	 * @param	Integer		seconds
 	 */
 	updateDisplayArea: function(idDisplayArea, seconds) {
 		var timeString = Todoyu.Helper.timestampFormat(seconds, ':');
@@ -203,11 +196,13 @@ Todoyu.Ext.timetracking.Clock = {
 
 	/**
 	 * Get an array with the keys hours,minutes and seconds of the current time
+	 * 
+	 * @return	Array
 	 */
 	getTimeParts: function() {
 		return {'hours': 	Math.floor(this.getTime()/3600),
 				'minutes':	Math.floor((this.getTime()-Math.floor(this.getTime()/3600)*3600)/60),
-				'seconds':	this.getTime() - (Math.floor(this.getTime()/3600)*3600) - (Math.floor((this.getTime()-Math.floor(this.getTime()/3600)*3600)/60)*60)};
+				'seconds':	this.getTime() - (Math.floor(this.getTime() / 3600) * 3600) - (Math.floor((this.getTime() - Math.floor(this.getTime() / 3600) * 3600) / 60)*60)};
 	}
 
 };

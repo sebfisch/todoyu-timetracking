@@ -38,33 +38,47 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 			// Register timetracking
 		this.ext.registerToggleCallback(this.onToggle.bind(this));
 		this.ext.registerClockCallback(this.onClockUpdate.bind(this));
-		
+
 			// Register button observer
 		this.button	= $('headlet-Timetracking').down('div.button');
 		this.info	= $('headlet-Timetracking').down('div.info');
-		
+
 		//this.button.observe('mouseover', this.onButtonHover.bindAsEventListener(this));
 		this.button.observe('click', this.onButtonClick.bindAsEventListener(this));
 	},
-	
+
+
+
+	/**
+	 * @todo	comment
+	 * 
+	 * @param	Object		event
+	 */
 	onButtonHover: function(event) {
 		this.info.setStyle({
 			'display': 'block'
 		});
 		this.info.focus();
 	},
-	
+
+
+
+	/**
+	 * @todo	comment
+	 * 
+	 * @param	Object	event
+	 */
 	onButtonClick: function(event) {
 		console.log('click');
 	},
-	
+
 
 
 	/**
 	 * Handle toggeling of timetracking (headlet). If timetrack started: show it, otherwise: hide it
 	 *
-	 *	@param	Integer	idTask
-	 *	@param	Boolean	start
+	 * @param	Integer		idTask
+	 * @param	Boolean		start
 	 */
 	onToggle: function(idTask, start) {
 		if( start === true ) {
@@ -79,8 +93,8 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Handle update event of clock inside timetracking headlet
 	 *
-	 *	@param	Integer	idTask
-	 *	@param	Time	time
+	 * @param	Integer	idTask
+	 * @param	Time	time
 	 */
 	onClockUpdate: function(idTask, time) {
 		this.updateTime(time);
@@ -101,7 +115,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Update displayed tracked time count inside headlet
 	 *
-	 *	@param	Time	time
+	 * @param	Time	time
 	 */
 	updateTime: function(time) {
 		$('headlettimetracking-time-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
