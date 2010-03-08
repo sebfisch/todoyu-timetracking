@@ -155,7 +155,7 @@ Todoyu.Ext.timetracking = {
 	 *	Fire all registered start callbacks
 	 */
 	fireStartCallbacks: function() {
-		this._callbacks['toggle'].each(function(func){
+		this._callbacks.toggle.each(function(func){
 			func(this.task, true);
 		}.bind(this));
 	},
@@ -166,7 +166,7 @@ Todoyu.Ext.timetracking = {
 	 *	Fire all registered stop callbacks
 	 */
 	fireStopCallbacks: function() {
-		this._callbacks['toggle'].each(function(func){
+		this._callbacks.toggle.each(function(func){
 			func(this.task, false);
 		}.bind(this));
 	},
@@ -198,7 +198,7 @@ Todoyu.Ext.timetracking = {
 	 *	Register new callback function to be evoked on timetrack toggeling
 	 */
 	registerToggleCallback: function(func) {
-		this._callbacks['toggle'].push(func);
+		this._callbacks.toggle.push(func);
 	},
 
 
@@ -209,7 +209,7 @@ Todoyu.Ext.timetracking = {
 	 *	@param unknown_type func
 	 */
 	registerClockCallback: function(func) {
-		this._callbacks['clock'].push(func);
+		this._callbacks.clock.push(func);
 	},
 
 
@@ -219,7 +219,7 @@ Todoyu.Ext.timetracking = {
 	 *	Fire all registered clock callbacks
 	 */
 	fireClockCallbacks: function() {
-		this._callbacks['clock'].each(function(func){
+		this._callbacks.clock.each(function(func){
 			func(this.task, this.time);
 		}.bind(this));
 	},
