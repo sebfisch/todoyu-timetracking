@@ -35,21 +35,18 @@ $CONFIG['EXT']['timetracking']['trackableStatus'] = array(
 );
 
 
-if( allowed('timetracking', 'general:use') && allowed('timetracking', 'task:track') ) {
-	/**
-	 * Register context menu function for task
-	 */
-	TodoyuContextMenuManager::registerFunction('task', 'TodoyuTimetracking::getContextMenuItems', 100);
-	TodoyuHookManager::registerHook('core', 'logout', 'TodoyuTimetracking::onLogout');
-}
-
-
-if( allowed('timetracking', 'task:seeTaskTab') ) {
-	/**
-	 * Register tab for task
-	 */
+if( allowed('timetracking', 'general:use') ) {
+		// Register tab for task
 	TodoyuTaskManager::addTaskTab('timetracking', 'TodoyuTimetrackingTask::getTabLabel', 'TodoyuTimetrackingTask::getTabContent', 10);
+
+	if( allowed('timetracking', 'task:track') ) {
+			// Register context menu function for task
+		TodoyuContextMenuManager::registerFunction('task', 'TodoyuTimetracking::getContextMenuItems', 100);
+		TodoyuHookManager::registerHook('core', 'logout', 'TodoyuTimetracking::onLogout');
+	}
 }
+
+
 
 
 ?>

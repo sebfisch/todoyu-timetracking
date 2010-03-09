@@ -5,8 +5,6 @@
 		<label index="general.use">Use timetracking</label>
 		<label index="task">Task tracking</label>
 		<label index="task.track">Track time</label>
-		<label index="task.seeTaskTab">See task tab</label>
-		<label index="task.seeTracks">See tracked time on task</label>
 		<label index="task.editOwn">Can edit OWN tracks on task</label>
 		<label index="task.editAll">Can edit ALL tracks on task</label>
 	</labels>
@@ -15,8 +13,6 @@
 		<label index="general.use">Benutze Zeiterfassung</label>
 		<label index="task">Zeiterfassung Aufgaben</label>
 		<label index="task.track">Zeit erfassen</label>
-		<label index="task.seeTaskTab">Sieht Aufgabentab</label>
-		<label index="task.seeTracks">Sieht erfasste Zeit im Aufgabentab</label>
 		<label index="task.editOwn">Kann SELBST ERFASSTE Zeiten bearbeiten</label>
 		<label index="task.editAll">Kann ALLE Zeiten bearbeiten</label>
 	</labels>

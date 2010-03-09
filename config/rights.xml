@@ -7,8 +7,6 @@
 
 	<section name="task" require="general:use">
 		<right name="track" />
-		<right name="seeTaskTab" />
-		<right name="seeTracks" />
 		<right name="editOwn" />
 		<right name="editAll" require="task:editOwn" />
 	</section>
