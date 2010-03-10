@@ -26,9 +26,9 @@
 
 $CONFIG['EXT']['timetracking']['info'] = array(
 	'title'			=> 'Time Tracking',
-	'description' 	=> 'Person Based Time Tracking for Tasks',
+	'description' 	=> 'Individual Tracking for Tasks',
 	'author' 		=> array(
-		'name'		=> 'todoyu Core Team',
+		'name'		=> 'Journal of tracked hours',
 		'email'		=> 'team@todoyu.com',
 		'company'	=> 'snowflake productions GmbH, Zurich'
 	),
