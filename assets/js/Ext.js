@@ -54,14 +54,14 @@ Todoyu.Ext.timetracking = {
 	 *
 	 * @param Integer		idTask
 	 * @param Integer		trackedTime
-	 * @param Integer		estimatedWorkload
+	 * @param Integer		estimatedTime
 	 */
-	initWithTask: function(idTask, trackedTime, estimatedWorkload) {
+	initWithTask: function(idTask, trackedTime, estimatedTime) {
 		this.init();
 
 		this.task			= idTask;
 		this.time			= trackedTime;
-		this.estimatedTime	= estimatedWorkload;
+		this.estimatedTime	= estimatedTime;
 
 		this.start(idTask, true);
 	},
@@ -75,17 +75,15 @@ Todoyu.Ext.timetracking = {
 	 * @param	Boolean	noRequest
 	 */
 	start: function(idTask, noRequest) {
+			// Make noRequest boolean
 		noRequest	= noRequest === true;
 
-		if ( this.task != 0 ) {
-			this.Task.stop(this.task);
-		}
-/*
+			// Check if tracking is active and is normal start
 		if( this.isTracking() && noRequest === false ) {
 			this.stop(noRequest);
 		}
-*/
 
+			// If normal start, remove running styles
 		if( noRequest === false ) {
 			this.removeAllRunningStyles();
 		}
@@ -93,10 +91,14 @@ Todoyu.Ext.timetracking = {
 			// Set task ID
 		this.task = idTask;
 
+			// If initiali request
 		if( noRequest === true ) {
-			//this.fireStartCallbacks();
+				// Send start to all registered clock listeners
+			this.fireStartCallbacks();
+				// Start click ticking
 			this.Clock.start();
 		} else {
+				// Send request to server (and than start the clock)
 			this.sendTrackRequest(idTask, true);
 		}
 	},

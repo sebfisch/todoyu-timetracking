@@ -1,0 +1,31 @@
+<div class="title">
+	<a href="javascript:void(0)" onclick="">{$task.id_project}.{$task.tasknumber}: {truncate($task.title, 30, '...', true)}</a>
+</div>
+<div class="companyProject">
+	<a href="javascript:void(0)" onclick="" class="company">{truncate($task.company.title, 20)}</a>:
+	<a href="javascript:void(0)" onclick="" class="project">{truncate($task.project.title, 30)}</a>
+</div>
+<div class="time">
+	<span class="tracked">
+		{HourMinSec $tracked}
+	</span>
+	<span class="tracking">
+		+ <span id="{$id}-tracking">{HourMinSec $tracking}</span>
+	</span>
+	<span class="estimated">
+		{HourMinSec $task.estimated_workload}
+	</span>
+</div>
+{if $showPercent}
+<div class="percent">
+	<div class="number" id="{$id}-percent">
+		{$percent}%
+	</div>
+	<div class="bar">
+		<div class="progress" id="{$id}-progress"></div>
+	</div>
+</div>
+{/if}
+<div class="stop">
+	{Button label="LLL:timetracking.stop"}
+</div>

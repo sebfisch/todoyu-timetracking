@@ -90,7 +90,7 @@ class TodoyuTimetracking {
 	/**
 	 * Get current tracked task
 	 *
-	 * @return	Task
+	 * @return	TodoyuTask
 	 */
 	public static function getTask() {
 		return TodoyuTaskManager::getTask(self::getTaskID());

@@ -19,12 +19,24 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
+/**
+ * Headlet action controller
+ *
+ * @package		Todoyu
+ * @subpackage	Timetracking
+ */
 class TodoyuTimetrackingHeadletActionController extends TodoyuActionController {
 
+	/**
+	 * Update headlet info content
+	 *
+	 * @param	Array		$params
+	 * @return	String
+	 */
 	public function updateAction(array $params) {
 		$headlet	= new TodoyuHeadletTimetracking();
 
-		return $headlet->render();
+		return $headlet->renderOverlayContent();
 	}
 
 }

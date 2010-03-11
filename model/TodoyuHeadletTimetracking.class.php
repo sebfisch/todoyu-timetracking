@@ -26,71 +26,113 @@
  * @subpackage	Timetracking
  */
 
-class TodoyuHeadletTimetracking extends TodoyuHeadlet {
+class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 
 	/**
 	 * Initialize headlet
 	 *
 	 */
 	protected function init() {
-		$this->setTemplate('ext/timetracking/view/headlet-timetracking.tmpl');
+		$this->setJsHeadlet('Todoyu.Ext.timetracking.Headlet.Timetracking');
 
 		TodoyuPage::addExtAssets('timetracking', 'headlet-timetracking');
 
-		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.timetracking.Headlet.Timetracking.init.bind(Todoyu.Ext.timetracking.Headlet.Timetracking)', 100);
-
-		$this->setupData();
+		if( TodoyuTimetracking::isTrackingActive() ) {
+			$this->addButtonClass('active');
+		}
 	}
 
 
-
-	/**
-	 * Set headlet data
-	 *
-	 */
-	private function setupData()  {
-		$data	= array();
-
+	public function renderOverlayContent() {
 		if( TodoyuTimetracking::isTrackingActive() ) {
-			$task	= TodoyuTimetracking::getTask();
-
-			$data['idTask']			= $task->id;
-			$data['idProject']		= $task->id_project;
-			$data['label']			= $task->getFullTitle();
-			$data['labelTitle']		= $task->getTitle();
-			$data['labelProject']	= $task->getProject()->getTitle();
-			$data['labelCustomer']	= $task->getProject()->getCompany()->getTitle();
-			$data['labelCustomerShort']	= $task->getProject()->getCompany()->getShortLabel();
-			$data['taskNumber']		= $task->tasknumber;
-			$data['tracked']		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id);
-			$data['tracking']		= TodoyuTimetracking::getTrackedTime();
-			$data['attributes']		= 'style="display:block"';
-
-				// Get percent of task time
-			$estWorkload	= intval($task->get('estimated_workload'));
-
-			if( $estWorkload > 0 ) {
-				$totalTracked		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id, false, true);
-				$data['percent']	= round(($totalTracked/$estWorkload)*100, 0);
-				$data['showPercent']= true;
-			}
-
+			return $this->renderOverlayContentActive();
 		} else {
-			$data['attributes']	= 'style="display:none"';
+			return $this->renderOverlayContentInactive();
+		}
+	}
+
+
+	private function renderOverlayContentActive() {
+		$task	= TodoyuTimetracking::getTask();
+
+		$tmpl	= 'ext/timetracking/view/headlet-timetracking-active.tmpl';
+		$data	= array(
+			'id'		=> $this->getID(),
+			'task'		=> $task->getTemplateData(2),
+			'tracked'	=> TodoyuTimetracking::getTrackedTaskTimeTotal($task->id),
+			'tracking'	=> TodoyuTimetracking::getTrackedTime()
+		);
+
+
+			// Get percent of task time
+		$estWorkload	= intval($task->estimated_workload);
+
+		if( $estWorkload > 0 ) {
+			$totalTracked		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id, false, true);
+			$data['percent']	= round(($totalTracked/$estWorkload)*100, 0);
+			$data['showPercent']= true;
 		}
 
-		$this->setData($data);
+
+
+
+
+
+
+		return render($tmpl, $data);
 	}
 
 
+	private function renderOverlayContentInactive() {
+		$tmpl	= 'ext/timetracking/view/headlet-timetracking-inactive.tmpl';
+		$data	= array(
+			'id'	=> $this->getID()
+		);
 
-	/**
-	 * Render headlet
-	 *
-	 * @return	String
-	 */
-	public function render() {
-		return parent::render();
+		return render($tmpl, $data);
+	}
+
+
+	public static function renderRunningTaskInfo() {
+		$task	= TodoyuTimetracking::getTask();
+
+		return $task->getTitle();
+
+
+
+				$task	= TodoyuTimetracking::getTask();
+
+			$data['task']			= $task->getTemplateData();
+
+//			$data['idTask']			= $task->id;
+//			$data['idProject']		= $task->id_project;
+//			$data['label']			= $task->getFullTitle();
+//			$data['labelTitle']		= $task->getTitle();
+//			$data['labelProject']	= $task->getProject()->getTitle();
+//			$data['labelCustomer']	= $task->getProject()->getCompany()->getTitle();
+//			$data['labelCustomerShort']	= $task->getProject()->getCompany()->getShortLabel();
+//			$data['taskNumber']		= $task->tasknumber;
+//			$data['tracked']		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id);
+//			$data['tracking']		= TodoyuTimetracking::getTrackedTime();
+//			$data['attributes']		= 'style="display:block"';
+//
+//				// Get percent of task time
+//			$estWorkload	= intval($task->estimated_workload);
+//
+//			if( $estWorkload > 0 ) {
+//				$totalTracked		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id, false, true);
+//				$data['percent']	= round(($totalTracked/$estWorkload)*100, 0);
+//				$data['showPercent']= true;
+//			}
+
+
+
+
+
+
+
+
+
 	}
 
 }

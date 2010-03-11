@@ -35,43 +35,32 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * Initialize timetracking headlet (register timetracking).
 	 */
 	init: function() {
+		this.toggleContent();
 			// Register timetracking
-		this.ext.registerToggleCallback(this.onToggle.bind(this));
-		this.ext.registerClockCallback(this.onClockUpdate.bind(this));
+		this.ext.registerToggleCallback(this.onClockToggle.bind(this));
+		this.ext.registerClockCallback(this.onClockTick.bind(this));
 
 			// Register button observer
-		this.button	= $('headlet-Timetracking').down('div.button');
-		this.info	= $('headlet-Timetracking').down('div.info');
+		//this.button	= $('headlet-Timetracking').down('div.button');
+		//this.info	= $('headlet-Timetracking').down('div.info');
 
 		//this.button.observe('mouseover', this.onButtonHover.bindAsEventListener(this));
-		this.button.observe('click', this.onButtonClick.bindAsEventListener(this));
+		//this.button.observe('click', this.onButtonClick.bindAsEventListener(this));
 	},
-
-
-
-	/**
-	 * @todo	comment
-	 * 
-	 * @param	Object		event
-	 */
-	onButtonHover: function(event) {
-		this.info.setStyle({
-			'display': 'block'
-		});
-		this.info.focus();
-	},
-
-
-
+	
+	
 	/**
 	 * @todo	comment
 	 * 
 	 * @param	Object	event
 	 */
 	onButtonClick: function(event) {
-		console.log('click');
+		this.toggleContent();
 	},
-
+	
+	toggleContent: function() {
+		this.headlet.toggleContent('timetracking', false);
+	},
 
 
 	/**
@@ -80,12 +69,9 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	Integer		idTask
 	 * @param	Boolean		start
 	 */
-	onToggle: function(idTask, start) {
-		if( start === true ) {
-			this.update();
-		} else {
-			this.hide();
-		}
+	onClockToggle: function(idTask, start) {
+		this.updateContent();
+		this.setActiveStatus(start);
 	},
 
 
@@ -96,21 +82,15 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	Integer	idTask
 	 * @param	Time	time
 	 */
-	onClockUpdate: function(idTask, time) {
+	onClockTick: function(idTask, time) {
 		this.updateTime(time);
 		this.updatePercent();
 	},
-
-
-
-	/**
-	 * Evoke slide-up effect of headlet to hide it
-	 */
-	hide: function() {
-		Effect.SlideUp('headlettimetracking');
+	
+	
+	setActiveStatus: function(active) {
+		this.headlet.getButton('timetracking').toggleClassName('active');
 	},
-
-
 
 	/**
 	 * Update displayed tracked time count inside headlet
@@ -118,7 +98,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	Time	time
 	 */
 	updateTime: function(time) {
-		$('headlettimetracking-time-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
+		$('headlet-timetracking-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
 	},
 
 
@@ -127,11 +107,11 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * Update (used amount of estimated task workload in) percent inside headlet
 	 */
 	updatePercent: function() {
-		var percentContainer = 'headlettimetracking-time-percent-value';
+		var idPercent = 'headlet-timetracking-percent';
 
-		if( Todoyu.exists(percentContainer) && this.ext.hasEstimatedTime() ) {
+		if( Todoyu.exists(idPercent) && this.ext.hasEstimatedTime() ) {
 			var percent	= this.ext.getPercentOfTime();
-			$(percentContainer).update(percent);
+			$(idPercent).update(percent + '%');
 		}
 	},
 
@@ -140,16 +120,21 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Update timetracking headlet. Evokes rerendering of the headlet.
 	 */
-	update: function() {
+	updateContent: function() {
 		var url		= Todoyu.getUrl('timetracking', 'headlet');
 		var options	= {
 			'parameters': {
 				'action':	'update'
-			}
+			},
+			'onComplete':	this.onContentUpdated.bind(this)
 		};
-		var target	= 'headlettimetracking';
+		var target	= 'headlet-timetracking-content';
 
-		Todoyu.Ui.replace(target, url, options);
+		Todoyu.Ui.update(target, url, options);
+	},
+	
+	onContentUpdated: function(response) {
+		console.log('updated');
 	},
 
 

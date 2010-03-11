@@ -1,14 +1,86 @@
-#headlet-Timetracking {
+#headlet-timetracking {
 	
 }
 
-#headlet-Timetracking .button {
-	background:url(../img/icons.png) no-repeat 5px -205px;
-	height:20px;
-	cursor:pointer;
+#headlet-timetracking div.button div.icon {
+	background:url(../img/icons.png) no-repeat 1px -209px;
 }
 
-#headlet-Timetracking .info {
+#headlet-timetracking div.button.active div.icon {
+	background-position:1px -29px;
+}
+
+#headlet-timetracking-content {
+	width:250px;
+	margin-left:-100px;
+	padding:5px;
+}
+
+
+
+/**
+ * Content
+ */
+#headlet-timetracking-content div.title,
+#headlet-timetracking-content div.companyProject,
+#headlet-timetracking-content div.time,
+#headlet-timetracking-content div.percent {
+	border-bottom:1px dotted #CCC;
+	margin-bottom:3px;
+}
+
+#headlet-timetracking-content div.title a {
+	font-size:14px;
+	font-weight:bold;
+}
+
+#headlet-timetracking-content div.companyProject a {
+	color:#AAA;
+}
+
+#headlet-timetracking-content span.tracking,
+#headlet-timetracking-content span.tracking span {
+	font-size:16px;
+	font-weight:bold;
+}
+
+#headlet-timetracking-content span.tracked {
+	margin-right:5px;
+}
+#headlet-timetracking-content span.estimated {
+	margin-left:5px;
+}
+
+#headlet-timetracking-content div.percent div {
+	height:12px;
+}
+
+#headlet-timetracking-content div.percent div.number {
+	width:30px;
+	display:inline-block;
+}
+
+#headlet-timetracking-content div.percent div.bar {
+	width:200px;
+	display:inline-block;
+	border:1px solid #CCC;
+}
+
+#headlet-timetracking-content div.percent div.bar div.progress {
+	background-color:#0F0;
+	display:inline-block;
+	height:100%;
+}
+
+
+
+
+
+
+
+
+
+#headlet-timetracking .info {
 	width:150px;
 	height:100px;
 	background-color:#EEE;
@@ -19,7 +91,7 @@
 	display:none;
 }
 
-#headlet-Timetracking .hover:hover .info {
+#headlet-timetracking .hover:hover .info {
 	display:block;
 }
 
@@ -27,6 +99,13 @@
 
 
 
+
+
+
+
+
+
+/*
 
 div#headlettimetracking {
 	left:0;
@@ -63,3 +142,63 @@ div#headlettimetracking div.time {
 	left:5px;
 	bottom:7px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#headlet-timetracking {
+	width:150px;
+	height:29px;
+	padding:2px;
+	background-color:#F6F6F6;
+	border:1px solid #DDD;
+}
+
+#headlet-timetracking .task {
+	width:120px;
+	overflow:hidden;
+}
+
+#headlet-timetracking .innertask {
+	width:500px;
+}
+
+#headlet-timetracking .time {
+	width:120px;
+}
+
+#headlet-timetracking .ctrl {
+	float:right !important;
+	width:20px;
+	height:30px;
+	cursor:pointer;
+	background:url('../img/icons.png') no-repeat -2px -180px;
+}
+
+.timetrackform .elapsedTime {
+	float:left;
+	padding:0 0 0 5px;
+	line-height:30px;
+}
+
+
+
+
+
+
+
+
+
+
+*/
