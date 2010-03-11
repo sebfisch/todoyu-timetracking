@@ -45,10 +45,8 @@ $CONFIG['FILTERS']['TASK']['widgets']['timetrackedRoles'] = array(
 	'wConf'		=> array(
 		'multiple'	=> true,
 		'size'		=> 5,
-		'FuncRef'	=> 'TodoyuTaskFilterDataSource::getUsergroupOptions'
+		'FuncRef'	=> 'TodoyuRoleDatasource::getRoleOptions'
 	)
 );
-
-
 
 ?>
