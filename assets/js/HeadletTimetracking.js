@@ -28,6 +28,8 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	button: null,
 	
 	info: null,
+	
+	barClasses: {},
 
 
 
@@ -109,12 +111,26 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	updatePercent: function() {
 		var idPercent = 'headlet-timetracking-percent';
 
-		if( Todoyu.exists(idPercent) && this.ext.hasEstimatedTime() ) {
+		if( this.ext.hasEstimatedTime() ) {
 			var percent	= this.ext.getPercentOfTime();
 			$(idPercent).update(percent + '%');
+			
+			var progress= $('headlet-timetracking-progress');
+			this.barClasses.each(function(percent, pair){
+				if( percent >= pair.key ) {
+					progress.setStyle({
+						'backgroundColor': pair.value
+					});
+					throw $break;
+				}
+			}.bind(this, percent));			
 		}
 	},
 
+
+	setBarClasses: function(barClasses) {
+		this.barClasses	= $H(barClasses);
+	},
 
 
 	/**

@@ -47,6 +47,13 @@ if( allowed('timetracking', 'general:use') ) {
 }
 
 
+$CONFIG['EXT']['timetracking']['headletBarClasses'] = array(
+	0	=> 'green',
+	80	=> 'yellow',
+	90	=> 'orange',
+	100	=> 'red'
+);
+
 
 
 ?>

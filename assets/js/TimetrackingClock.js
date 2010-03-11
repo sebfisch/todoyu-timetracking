@@ -124,11 +124,11 @@ Todoyu.Ext.timetracking.Clock = {
 
 	/**
 	 * Get currently tracked time
-	 * 
+	 *
 	 * @return	Integer
 	 */
 	getTime: function() {
-		return Todoyu.Ext.timetracking.getTime();
+		return this.ext.getTrackingTime();
 	},
 
 
@@ -196,7 +196,7 @@ Todoyu.Ext.timetracking.Clock = {
 
 	/**
 	 * Get an array with the keys hours,minutes and seconds of the current time
-	 * 
+	 *
 	 * @return	Array
 	 */
 	getTimeParts: function() {

@@ -22,10 +22,18 @@
 		{$percent}%
 	</div>
 	<div class="bar">
-		<div class="progress" id="{$id}-progress"></div>
+		{$max = 200}
+		{$length = $percent/100*$max}
+		{if $length>$max}
+			{$length = $max}
+		{/if}
+		<div class="progress" id="{$id}-progress" style="width:{$length}px" class="{$barClass}"></div>
 	</div>
 </div>
+<script type="text/javascript">
+	Todoyu.Ext.timetracking.Headlet.Timetracking.setBarClasses({$barClasses});
+</script>
 {/if}
 <div class="stop">
-	{Button label="LLL:timetracking.stop"}
+	{Button label="LLL:timetracking.stop" onclick="Todoyu.Ext.timetracking.Task.stop($task.id)" class="stopTracking"}
 </div>

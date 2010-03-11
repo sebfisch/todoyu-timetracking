@@ -205,11 +205,12 @@ class TodoyuTimetrackingManager {
 	 */
 	public static function addTimetrackingJsInitToPage() {
 		if( TodoyuTimetracking::isTrackingActive() && ! TodoyuRequest::isAjaxRequest() ) {
-			$idTask	= TodoyuTimetracking::getTaskID();
-			$time	= TodoyuTimetracking::getTrackedTime();
-			$estWork= self::getEstimatedTaskWorkload($idTask);
+			$idTask			= TodoyuTimetracking::getTaskID();
+			$trackedTime	= TodoyuTimeTracking::getTrackedTaskTime($idTask);
+			$trackingTime	= TodoyuTimetracking::getTrackedTime();
+			$estimatedTime	= self::getEstimatedTaskWorkload($idTask);
 
-			$init	= 'Todoyu.Ext.timetracking.initWithTask.bind(Todoyu.Ext.timetracking, ' . $idTask . ', ' . $time . ', ' . $estWork . ')';
+			$init	= 'Todoyu.Ext.timetracking.initWithTask.bind(Todoyu.Ext.timetracking, ' . $idTask . ', ' . $trackedTime . ', ' . $trackingTime . ', ' . $estimatedTime . ')';
 		} else {
 			$init	= 'Todoyu.Ext.timetracking.init.bind(Todoyu.Ext.timetracking)';
 		}

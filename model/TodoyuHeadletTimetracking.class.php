@@ -71,13 +71,10 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 			$totalTracked		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id, false, true);
 			$data['percent']	= round(($totalTracked/$estWorkload)*100, 0);
 			$data['showPercent']= true;
+			$barClasses			= TodoyuArray::assure($GLOBALS['CONFIG']['EXT']['timetracking']['headletBarClasses']);
+			krsort($barClasses);
+			$data['barClasses']	= json_encode($barClasses);
 		}
-
-
-
-
-
-
 
 		return render($tmpl, $data);
 	}
