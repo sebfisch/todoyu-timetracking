@@ -17,10 +17,10 @@
 		<label index="currentTask">Current Task</label>
 		<label index="showCurrentTaskInProject">Show Task in Project</label>
 		<label index="quicktask.workload_done">Already Worked Time</label>
-		<label index="extconf.stopOnLogout">Stop Tracking if Persons Logs Off</label>
+		<label index="extconf.stopOnLogout">Stop Tracking If Persons Logs Off</label>
 		<label index="search.label">Time Tracking</label>
-		<label index="filter.timetrackedPerson">Person has Tracked Time</label>
-		<label index="filter.timetrackedRoles">Roles have Tracked Time</label>
+		<label index="filter.timetrackedPerson">Person Has Tracked Time</label>
+		<label index="filter.timetrackedRoles">Roles Have Tracked Time</label>
 	</labels>
 	<labels lang="de">
 		<label index="ext.title">Zeiterfassung</label>

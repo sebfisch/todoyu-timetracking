@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locallang>
 	<labels lang="en">
-		<label index="general">General settings</label>
-		<label index="general.use">Use timetracking</label>
-		<label index="task">Task tracking</label>
-		<label index="task.track">Track time</label>
-		<label index="task.editOwn">Can edit OWN tracks on task</label>
-		<label index="task.editAll">Can edit ALL tracks on task</label>
+		<label index="general">General Settings</label>
+		<label index="general.use">Use Timetracking</label>
+		<label index="task">Task Tracking</label>
+		<label index="task.track">Track Time</label>
+		<label index="task.editOwn">Can Edit OWN Tracks On Task</label>
+		<label index="task.editAll">Can Edit ALL Tracks On Task</label>
 	</labels>
 	<labels lang="de">
 		<label index="general">Allgemeine Einstellungen</label>
