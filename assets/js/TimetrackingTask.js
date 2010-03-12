@@ -54,7 +54,6 @@ Todoyu.Ext.timetracking.Task = {
 	 */
 	stop: function(idTask) {
 		this.ext.stop();
-		this.setRunningStyle(idTask, false);
 	},
 
 
@@ -77,13 +76,17 @@ Todoyu.Ext.timetracking.Task = {
 	 */
 	onClockToggle: function(idTask, start) {
 		if( start ) {
+			this.setRunningStyle(idTask, true);
+			Todoyu.Ext.project.Task.setStatus(idTask, 2); // Open
+			/*
 			if(Todoyu.getArea() == 'portal'){
 				Todoyu.Ext.portal.Task.refresh(idTask);
 			} else {
 				Todoyu.Ext.project.Task.refresh(idTask);
 			}
+			*/
 		} else {
-			this.setRunningStyle(idTask, false);
+			//this.setRunningStyle(idTask, false);
 			if( this.isTaskTrackingTabLoaded(idTask) ) {
 				this.updateTab(idTask);
 			}

@@ -97,7 +97,8 @@ Todoyu.Ext.timetracking = {
 			// If initiali request
 		if( noRequest === true ) {
 				// Send start to all registered clock listeners
-			this.fireStartCallbacks();
+			//@ change: Not necessary on first load
+			//this.fireStartCallbacks();
 				// Start click ticking
 			this.Clock.start();
 		} else {

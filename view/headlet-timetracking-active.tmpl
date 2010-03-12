@@ -32,9 +32,6 @@
 		<div class="progress" id="{$id}-progress" style="width:{$length}px" class="progress {$barClass}"></div>
 	</div>
 </div>
-<script type="text/javascript">
-	Todoyu.Ext.timetracking.Headlet.Timetracking.setBarClasses({$barClasses});
-</script>
 {/if}
 <div class="stop">
 	{Button label="LLL:timetracking.stop" onclick="Todoyu.Ext.timetracking.Task.stop($task.id)" class="stopTracking"}

@@ -40,6 +40,9 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 		if( TodoyuTimetracking::isTrackingActive() ) {
 			$this->addButtonClass('active');
 		}
+
+		$barClassJSON	= self::getBarClassesJSON();
+		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.timetracking.Headlet.Timetracking.setBarClasses.bind(Todoyu.Ext.timetracking.Headlet.Timetracking,' . $barClassJSON . ')');
 	}
 
 
@@ -49,6 +52,14 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 		} else {
 			return $this->renderOverlayContentInactive();
 		}
+	}
+
+
+	public function getBarClassesJSON() {
+		$barClasses			= TodoyuArray::assure($GLOBALS['CONFIG']['EXT']['timetracking']['headletBarClasses']);
+		krsort($barClasses);
+
+		return json_encode($barClasses);
 	}
 
 
@@ -71,9 +82,6 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 			$totalTracked		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id, false, true);
 			$data['percent']	= round(($totalTracked/$estWorkload)*100, 0);
 			$data['showPercent']= true;
-			$barClasses			= TodoyuArray::assure($GLOBALS['CONFIG']['EXT']['timetracking']['headletBarClasses']);
-			krsort($barClasses);
-			$data['barClasses']	= json_encode($barClasses);
 		}
 
 		return render($tmpl, $data);
