@@ -1,4 +1,4 @@
-<li>
+<li class="tracking">
 <div class="title">
 	<a href="javascript:void(0)" onclick="">{$task.id_project}.{$task.tasknumber}: {truncate($task.title, 30, '...', true)}</a>
 </div>
@@ -24,7 +24,7 @@
 		{$percent}%
 	</div>
 	<div class="bar">
-		{$max = 200}
+		{$max = 160}
 		{$length = $percent/100*$max}
 		{if $length>$max}
 			{$length = $max}

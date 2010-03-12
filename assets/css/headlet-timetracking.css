@@ -2,12 +2,19 @@
 	background:url(../img/icons.png) no-repeat 3px -205px;
 }
 #headlet-timetracking-button.active {
-	background-position:0 -30px;
+	background-position:3px -25px;
 
 }
 
 #headlets #headlet-timetracking-content li {
 	padding:5px;
+}
+
+/**
+ * Active headlet content
+ */
+#headlets #headlet-timetracking-content li.tracking {
+	width:200px;
 }
 
 #headlets #headlet-timetracking-content div.title,
@@ -25,4 +32,100 @@
 
 #headlets li:hover #headlet-timetracking-content a {
 	background:transparent;
+}
+
+
+#headlet-timetracking-content div.title,
+#headlet-timetracking-content div.companyProject,
+#headlet-timetracking-content div.time,
+#headlet-timetracking-content div.percent {
+	border-bottom:1px dotted #CCC;
+	margin-bottom:3px;
+}
+
+#headlet-timetracking-content div.title a {
+	font-size:14px;
+	font-weight:bold;
+}
+
+#headlet-timetracking-content div.companyProject a {
+	color:#AAA;
+}
+
+#headlet-timetracking-content span.tracking,
+#headlet-timetracking-content span.tracking span {
+	font-size:16px;
+	font-weight:bold;
+}
+
+#headlet-timetracking-content span.tracked {
+	margin-right:5px;
+}
+#headlet-timetracking-content span.estimated {
+	margin-left:5px;
+}
+
+#headlet-timetracking-content div.percent div {
+	height:12px;
+}
+
+#headlet-timetracking-content div.percent div.number {
+	width:30px;
+	display:inline-block;
+}
+
+#headlet-timetracking-content div.percent div.bar {
+	width:160px;
+	display:inline-block;
+	border:1px solid #CCC;
+}
+
+#headlet-timetracking-content div.percent div.bar div.progress {
+	background-color:#0F0;
+	display:inline-block;
+	height:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Inactive headlet content
+ */
+#headlets #headlet-timetracking-content ul {
+	position:relative;
+	border:none;
+	top:0;
+	left:0;
+	width:230px;
+}
+
+#headlets #headlet-timetracking-content ul li {
+	border-bottom:1px dotted #B9BBAD;
+}
+
+#headlets #headlet-timetracking-content ul li span {
+	display:inline-block;
+}
+
+#headlets #headlet-timetracking-content ul li span.tasknumber {
+	width:30px;
+}
+
+#headlets #headlet-timetracking-content ul li span.title {
+	width:140px;
+}
+
+#headlets #headlet-timetracking-content ul li span.start {
+	width:40px;
 }

@@ -91,10 +91,37 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	private function renderOverlayContentInactive() {
 		$tmpl	= 'ext/timetracking/view/headlet-timetracking-inactive.tmpl';
 		$data	= array(
-			'id'	=> $this->getID()
+			'id'	=> $this->getID(),
+			'tasks'	=> $this->getLastTrackedTasks()
 		);
 
+//		TodoyuDebug::printLastQueryInFirebug();
+//
+//		$trackedTasks	= $this->getLastTrackedTasks();
+//
+//		TodoyuDebug::printHtml($trackedTasks);
+
+
 		return render($tmpl, $data);
+	}
+
+
+	private function getLastTrackedTasks() {
+		$fields	= '	t.id,
+					t.title,
+					t.status,
+					t.tasknumber,
+					t.id_project';
+		$tables	= '	ext_project_task t,
+					ext_timetracking_track tr,
+					ext_project_project p';
+		$where	= '	t.id	= tr.id_task AND
+					tr.id_person_create	= ' . personid();
+		$group	= '	t.id';
+		$order	= '	tr.date_update DESC';
+		$limit	= ' 0,5';
+
+		return Todoyu::db()->getArray($fields, $tables, $where, $group, $order, $limit);
 	}
 
 

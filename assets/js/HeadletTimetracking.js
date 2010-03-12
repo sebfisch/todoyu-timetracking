@@ -37,17 +37,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * Initialize timetracking headlet (register timetracking).
 	 */
 	init: function() {
-		this.toggleContent();
 			// Register timetracking
 		this.ext.registerToggleCallback(this.onClockToggle.bind(this));
 		this.ext.registerClockCallback(this.onClockTick.bind(this));
 
-			// Register button observer
-		//this.button	= $('headlet-Timetracking').down('div.button');
-		//this.info	= $('headlet-Timetracking').down('div.info');
-
-		//this.button.observe('mouseover', this.onButtonHover.bindAsEventListener(this));
-		//this.button.observe('click', this.onButtonClick.bindAsEventListener(this));
 	},
 	
 	
@@ -162,6 +155,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 */
 	stopTask: function(idTask) {
 		this.ext.stop(idTask);
+	},
+	
+	startTask: function(idTask) {
+		this.ext.start(idTask);
 	},
 
 
