@@ -130,14 +130,16 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 //				$data['showPercent']= true;
 //			}
 
+	}
 
 
-
-
-
-
-
-
+	/**
+	 * Get healet label
+	 *
+	 * @return	String
+	 */
+	public function getLabel() {
+		return 'Zeiterfassung';
 	}
 
 }

@@ -1,3 +1,11 @@
+#headlet-timetracking-button {
+	background:url(../img/icons.png) no-repeat 3px -205px;
+}
+#headlet-timetracking-button.active {
+	background-position:0 -30px;
+
+}
+
 #headlets #headlet-timetracking-content li {
 	padding:5px;
 }
