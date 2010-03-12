@@ -1,8 +1,10 @@
+<li>
 <div class="title">
 	<a href="javascript:void(0)" onclick="">{$task.id_project}.{$task.tasknumber}: {truncate($task.title, 30, '...', true)}</a>
 </div>
 <div class="companyProject">
-	<a href="javascript:void(0)" onclick="" class="company">{truncate($task.company.title, 20)}</a>:
+	<a href="javascript:void(0)" onclick="" class="company">{truncate($task.company.title, 20)}</a>
+	<span>:</span>
 	<a href="javascript:void(0)" onclick="" class="project">{truncate($task.project.title, 30)}</a>
 </div>
 <div class="time">
@@ -27,7 +29,7 @@
 		{if $length>$max}
 			{$length = $max}
 		{/if}
-		<div class="progress" id="{$id}-progress" style="width:{$length}px" class="{$barClass}"></div>
+		<div class="progress" id="{$id}-progress" style="width:{$length}px" class="progress {$barClass}"></div>
 	</div>
 </div>
 <script type="text/javascript">
@@ -37,3 +39,4 @@
 <div class="stop">
 	{Button label="LLL:timetracking.stop" onclick="Todoyu.Ext.timetracking.Task.stop($task.id)" class="stopTracking"}
 </div>
+</li>
