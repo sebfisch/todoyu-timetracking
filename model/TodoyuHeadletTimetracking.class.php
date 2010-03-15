@@ -25,7 +25,6 @@
  * @package		Todoyu
  * @subpackage	Timetracking
  */
-
 class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 
 	/**
@@ -37,15 +36,23 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 
 		TodoyuPage::addExtAssets('timetracking', 'headlet-timetracking');
 
+			// Add active class if tracking is running
 		if( TodoyuTimetracking::isTrackingActive() ) {
 			$this->addButtonClass('active');
 		}
 
+			// Get bar classes and init js object
 		$barClassJSON	= self::getBarClassesJSON();
 		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.timetracking.Headlet.Timetracking.setBarClasses.bind(Todoyu.Ext.timetracking.Headlet.Timetracking,' . $barClassJSON . ')');
 	}
 
 
+
+	/**
+	 * Render content for overlay box
+	 *
+	 * @return	String
+	 */
 	public function renderOverlayContent() {
 		if( TodoyuTimetracking::isTrackingActive() ) {
 			return $this->renderOverlayContentActive();
@@ -55,6 +62,12 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	}
 
 
+
+	/**
+	 * Get progress bar classes as json array
+	 *
+	 * @return	String
+	 */
 	public function getBarClassesJSON() {
 		$barClasses			= TodoyuArray::assure($GLOBALS['CONFIG']['EXT']['timetracking']['headletBarClasses']);
 		krsort($barClasses);
@@ -63,6 +76,12 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	}
 
 
+
+	/**
+	 * Render overlay content for active timetracking
+	 *
+	 * @return	String
+	 */
 	private function renderOverlayContentActive() {
 		$task	= TodoyuTimetracking::getTask();
 
@@ -88,6 +107,12 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	}
 
 
+
+	/**
+	 * Render overlay content for inactive timetracking
+	 *
+	 * @return	String
+	 */
 	private function renderOverlayContentInactive() {
 		$tmpl	= 'ext/timetracking/view/headlet-timetracking-inactive.tmpl';
 		$data	= array(
@@ -95,69 +120,36 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 			'tasks'	=> $this->getLastTrackedTasks()
 		);
 
-//		TodoyuDebug::printLastQueryInFirebug();
-//
-//		$trackedTasks	= $this->getLastTrackedTasks();
-//
-//		TodoyuDebug::printHtml($trackedTasks);
-
-
 		return render($tmpl, $data);
 	}
 
 
+
+	/**
+	 * Get the last tracked tasks for the inactive box
+	 *
+	 * @return	Array
+	 */
 	private function getLastTrackedTasks() {
+		$numTasks	= intval($GLOBALS['CONFIG']['EXT']['timetracking']['headletLastTasks']);
+
 		$fields	= '	t.id,
 					t.title,
 					t.status,
 					t.tasknumber,
-					t.id_project';
+					t.id_project,
+					MAX(tr.date_update) as last_update';
 		$tables	= '	ext_project_task t,
-					ext_timetracking_track tr,
-					ext_project_project p';
+					ext_timetracking_track tr';
 		$where	= '	t.id	= tr.id_task AND
 					tr.id_person_create	= ' . personid();
 		$group	= '	t.id';
-		$order	= '	tr.date_update DESC';
-		$limit	= ' 0,5';
+		$order	= '	last_update DESC';
+		$limit	= ' 0,' . $numTasks;
 
 		return Todoyu::db()->getArray($fields, $tables, $where, $group, $order, $limit);
 	}
 
-
-	public static function renderRunningTaskInfo() {
-		$task	= TodoyuTimetracking::getTask();
-
-		return $task->getTitle();
-
-
-
-				$task	= TodoyuTimetracking::getTask();
-
-			$data['task']			= $task->getTemplateData();
-
-//			$data['idTask']			= $task->id;
-//			$data['idProject']		= $task->id_project;
-//			$data['label']			= $task->getFullTitle();
-//			$data['labelTitle']		= $task->getTitle();
-//			$data['labelProject']	= $task->getProject()->getTitle();
-//			$data['labelCustomer']	= $task->getProject()->getCompany()->getTitle();
-//			$data['labelCustomerShort']	= $task->getProject()->getCompany()->getShortLabel();
-//			$data['taskNumber']		= $task->tasknumber;
-//			$data['tracked']		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id);
-//			$data['tracking']		= TodoyuTimetracking::getTrackedTime();
-//			$data['attributes']		= 'style="display:block"';
-//
-//				// Get percent of task time
-//			$estWorkload	= intval($task->estimated_workload);
-//
-//			if( $estWorkload > 0 ) {
-//				$totalTracked		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id, false, true);
-//				$data['percent']	= round(($totalTracked/$estWorkload)*100, 0);
-//				$data['showPercent']= true;
-//			}
-
-	}
 
 
 	/**

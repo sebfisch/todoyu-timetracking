@@ -55,5 +55,8 @@ $CONFIG['EXT']['timetracking']['headletBarClasses'] = array(
 );
 
 
+$CONFIG['EXT']['timetracking']['headletLastTasks']	= 5;
+
+
 
 ?>
