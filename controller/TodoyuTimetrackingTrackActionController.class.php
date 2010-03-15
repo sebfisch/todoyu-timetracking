@@ -38,11 +38,10 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 		TodoyuTimetracking::startTask($idTask);
 
 		$task			= TodoyuTaskManager::getTask($idTask);
-		$estimatedTime	= intval($task->estimated_workload);
 		$trackedTime	= TodoyuTimetracking::getTrackedTaskTime($idTask);
 
-		TodoyuHeader::sendTodoyuHeader('estimatedTime', $estimatedTime);
 		TodoyuHeader::sendTodoyuHeader('trackedTime', $trackedTime);
+		TodoyuHeader::sendTodoyuHeader('taskData', json_encode($task->getTemplateData()));
 	}
 
 

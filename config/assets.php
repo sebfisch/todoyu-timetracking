@@ -41,6 +41,10 @@ $CONFIG['EXT']['timetracking']['assets'] = array(
 			array(
 				'file'		=> 'ext/timetracking/assets/js/TimetrackingClock.js',
 				'position'	=> 105
+			),
+			array(
+				'file'		=> 'ext/timetracking/assets/js/PageTitle.js',
+				'position'	=> 106
 			)
 		),
 		'css' => array(

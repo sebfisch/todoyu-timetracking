@@ -180,11 +180,12 @@ class TodoyuTimetrackingManager {
 	public static function addTimetrackingJsInitToPage() {
 		if( TodoyuTimetracking::isTrackingActive() && ! TodoyuRequest::isAjaxRequest() ) {
 			$idTask			= TodoyuTimetracking::getTaskID();
+			$taskData		= TodoyuTimetracking::getTask()->getTemplateData();
 			$trackedTime	= TodoyuTimeTracking::getTrackedTaskTime($idTask);
 			$trackingTime	= TodoyuTimetracking::getTrackedTime();
 			$estimatedTime	= self::getEstimatedTaskWorkload($idTask);
 
-			$init	= 'Todoyu.Ext.timetracking.initWithTask.bind(Todoyu.Ext.timetracking, ' . $idTask . ', ' . $trackedTime . ', ' . $trackingTime . ', ' . $estimatedTime . ')';
+			$init	= 'Todoyu.Ext.timetracking.initWithTask.bind(Todoyu.Ext.timetracking, ' . json_encode($taskData) . ', ' . $trackedTime . ', ' . $trackingTime . ', ' . $estimatedTime . ')';
 		} else {
 			$init	= 'Todoyu.Ext.timetracking.init.bind(Todoyu.Ext.timetracking)';
 		}
