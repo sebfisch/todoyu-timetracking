@@ -3,7 +3,7 @@
 	{foreach $tasks task}
 		<li>
 			<span class="tasknumber">{$task.id_project}.{$task.tasknumber}</span>
-			<span class="title">{$task.title}</span>
+			<span class="title">{htmlencode $task.title}</span>
 			<span class="start">{Button  onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.startTask($task.id)" class="startTracking"}</span>
 		</li>
 	{/foreach}
