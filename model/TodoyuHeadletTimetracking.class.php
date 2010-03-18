@@ -34,8 +34,6 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	protected function init() {
 		$this->setJsHeadlet('Todoyu.Ext.timetracking.Headlet.Timetracking');
 
-		TodoyuPage::addExtAssets('timetracking', 'headlet-timetracking');
-
 			// Add active class if tracking is running
 		if( TodoyuTimetracking::isTrackingActive() ) {
 			$this->addButtonClass('active');

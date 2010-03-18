@@ -50,13 +50,14 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	Object	event
 	 */
 	onButtonClick: function(event) {
-		this.toggleContent();
+		if( this.isContentVisible() ) {
+			this.hide();
+		} else {
+			this.hideOthers();
+			this.showContent();
+		}
 	},
 	
-	toggleContent: function() {
-		this.headlet.toggleContent('timetracking', false);
-	},
-
 
 	/**
 	 * Handle toggeling of timetracking (headlet). If timetrack started: show it, otherwise: hide it
@@ -80,6 +81,11 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	onClockTick: function(idTask, time) {
 		this.updateTime(time);
 		this.updatePercent();
+	},
+	
+	
+	hide: function() {
+		this.hideContent();
 	},
 	
 	

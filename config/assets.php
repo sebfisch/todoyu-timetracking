@@ -27,63 +27,38 @@
  */
 
 $CONFIG['EXT']['timetracking']['assets'] = array(
-		// Default: loaded all over the installation always
-	'default' => array(
-		'js' => array(
-			array(
-				'file'		=> 'ext/timetracking/assets/js/Ext.js',
-				'position'	=> 100
-			),
-			array(
-				'file'		=> 'ext/timetracking/assets/js/TimetrackingTask.js',
-				'position'	=> 101
-			),
-			array(
-				'file'		=> 'ext/timetracking/assets/js/TimetrackingClock.js',
-				'position'	=> 105
-			),
-			array(
-				'file'		=> 'ext/timetracking/assets/js/PageTitle.js',
-				'position'	=> 106
-			)
+	'js' => array(
+		array(
+			'file'		=> 'ext/timetracking/assets/js/Ext.js',
+			'position'	=> 100
 		),
-		'css' => array(
-			array(
-				'file'		=> 'ext/timetracking/assets/css/ext.css',
-				'position'	=> 100
-			)
+		array(
+			'file'		=> 'ext/timetracking/assets/js/TimetrackingTask.js',
+			'position'	=> 101
+		),
+		array(
+			'file'		=> 'ext/timetracking/assets/js/TimetrackingClock.js',
+			'position'	=> 105
+		),
+		array(
+			'file'		=> 'ext/timetracking/assets/js/PageTitle.js',
+			'position'	=> 106
+		),
+		array(
+			'file'		=> 'ext/timetracking/assets/js/HeadletTimetracking.js',
+			'position'	=> 110
 		)
 	),
-
-
-		// Public assets: basis assets for this extension
-	'public' => array(
-		'js' => array(
-
+	'css' => array(
+		array(
+			'file'		=> 'ext/timetracking/assets/css/ext.css',
+			'position'	=> 100
 		),
-		'css' => array(
-
-		)
-	),
-
-	// Assets of panel widgets
-
-		// Timetracking headlet
-	'headlet-timetracking' => array(
-		'js' => array(
-			array(
-				'file'		=> 'ext/timetracking/assets/js/HeadletTimetracking.js',
-				'position'	=> 110
-			)
-		),
-		'css' => array(
-			array(
-				'file'		=> 'ext/timetracking/assets/css/headlet-timetracking.css',
-				'position'	=> 110
-			)
+		array(
+			'file'		=> 'ext/timetracking/assets/css/headlet-timetracking.css',
+			'position'	=> 110
 		)
 	)
-
 );
 
 ?>
