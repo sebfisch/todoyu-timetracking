@@ -187,7 +187,7 @@ class TodoyuTimetrackingManager {
 
 			$init	= 'Todoyu.Ext.timetracking.initWithTask.bind(Todoyu.Ext.timetracking, ' . json_encode($taskData) . ', ' . $trackedTime . ', ' . $trackingTime . ', ' . $estimatedTime . ')';
 		} else {
-			$init	= 'Todoyu.Ext.timetracking.init.bind(Todoyu.Ext.timetracking)';
+			$init	= 'Todoyu.Ext.timetracking.initWithoutTask.bind(Todoyu.Ext.timetracking)';
 		}
 
 		TodoyuPage::addJsOnloadedFunction($init, 100);

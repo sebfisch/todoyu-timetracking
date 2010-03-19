@@ -51,7 +51,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 */
 	onButtonClick: function(event) {
 		if( this.isContentVisible() ) {
-			this.hide();
+			this.hideContent();
 		} else {
 			this.hideOthers();
 			this.showContent();
@@ -84,14 +84,17 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	},
 	
 	
-	hide: function() {
-		this.hideContent();
-	},
 	
-	
+	/**
+	 * Set active status for button
+	 * 
+	 * @param	Bool		active
+	 */
 	setActiveStatus: function(active) {
-		this.headlet.getButton('timetracking').toggleClassName('active');
+		this.headlet.getButton('timetracking')[active?'addClassName':'removeClassName']('active');
 	},
+
+
 
 	/**
 	 * Update displayed tracked time count inside headlet
@@ -127,9 +130,16 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	},
 
 
+	
+	/**
+	 * Set barClasses to internal storage
+	 * 
+	 * @param	Object		barClasses
+	 */
 	setBarClasses: function(barClasses) {
 		this.barClasses	= $H(barClasses);
 	},
+
 
 
 	/**
@@ -148,8 +158,15 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		Todoyu.Ui.update(target, url, options);
 	},
 	
+	
+	
+	/**
+	 * Handler when content is updated
+	 * 
+	 * @param	Ajax.Response		response
+	 */
 	onContentUpdated: function(response) {
-		console.log('updated');
+		
 	},
 
 

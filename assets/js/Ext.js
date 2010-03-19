@@ -38,11 +38,16 @@ Todoyu.Ext.timetracking = {
 	trackingTime: 0,
 
 
+	init: function() {
+
+	},
+
+
 	/**
 	 * Init task timetracking
 	 *
 	 */
-	init: function() {
+	initWithoutTask: function() {
 		this.Task.init();
 		this.PageTitle.init();
 	},
@@ -123,7 +128,7 @@ Todoyu.Ext.timetracking = {
 		var options	= {
 			'parameters': {
 				'action':	start ? 'start' : 'stop',
-				'task':		idTask				
+				'task':		idTask
 			},
 			'onComplete': this.onTrackingRequestSended.bind(this, idTask, start)
 		};
@@ -144,7 +149,7 @@ Todoyu.Ext.timetracking = {
 		if( started ) {
 			this.task		= response.getTodoyuHeader('taskData').evalJSON();
 			this.trackedTime= Todoyu.Helper.intval(response.getTodoyuHeader('trackedTime'));
-			
+
 			this.fireStartCallbacks();
 			this.Clock.start();
 		} else {
@@ -199,19 +204,19 @@ Todoyu.Ext.timetracking = {
 	isTracking: function() {
 		return this.task > 0;
 	},
-	
-	
-	
+
+
+
 	/**
 	 * Check if given task is tracked
-	 * 
+	 *
 	 * @param	Integer		idTask
 	 */
 	isTrackingTask: function(idTask) {
 		return this.getTaskID() == idTask;
 	},
-	
-	
+
+
 
 	/**
 	 * Register new callback function to be evoked on timetrack toggeling
@@ -264,17 +269,17 @@ Todoyu.Ext.timetracking = {
 
 		this.fireClockCallbacks();
 	},
-	
-	
+
+
 	getTaskID: function() {
 		return this.task.id;
 	},
-	
-	
-	
+
+
+
 	/**
 	 * Get task data (all or single value)
-	 * 
+	 *
 	 * @param	String		key
 	 */
 	getTaskData: function(key) {
@@ -307,16 +312,16 @@ Todoyu.Ext.timetracking = {
 	getTrackingTime: function() {
 		return this.trackingTime;
 	},
-	
-	
-	
+
+
+
 	/**
 	 * Get already tracked time
 	 */
 	getTrackedTime: function() {
 		return this.trackedTime;
 	},
-	
+
 	getTotalTime: function() {
 		return this.getTrackedTime() + this.getTrackingTime();
 	},
