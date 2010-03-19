@@ -266,7 +266,6 @@ class TodoyuTimetracking {
 
 
 
-
 	/**
 	 * Get total tracked time of a task
 	 *
@@ -335,8 +334,10 @@ class TodoyuTimetracking {
 		$table	= self::TABLE;
 		$where	= ' id_person_create	= ' . $idPerson . ' AND
 					date_track BETWEEN ' . $dateStart . ' AND ' . $dateEnd;
+		$group	= '';
+		$order	= 'date_track';
 
-		return Todoyu::db()->getArray($fields, $table, $where);
+		return Todoyu::db()->getArray($fields, $table, $where, $group, $order);
 	}
 
 
