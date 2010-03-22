@@ -248,7 +248,6 @@ class TodoyuTimetracking {
 			$fields .= ', workload_chargeable';
 		}
 
-
 		$tracks	= Todoyu::db()->getArray($fields, $table, $where);
 		$time	= 0;
 
@@ -493,7 +492,7 @@ class TodoyuTimetracking {
 	 *
 	 * @param	Integer		$type
 	 * @param	Integer		$status
-	 * @return	Bool
+	 * @return	Boolean
 	 */
 	public static function isTrackable($type, $status) {
 		$type	= intval($type);
@@ -613,8 +612,6 @@ class TodoyuTimetracking {
 			}
 		}
 	}
+
 }
-
-
-
 ?>
