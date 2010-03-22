@@ -31,7 +31,8 @@ Todoyu.Ext.timetracking.PageTitle = {
 	 * @param	Bool		start
 	 */
 	onClockToggle: function(idTask, start) {
-		if( start ) {			
+		if( start ) {
+			this.task = this.ext.getTaskData();		
 			this.showInfo();			
 		} else {
 			this.update(false);
@@ -55,11 +56,8 @@ Todoyu.Ext.timetracking.PageTitle = {
 	/**
 	 * Show info in window title
 	 */
-	showInfo: function() {
-		if( this.task === null ) {
-			this.task = this.ext.getTaskData();
-		}
-		this.update(true, this.task.id_project + '.' + this.task.id, this.task.title, this.ext.getTrackingTime());
+	showInfo: function() {	
+		this.update(true, this.task.id_project + '.' + this.task.tasknumber, this.task.title, this.ext.getTotalTime(), this.ext.getPercentOfTime());
 	},
 	
 	
@@ -67,19 +65,20 @@ Todoyu.Ext.timetracking.PageTitle = {
 	/**
 	 * Update window title
 	 * 
-	 * @param	Bool		show		Show timetracking info
-	 * @param	String		taskNumber	Tasknumber (incl. project)
-	 * @param	String		taskTitle	Task title
-	 * @param	String		time		Seconds of current tracking
+	 * @param	Bool		show			Show timetracking info
+	 * @param	String		taskNumber		Tasknumber (incl. project)
+	 * @param	String		taskTitle		Task title
+	 * @param	Integer		time			Seconds of current tracking
 	 */
-	update: function(show, taskNumber, taskTitle, time) {
+	update: function(show, taskNumber, taskTitle, time, percent) {
 		var currentTitle= Todoyu.Ui.getTitle();
 		var blankTitle	= currentTitle.split(' - [')[0];
 		var trackInfo	= '';
-		
+		var percentStr	= percent !== undefined ? ' - ' + percent + '%' : '';
+
 		if( show === true ) {
 			var timeStr	= Todoyu.Time.timeFormatSeconds(time);
-			trackInfo	= ' - [' + taskNumber + ': ' + taskTitle + ' [' + timeStr + ']';			
+			trackInfo	= ' - [' + taskNumber + ': ' + taskTitle + ' [' + timeStr + percentStr + ']';			
 		}
 		
 		Todoyu.Ui.setTitle(blankTitle + trackInfo);

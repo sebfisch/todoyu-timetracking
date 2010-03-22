@@ -67,7 +67,7 @@ Todoyu.Ext.timetracking = {
 		this.trackedTime	= trackedTime;
 		this.trackingTime	= trackingTime;
 
-		this.init();
+		this.initWithoutTask();
 		this.start(this.getTaskID(), true);
 	},
 
@@ -80,29 +80,14 @@ Todoyu.Ext.timetracking = {
 	 * @param	Boolean	noRequest
 	 */
 	start: function(idTask, noRequest) {
-			// Make noRequest boolean
-		noRequest	= noRequest === true;
-
-			// Check if tracking is active and is normal start
-		if( this.isTracking() && noRequest === false ) {
-			this.stop(noRequest);
-		}
-
-			// If normal start, remove running styles
-		if( noRequest === false ) {
-			this.removeAllRunningStyles();
-		}
-
-			// Set task ID
-		this.taskxxx = {
-			'id': idTask
-		};
-
-			// If initiali request
+			// If initial request
 		if( noRequest === true ) {
 				// Start click ticking
 			this.Clock.start();
 		} else {
+				// Remove running styles from task
+				// @todo	Move to task part
+			this.removeAllRunningStyles();
 				// Send request to server (and than start the clock)
 			this.sendTrackRequest(idTask, true);
 		}
@@ -147,8 +132,9 @@ Todoyu.Ext.timetracking = {
 	 */
 	onTrackingRequestSended: function(idTask, started, response) {
 		if( started ) {
-			this.task		= response.getTodoyuHeader('taskData').evalJSON();
-			this.trackedTime= Todoyu.Helper.intval(response.getTodoyuHeader('trackedTime'));
+			this.task			= response.getTodoyuHeader('taskData').evalJSON();
+			this.trackedTime	= Todoyu.Helper.intval(response.getTodoyuHeader('trackedTime'));
+			this.trackingTime	= 0;
 
 			this.fireStartCallbacks();
 			this.Clock.start();
@@ -202,7 +188,7 @@ Todoyu.Ext.timetracking = {
 	 * Check wether time is being currently tracked
 	 */
 	isTracking: function() {
-		return this.task > 0;
+		return this.task.id > 0;
 	},
 
 
@@ -271,6 +257,10 @@ Todoyu.Ext.timetracking = {
 	},
 
 
+	
+	/**
+	 * Get ID of currently tracked task
+	 */
 	getTaskID: function() {
 		return this.task.id;
 	},

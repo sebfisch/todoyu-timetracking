@@ -17,9 +17,7 @@ h1.extIconTimetracking .title {
 }
 
 	/* Task injections */
-.task.running span.headLabel .date,
-.task.running span.headLabel .title,
-.task.running span.headLabel .tasknumber {
+div.task.running div.headLabel {
 	font-weight:bold;
 }
 
