@@ -33,11 +33,11 @@ $CONFIG['EXT']['timetracking']['assets'] = array(
 			'position'	=> 100
 		),
 		array(
-			'file'		=> 'ext/timetracking/assets/js/TimetrackingTask.js',
+			'file'		=> 'ext/timetracking/assets/js/Task.js',
 			'position'	=> 101
 		),
 		array(
-			'file'		=> 'ext/timetracking/assets/js/TimetrackingClock.js',
+			'file'		=> 'ext/timetracking/assets/js/Clock.js',
 			'position'	=> 105
 		),
 		array(

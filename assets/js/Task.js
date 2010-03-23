@@ -77,7 +77,7 @@ Todoyu.Ext.timetracking.Task = {
 	onClockToggle: function(idTask, start) {
 		if( start ) {
 			this.setRunningStyle(idTask, true);
-			Todoyu.Ext.project.Task.setStatus(idTask, 2); // Open
+			Todoyu.Ext.project.Task.setStatus(idTask, 3); // In Progress
 			/*
 			if(Todoyu.getArea() == 'portal'){
 				Todoyu.Ext.portal.Task.refresh(idTask);
