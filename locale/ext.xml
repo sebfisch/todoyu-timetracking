@@ -10,7 +10,6 @@
 		<label index="attr.workload_chargeable">Chargeable</label>
 		<label index="attr.comment">Comment</label>
 		<label index="tasktab.time_elapsed">Total Tracked Time</label>
-		<label index="tasktab.toggle">Scheduled Times on/off</label>
 		<label index="tasktab.edit">Click Here to Edit This Record</label>
 		<label index="start">Start Time Tracking</label>
 		<label index="stop">Stop Time Tracking</label>
@@ -21,7 +20,8 @@
 		<label index="search.label">Time Tracking</label>
 		<label index="filter.timetrackedPerson">Person Has Tracked Time</label>
 		<label index="filter.timetrackedRoles">Roles Have Tracked Time</label>
-		<label index="headlet.label">Timetracking</label>
+		<label index="headlet.label">Time Tracking</label>
+		<label index="estimated_workload">Est. Workload</label>
 	</labels>
 	<labels lang="de">
 		<label index="ext.title">Zeiterfassung</label>
@@ -33,7 +33,6 @@
 		<label index="attr.workload_chargeable">Verrechenbar</label>
 		<label index="attr.comment">Kommentar</label>
 		<label index="tasktab.time_elapsed">Total erfasste Zeit</label>
-		<label index="tasktab.toggle">Geplante Zeiten an/aus</label>
 		<label index="tasktab.edit">Klicken Sie hier um diesen Eintrag zu bearbeiten</label>
 		<label index="start">Zeiterfassung starten</label>
 		<label index="stop">Zeiterf. stoppen</label>

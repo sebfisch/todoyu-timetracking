@@ -14,15 +14,17 @@
  * Active headlet content
  */
 #headlets #headlet-timetracking-content li.tracking {
-	width:200px;
+	width:300px;
 }
 
-#headlets #headlet-timetracking-content div.title,
-#headlets #headlet-timetracking-content div.companyProject,
-#headlets #headlet-timetracking-content div.time,
-#headlets #headlet-timetracking-content div.percent {
-	border-bottom:1px dotted #CCCCCC;
-	margin-bottom:3px;
+#headlets #headlet-timetracking-content div.stop {
+	margin:8px 0 0 0;
+}
+
+#headlet-timetracking-content div.time {
+	margin:5px 0;
+	float:left;
+	width:250px;
 }
 
 #headlets #headlet-timetracking-content a {
@@ -35,34 +37,24 @@
 }
 
 
-#headlet-timetracking-content div.title,
-#headlet-timetracking-content div.companyProject,
-#headlet-timetracking-content div.time,
-#headlet-timetracking-content div.percent {
-	border-bottom:1px dotted #CCC;
-	margin-bottom:3px;
-}
 
-#headlet-timetracking-content div.title a {
-	font-size:14px;
+
+
+#headlet-timetracking-content .title a {
+	font-size:11px;
 	font-weight:bold;
 }
 
-#headlet-timetracking-content div.companyProject a {
-	color:#AAA;
-}
 
-#headlet-timetracking-content span.tracking,
-#headlet-timetracking-content span.tracking span {
-	font-size:16px;
+#headlet-timetracking-content span.currentTracking {
 	font-weight:bold;
 }
 
 #headlet-timetracking-content span.tracked {
-	margin-right:5px;
+
 }
 #headlet-timetracking-content span.estimated {
-	margin-left:5px;
+	
 }
 
 #headlet-timetracking-content div.percent div {
@@ -70,12 +62,11 @@
 }
 
 #headlet-timetracking-content div.percent div.number {
-	width:30px;
-	display:inline-block;
+		display:inline-block;
 }
 
 #headlet-timetracking-content div.percent div.bar {
-	width:160px;
+	width:100px;
 	display:inline-block;
 	border:1px solid #CCC;
 }
@@ -89,16 +80,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 /**
  * Inactive headlet content
  */
@@ -107,25 +88,26 @@
 	border:none;
 	top:0;
 	left:0;
-	width:230px;
+	width:300px;
+
 }
 
-#headlets #headlet-timetracking-content ul li {
+#headlets #headlet-timetracking-content .inactiveTaskList li {
 	border-bottom:1px dotted #B9BBAD;
 }
 
-#headlets #headlet-timetracking-content ul li span {
+#headlets #headlet-timetracking-content .inactiveTaskList span {
 	display:inline-block;
 }
 
-#headlets #headlet-timetracking-content ul li span.tasknumber {
-	width:30px;
+#headlets #headlet-timetracking-content .inactiveTaskList .tasknumber {
+	width:40px;
 }
 
-#headlets #headlet-timetracking-content ul li span.title {
-	width:140px;
+#headlets #headlet-timetracking-content .inactiveTaskList .title {
+	width:190px;
 }
 
-#headlets #headlet-timetracking-content ul li span.start {
+#headlets #headlet-timetracking-content .inactiveTaskList .start {
 	width:40px;
 }

@@ -1,39 +1,36 @@
 <li class="tracking">
-<div class="title">
-	<a href="javascript:void(0)" onclick="">{$task.id_project}.{$task.tasknumber}: {truncate($task.title, 25, '...', true)}</a>
-</div>
-<div class="companyProject">
-	<a href="javascript:void(0)" onclick="" class="company">{truncate($task.company.title, 20)}</a>
+<span class="title">
+	<a href="javascript:void(0)" onclick="">{$task.id_project}.{$task.tasknumber}: {truncate($task.title, 30, '...', true)}</a>
+</span>
+<span class="companyProject">(<a href="javascript:void(0)" onclick="" class="company">{truncate($task.company.title, 20)}</a>
 	<span>:</span>
-	<a href="javascript:void(0)" onclick="" class="project">{truncate($task.project.title, 30)}</a>
-</div>
+	<a href="javascript:void(0)" onclick="" class="project">{truncate($task.project.title, 30)}</a>)</span>
 <div class="time">
-	<span class="tracked">
-		{HourMinSec $tracked}
+	<span class="tracking" title="{Label LLL:timetracking.tasktab.time_elapsed}">
+		{Label LLL:timetracking.tasktab.time_elapsed} {HourMinSec $tracked}
+		+<span id="{$id}-tracking" class="currentTracking">{HourMinSec $tracking}</span>
 	</span>
-	<span class="tracking">
-		+ <span id="{$id}-tracking">{HourMinSec $tracking}</span>
-	</span>
-	<span class="estimated">
-		{HourMinSec $task.estimated_workload}
-	</span>
-</div>
+
+
 {if $showPercent}
 <div class="percent">
 	<div class="number" id="{$id}-percent">
 		{$percent}%
 	</div>
 	<div class="bar">
-		{$max = 160}
+		{$max = 100}
 		{$length = $percent/100*$max}
 		{if $length>$max}
 			{$length = $max}
 		{/if}
 		<div class="progress" id="{$id}-progress" style="width:{$length}px" class="progress {$barClass}"></div>
 	</div>
+
 </div>
 {/if}
+({Label LLL:timetracking.estimated_workload}: {HourMin $task.estimated_workload})
+</div>
 <div class="stop">
-	{Button label="LLL:timetracking.stop" onclick="Todoyu.Ext.timetracking.Task.stop($task.id)" class="stopTracking"}
+	{Button  onclick="Todoyu.Ext.timetracking.Task.stop($task.id)" class="stopTracking" title="LLL:timetracking.stop"}
 </div>
 </li>

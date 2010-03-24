@@ -31,6 +31,10 @@ div.task.running div.headLabel {
 	background:#fff;
 }
 
+div.tabBlock .elapsedTime {
+	padding:10px 0 10px 20px;
+}
+
 button.startTracking .icon,
 div.tabBlock .timetrackingButtons button.startTracking .icon {
 	background:url(../img/icons.png) no-repeat 0 -30px;
