@@ -482,7 +482,7 @@ class TodoyuTimetracking {
 	 * @return	Boolean
 	 */
 	public static function isTrackableStatus($status) {
-		return in_array($status, TodoyuArray::assure($GLOBALS['CONFIG']['EXT']['timetracking']['trackableStatus']));
+		return in_array($status, TodoyuArray::assure(Todoyu::$CONFIG['EXT']['timetracking']['trackableStatus']));
 	}
 
 
@@ -555,9 +555,9 @@ class TodoyuTimetracking {
 
 		if( $task->isTask() && self::isTrackableStatus($task->getStatus()) ) {
 			if( self::isTaskRunning($idTask) ) {
-				$items['timetrackstop'] = $GLOBALS['CONFIG']['EXT']['timetracking']['ContextMenu']['Task']['timetrackstop'];
+				$items['timetrackstop'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstop'];
 			} else {
-				$items['timetrackstart'] = $GLOBALS['CONFIG']['EXT']['timetracking']['ContextMenu']['Task']['timetrackstart'];
+				$items['timetrackstart'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstart'];
 			}
 		}
 

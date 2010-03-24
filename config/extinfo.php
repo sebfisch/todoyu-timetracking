@@ -24,7 +24,7 @@
  */
 
 
-$CONFIG['EXT']['timetracking']['info'] = array(
+Todoyu::$CONFIG['EXT']['timetracking']['info'] = array(
 	'title'			=> 'Time Tracking',
 	'description' 	=> 'Individual Tracking for Tasks',
 	'author' 		=> array(

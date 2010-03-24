@@ -22,7 +22,7 @@
 /**
  * Trackable task status
  */
-$CONFIG['EXT']['timetracking']['trackableStatus'] = array(
+Todoyu::$CONFIG['EXT']['timetracking']['trackableStatus'] = array(
 	STATUS_PLANNING,
 	STATUS_OPEN,
 	STATUS_PROGRESS,
@@ -47,7 +47,7 @@ if( allowed('timetracking', 'general:use') ) {
 }
 
 
-$CONFIG['EXT']['timetracking']['headletBarClasses'] = array(
+Todoyu::$CONFIG['EXT']['timetracking']['headletBarClasses'] = array(
 	0	=> 'green',
 	80	=> 'yellow',
 	90	=> 'orange',
@@ -55,7 +55,7 @@ $CONFIG['EXT']['timetracking']['headletBarClasses'] = array(
 );
 
 
-$CONFIG['EXT']['timetracking']['headletLastTasks']	= 5;
+Todoyu::$CONFIG['EXT']['timetracking']['headletLastTasks']	= 5;
 
 
 

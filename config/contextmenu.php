@@ -27,7 +27,7 @@
  */
 
 	// Add menu items to the task context menu
-$CONFIG['EXT']['timetracking']['ContextMenu']['Task'] = array(
+Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task'] = array(
 	'timetrackstart'	=> array(
 		'key'		=> 'timetrackstart',
 		'label'		=> 'timetracking.start',

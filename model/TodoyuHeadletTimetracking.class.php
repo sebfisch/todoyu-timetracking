@@ -67,7 +67,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	 * @return	String
 	 */
 	public function getBarClassesJSON() {
-		$barClasses			= TodoyuArray::assure($GLOBALS['CONFIG']['EXT']['timetracking']['headletBarClasses']);
+		$barClasses			= TodoyuArray::assure(Todoyu::$CONFIG['EXT']['timetracking']['headletBarClasses']);
 		krsort($barClasses);
 
 		return json_encode($barClasses);
@@ -130,7 +130,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	 * @return	Array
 	 */
 	private function getLastTrackedTasks() {
-		$numTasks	= intval($GLOBALS['CONFIG']['EXT']['timetracking']['headletLastTasks']);
+		$numTasks	= intval(Todoyu::$CONFIG['EXT']['timetracking']['headletLastTasks']);
 
 		$fields	= '	t.id,
 					t.title,

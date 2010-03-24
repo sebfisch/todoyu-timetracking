@@ -22,7 +22,7 @@
 /**
  * Task where an person has tracked time
  */
-$CONFIG['FILTERS']['TASK']['widgets']['timetrackedPerson'] = array(
+Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['timetrackedPerson'] = array(
 	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_timetrackedPerson',
 	'label'		=> 'LLL:timetracking.filter.timetrackedPerson',
 	'optgroup'	=> 'LLL:timetracking.search.label',
@@ -37,7 +37,7 @@ $CONFIG['FILTERS']['TASK']['widgets']['timetrackedPerson'] = array(
 );
 
 
-$CONFIG['FILTERS']['TASK']['widgets']['timetrackedRoles'] = array(
+Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['timetrackedRoles'] = array(
 	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_timetrackedRoles',
 	'label'		=> 'LLL:timetracking.filter.timetrackedRoles',
 	'optgroup'	=> 'LLL:timetracking.search.label',

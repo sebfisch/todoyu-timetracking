@@ -26,7 +26,7 @@
  * @subpackage	Timetracking
  */
 
-$CONFIG['EXT']['timetracking']['assets'] = array(
+Todoyu::$CONFIG['EXT']['timetracking']['assets'] = array(
 	'js' => array(
 		array(
 			'file'		=> 'ext/timetracking/assets/js/Ext.js',
