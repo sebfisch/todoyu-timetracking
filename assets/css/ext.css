@@ -31,8 +31,9 @@ div.task.running div.headLabel {
 	background:#fff;
 }
 
-div.tabBlock .elapsedTime {
+div.timetrackingButtons{
 	padding:10px 0 10px 20px;
+	font-weight: bold;
 }
 
 button.startTracking .icon,
@@ -47,7 +48,6 @@ div.tabBlock .timetrackingButtons button.stopTracking .icon {
 
 
 
-
 /* --------------------
     Task
    -------------------- */
@@ -55,7 +55,7 @@ div.tabBlock .timetrackingButtons button.stopTracking .icon {
 	width:30px;
 	padding:0 3px;
 }
-  
+
 
 /* --------------------
     Time track task tab
@@ -79,7 +79,7 @@ div.task div.taskTabs ul li.timetracking span.icon {
 	right:20px;
 	height:16px;
 	width:16px;
-	background:url(../../../../core/assets/img/sprite-icons.png) no-repeat 0 -1095px;
+	background:url(../../../../core/assets/img/icons.png) no-repeat 0 -1095px;
 }
 
 .task .taskTabs .timetracks {
@@ -96,7 +96,8 @@ div.task div.taskTabs ul li.timetracking span.icon {
 }
 
 .task .taskTabs .timetracks ul li a.editableItem {
-	background-position: -58px -358px;
+	background:url(../../../../core/assets/img/icons.png) no-repeat;
+	background-position: 3px -775px;
 	line-height:20px;
 }
 
