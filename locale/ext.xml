@@ -21,6 +21,7 @@
 		<label index="search.label">Time Tracking</label>
 		<label index="filter.timetrackedPerson">Person Has Tracked Time</label>
 		<label index="filter.timetrackedRoles">Roles Have Tracked Time</label>
+		<label index="headlet.label">Timetracking</label>
 	</labels>
 	<labels lang="de">
 		<label index="ext.title">Zeiterfassung</label>
@@ -42,5 +43,6 @@
 		<label index="search.label">Zeiterfassung</label>
 		<label index="filter.timetrackedPerson">Person hat Zeit erfasst</label>
 		<label index="filter.timetrackedRoles">Rollen haben Zeit erfasst</label>
+		<label index="headlet.label">Zeiterfassung</label>
 	</labels>
 </locallang>

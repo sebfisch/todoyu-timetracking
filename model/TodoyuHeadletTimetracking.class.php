@@ -113,7 +113,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	 */
 	private function renderOverlayContentInactive() {
 		$tmpl	= 'ext/timetracking/view/headlet-timetracking-inactive.tmpl';
-		
+
 		$data	= array(
 			'id'	=> $this->getID(),
 			'tasks'	=> $this->getLastTrackedTasks()
@@ -148,11 +148,11 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 		$limit	= ' 0,' . $numTasks;
 
 		$tasks = Todoyu::db()->getArray($fields, $tables, $where, $group, $order, $limit);
-		
+
 		foreach($tasks as $index => $task)	{
 			$tasks[$index]['isTrackable'] = TodoyuTimetracking::isTrackable($task['type'], $task['status']);
 		}
-		
+
 		return $tasks;
 	}
 
@@ -164,7 +164,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	 * @return	String
 	 */
 	public function getLabel() {
-		return 'Zeiterfassung';
+		return Label('timetracking.headlet.label');
 	}
 
 }
