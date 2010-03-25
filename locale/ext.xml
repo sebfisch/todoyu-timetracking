@@ -22,6 +22,8 @@
 		<label index="filter.timetrackedRoles">Roles Have Tracked Time</label>
 		<label index="headlet.label">Time Tracking</label>
 		<label index="estimated_workload">Est. Workload</label>
+		<label index="jumpToTask">Click here to jump to this task</label>
+		<label index="jumpToProject">Click here to jump to this project</label>
 	</labels>
 	<labels lang="de">
 		<label index="ext.title">Zeiterfassung</label>

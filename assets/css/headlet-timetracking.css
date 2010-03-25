@@ -9,6 +9,10 @@
 #headlets #headlet-timetracking-content li {
 	padding:5px;
 }
+#headlets #headlet-timetracking-content li a {
+	display:inline;
+	white-space:normal;
+}
 
 /**
  * Active headlet content
@@ -40,9 +44,12 @@
 
 
 
-#headlet-timetracking-content .title a {
+#headlet-timetracking-content  a.title {
 	font-size:11px;
 	font-weight:bold;
+}
+#headlet-timetracking-content  a:hover {
+	color:#6f6f6f;
 }
 
 

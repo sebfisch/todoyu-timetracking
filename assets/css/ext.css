@@ -158,10 +158,3 @@ div.task div.taskTabs ul li.timetracking span.icon {
 	margin:0;
 	padding:0;
 }
-
-#timetrackingPanel ul li.tasktitle {
-	display:block;
-	width:210px;
-	height:27px;
-	overflow:hidden;
-}
