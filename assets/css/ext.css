@@ -31,7 +31,8 @@ div.task.running div.headLabel {
 	background:#fff;
 }
 
-div.timetrackingButtons{
+div.timetrackform,
+span.notracksyet{
 	padding:10px 0 10px 20px;
 	font-weight: bold;
 }
@@ -103,10 +104,6 @@ div.task div.taskTabs ul li.timetracking span.icon {
 
 .task .taskTabs .timetracks ul li button span {
 	float:left; /* reset */
-}
-
-.task .taskTabs .timetracks .notracksyet {
-	padding-left:5px;
 }
 
 

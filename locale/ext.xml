@@ -3,7 +3,7 @@
 	<labels lang="en">
 		<label index="ext.title">Time Tracking</label>
 		<label index="title">Time Tracking</label>
-		<label index="noTracksYet">No Time Tracks yet</label>
+		<label index="noTracksYet">No Time Tracks Yet</label>
 		<label index="attr.date_create">Date</label>
 		<label index="attr.date_track">Date</label>
 		<label index="attr.workload_tracked">Workload</label>
