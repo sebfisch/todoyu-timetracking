@@ -66,7 +66,9 @@ Todoyu.Ext.timetracking.Clock = {
 
 
 	/**
-	 * @todo	comment
+	 * Check whether clock (periodical execution update) is runnig
+	 * 
+	 * @return	Boolean
 	 */
 	isRunning: function() {
 		return this.pe !== null;
@@ -75,16 +77,16 @@ Todoyu.Ext.timetracking.Clock = {
 
 
 	/**
-	 * @todo	comment
+	 * Handler for clock tick: evoke timetracking clock ticking handler
 	 *
-	 * @param unknown_type periodicalExecuter
+	 * @param	Object	periodicalExecuter
 	 */
 	onClockTick: function(periodicalExecuter) {
 		this.ext.onClockTick();
 	},
 
 
-
+	
 //	setTime: function(time) {
 //		Todoyu.Ext.timetracking.setTime(time);
 //	},

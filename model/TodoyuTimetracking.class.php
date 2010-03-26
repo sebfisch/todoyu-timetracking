@@ -522,7 +522,7 @@ class TodoyuTimetracking {
 	/**
 	 * Get stored workload of a task for a day. Only one record is created for a task per day
 	 *
-	 * @param	Integer		$idTask		@todo	check use
+	 * @param	Integer		$idTask
 	 * @param	Integer		$timestamp
 	 * @return	Array		Or FALSE of no record found
 	 */

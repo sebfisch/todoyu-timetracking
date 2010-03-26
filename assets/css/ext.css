@@ -34,7 +34,7 @@ div.task.running div.headLabel {
 div.timetrackform,
 span.notracksyet{
 	padding:10px 0 10px 20px;
-	font-weight: bold;
+	font-weight:bold;
 }
 
 button.startTracking .icon,
@@ -98,7 +98,7 @@ div.task div.taskTabs ul li.timetracking span.icon {
 
 .task .taskTabs .timetracks ul li a.editableItem {
 	background:url(../../../../core/assets/img/icons.png) no-repeat;
-	background-position: 3px -775px;
+	background-position:3px -775px;
 	line-height:20px;
 }
 

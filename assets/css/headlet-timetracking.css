@@ -3,11 +3,10 @@
 }
 #headlet-timetracking-button.active {
 	background-position:3px 5px;
-
 }
 
 #headlets #headlet-timetracking-content {
-	margin-left: -190px;
+	margin-left:-190px;
 }
 
 #headlets #headlet-timetracking-content li {
@@ -72,29 +71,27 @@
 #headlet-timetracking-content div.percent div.bar {
 	width:100px;
 	display:inline-block;
-	border:1px solid #CCC;
+	border:1px solid #ccc;
 }
 
 #headlet-timetracking-content div.percent div.bar div.progress {
-	background-color:#0F0;
+	background-color:#0f0;
 	display:inline-block;
 	height:100%;
 }
 
 #headlet-timetracking-content div.percent {
-	float: left;
+	float:left;
 }
 
 #headlet-timetracking-content div.estimatedWorkload {
-	float: left;
-	margin-left: 5px;
+	float:left;
+	margin-left:5px;
 }
 
 #headlet-timetracking-content .button {
-	float: right;
+	float:right;
 }
-
-
 
 
 
@@ -102,8 +99,7 @@
  * Inactive headlet content
  */
 
-
- #headlets #headlet-timetracking-content ul {
+#headlets #headlet-timetracking-content ul {
 	position:relative;
 	border:none;
 	top:0;
@@ -113,13 +109,13 @@
 
 
 #headlets #headlet-timetracking-content .inactiveTaskList li {
-	border-bottom:1px dotted #B9BBAD;
+	border-bottom:1px dotted #b9bbad;
 }
 
 
 #headlets #headlet-timetracking-content .inactiveTaskList a.title {
 	width:190px;
-	font-weight: bold;
+	font-weight:bold;
 	line-height:22px;
 }
 

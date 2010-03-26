@@ -194,18 +194,19 @@ class TodoyuTimetrackingManager {
 
 
 
-	/**
-	 * Calculates the billable time from the tracked time
-	 *
-	 * @todo	RIGHT PLACE FOR THIS FUNCTION?
-	 * @param	Integer	$trackedWorkload
-	 */
-	public static function calculateBillableTime($trackedWorkload)	{
-		$trackedWorkload		= intval($trackedWorkload);
-		$fifteenMinutesInSeconds= 900;
-
-		return ceil( $trackedWorkload / $fifteenMinutesInSeconds) * $fifteenMinutesInSeconds;
-	}
+//	/**
+//	 * Calculate billable amount of tracked time
+//	 *
+//	 * @todo	Not used currently, relocate when used
+//	 * @param	Integer	$trackedWorkload
+//	 * @return	Integer
+//	 */
+//	public static function calculateBillableTime($trackedWorkload)	{
+//		$trackedWorkload		= intval($trackedWorkload);
+//		$fifteenMinutesInSeconds= 900;
+//
+//		return ceil( $trackedWorkload / $fifteenMinutesInSeconds) * $fifteenMinutesInSeconds;
+//	}
 
 
 
