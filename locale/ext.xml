@@ -45,6 +45,7 @@
 		<label index="filter.timetrackedPerson">Person hat Zeit erfasst</label>
 		<label index="filter.timetrackedRoles">Rollen haben Zeit erfasst</label>
 		<label index="headlet.label">Zeiterfassung</label>
+		<label index="estimated_workload">Aufw. geschätzt</label>
 		<label index="jumpToTask">Klicken Sie hier um zu diesem Task zu wechseln</label>
 		<label index="jumpToProject">Klicken Sie hier um zu diesem Projekt zu wechseln</label>
 	</labels>
