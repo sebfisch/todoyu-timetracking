@@ -1,6 +1,8 @@
 <li class="tracking">
+<div class="task">
 	<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject({$task.id})" title="{Label LLL:timetracking.jumpToTask}" class="title">{$task.id_project}.{$task.tasknumber}: {truncate($task.title, 25, '...', true)}</a>
 	<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject(0,{$task.project.id})" title="{Label LLL:timetracking.jumpToProject}" class="project">({truncate($task.company.title, 25)}:{truncate($task.project.title, 25)})</a>
+</div>
 <div class="time">
 	<span class="tracking" title="{Label LLL:timetracking.tasktab.time_elapsed}">
 		{Label LLL:timetracking.tasktab.time_elapsed} {HourMinSec $tracked}
