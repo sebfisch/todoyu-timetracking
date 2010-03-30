@@ -25,8 +25,8 @@
 }
 
 #headlets #headlet-timetracking-content div.task {
-	border-bottom: 1px dotted #B9BBAD;
-	padding-bottom: 5px;
+	border-bottom:1px dotted #B9BBAD;
+	padding-bottom:5px;
 }
 
 #headlets #headlet-timetracking-content div.stop {
@@ -66,13 +66,13 @@
 }
 
 #headlet-timetracking-content div.percent div.number {
-	float: left;
-	margin-right: 5px;
+	float:left;
+	margin-right:5px;
 }
 
 #headlet-timetracking-content div.percent div.bar {
 	width:100px;
-	height: 12px;
+	height:12px;
 	display:inline-block;
 	border:1px solid #ccc;
 }
