@@ -87,7 +87,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Set active status for button
 	 * 
-	 * @param	Bool		active
+	 * @param	Boolean		active
 	 */
 	setActiveStatus: function(active) {
 		this.headlet.getButton('timetracking')[active?'addClassName':'removeClassName']('active');

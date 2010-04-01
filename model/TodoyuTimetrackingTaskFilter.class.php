@@ -30,7 +30,7 @@ class TodoyuTimetrackingTaskFilter {
 	 * Filter condition: Task which have tracks of the person
 	 *
 	 * @param	Integer		$idPerson
-	 * @param	Bool		$negate
+	 * @param	Boolean		$negate
 	 * @return	Array		Or FALSE
 	 */
 	public static function Filter_timetrackedPerson($idPerson, $negate = false) {

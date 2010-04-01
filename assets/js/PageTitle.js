@@ -28,7 +28,7 @@ Todoyu.Ext.timetracking.PageTitle = {
 	 * Handler when click is stopped/started
 	 * 
 	 * @param	Integer		idTask
-	 * @param	Bool		start
+	 * @param	Boolean		start
 	 */
 	onClockToggle: function(idTask, start) {
 		if( start ) {
@@ -65,8 +65,8 @@ Todoyu.Ext.timetracking.PageTitle = {
 	/**
 	 * Update window title
 	 * 
-	 * @param	Bool		show			Show timetracking info
-	 * @param	String		taskNumber		Tasknumber (incl. project)
+	 * @param	Boolean		show			Show time tracking info
+	 * @param	String		taskNumber		Task number (incl. project)
 	 * @param	String		taskTitle		Task title
 	 * @param	Integer		time			Seconds of current tracking
 	 */
