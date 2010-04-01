@@ -65,7 +65,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	 *
 	 * @return	String
 	 */
-	public function getBarClassesJSON() {
+	public static function getBarClassesJSON() {
 		$barClasses			= TodoyuArray::assure(Todoyu::$CONFIG['EXT']['timetracking']['headletBarClasses']);
 		krsort($barClasses);
 
