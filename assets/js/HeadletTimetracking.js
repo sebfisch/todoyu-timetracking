@@ -101,7 +101,11 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	Time	time
 	 */
 	updateTime: function(time) {
-		$('headlet-timetracking-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
+		var headlet = $('headlet-timetracking-tracking');
+
+		if ( headlet ) {
+			$('headlet-timetracking-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
+		}
 	},
 
 
