@@ -213,9 +213,9 @@ class TodoyuTimetracking {
 	 * @param	Integer		$idTask
 	 * @param	Integer		$dateStart
 	 * @param	Integer		$dateEnd
-	 * @param	Bool		$checkChargeableTime
+	 * @param	Boolean		$checkChargeableTime
 	 * @param	Integer		$idPerson
-	 * @param	Bool		$addCurrentTracking
+	 * @param	Boolean		$addCurrentTracking
 	 * @return	Integer
 	 */
 	public static function getTrackedTaskTime($idTask = 0, $dateStart = 0, $dateEnd = 0, $checkChargeableTime = false, $idPerson = 0, $addCurrentTracking = false) {
