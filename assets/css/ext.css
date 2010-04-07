@@ -37,12 +37,15 @@ span.notracksyet{
 	font-weight:bold;
 }
 
-div.tabBlock .timetrackingButtons .elapsedTime {
-	position: absolute;
-	left: 72px;
-	top: 10px;
+div.tabBlock .timetrackingButtons .button {
+	margin-right: 10px;
+	float: left;
 }
 
+div.tabBlock .timetrackingButtons .elapsedTime {
+	margin-top: 5px;
+	float: left;
+}
 
 button.startTracking .icon,
 div.tabBlock .timetrackingButtons button.startTracking .icon {
