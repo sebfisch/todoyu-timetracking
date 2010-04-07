@@ -40,9 +40,25 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 
 			// Get bar classes and init js object
 		$barClassJSON	= self::getBarClassesJSON();
-		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.timetracking.Headlet.Timetracking.setBarClasses.bind(Todoyu.Ext.timetracking.Headlet.Timetracking,' . $barClassJSON . ')');
+		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.timetracking.Headlet.Timetracking.setBarClasses.bind(Todoyu.Ext.timetracking.Headlet.Timetracking,' . $barClassJSON . ')', 160);
+
+			// Check for visible status
+		$this->setVisibleStatus();
 	}
 
+
+
+	/**
+	 * Set visible status for headlet
+	 *
+	 */
+	private function setVisibleStatus() {
+		$open	= TodoyuTimetrackingPreferences::getPref('headletOpen');
+
+		if( intval($open) === 1 ) {
+			$this->setVisible();
+		}
+	}
 
 
 	/**

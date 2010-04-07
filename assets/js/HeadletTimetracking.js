@@ -54,7 +54,23 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		} else {
 			this.hideOthers();
 			this.showContent();
+			this.saveOpenStatus(true);
 		}
+	},
+	
+	hide: function() {
+		this.hideContent();
+		this.saveOpenStatus(false);
+	},
+	
+	
+	
+	/**
+	 * Save open status of the headlet
+	 * @param {Object} open
+	 */
+	saveOpenStatus: function(open) {
+		this.headlet.saveOpenStatus('timetracking', 'timetracking', 'headlet', open);
 	},
 	
 
