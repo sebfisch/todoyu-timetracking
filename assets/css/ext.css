@@ -84,7 +84,7 @@ div.task div.taskTabs ul li.timetracking span.icon {
 }
 
 .task .taskTabs .timetracks {
-	padding:0 0 5px 0;
+	padding:0 5px 5px 5px;
 	background:#fff;
 }
 
