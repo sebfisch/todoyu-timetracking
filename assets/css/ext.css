@@ -37,6 +37,13 @@ span.notracksyet{
 	font-weight:bold;
 }
 
+div.tabBlock .timetrackingButtons .elapsedTime {
+	position: absolute;
+	left: 72px;
+	top: 10px;
+}
+
+
 button.startTracking .icon,
 div.tabBlock .timetrackingButtons button.startTracking .icon {
 	background:url(../img/icons.png) no-repeat 0 -30px;
@@ -91,6 +98,7 @@ div.task div.taskTabs ul li.timetracking span.icon {
 .task .taskTabs .timetracks ul {
 	margin:0;
 	padding:0;
+	border-top: 1px dotted #aaa;
 }
 
 .task .taskTabs .timetracks ul li {
@@ -131,6 +139,7 @@ div.task div.taskTabs ul li.timetracking span.icon {
 
 .task .taskTabs .timetracks ul form {
 	background:#fff; /* not view hover effekt */
+	padding-top: 10px;
 }
 
 
