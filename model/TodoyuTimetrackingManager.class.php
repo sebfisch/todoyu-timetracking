@@ -227,8 +227,6 @@ class TodoyuTimetrackingManager {
 
 		$form->getFieldset('main')->addField('workload_done', $workloadDone, 'after:id_worktype');
 		$form->getFieldset('main')->addField('start_tracking', $startTracking, 'after:workload_done');
-
-		$form->getField('task_done')->setAttribute('onchange', 'Todoyu.Ext.project.QuickTask.preventStartDone(\'done\', this)');
 	}
 
 
@@ -282,6 +280,25 @@ class TodoyuTimetrackingManager {
 		);
 
 		self::saveWorkloadRecord($data);
+	}
+
+
+
+	/**
+	 * Hook when quicktask is saved
+	 * Check if the option 'start tracking' was checked when saving
+	 * Start tracking on server and send tracking header
+	 *
+	 * @param	Integer		$idTask
+	 * @param	Integer		$idProject
+	 * @param	Array		$data
+	 */
+	public static function hookQuickTaskSaved($idTask, $idProject, array $data) {
+		if( intval($data['start_tracking']) === 1 ) {
+			TodoyuTimetracking::startTask($idTask);
+
+			TodoyuHeader::sendTodoyuHeader('startTracking', 1);
+		}
 	}
 
 }

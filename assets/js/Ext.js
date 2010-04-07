@@ -20,7 +20,6 @@
 /**
  *	Ext: timetracking
  */
-
 Todoyu.Ext.timetracking = {
 
 	PanelWidget: {},
@@ -37,8 +36,11 @@ Todoyu.Ext.timetracking = {
 	trackingTime: 0,
 
 
+	/**
+	 * Initialize timetracking extension
+	 */
 	init: function() {
-
+		this.QuickTask.init();
 	},
 
 
@@ -69,8 +71,8 @@ Todoyu.Ext.timetracking = {
 		this.initWithoutTask();
 		this.start(this.getTaskID(), true);
 	},
-
-
+	
+	
 
 	/**
 	 * Start tracking time on given task
