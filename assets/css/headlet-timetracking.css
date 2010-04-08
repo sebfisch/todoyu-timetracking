@@ -1,5 +1,5 @@
 #headlet-timetracking-button {
-	background:url(../img/icons.png) no-repeat 3px -205px;
+	background:url(../img/icons.png) no-repeat 5px -205px;
 }
 #headlet-timetracking-button.active {
 	background-position:3px 5px;
