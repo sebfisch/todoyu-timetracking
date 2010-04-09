@@ -6,11 +6,12 @@
 }
 
 #headlets #headlet-timetracking-content {
-	margin-left:-190px;
+	margin-left:-180px;
+	padding: 10px;
 }
 
 #headlets #headlet-timetracking-content li {
-	padding:5px;
+	padding: 2px 0;
 }
 #headlets #headlet-timetracking-content li a {
 	display:inline;
@@ -21,7 +22,7 @@
  * Active headlet content
  */
 #headlets #headlet-timetracking-content li.tracking {
-	width:341px;
+	width:321px;
 }
 
 #headlets #headlet-timetracking-content div.task {
@@ -34,7 +35,7 @@
 }
 
 #headlet-timetracking-content div.time {
-	margin:5px 0;
+	margin-top:5px;
 	float:left;
 	width:80%;
 }
@@ -75,6 +76,7 @@
 	height:12px;
 	display:inline-block;
 	border:1px solid #ccc;
+	background-color: #E3EACE;
 }
 
 #headlet-timetracking-content div.percent div.bar div.progress {
@@ -96,6 +98,9 @@
 	float:right;
 }
 
+#headlet-timetracking-content .button span.label {
+	display: none;
+}
 
 
 /**
@@ -107,7 +112,8 @@
 	border:none;
 	top:0;
 	left:0;
-	width:341px;
+	width:321px;
+	border-top:1px dotted #b9bbad;
 }
 
 
@@ -119,7 +125,7 @@
 #headlets #headlet-timetracking-content .inactiveTaskList a.title {
 	width:190px;
 	font-weight:bold;
-	line-height:22px;
+	line-height: 22px;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList .start {
