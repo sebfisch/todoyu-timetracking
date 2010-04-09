@@ -7,7 +7,7 @@
 			</a>
 		
 			{if $task.isTrackable}
-				<span class="start">{Button  onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.startTask($task.id)" class="startTracking" title="LLL:timetracking.start"}</span>
+				<span class="start startTracking">{Button  onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.startTask($task.id)" title="LLL:timetracking.start"}</span>
 			{/if}
 		</li>
 	{/foreach}
