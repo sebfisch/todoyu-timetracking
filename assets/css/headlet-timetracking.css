@@ -37,7 +37,7 @@
 #headlet-timetracking-content div.time {
 	margin-top:5px;
 	float:left;
-	width:80%;
+	width: 88%;
 }
 
 #headlets #headlet-timetracking-content a {
@@ -124,7 +124,7 @@
 
 #headlets #headlet-timetracking-content .inactiveTaskList a.title {
 	width:190px;
-	font-weight:bold;
+	font-weight: normal;
 	line-height: 22px;
 }
 
