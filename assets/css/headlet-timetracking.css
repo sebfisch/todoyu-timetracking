@@ -6,8 +6,8 @@
 }
 
 #headlets #headlet-timetracking-content {
-	margin-left:-185px;
-	padding: 10px;
+	margin-left:-297px;
+	padding: 5px;
 
 }
 
@@ -23,11 +23,11 @@
  * Active headlet content
  */
 #headlets #headlet-timetracking-content li.tracking {
-	width:326px;
+	width:321px;
 }
 
 #headlets #headlet-timetracking-content div.trackingContainer {
-	
+	padding: 5px;
 }
 
 #headlets #headlet-timetracking-content div.task {
@@ -133,7 +133,7 @@
 	border:none;
 	top:0;
 	left:0;
-	width:326px;
+	width:321px;
 	border-top: 1px dotted #b9bbad;
 }
 
@@ -190,7 +190,5 @@
 
 #headlets #headlet-timetracking-content .inactiveTaskList .start {
 	width:35px;
-	border-left:1px dotted #b9bbad;
 	float: right;
-	margin-right: 5px;
 }
