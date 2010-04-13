@@ -1,14 +1,30 @@
-<li  class="inactiveTaskList">
+<li class="inactiveTaskList">
+	<h1 class="headerLine">
+		<span class="first taskNumber">{Label portal.tasktree.header.tasknumber}</span>
+		<span class="projectName">{Label project.project} - {Label task.task}</span>
+		<span class="tracking">{Label LLL:timetracking.tasktab.time_elapsed}</span>
+		<span class="rgt"><!-- right --></span>
+	</h1>
 <ul>
 	{foreach $tasks task}
-		<li><a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject({$task.id})" title="{Label LLL:timetracking.jumpToTask}" class="title">
-			{$task.id_project}.{$task.tasknumber}
-			{truncate(htmlencode($task.title), 30, break = true)}
+		<li>
+			<span class="headLabel bcStatus{$task.status}" title="{$task.fulltitle}">
+			<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject({$task.id})" title="{Label LLL:timetracking.jumpToTask}" class="title">
+				<span class="first taskNumber" title="{Label portal.tasktree.header.tasknumber}: {$task.id_project}.{$task.tasknumber}">
+					{$task.id_project}.{$task.tasknumber}
+				</span>
+				<span class="projectName" title="{Label project.project}: {$task.project.title} (ID: {$task.project.id}) / {Label task.task}: {$task.title}">
+					{htmlencode $task.project.title|truncate:45} - {htmlencode $task.title|truncate:45}
+				</span>
+				<span class="tracking" title="{Label LLL:timetracking.tasktab.time_elapsed}">
+					{HourMinSec $tracked}
+				</span>
 			</a>
 		
 			{if $task.isTrackable}
 				<span class="start startTracking">{Button  onclick="Todoyu.Ext.timetracking.Headlet.Timetracking.startTask($task.id)" class="startTracking" title="LLL:timetracking.start"}</span>
 			{/if}
+			</span>
 		</li>
 	{/foreach}
 </ul>

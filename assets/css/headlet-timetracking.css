@@ -6,13 +6,13 @@
 }
 
 #headlets #headlet-timetracking-content {
-	margin-left:-180px;
-	padding: 10px;
+	margin-left:-175px;
+	padding: 5px;
 }
 
 #headlets #headlet-timetracking-content li {
-	padding: 2px 0;
 }
+
 #headlets #headlet-timetracking-content li a {
 	display:inline;
 	white-space:normal;
@@ -22,7 +22,12 @@
  * Active headlet content
  */
 #headlets #headlet-timetracking-content li.tracking {
-	width:321px;
+	width:326px;
+}
+
+#headlets #headlet-timetracking-content div.trackingContainer {
+	padding: 5px 5px 10px 5px;
+	background: white;
 }
 
 #headlets #headlet-timetracking-content div.task {
@@ -30,14 +35,15 @@
 	padding-bottom:5px;
 }
 
-#headlets #headlet-timetracking-content div.stop {
-	margin:8px 0 0 0;
+#headlets #headlet-timetracking-content .stop {
+	float: right;
+	position: relative;
+	top: -5px;
 }
 
 #headlet-timetracking-content div.time {
 	margin-top:5px;
 	float:left;
-	width: 88%;
 }
 
 #headlets #headlet-timetracking-content a {
@@ -45,8 +51,9 @@
 	padding:0;
 }
 
+#headlets li #headlet-timetracking-content a,
 #headlets li:hover #headlet-timetracking-content a {
-	background:transparent;
+	background: none !important;
 }
 
 #headlet-timetracking-content a.title {
@@ -91,7 +98,7 @@
 
 #headlet-timetracking-content div.estimatedWorkload {
 	float:left;
-	margin-left:5px;
+	margin-left: 5px;
 }
 
 #headlet-timetracking-content .button {
@@ -102,31 +109,87 @@
 	display: none;
 }
 
+#headlets #headlet-timetracking-content h1 {
+	margin: 0;
+}
+
+#headlets #headlet-timetracking-content li.tracking,
+#headlets #headlet-timetracking-content li.inactiveTaskList {
+	
+}
+
+#headlets #headlet-timetracking-content li.tracking .task {
+	padding: 5px 0;
+	border-bottom: 1px dotted #b9bbad;
+}
 
 /**
  * Inactive headlet content
  */
 
-#headlets #headlet-timetracking-content ul {
+#headlets #headlet-timetracking-content .inactiveTaskList ul {
 	position:relative;
 	border:none;
 	top:0;
 	left:0;
-	width:321px;
-	border-top:1px dotted #b9bbad;
+	width:326px;
+	background: white;
 }
-
 
 #headlets #headlet-timetracking-content .inactiveTaskList li {
 	border-bottom:1px dotted #b9bbad;
 }
 
+#headlets #headlet-timetracking-content .inactiveTaskList li span.headLabel {
+	border-left-style: solid;
+	border-left-width: 8px;
+	display: block;
+	padding: 1px 0 1px 0;
+}
+
+#headlets #headlet-timetracking-content .inactiveTaskList span.headLabel .first {
+	padding-left: 17px;
+}
+
 #headlets #headlet-timetracking-content .inactiveTaskList a.title {
-	width:190px;
+	display: inline-block;
 	font-weight: normal;
+	height: auto;
+	line-height: 0;
+}
+
+#headlets #headlet-timetracking-content .inactiveTaskList a.title .taskNumber,
+#headlets #headlet-timetracking-content .inactiveTaskList a.title .projectName,
+#headlets #headlet-timetracking-content .inactiveTaskList a.title .tracking {
+	margin-right: 5px;
+}
+
+#headlets #headlet-timetracking-content .inactiveTaskList a.title span {
 	line-height: 22px;
+	white-space: nowrap;
+	margin-right: 5px;
+}
+
+#headlets #headlet-timetracking-content .inactiveTaskList .taskNumber {
+	display: inline-block;
+	float: none;
+	width: 50px;
+}
+
+#headlets #headlet-timetracking-content .inactiveTaskList .projectName {
+	display: inline-block;
+	float: none;
+	width: 135px;
+}
+#headlets #headlet-timetracking-content .inactiveTaskList .tracking {
+	display: inline-block;
+	float: none;
+	width: 50px;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList .start {
-	width:40px;
+	width:35px;
+	border-left:1px dotted #b9bbad;
+	float: right;
+	margin-right: 5px;
 }
