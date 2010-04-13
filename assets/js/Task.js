@@ -265,6 +265,13 @@ Todoyu.Ext.timetracking.Task = {
 	 */
 	onTrackSaved: function(idTask, idTrack, response) {
 		this.updateTrackContent(idTask, idTrack, response.responseText);
+		
+			// Add the zebra for the list
+		var tracks	= $('task-' + idTask + '-timetracks').select('li');
+				
+		tracks.each(function(item, index){
+			item[index%2?'removeClassName':'addClassName']('odd');
+		});
 	},
 
 
