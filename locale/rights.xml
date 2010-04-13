@@ -16,4 +16,12 @@
 		<label index="task.editOwn">Kann SELBST ERFASSTE Zeiten bearbeiten</label>
 		<label index="task.editAll">Kann ALLE Zeiten bearbeiten</label>
 	</labels>
+	<labels lang="pt">
+		<label index="general">Configurações Gerais</label>
+		<label index="general.use">Usar Gestão de Horas</label>
+		<label index="task">Acompanhamento de Tarefas</label>
+		<label index="task.track">Contabilizar Horas</label>
+		<label index="task.editOwn">Pode Editar Somente as Próprias Entradas Na Tarefa</label>
+		<label index="task.editAll">Pode Editar Todas as Entradas Na Tarefa</label>
+	</labels>
 </locallang>
