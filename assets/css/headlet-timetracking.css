@@ -27,7 +27,7 @@
 }
 
 #headlets #headlet-timetracking-content div.trackingContainer {
-	padding: 5px;
+	padding: 5px 0px;
 }
 
 #headlets #headlet-timetracking-content div.task {
@@ -37,6 +37,8 @@
 
 #headlets #headlet-timetracking-content .stop {
 	float: right;
+	position: relative;
+	top: -3px;
 }
 
 #headlet-timetracking-content div.time {
