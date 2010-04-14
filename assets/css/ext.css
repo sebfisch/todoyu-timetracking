@@ -31,9 +31,13 @@ div.task.running div.headLabel {
 	background:#fff;
 }
 
-div.timetrackform,
-span.notracksyet{
+div.timetrackform {
 	padding:10px 0 10px 20px;
+	font-weight:bold;
+}
+
+span.notracksyet {
+	padding-left: 5px;
 	font-weight:bold;
 }
 
