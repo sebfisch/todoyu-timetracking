@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locallang>
-	<labels lang="en">
+	<labels lang="en_GB">
 		<label index="ext.title">Time Tracking</label>
 		<label index="title">Time Tracking</label>
 		<label index="noTracksYet">No Time Tracks Yet</label>
@@ -25,7 +25,7 @@
 		<label index="jumpToTask">Click here to jump to this task</label>
 		<label index="jumpToProject">Click here to jump to this project</label>
 	</labels>
-	<labels lang="de">
+	<labels lang="de_DE">
 		<label index="ext.title">Zeiterfassung</label>
 		<label index="title">Zeiterfassung</label>
 		<label index="noTracksYet">Noch keine Zeiterfassungen.</label>
@@ -49,7 +49,7 @@
 		<label index="jumpToTask">Klicken Sie hier um zu diesem Task zu wechseln</label>
 		<label index="jumpToProject">Klicken Sie hier um zu diesem Projekt zu wechseln</label>
 	</labels>
-	<labels lang="pt">
+	<labels lang="pt_BR">
 		<label index="ext.title">Gestão de Horas</label>
 		<label index="title">Gestão de Horas</label>
 		<label index="noTracksYet">Nenhum Registro</label>
