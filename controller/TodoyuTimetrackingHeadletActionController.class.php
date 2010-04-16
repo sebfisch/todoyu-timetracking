@@ -38,13 +38,6 @@ class TodoyuTimetrackingHeadletActionController extends TodoyuActionController {
 		return $headlet->renderOverlayContent();
 	}
 
-
-	public function headletOpenAction(array $params) {
-		$open	= intval($params['open']) === 1 ? 1 : 0;
-
-		TodoyuTimetrackingPreferences::savePref('headletOpen', $open, 0, true);
-	}
-
 }
 
 
