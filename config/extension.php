@@ -40,7 +40,7 @@ if( allowed('timetracking', 'general:use') ) {
 
 	if( allowed('timetracking', 'task:track') ) {
 			// Register context menu function for task
-		TodoyuContextMenuManager::registerFunction('task', 'TodoyuTimetracking::getContextMenuItems', 100);
+		TodoyuContextMenuManager::addFunction('task', 'TodoyuTimetracking::getContextMenuItems', 100);
 		TodoyuHookManager::registerHook('core', 'logout', 'TodoyuTimetracking::onLogout');
 	}
 }
