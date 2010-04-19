@@ -28,7 +28,6 @@ class TodoyuTimetrackingManager {
 
 	/**
 	 * Working table
-	 *
 	 */
 	const TABLE		= 'ext_timetracking_track';
 

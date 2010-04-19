@@ -28,7 +28,6 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 
 	/**
 	 * Initialize headlet
-	 *
 	 */
 	protected function init() {
 		$this->setJsHeadlet('Todoyu.Ext.timetracking.Headlet.Timetracking');

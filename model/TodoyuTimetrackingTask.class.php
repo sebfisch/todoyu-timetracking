@@ -19,12 +19,11 @@
 *****************************************************************************/
 
 /**
- * Timetracking functions for task
+ * Time tracking functions for task
  *
  * @package		Todoyu
  * @subpackage	Timetracking
  */
-
 class TodoyuTimetrackingTask {
 
 	/**
@@ -35,7 +34,7 @@ class TodoyuTimetrackingTask {
 
 
 	/**
-	 * Get timetracking task tracks
+	 * Get time tracking task tracks
 	 *
 	 * @param	Integer	$idTask
 	 * @return	Array
@@ -58,7 +57,7 @@ class TodoyuTimetrackingTask {
 
 
 	/**
-	 * Get timetracking tab label
+	 * Get time tracking tab label
 	 *
 	 * @param	Integer	$idTask
 	 * @return	String
@@ -70,7 +69,7 @@ class TodoyuTimetrackingTask {
 
 
 	/**
-	 * Get timetracking tab content
+	 * Get time tracking tab content
 	 *
 	 * @param	Integer	$idTask
 	 * @param	Boolean $active
@@ -85,7 +84,7 @@ class TodoyuTimetrackingTask {
 
 
 	/**
-	 * Save timetracking tab inline form
+	 * Save time tracking tab inline form
 	 *
 	 * @param	Array	$formData
 	 */

@@ -24,18 +24,15 @@
  * @package		Todoyu
  * @subpackage	Timetracking
  */
-
 class TodoyuTimetracking {
 
 	/**
 	 * Session key
-	 *
 	 */
 	const SESS_KEY 	= 'timetracking';
 
 	/**
 	 * Working table
-	 *
 	 */
 	const TABLE		= 'ext_timetracking_track';
 
@@ -597,7 +594,6 @@ class TodoyuTimetracking {
 	/**
 	 * Hook. Called when person logs out
 	 * If configured, stop tracking
-	 *
 	 */
 	public static function onLogout() {
 		$extConf	= TodoyuExtConfManager::getExtConf('timetracking');

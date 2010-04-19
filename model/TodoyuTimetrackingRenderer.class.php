@@ -24,7 +24,6 @@
  * @package		Todoyu
  * @subpackage	Timetracking
  */
-
 class TodoyuTimetrackingRenderer {
 
 	/**
