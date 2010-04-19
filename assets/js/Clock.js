@@ -24,7 +24,7 @@
 Todoyu.Ext.timetracking.Clock = {
 
 	/**
-	 *	Ext shortcut
+	 * Ext shortcut
 	 */
 	ext:	Todoyu.Ext.timetracking,
 
@@ -68,7 +68,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Check whether clock (periodical execution update) is runnig
 	 * 
-	 * @return	Boolean
+	 * @return	{Boolean}
 	 */
 	isRunning: function() {
 		return this.pe !== null;
@@ -79,7 +79,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Handler for clock tick: evoke timetracking clock ticking handler
 	 *
-	 * @param	Object	periodicalExecuter
+	 * @param	{Object}	periodicalExecuter
 	 */
 	onClockTick: function(periodicalExecuter) {
 		this.ext.onClockTick();
@@ -96,8 +96,8 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Show a new clock in a display area. Can be initialized with a start time
 	 *
-	 * @param	String		idDisplayArea
-	 * @param	Integer		startTime
+	 * @param	{String}		idDisplayArea
+	 * @param	{Integer}		startTime
 	 */
 	showClock: function(idDisplayArea, startTime) {
 		this.addDisplayArea(idDisplayArea);
@@ -126,7 +126,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Get currently tracked time
 	 *
-	 * @return	Integer
+	 * @return	{Integer}
 	 */
 	getTime: function() {
 		return this.ext.getTrackingTime();
@@ -159,7 +159,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Add a new display area to the list of updated elements
 	 *
-	 * @param	String		idDisplayArea
+	 * @param	{String}		idDisplayArea
 	 */
 	addDisplayArea: function(idDisplayArea) {
 		this.displayAreas.push(idDisplayArea);
@@ -184,8 +184,8 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Update a display area with the current time
 	 *
-	 * @param	String		idDisplayArea
-	 * @param	Integer		seconds
+	 * @param	{String}		idDisplayArea
+	 * @param	{Integer}		seconds
 	 */
 	updateDisplayArea: function(idDisplayArea, seconds) {
 		var timeString = Todoyu.Helper.timestampFormat(seconds, ':');

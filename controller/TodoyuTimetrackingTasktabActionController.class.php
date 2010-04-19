@@ -112,5 +112,4 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 	}
 }
 
-
 ?>

@@ -20,7 +20,7 @@
 Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 	/**
-	 *	Ext shortcut
+	 * Ext shortcut
 	 */
 	ext:	Todoyu.Ext.timetracking,
 	
@@ -46,7 +46,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * @todo	comment
 	 * 
-	 * @param	Object	event
+	 * @param	{Object}	event
 	 */
 	onButtonClick: function(event) {
 		if( this.isContentVisible() ) {
@@ -68,8 +68,8 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Handle toggeling of timetracking (headlet). If timetrack started: show it, otherwise: hide it
 	 *
-	 * @param	Integer		idTask
-	 * @param	Boolean		start
+	 * @param	{Integer}		idTask
+	 * @param	{Boolean}		start
 	 */
 	onClockToggle: function(idTask, start) {
 		this.updateContent();
@@ -81,8 +81,8 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Handle update event of clock inside timetracking headlet
 	 *
-	 * @param	Integer	idTask
-	 * @param	Time	time
+	 * @param	{Integer}	idTask
+	 * @param	{Time}	    time
 	 */
 	onClockTick: function(idTask, time) {
 		this.updateTime(time);
@@ -94,7 +94,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Set active status for button
 	 * 
-	 * @param	Boolean		active
+	 * @param	{Boolean}		active
 	 */
 	setActiveStatus: function(active) {
 		this.headlet.getButton('timetracking')[active?'addClassName':'removeClassName']('active');
@@ -105,7 +105,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Update displayed tracked time count inside headlet
 	 *
-	 * @param	Time	time
+	 * @param	{Time}  	time
 	 */
 	updateTime: function(time) {
 		var headlet = $('headlet-timetracking-tracking');
@@ -144,7 +144,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Set barClasses to internal storage
 	 * 
-	 * @param	Object		barClasses
+	 * @param	{Object}		barClasses
 	 */
 	setBarClasses: function(barClasses) {
 		this.barClasses	= $H(barClasses);
@@ -173,7 +173,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Handler when content is updated
 	 * 
-	 * @param	Ajax.Response		response
+	 * @param	{Ajax.Response}		response
 	 */
 	onContentUpdated: function(response) {
 		
@@ -184,7 +184,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Stop timetracking of given task
 	 *
-	 *	@param	Integer	idTask
+	 * @param	{Integer}	idTask
 	 */
 	stopTask: function(idTask) {
 		this.ext.stop(idTask);
@@ -197,10 +197,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 *	Go to given task
+	 * Go to given task
 	 *
-	 *	@param	Integer	idProject
-	 *	@param	Integer	idTask
+	 * @param	{Integer}	idProject
+	 * @param	{Integer}	idTask
 	 */
 	goToTask: function(idProject, idTask) {
 		if( this.isTaskInCurrentView(idTask) ) {
@@ -213,9 +213,9 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 *	Check if given task is exists in current view
+	 * Check if given task is exists in current view
 	 *
-	 *	@param	Integer	idTask
+	 * @param	{Integer}	idTask
 	 */
 	isTaskInCurrentView: function(idTask) {
 		return Todoyu.exists('task-' + idTask);

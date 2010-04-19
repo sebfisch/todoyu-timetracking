@@ -45,7 +45,7 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 * Hook called when quicktask popup is loaded
 	 * Install observers on fields
 	 * 
-	 * @param	Ajax.Response		response		Popup Ajax request response
+	 * @param	{Ajax.Response}		response		Popup Ajax request response
 	 */
 	onQuickTaskOpen: function(response) {
 		$(this.fieldStart).observe('change', this.preventStartDone.bindAsEventListener(this, 'start'));
@@ -58,8 +58,8 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 * Hook called after quicktask was saved
 	 * Start timetracking if php hook has sent the header
 	 * 
-	 * @param	Integer			idTask
-	 * @param	Integer			idProject
+	 * @param	{Integer}			idTask
+	 * @param	{Integer}			idProject
 	 * @param	Ajax.Reponse	response
 	 */
 	onQuickTaskSaved: function(idTask, idProject, response) {
@@ -75,8 +75,8 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 * - start tracking
 	 * - task done
 	 * 
-	 * 	@param	Event		event
-	 * 	@param	String		key
+	 * @param	{Event}         event
+	 * @param	{String}		key
 	 */
 	preventStartDone: function(event, key) {
 		if( key === 'start' ) {

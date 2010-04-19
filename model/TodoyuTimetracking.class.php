@@ -70,6 +70,7 @@ class TodoyuTimetracking {
 	}
 
 
+
 	/**
 	 * Get ID of current running task
 	 *
@@ -283,7 +284,6 @@ class TodoyuTimetracking {
 	 * @param	Integer		$timestamp: timestamp of a specific day. Default will be today
 	 * @param	Integer		$idPerson
 	 * @return	String
-	 *
 	 */
 	public static function getTrackedTaskTimeOfDay($idTask, $timestamp = 0, $idPerson = 0) {
 		$idTask		= intval($idTask);

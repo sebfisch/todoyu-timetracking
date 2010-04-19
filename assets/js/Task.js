@@ -20,7 +20,7 @@
 Todoyu.Ext.timetracking.Task = {
 
 	/**
-	 *	Ext shortcut
+	 * Ext shortcut
 	 */
 	ext:	Todoyu.Ext.timetracking,
 
@@ -38,7 +38,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Start timetracking of given task
 	 *
-	 * @param Integert idTask
+	 * @param {Integer}t idTask
 	 */
 	start: function(idTask) {
 		this.ext.start(idTask);		
@@ -49,7 +49,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Stop timetracking of given task, reset timetrack button style
 	 *
-	 * @param Integer idTask
+	 * @param {Integer} idTask
 	 */
 	stop: function(idTask) {
 		this.ext.stop();
@@ -70,8 +70,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Event handler 'onClockToggle': evoked on toggle (start / stop) of clock with current running timetracking
 	 *
-	 * @param	Integer		idTask
-	 * @param	Boolean		start
+	 * @param	{Integer}		idTask
+	 * @param	{Boolean}		start
 	 */
 	onClockToggle: function(idTask, start) {
 		if( start ) {
@@ -97,8 +97,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Event handler: 'onClockTick': evoked on each tick of the clock showing the current time of the current running timetrack
 	 *
-	 * @param	Integer	idTask
-	 * @param	Time	time
+	 * @param	{Integer}	idTask
+	 * @param	{Time}  	time
 	 */
 	onClockTick: function(idTask, time) {
 		var el = $('task-' + idTask + '-timetrack-currentsession');
@@ -112,8 +112,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Check whether given task's timetracking tab is loaded
 	 * 
-	 * @param	Integer	idTask
-	 *  @return	Boolean
+	 * @param	{Integer}	idTask
+	 * @return	{Boolean}
 	 */
 	isTaskTrackingTabLoaded: function(idTask) {
 		return Todoyu.exists('task-' + idTask + '-tabcontent-timetracking');
@@ -124,8 +124,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Set task style 'running', indicating visually that it is currently not / being timetracked
 	 * 
-	 * @param	Integer	idTask
-	 * @param	Boolean	running
+	 * @param	{Integer}	idTask
+	 * @param	{Boolean}	running
 	 */
 	setRunningStyle: function(idTask, running) {		
 		if( Todoyu.exists('task-' + idTask) ) {
@@ -143,7 +143,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Update timetracking tab (contains start / stop button, list of prev. tracked times, etc.) of given task. 
 	 * 
-	 * @param	Integer	idTask
+	 * @param	{Integer}	idTask
 	 */
 	updateTab: function(idTask) {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
@@ -165,7 +165,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Update timetracking list of given task
 	 * 
-	 * @param	Integer	idTask
+	 * @param	{Integer}	idTask
 	 */
 	updateTrackList: function(idTask) {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
@@ -185,7 +185,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Update controll box in timetracking tab of given task 
 	 * 
-	 * @param	Integer	idTask
+	 * @param	{Integer}	idTask
 	 */
 	updateTabControl: function(idTask) {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
@@ -207,8 +207,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Get track edit form
 	 * 
-	 * @param	Integer	idTask
-	 *  @param	Integer	idTrack
+	 * @param	{Integer}	idTask
+	 *  @param	{Integer}	idTrack
 	 */
 	editTrack: function(idTask, idTrack) {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
@@ -229,9 +229,9 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Event handler: edit form loaded
 	 * 
-	 * @param	Integer	idTask
-	 * @param	Integer	idTrack
-	 * @param	Object	response
+	 * @param	{Integer}	idTask
+	 * @param	{Integer}	idTrack
+	 * @param	{Object}	response
 	 */
 	onEditFormLoaded: function(idTask, idTrack, response) {
 		$('timetrack-' + idTrack + '-field-workload-tracked').select();
@@ -242,8 +242,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Save edited track
 	 * 
-	 * @param	Integer	idTask
-	 * @param	Integer	idTrack
+	 * @param	{Integer}	idTask
+	 * @param	{Integer}	idTrack
 	 */
 	saveTrack: function(idTask, idTrack) {
 		$('timetrack-' + idTrack + '-form').request({
@@ -259,9 +259,9 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Event handler: being evoked after edited track has been saved
 	 * 
-	 * @param	Integer	idTask
-	 * @param	Integer	idTrack
-	 * @param	Object	response
+	 * @param	{Integer}	idTask
+	 * @param	{Integer}	idTrack
+	 * @param	{Object}	response
 	 */
 	onTrackSaved: function(idTask, idTrack, response) {
 		this.updateTrackContent(idTask, idTrack, response.responseText);
@@ -279,7 +279,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Cancel track editing
 	 * 
-	  * @param	Integer	idTask
+	  * @param	{Integer}	idTask
 	 */
 	cancelTrackEditing: function(idTask, idTrack) {
 		this.updateTrack(idTask, idTrack);
@@ -290,8 +290,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Update timetracking tab content
 	 * 
-	 * @param	Integer	idTask
-	 * @param	String	tabContent
+	 * @param	{Integer}	idTask
+	 * @param	{String}	tabContent
 	 */
 	updateTrackContent: function(idTask, idTrack, tabContent) {
 		$('task-' + idTask + '-track-' + idTrack).replace(tabContent);
@@ -302,7 +302,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Toggle timetracks list visibility
 	 * 
-	 * @param	Integer	idTask
+	 * @param	{Integer}	idTask
 	 */
 	toggleList: function(idTask) {
 		Todoyu.Ui.toggle('task-' + idTask + '-timetracks');
@@ -313,8 +313,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Updates a single track
 	 * 
-	 * @param	Integer	idTask
-	 * @param	Integer	idTrack
+	 * @param	{Integer}	idTask
+	 * @param	{Integer}	idTrack
 	 */
 	updateTrack: function(idTask, idTrack){
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
