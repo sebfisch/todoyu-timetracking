@@ -6,7 +6,7 @@
 }
 
 #headlets #headlet-timetracking-content {
-	margin-left:-297px;
+	margin-left:-80px;
 	padding: 5px;
 
 }
@@ -23,22 +23,23 @@
  * Active headlet content
  */
 #headlets #headlet-timetracking-content li.tracking {
-	width:321px;
+	width:366px;
 }
 
 #headlets #headlet-timetracking-content div.trackingContainer {
 	padding: 5px 0px;
 }
 
-#headlets #headlet-timetracking-content div.task {
+#headlets #headlet-timetracking-content .trackingTask {
 	border-bottom:1px dotted #B9BBAD;
 	padding-bottom:5px;
+	min-height:15px;
 }
 
 #headlets #headlet-timetracking-content .stop {
-	float: right;
-	position: relative;
-	top: -3px;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 #headlet-timetracking-content div.time {
@@ -62,10 +63,6 @@
 }
 #headlet-timetracking-content  a:hover {
 	color:#6f6f6f;
-}
-
-#headlet-timetracking-content li.tracking .project {
-	text-transform: uppercase;
 }
 
 #headlet-timetracking-content span.currentTracking {
@@ -112,18 +109,25 @@
 	display: none;
 }
 
-#headlets #headlet-timetracking-content h1 {
+#headlet-timetracking-content h1 {
 	margin: 0;
 }
 
-#headlets #headlet-timetracking-content li.tracking,
-#headlets #headlet-timetracking-content li.inactiveTaskList {
+#headlet-timetracking-content li.tracking,
+#headlet-timetracking-content li.inactiveTaskList {
 	
 }
 
-#headlets #headlet-timetracking-content li.tracking .task {
-	padding: 5px 0;
-	border-bottom: 1px dotted #b9bbad;
+#headlet-timetracking-content li.tracking .project {
+	text-transform: uppercase;
+	white-space: nowrap;
+	padding-left: 5px;
+	padding-right: 40px;
+}
+
+#headlet-timetracking-content li.tracking .task {
+	border-right: 1px dotted #B9BBAD;
+	padding-right: 5px !important;
 }
 
 /**
@@ -135,7 +139,7 @@
 	border:none;
 	top:0;
 	left:0;
-	width:321px;
+	width:366px;
 	border-top: 1px dotted #b9bbad;
 }
 
@@ -182,7 +186,7 @@
 #headlets #headlet-timetracking-content .inactiveTaskList .projectName {
 	display: inline-block;
 	float: none;
-	width: 135px;
+	width: 175px;
 }
 #headlets #headlet-timetracking-content .inactiveTaskList .tracking {
 	display: inline-block;
