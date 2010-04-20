@@ -209,7 +209,6 @@ class TodoyuTimetrackingManager {
 
 
 
-
 	/**
 	 * Formhook
 	 * Add timetracking fields to quicktask

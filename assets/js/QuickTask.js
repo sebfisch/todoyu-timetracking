@@ -75,8 +75,8 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 * - start tracking
 	 * - task done
 	 * 
-	 * @param	{Event}         event
-	 * @param	{String}		key
+	 * @param	{Event}		event
+	 * @param	{String}	key
 	 */
 	preventStartDone: function(event, key) {
 		if( key === 'start' ) {
