@@ -22,7 +22,6 @@
  * Various timetracking extension info data
  */
 
-
 Todoyu::$CONFIG['EXT']['timetracking']['info'] = array(
 	'title'			=> 'Time Tracking',
 	'description' 	=> 'Individual Tracking for Tasks',
@@ -42,6 +41,5 @@ Todoyu::$CONFIG['EXT']['timetracking']['info'] = array(
 		)
 	)
 );
-
 
 ?>

@@ -130,7 +130,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Check if task is currently running
+	 * Check whether task is currently running
 	 *
 	 * @param	Integer		$idTask
 	 * @return	Boolean
@@ -145,7 +145,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Check if timetracking is active
+	 * Check whether timetracking is active
 	 *
 	 * @return	Boolean
 	 */
@@ -482,7 +482,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Check if status is allowed for more timetracking
+	 * Check whether status is allowed for more timetracking
 	 *
 	 * @param	Integer		$status
 	 * @return	Boolean
@@ -494,7 +494,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Check if an item is trackable. At the moment, only task are trackable, but not containers
+	 * Check whether an item is trackable. At the moment, only task are trackable, but not containers
 	 *
 	 * @param	Integer		$type
 	 * @param	Integer		$status

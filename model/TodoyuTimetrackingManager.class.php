@@ -34,7 +34,7 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Add timetracking specific information to task array
+	 * Add time tracking specific information to task array
 	 *
 	 * @param	Array		$taskData		Task data array
 	 * @param	Integer		$idTask			Task ID
@@ -60,7 +60,7 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Add billingtime to taskHeaderExtra
+	 * Add billing time to taskHeaderExtra
 	 * Hook: dataModifier
 	 *
 	 * @param	Array		$extras
@@ -132,7 +132,7 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Check whether task is overtimed
+	 * Check whether task is over-timed
 	 *
 	 * @param	Integer		$idTask
 	 * @return	Boolean
@@ -173,7 +173,7 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Add timetracking JS init to page
+	 * Add time tracking JS init to page
 	 */
 	public static function addTimetrackingJsInitToPage() {
 		if( TodoyuTimetracking::isTrackingActive() && ! TodoyuRequest::isAjaxRequest() ) {
@@ -211,7 +211,7 @@ class TodoyuTimetrackingManager {
 
 	/**
 	 * Formhook
-	 * Add timetracking fields to quicktask
+	 * Add time tracking fields to quick task
 	 *
 	 * @param	TodoyuForm		$form
 	 * @param	Integer			$idTask
@@ -230,8 +230,7 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Formhook
-	 * Handle (save) special fields added to quicktask by timetracking
+	 * Formhook: Handle (save) special fields added to quick task by time tracking
 	 *
 	 * @param	Array		$data
 	 * @param	Integer		$idTask
@@ -283,8 +282,8 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Hook when quicktask is saved
-	 * Check if the option 'start tracking' was checked when saving
+	 * Hook when quick task is saved
+	 * Check whether the option 'start tracking' was checked when saving
 	 * Start tracking on server and send tracking header
 	 *
 	 * @param	Integer		$idTask
