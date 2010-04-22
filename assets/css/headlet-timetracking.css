@@ -169,42 +169,43 @@
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList a.title {
-	display: inline-block;
+	display: block;
+	width: 90%;
 	font-weight: normal;
 	height: auto;
 	line-height: 0;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList a.title .taskNumber,
-#headlets #headlet-timetracking-content .inactiveTaskList a.title .projectName,
-#headlets #headlet-timetracking-content .inactiveTaskList a.title .tracking {
+#headlets #headlet-timetracking-content .inactiveTaskList a.title .projectName {
 	margin-right: 5px;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList a.title span {
 	line-height: 22px;
 	white-space: nowrap;
-	margin-right: 5px;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList .taskNumber {
 	display: inline-block;
 	float: none;
-	width: 50px;
+	width: 10%;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList .projectName {
 	display: inline-block;
 	float: none;
-	width: 175px;
+	width: 70%;
 }
 #headlets #headlet-timetracking-content .inactiveTaskList .tracking {
 	display: inline-block;
 	float: none;
-	width: 50px;
+	text-align: right;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList .start {
 	width:35px;
-	float: right;
+	position: absolute;
+	top: 1px;
+	right: 0;
 }
