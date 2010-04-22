@@ -34,7 +34,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 
 			// Add active class if tracking is running
 		if( TodoyuTimetracking::isTrackingActive() ) {
-			$this->addButtonClass('active');
+			$this->addButtonClass('tracking');
 		}
 
 			// Get bar classes and init js object

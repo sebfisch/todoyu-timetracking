@@ -66,14 +66,14 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	
 
 	/**
-	 * Handle toggeling of timetracking (headlet). If timetrack started: show it, otherwise: hide it
+	 * Handle toggeling of timetracking (headlet). If timetracking started: show it, otherwise: hide it
 	 *
 	 * @param	{Integer}		idTask
 	 * @param	{Boolean}		start
 	 */
 	onClockToggle: function(idTask, start) {
 		this.updateContent();
-		this.setActiveStatus(start);
+		this.setTrackingStatus(start);
 	},
 
 
@@ -92,12 +92,12 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	
 	
 	/**
-	 * Set active status for button
+	 * Set tracking status for button
 	 * 
-	 * @param	{Boolean}		active
+	 * @param	{Boolean}		tracking
 	 */
-	setActiveStatus: function(active) {
-		this.headlet.getButton('timetracking')[active?'addClassName':'removeClassName']('active');
+	setTrackingStatus: function(tracking) {
+		this.headlet.getButton('timetracking')[tracking?'addClassName':'removeClassName']('tracking');
 	},
 
 
