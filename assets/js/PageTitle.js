@@ -78,7 +78,7 @@ Todoyu.Ext.timetracking.PageTitle = {
 
 		if( show === true ) {
 			var timeStr	= Todoyu.Time.timeFormatSeconds(time);
-			trackInfo	= ' - [' + taskNumber + ': ' + taskTitle + ' [' + timeStr + percentStr + ']';			
+			trackInfo	= ' - [' + taskNumber + ': ' + taskTitle.substr(0, 50) + ' [' + timeStr + percentStr + ']';			
 		}
 		
 		Todoyu.Ui.setTitle(blankTitle + trackInfo);
