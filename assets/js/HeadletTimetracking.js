@@ -54,13 +54,19 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		} else {
 			this.hideOthers();
 			this.showContent();
+			this.saveOpenStatus();
 		}
-		
-		this.saveOpenStatus(this.isContentVisible());
+	},
+
+	onBodyClick: function(event) {
+		if( this.isEventInOwnContent(event) ) {
+			event.stop();
+		}
 	},
 	
 	hide: function() {
 		this.hideContent();
+		this.saveOpenStatus();
 	},
 	
 	
