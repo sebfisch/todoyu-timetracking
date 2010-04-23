@@ -7,7 +7,7 @@
 
 #headlets #headlet-timetracking-content {
 	margin-left:-451px;
-	padding: 5px;
+	padding:5px;
 
 }
 
@@ -27,36 +27,36 @@
 }
 
 #headlets #headlet-timetracking-content span.trackingContainer {
-	display: block;
+	display:block;
 }
 
 #headlets #headlet-timetracking-content span.currentTask {
-	display: block;
-	width: 37%;
-	float: left;
-	border-right: 1px dotted #B9BBAD;
+	display:block;
+	width:37%;
+	float:left;
+	border-right:1px dotted #B9BBAD;
 }
 
 #headlets #headlet-timetracking-content span.container {
-	overflow: hidden;
-	display: block;
+	overflow:hidden;
+	display:block;
 }
 #headlets #headlet-timetracking-content  span.currentTask span.container {
-	margin: 0 5px 0 0;
+	margin:0 5px 0 0;
 }
 #headlet-timetracking-content span.time {
 	float:left;
-	width: 50%;
-	display: block;
+	width:50%;
+	display:block;
 }
 #headlets #headlet-timetracking-content  span.time span.container {
-	margin: 0 0 0 5px;
+	margin:0 0 0 5px;
 }
 
 #headlets #headlet-timetracking-content span.stop {
-	position: absolute;
-	top: 0;
-	right: 0;
+	position:absolute;
+	top:0;
+	right:0;
 }
 
 #headlets #headlet-timetracking-content a {
@@ -66,7 +66,7 @@
 
 #headlets li #headlet-timetracking-content a,
 #headlets li:hover #headlet-timetracking-content a {
-	background: none !important;
+	background:none !important;
 }
 
 #headlet-timetracking-content a.title {
@@ -94,9 +94,9 @@
 	width:100px;
 	height:12px;
 	display:block;
-	float: left;
+	float:left;
 	border:1px solid #ccc;
-	background-color: #E3EACE;
+	background-color:#E3EACE;
 }
 
 #headlet-timetracking-content span.percent span.bar span.progress {
@@ -106,16 +106,16 @@
 }
 
 #headlet-timetracking-content span.percent {
-	display: block;
-	height: 14px;
-	position: absolute;
-	overflow: hidden;
+	display:block;
+	height:14px;
+	position:absolute;
+	overflow:hidden;
 }
 
 #headlet-timetracking-content span.estimatedWorkload {
 	float:left;
-	display: block;
-	margin-left: 5px;
+	display:block;
+	margin-left:5px;
 }
 
 #headlet-timetracking-content .button {
@@ -123,11 +123,11 @@
 }
 
 #headlet-timetracking-content .button .label {
-	display: none;
+	display:none;
 }
 
 #headlet-timetracking-content h1 {
-	margin: 0;
+	margin:0;
 }
 
 #headlet-timetracking-content li.tracking,
@@ -136,8 +136,8 @@
 }
 
 #headlet-timetracking-content li.tracking a.project {
-	text-transform: uppercase;
-	display: block;
+	text-transform:uppercase;
+	display:block;
 }
 
 /**
@@ -150,7 +150,7 @@
 	top:0;
 	left:0;
 	width:475px;
-	border-top: 1px dotted #b9bbad;
+	border-top:1px dotted #b9bbad;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList li {
@@ -158,54 +158,54 @@
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList li span.headLabel {
-	border-left-style: solid;
-	border-left-width: 8px;
-	display: block;
-	padding: 1px 0 1px 0;
+	border-left-style:solid;
+	border-left-width:8px;
+	display:block;
+	padding:1px 0 1px 0;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList span.headLabel .first {
-	padding-left: 17px;
+	padding-left:17px;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList a.title {
-	display: block;
-	width: 90%;
-	font-weight: normal;
-	height: auto;
-	line-height: 0;
+	display:block;
+	width:90%;
+	font-weight:normal;
+	height:auto;
+	line-height:0;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList a.title .taskNumber,
 #headlets #headlet-timetracking-content .inactiveTaskList a.title .projectName {
-	margin-right: 5px;
+	margin-right:5px;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList a.title span {
-	line-height: 22px;
-	white-space: nowrap;
+	line-height:22px;
+	white-space:nowrap;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList .taskNumber {
-	display: inline-block;
-	float: none;
-	width: 10%;
+	display:inline-block;
+	float:none;
+	width:10%;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList .projectName {
-	display: inline-block;
-	float: none;
-	width: 70%;
+	display:inline-block;
+	float:none;
+	width:70%;
 }
 #headlets #headlet-timetracking-content .inactiveTaskList .tracking {
-	display: inline-block;
-	float: none;
-	text-align: right;
+	display:inline-block;
+	float:none;
+	text-align:right;
 }
 
 #headlets #headlet-timetracking-content .inactiveTaskList .start {
 	width:35px;
-	position: absolute;
-	top: 1px;
-	right: 0;
+	position:absolute;
+	top:1px;
+	right:0;
 }

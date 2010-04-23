@@ -25,6 +25,8 @@ Todoyu.Ext.timetracking.Clock = {
 
 	/**
 	 * Ext shortcut
+	 *
+	 * @var	{Object}	ext
 	 */
 	ext:	Todoyu.Ext.timetracking,
 
