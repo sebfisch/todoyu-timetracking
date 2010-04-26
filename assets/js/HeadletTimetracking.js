@@ -52,7 +52,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 */
 	onButtonClick: function(event) {
 		if( this.isContentVisible() ) {
-			this.hideContent();
+			this.hide();
 		} else {
 			this.hideOthers();
 			this.showContent();
