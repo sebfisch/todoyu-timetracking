@@ -1,5 +1,5 @@
 <div class="tabBlock timetrackingButtons">
-{if $trackable}
+{if $trackable || $running}
 	{Button label=$buttonLabel id="task-$idTask-timetracking-button" class=$class onclick="Todoyu.Ext.timetracking.Task.$function($idTask)"}
 {/if}
 	<div class="elapsedTime">
