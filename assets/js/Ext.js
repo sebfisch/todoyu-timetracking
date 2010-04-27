@@ -58,9 +58,9 @@ Todoyu.Ext.timetracking = {
 	 * Init task timetracking, start tracking time of given task
 	 *
 	 * @param	{String}		taskJSON			Task data as JSON
-	 * @param	{Integer}		trackedTime			Already tracked and saved time
-	 * @param	{Integer}		trackingTime		Currently tracking time which is not saved yet
-	 * @param	{Integer}		estimatedTime		Total estimated time for task
+	 * @param	{Number}		trackedTime			Already tracked and saved time
+	 * @param	{Number}		trackingTime		Currently tracking time which is not saved yet
+	 * @param	{Number}		estimatedTime		Total estimated time for task
 	 */
 	initWithTask: function(taskJSON, trackedTime, trackingTime) {
 		this.task			= taskJSON;
@@ -76,7 +76,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Start tracking time on given task
 	 *
-	 * @param	{Integer}	idTask
+	 * @param	{Number}	idTask
 	 * @param	{Boolean}	noRequest
 	 */
 	start: function(idTask, noRequest) {
@@ -126,7 +126,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Handler when tracking request has been sent (started or stoped)
 	 *
-	 * @param {Integer}	idTask
+	 * @param {Number}	idTask
 	 * @param Boolean	started
 	 * @param Object	response
 	 */
@@ -172,7 +172,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Toggle timetracking	of given task
 	 *
-	 * @param	{Integer}		idTask
+	 * @param	{Number}		idTask
 	 */
 	toggle: function(idTask) {
 		if( this.isTrackingTask(idTask) ) {
@@ -196,7 +196,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Check if given task is tracked
 	 *
-	 * @param	{Integer}		idTask
+	 * @param	{Number}		idTask
 	 */
 	isTrackingTask: function(idTask) {
 		return this.getTaskID() == idTask;

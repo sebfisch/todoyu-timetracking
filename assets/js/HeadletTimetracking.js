@@ -76,7 +76,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Handle toggeling of timetracking (headlet). If timetracking started: show it, otherwise: hide it
 	 *
-	 * @param	{Integer}		idTask
+	 * @param	{Number}		idTask
 	 * @param	{Boolean}		start
 	 */
 	onClockToggle: function(idTask, start) {
@@ -89,7 +89,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Handle update event of clock inside timetracking headlet
 	 *
-	 * @param	{Integer}	idTask
+	 * @param	{Number}	idTask
 	 * @param	{Time}		time
 	 */
 	onClockTick: function(idTask, time) {
@@ -192,7 +192,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Stop timetracking of given task
 	 *
-	 * @param	{Integer}	idTask
+	 * @param	{Number}	idTask
 	 */
 	stopTask: function(idTask) {
 		this.ext.stop(idTask);
@@ -207,8 +207,8 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Go to given task
 	 *
-	 * @param	{Integer}	idProject
-	 * @param	{Integer}	idTask
+	 * @param	{Number}	idProject
+	 * @param	{Number}	idTask
 	 */
 	goToTask: function(idProject, idTask) {
 		if( this.isTaskInCurrentView(idTask) ) {
@@ -223,7 +223,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Check if given task is exists in current view
 	 *
-	 * @param	{Integer}	idTask
+	 * @param	{Number}	idTask
 	 */
 	isTaskInCurrentView: function(idTask) {
 		return Todoyu.exists('task-' + idTask);

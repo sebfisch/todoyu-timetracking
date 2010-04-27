@@ -58,8 +58,8 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 * Hook called after quicktask was saved
 	 * Start timetracking if php hook has sent the header
 	 * 
-	 * @param	{Integer}			idTask
-	 * @param	{Integer}			idProject
+	 * @param	{Number}			idTask
+	 * @param	{Number}			idProject
 	 * @param	Ajax.Reponse	response
 	 */
 	onQuickTaskSaved: function(idTask, idProject, response) {

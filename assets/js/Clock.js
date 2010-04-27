@@ -99,7 +99,7 @@ Todoyu.Ext.timetracking.Clock = {
 	 * Show a new clock in a display area. Can be initialized with a start time
 	 *
 	 * @param	{String}		idDisplayArea
-	 * @param	{Integer}		startTime
+	 * @param	{Number}		startTime
 	 */
 	showClock: function(idDisplayArea, startTime) {
 		this.addDisplayArea(idDisplayArea);
@@ -128,7 +128,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Get currently tracked time
 	 *
-	 * @return	{Integer}
+	 * @return	{Number}
 	 */
 	getTime: function() {
 		return this.ext.getTrackingTime();
@@ -187,7 +187,7 @@ Todoyu.Ext.timetracking.Clock = {
 	 * Update a display area with the current time
 	 *
 	 * @param	{String}		idDisplayArea
-	 * @param	{Integer}		seconds
+	 * @param	{Number}		seconds
 	 */
 	updateDisplayArea: function(idDisplayArea, seconds) {
 		var timeString = Todoyu.Helper.timestampFormat(seconds, ':');
