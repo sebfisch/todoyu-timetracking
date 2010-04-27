@@ -92,8 +92,8 @@ class TodoyuTimetrackingTask {
 		$idTrack	= intval($formData['id']);
 		$data		= array(
 			'date_track'			=> TodoyuTime::parseDate($formData['date_track']),
-			'workload_tracked'		=> TodoyuTime::parseTime($formData['workload_tracked']),
-			'workload_chargeable'	=> TodoyuTime::parseTime($formData['workload_chargeable']),
+			'workload_tracked'		=> TodoyuTime::parseDuration($formData['workload_tracked']),
+			'workload_chargeable'	=> TodoyuTime::parseDuration($formData['workload_chargeable']),
 			'comment'				=> $formData['comment']
 		);
 

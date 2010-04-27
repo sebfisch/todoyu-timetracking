@@ -6,7 +6,7 @@
 		<fieldset name="fieldset">
 			<elements>
 
-				<field type="timeinput" name="workload_done">
+				<field type="duration" name="workload_done">
 					<label>timetracking.quicktask.workload_done</label>
 				</field>
 

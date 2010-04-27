@@ -239,7 +239,7 @@ class TodoyuTimetrackingManager {
 	public static function handleQuicktaskFormSave(array $data, $idTask) {
 		$idTask			= intval($idTask);
 		$workloadDone	= intval($data['workload_done']);
-
+		
 			// Save already done workload
 		if( $workloadDone > 0 ) {
 			self::addTrackedWorkload($idTask, $workloadDone);
