@@ -16,6 +16,7 @@ CREATE TABLE `ext_timetracking_track` (
   KEY `task` (`id_task`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `ext_timetracking_tracking`
