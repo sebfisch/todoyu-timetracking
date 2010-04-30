@@ -337,8 +337,8 @@ class TodoyuTimetracking {
 
 		$fields	= '*';
 		$table	= self::TABLE;
-		$where	= ' id_person_create	= ' . $idPerson . ' AND
-					date_track BETWEEN ' . $dateStart . ' AND ' . $dateEnd;
+		$where	= '		id_person_create	= ' . $idPerson .
+				  ' AND	date_track BETWEEN ' . $dateStart . ' AND ' . $dateEnd;
 		$group	= '';
 		$order	= 'date_track';
 
@@ -387,8 +387,8 @@ class TodoyuTimetracking {
 					u.lastname';
 		$tables	= 	self::TABLE . ' t,
 					ext_contact_person u';
-		$where	= '	t.id 				= ' . $idTrack . ' AND
-					t.id_person_create 	= u.id';
+		$where	= '		t.id 				= ' . $idTrack .
+				  ' AND	t.id_person_create 	= u.id';
 		$order	= '	t.date_track DESC';
 
 		return Todoyu::db()->getRecordByQuery($fields, $tables, $where, '', $order);
@@ -539,9 +539,9 @@ class TodoyuTimetracking {
 
 		$fields	= '*';
 		$table	= self::TABLE;
-		$where	= '	id_person_create	= ' . personid() . ' AND
-					id_task			= ' . $idTask . ' AND
-					date_track BETWEEN ' . $range['start'] . ' AND ' . $range['end'];
+		$where	= '		id_person_create	= ' . personid() .
+				  ' AND	id_task			= ' . $idTask .
+				  ' AND	date_track BETWEEN ' . $range['start'] . ' AND ' . $range['end'];
 
 		return Todoyu::db()->getRecordByQuery($fields, $table, $where);
 	}
@@ -591,8 +591,8 @@ class TodoyuTimetracking {
 
 		$field	= 'id_task';
 		$table	= self::TABLE;
-		$where	= '	date_update BETWEEN ' . $timeStart . ' AND ' . $timeEnd . ' AND
-					id_person_create	= ' . $idPerson;
+		$where	= '	date_update BETWEEN ' . $timeStart . ' AND ' . $timeEnd .
+				  ' AND	id_person_create = ' . $idPerson;
 		$group	= 'id_task';
 		$order	= 'date_create';
 

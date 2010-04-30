@@ -139,8 +139,8 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 					MAX(tr.date_update) as last_update';
 		$tables	= '	ext_project_task t,
 					ext_timetracking_track tr';
-		$where	= '	t.id	= tr.id_task AND
-					tr.id_person_create	= ' . personid();
+		$where	= '		t.id	= tr.id_task
+					AND	tr.id_person_create	= ' . personid();
 		$group	= '	t.id';
 		$order	= '	last_update DESC';
 		$limit	= ' 0,' . $numTasks;
