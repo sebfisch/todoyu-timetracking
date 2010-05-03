@@ -27,12 +27,12 @@
 class TodoyuTimetracking {
 
 	/**
-	 * Session key
+	 * @var	String		Session key
 	 */
 	const SESS_KEY 	= 'timetracking';
 
 	/**
-	 * Working table
+	 * @var	String		Working table
 	 */
 	const TABLE		= 'ext_timetracking_track';
 
