@@ -132,7 +132,7 @@ Todoyu.Ext.timetracking = {
 	 */
 	onTrackingRequestSended: function(idTask, started, response) {
 		if( started ) {
-			this.task			= response.getTodoyuHeader('taskData').evalJSON();
+			this.task			= response.getTodoyuHeader('taskData');
 			this.trackedTime	= Todoyu.Helper.intval(response.getTodoyuHeader('trackedTime'));
 			this.trackingTime	= 0;
 
