@@ -116,8 +116,6 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 			'id'	=> $this->getID(),
 			'tasks'	=> $this->getLastTrackedTasks()
 		);
-		
-		TodoyuDebug::printInFireBug($data['tasks'], 'tasks');
 
 		return render($tmpl, $data);
 	}
