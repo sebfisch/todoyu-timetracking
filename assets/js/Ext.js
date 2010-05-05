@@ -80,14 +80,13 @@ Todoyu.Ext.timetracking = {
 	 * @param	{Boolean}	noRequest
 	 */
 	start: function(idTask, noRequest) {
-			// If initial request
 		if( noRequest === true ) {
 				// Start click ticking
 			this.Clock.start();
+		} else if( this.isTracking() ) {
+			this.Clock.stop();
+			this.sendTrackRequest(idTask, false, this.onStoppedBeforeStart.bind(this));
 		} else {
-				// Remove running styles from task
-				// @todo	Move to task part
-			this.removeAllRunningStyles();
 				// Send request to server (and than start the clock)
 			this.sendTrackRequest(idTask, true);
 		}
@@ -108,17 +107,22 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Send track request
 	 */
-	sendTrackRequest: function(idTask, start) {
+	sendTrackRequest: function(idTask, start, onComplete) {
 		var url		= Todoyu.getUrl('timetracking', 'track');
 		var options	= {
 			'parameters': {
 				'action':	start ? 'start' : 'stop',
 				'task':		idTask
 			},
-			'onComplete': this.onTrackingRequestSended.bind(this, idTask, start)
+			'onComplete': this.onTrackingRequestSended.bind(this, idTask, start, onComplete)
 		};
 
 		Todoyu.send(url, options);
+	},
+
+	onStoppedBeforeStart: function(idTask, started, response) {
+			// Send request to server (and than start the clock)
+		this.sendTrackRequest(idTask, true);
 	},
 
 
@@ -126,11 +130,11 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Handler when tracking request has been sent (started or stoped)
 	 *
-	 * @param {Number}	idTask
-	 * @param Boolean	started
-	 * @param Object	response
+	 * @param	{Number}			idTask
+	 * @param	{Boolean			started
+	 * @param	{Ajax.Response}		response
 	 */
-	onTrackingRequestSended: function(idTask, started, response) {
+	onTrackingRequestSended: function(idTask, started, onComplete, response) {
 		if( started ) {
 			this.task			= response.getTodoyuHeader('taskData');
 			this.trackedTime	= Todoyu.Helper.intval(response.getTodoyuHeader('trackedTime'));
@@ -142,6 +146,10 @@ Todoyu.Ext.timetracking = {
 			this.fireStopCallbacks();
 			this.Clock.stop();
 			this.reset();
+		}
+
+		if( typeof onComplete === 'function' ) {
+			onComplete.call(this, idTask, started, response);
 		}
 	},
 

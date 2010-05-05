@@ -8,10 +8,10 @@
 					{$task.id_project}.{$task.tasknumber}
 				</span>
 				<span class="projectName" title="{Label project.project}: {$task.project.title} (ID: {$task.project.id}) / {Label task.task}: {$task.title}">
-					{htmlencode $task.project.title|truncate:45} - {htmlencode $task.title|truncate:45}
+					{htmlencode $task.projecttitle|truncate:45} - {htmlencode $task.title|truncate:45}
 				</span>
 				<span class="tracking" title="{Label LLL:timetracking.tasktab.time_elapsed}">
-					{HourMinSec $tracked}
+					{HourMinSec $task.workload_tracked}
 				</span>
 			</a>
 		

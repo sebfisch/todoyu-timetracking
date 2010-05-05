@@ -79,15 +79,8 @@ Todoyu.Ext.timetracking.Task = {
 		if( start ) {
 			this.setRunningStyle(idTask, true);
 			Todoyu.Ext.project.Task.setStatus(idTask, 3); // In Progress
-			/*
-			if(Todoyu.getArea() == 'portal'){
-				Todoyu.Ext.portal.Task.refresh(idTask);
-			} else {
-				Todoyu.Ext.project.Task.refresh(idTask);
-			}
-			*/
 		} else {
-			//this.setRunningStyle(idTask, false);
+			this.setRunningStyle(idTask, false);
 			if( this.isTaskTrackingTabLoaded(idTask) ) {
 				this.updateTab(idTask);
 			}

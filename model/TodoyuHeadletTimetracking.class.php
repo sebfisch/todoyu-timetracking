@@ -116,6 +116,8 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 			'id'	=> $this->getID(),
 			'tasks'	=> $this->getLastTrackedTasks()
 		);
+		
+		TodoyuDebug::printInFireBug($data['tasks'], 'tasks');
 
 		return render($tmpl, $data);
 	}
@@ -130,22 +132,49 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	private function getLastTrackedTasks() {
 		$numTasks	= intval(Todoyu::$CONFIG['EXT']['timetracking']['headletLastTasks']);
 
-		$fields	= '	t.id,
-					t.title,
-					t.status,
-					t.type,
-					t.tasknumber,
-					t.id_project,
-					MAX(tr.date_update) as last_update';
-		$tables	= '	ext_project_task t,
-					ext_timetracking_track tr';
-		$where	= '		t.id	= tr.id_task
-					AND	tr.id_person_create	= ' . personid();
-		$group	= '	t.id';
-		$order	= '	last_update DESC';
-		$limit	= ' 0,' . $numTasks;
+		$query	= '	SELECT
+						track.workload_tracked,
+						task.id,
+						task.id_project,
+						task.tasknumber,
+						task.title,
+						task.tasknumber,
+						task.type,
+						task.status,
+						project.title as projecttitle
+					FROM (
+						SELECT
+							id_task,
+							MAX(date_track) as last_update
+						FROM
+							`ext_timetracking_track`
+						WHERE
+							id_person_create	= ' . personid() . '
+						GROUP BY
+							id_task
+						ORDER BY
+							last_update DESC
+						LIMIT
+							' . (2 * $numTasks) . '
+					) AS latest_tracks
+					INNER JOIN
+						`ext_timetracking_track` AS track
+							ON		track.id_task 			= latest_tracks.id_task
+								AND track.date_track 		= latest_tracks.last_update
+								AND track.id_person_create	= ' . personid() . '
+					LEFT JOIN
+						ext_project_task task
+							ON track.id_task  = task.id
+					LEFT JOIN
+						ext_project_project project
+							ON task.id_project = project.id
+					ORDER BY
+						track.date_track DESC
+					LIMIT
+						0,' . $numTasks;
 
-		$tasks = Todoyu::db()->getArray($fields, $tables, $where, $group, $order, $limit);
+		$resource	= Todoyu::db()->query($query);
+		$tasks		= Todoyu::db()->resourceToArray($resource);
 
 		foreach($tasks as $index => $task)	{
 			$tasks[$index]['isTrackable'] = TodoyuTimetracking::isTrackable($task['type'], $task['status']);
