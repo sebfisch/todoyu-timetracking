@@ -132,8 +132,10 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	private function getLastTrackedTasks() {
 		$numTasks	= intval(Todoyu::$CONFIG['EXT']['timetracking']['headletLastTasks']);
 
+		/*
+		// This version gets only the last tracking time
 		$query	= '	SELECT
-						track.workload_tracked,
+						SUM(track.workload_tracked) as trackedtime,
 						task.id,
 						task.id_project,
 						task.tasknumber,
@@ -168,8 +170,39 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 					LEFT JOIN
 						ext_project_project project
 							ON task.id_project = project.id
+					GROUP BY
+						task.id
 					ORDER BY
 						track.date_track DESC
+					LIMIT
+						0,' . $numTasks;
+*/
+
+		$query	= '	SELECT
+						MAX(track.date_track) as last_update,
+						SUM(track.workload_tracked) as trackedtime,
+						task.id,
+						task.id_project,
+						task.tasknumber,
+						task.title,
+						task.tasknumber,
+						task.type,
+						task.status,
+						project.title as projecttitle
+					FROM
+						`ext_timetracking_track` track
+					LEFT JOIN
+						`ext_project_task` task
+							ON track.id_task = task.id
+					LEFT JOIN
+						`ext_project_project` project
+							ON task.id_project = project.id
+					WHERE
+						track.id_person_create = ' . personid() . '
+					GROUP BY
+						id_task
+					ORDER BY
+						last_update DESC
 					LIMIT
 						0,' . $numTasks;
 
