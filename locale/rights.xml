@@ -5,8 +5,8 @@
 		<label index="general.use">Use Time Tracking</label>
 		<label index="task">Task Tracking</label>
 		<label index="task.track">Track Time</label>
-		<label index="task.editOwn">Can edit OWN tracks on task</label>
-		<label index="task.editAll">Can edit ALL tracks on task</label>
+		<label index="task.editOwn">Can edit own tracks on task</label>
+		<label index="task.editAll">Can edit all tracks on task</label>
 	</labels>
 	<labels lang="de_DE">
 		<label index="general">Allgemeine Einstellungen</label>

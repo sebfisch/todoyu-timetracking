@@ -3,7 +3,7 @@
 	<labels lang="en_GB">
 		<label index="ext.title">Time Tracking</label>
 		<label index="title">Time Tracking</label>
-		<label index="noTracksYet">No Time Tracks Yet</label>
+		<label index="noTracksYet">No tracked time yet</label>
 		<label index="attr.date_create">Date</label>
 		<label index="attr.date_track">Date</label>
 		<label index="attr.workload_tracked">Workload</label>
@@ -15,8 +15,8 @@
 		<label index="stop">Stop Time Tracking</label>
 		<label index="currentTask">Current Task</label>
 		<label index="showCurrentTaskInProject">Show task in project</label>
-		<label index="quicktask.workload_done">Already Worked Time</label>
-		<label index="extconf.stopOnLogout">Stop tracking if persons logs off</label>
+		<label index="quicktask.workload_done">Time Already Worked</label>
+		<label index="extconf.stopOnLogout">Stop time tracking if a person clicks to logout</label>
 		<label index="search.label">Time Tracking</label>
 		<label index="filter.timetrackedPerson">Person has tracked time</label>
 		<label index="filter.timetrackedRoles">Roles have tracked time</label>
