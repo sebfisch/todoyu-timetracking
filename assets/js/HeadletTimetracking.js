@@ -46,9 +46,9 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	
 	
 	/**
-	 * @todo	comment
+	 * Handler when clicked on button
 	 * 
-	 * @param	{Object}	event
+	 * @param	{Event}	event
 	 */
 	onButtonClick: function(event) {
 		if( this.isContentVisible() ) {
@@ -60,6 +60,13 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		}
 	},
 
+
+
+	/**
+	 * Handler when clicked on content
+	 *
+	 * @param	{Event}		event
+	 */
 	onContentClick: function(event) {
 		this.setActive();
 	},
@@ -135,7 +142,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	updatePercent: function() {
 		var idPercent = 'headlet-timetracking-percent';
 
-		if( this.ext.hasEstimatedTime() ) {
+		if( Todoyu.exists(idPercent) && this.ext.hasEstimatedTime() ) {
 			var percent	= this.ext.getPercentOfTime();
 			$(idPercent).update(percent + '%');
 			
