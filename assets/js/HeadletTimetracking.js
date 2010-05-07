@@ -60,6 +60,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		}
 	},
 
+	onContentClick: function(event) {
+		this.setActive();
+	},
+
 	onBodyClick: function(event) {
 		if( this.isEventInOwnContent(event) ) {
 			event.stop();
@@ -184,7 +188,8 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	{Ajax.Response}		response
 	 */
 	onContentUpdated: function(response) {
-		
+
+		x = 4;
 	},
 
 
