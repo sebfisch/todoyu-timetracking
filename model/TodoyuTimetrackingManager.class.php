@@ -193,22 +193,6 @@ class TodoyuTimetrackingManager {
 
 
 
-//	/**
-//	 * Calculate billable amount of tracked time
-//	 *
-//	 * @todo	Not used currently, relocate when used
-//	 * @param	Integer	$trackedWorkload
-//	 * @return	Integer
-//	 */
-//	public static function calculateBillableTime($trackedWorkload)	{
-//		$trackedWorkload		= intval($trackedWorkload);
-//		$fifteenMinutesInSeconds= 900;
-//
-//		return ceil( $trackedWorkload / $fifteenMinutesInSeconds) * $fifteenMinutesInSeconds;
-//	}
-
-
-
 	/**
 	 * Formhook
 	 * Add time tracking fields to quick task
