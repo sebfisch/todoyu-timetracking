@@ -24,4 +24,12 @@
 		<label index="task.editOwn">Pode Editar Somente as Próprias Entradas Na Tarefa</label>
 		<label index="task.editAll">Pode Editar Todas as Entradas Na Tarefa</label>
 	</labels>
+	<labels lang="ru_RU">
+		<label index="general">Общие</label>
+		<label index="general.use">Использовать учёт времени</label>
+		<label index="task">Учёт времени</label>
+		<label index="task.track">Учитывать время</label>
+		<label index="task.editOwn">Может редактировать собственное время в задачах</label>
+		<label index="task.editAll">Может редактировать время всех в задачах</label>
+	</labels>
 </locallang>
