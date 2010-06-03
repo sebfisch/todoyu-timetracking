@@ -99,4 +99,29 @@
 		<label index="jumpToTask">Нажмите тут, чтобы перейти к этой задаче</label>
 		<label index="jumpToProject">Нажмите тут, чтобы перейти к этому проекту</label>
 	</labels>
+	<labels lang="nl_NL">
+		<label index="ext.title">Urenregistratie</label>
+		<label index="title">Urenregistratie</label>
+		<label index="noTracksYet">Nog geen uren geregistreerd</label>
+		<label index="attr.date_create">Datum</label>
+		<label index="attr.date_track">Datum</label>
+		<label index="attr.workload_tracked">Hoeveelheid werk</label>
+		<label index="attr.workload_chargeable">Facturabel</label>
+		<label index="attr.comment">Opmerking</label>
+		<label index="tasktab.time_elapsed">Totaal geregistreerde uren</label>
+		<label index="tasktab.edit">Klik hier om het record te bewerken</label>
+		<label index="start">Urenregistratie starten</label>
+		<label index="stop">Urenregistratie stoppen</label>
+		<label index="currentTask">Huidige taak</label>
+		<label index="showCurrentTaskInProject">Taak in project weergeven</label>
+		<label index="quicktask.workload_done">Hoeveelheid werk reeds verstreken</label>
+		<label index="extconf.stopOnLogout">Urenregistratie stoppen als een persoon uitlogt</label>
+		<label index="search.label">Urenregistratie</label>
+		<label index="filter.timetrackedPerson">Persoon heeft uren geregistreerd</label>
+		<label index="filter.timetrackedRoles">Rollen hebben geregistreerde uren</label>
+		<label index="headlet.label">Urenregistratie</label>
+		<label index="estimated_workload">Geschatte hoeveelheid werk</label>
+		<label index="jumpToTask">Klik hier om naar deze taak te gaan</label>
+		<label index="jumpToProject">Klik hier om naar dit project te gaan</label>
+	</labels>
 </locallang>
