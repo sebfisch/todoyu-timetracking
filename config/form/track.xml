@@ -15,7 +15,7 @@
 			<class>myFieldsetClass</class>
 			<elements>
 				
-				<field type="dateinput" name="date_track">
+				<field type="date" name="date_track">
 					<label>timetracking.attr.date_track</label>
 				</field>
 				
