@@ -48,4 +48,12 @@
 		<label index="task.editOwn">Může sledovat čas na vlastnich úkolech</label>
 		<label index="task.editAll">Může sledovat čas na všech úkolech</label>
 	</labels>
+	<labels lang="ja_JP">
+		<label index="general">一般設定</label>
+		<label index="general.use">作業時間の記録を使用</label>
+		<label index="task">タスクの記録</label>
+		<label index="task.track">作業時間の記録</label>
+		<label index="task.editOwn">所有するタスク上の記録を編集できる</label>
+		<label index="task.editAll">全タスク上の記録を編集できる</label>
+	</labels>
 </locallang>
