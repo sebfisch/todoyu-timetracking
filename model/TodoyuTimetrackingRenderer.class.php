@@ -93,12 +93,14 @@ class TodoyuTimetrackingRenderer {
 	 */
 	public static function renderTaskTabList($idTask) {
 		$idTask	= intval($idTask);
+		$task	= TodoyuTaskManager::getTask($idTask);
 		$tracks	= TodoyuTimetrackingTask::getTaskTracks($idTask);
 
 		$tmpl	= 'ext/timetracking/view/tasktab-list.tmpl';
 		$data	= array(
 			'idTask'	=> $idTask,
-			'tracks'	=> $tracks
+			'tracks'	=> $tracks,
+			'task'		=> $task->getTemplateData()
 		);
 
 		return render($tmpl, $data);
