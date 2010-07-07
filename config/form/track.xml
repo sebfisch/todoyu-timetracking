@@ -27,7 +27,7 @@
 					<label>timetracking.attr.workload_chargeable</label>
 				</field>
 
-				<field type="textinput" name="comment">
+				<field type="text" name="comment">
 					<label>timetracking.attr.comment</label>
 				</field>
 
