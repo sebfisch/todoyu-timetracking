@@ -9,6 +9,7 @@
 		<label index="attr.workload_tracked">Workload</label>
 		<label index="attr.workload_chargeable">Chargeable</label>
 		<label index="attr.comment">Comment</label>
+		<label index="task.attr.overtimed">Task Overbooked</label>
 		<label index="tasktab.time_elapsed">Total Tracked Time</label>
 		<label index="tasktab.edit">Click here to edit this record</label>
 		<label index="start">Start Time Tracking</label>
@@ -34,6 +35,7 @@
 		<label index="attr.workload_tracked">Arbeitsaufwand</label>
 		<label index="attr.workload_chargeable">Verrechenbar</label>
 		<label index="attr.comment">Kommentar</label>
+		<label index="task.attr.overtimed">Aufgabezeit überschritten</label>
 		<label index="tasktab.time_elapsed">Total erfasste Zeit</label>
 		<label index="tasktab.edit">Klicken Sie hier um diesen Eintrag zu bearbeiten</label>
 		<label index="start">Zeiterfassung starten</label>
@@ -58,6 +60,7 @@
 		<label index="attr.workload_tracked">Workload</label>
 		<label index="attr.workload_chargeable">Honorários</label>
 		<label index="attr.comment">Nota</label>
+		<label index="task.attr.overtimed">Tarefa Overbooked</label>
 		<label index="tasktab.time_elapsed">Total de Horas</label>
 		<label index="tasktab.edit">Click Aqui para Editar Este Registro</label>
 		<label index="start">Iniciar Gestão de Horas</label>
@@ -83,6 +86,7 @@
 		<label index="attr.workload_tracked">Загрузка</label>
 		<label index="attr.workload_chargeable">Оплачивается</label>
 		<label index="attr.comment">Комментарий</label>
+		<label index="task.attr.overtimed">Задача перегружена</label>
 		<label index="tasktab.time_elapsed">Всего учтено времени</label>
 		<label index="tasktab.edit">Нажмите тут для редактирования</label>
 		<label index="start">Начать учёт времени</label>
@@ -108,6 +112,7 @@
 		<label index="attr.workload_tracked">Hoeveelheid werk</label>
 		<label index="attr.workload_chargeable">Facturabel</label>
 		<label index="attr.comment">Opmerking</label>
+		<label index="task.attr.overtimed">Taak is overboekt</label>
 		<label index="tasktab.time_elapsed">Totaal geregistreerde uren</label>
 		<label index="tasktab.edit">Klik hier om het record te bewerken</label>
 		<label index="start">Urenregistratie starten</label>
@@ -133,6 +138,7 @@
 		<label index="attr.workload_tracked">Odpracovaný</label>
 		<label index="attr.workload_chargeable">Zpoplatněný</label>
 		<label index="attr.comment">Komentář</label>
+		<label index="task.attr.overtimed">Úkol Overbooked</label>
 		<label index="tasktab.time_elapsed">Celkový zaznamenaný čas</label>
 		<label index="tasktab.edit">Pro úpravu záznamu klikněte zde</label>
 		<label index="start">Začít sletovat čas</label>
@@ -158,6 +164,7 @@
 		<label index="attr.workload_tracked">作業量</label>
 		<label index="attr.workload_chargeable">請求対象</label>
 		<label index="attr.comment">コメント</label>
+		<label index="task.attr.overtimed">タスクの衝突</label>
 		<label index="tasktab.time_elapsed">作業時間の合計</label>
 		<label index="tasktab.edit">レコードを編集する</label>
 		<label index="start">作業時間を記録する</label>
