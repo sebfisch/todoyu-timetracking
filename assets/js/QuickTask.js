@@ -18,34 +18,40 @@
 *****************************************************************************/
 
 /**
- * Quicktask modifications of timetracking
+ * Quick task modifications to time tracking
  */
 Todoyu.Ext.timetracking.QuickTask = {
-	
+
+	/**
+	 * Extension backlink
+	 *
+	 * @var	{Object}	ext
+	 */
 	ext: Todoyu.Ext.timetracking,
 	
 	fieldStart:		'quicktask-0-field-start-tracking',
+
 	fieldDone:		'quicktask-0-field-task-done',
-	
+
+
 	
 	/**
-	 * Initialize
-	 * Add hooks on quicktask for timetracking
+	 * Initialize: Add hooks for time tracking to quick task 
 	 */
 	init: function() {
-			// Callend when quicktask is opened (empty form)
+			// Called when quick task is opened (empty form)
 		Todoyu.Hook.add('QuickTaskOpen', this.onQuickTaskOpen.bind(this));		
-			// Called when a quicktask is saved
+			// Called when a quick task is saved
 		Todoyu.Hook.add('QuickTaskSaved', this.onQuickTaskSaved.bind(this));
 	},
 	
 	
 	
 	/**
-	 * Hook called when quicktask popup is loaded
+	 * Hook called when quick task popUp is loaded
 	 * Install observers on fields
 	 * 
-	 * @param	{Ajax.Response}		response		Popup Ajax request response
+	 * @param	{Ajax.Response}		response		PopUp AJAX request response
 	 */
 	onQuickTaskOpen: function(response) {
 		$(this.fieldStart).observe('change', this.preventStartDone.bindAsEventListener(this, 'start'));
@@ -55,12 +61,12 @@ Todoyu.Ext.timetracking.QuickTask = {
 	
 	
 	/**
-	 * Hook called after quicktask was saved
-	 * Start timetracking if php hook has sent the header
+	 * Hook called after quick task was saved
+	 * Start time tracking if PHP hook has sent the header
 	 * 
 	 * @param	{Number}			idTask
 	 * @param	{Number}			idProject
-	 * @param	Ajax.Reponse	response
+	 * @param	{Ajax.Reponse}		response
 	 */
 	onQuickTaskSaved: function(idTask, idProject, response) {
 		if( response.getTodoyuHeader('startTracking') == 1 ) {
@@ -71,7 +77,7 @@ Todoyu.Ext.timetracking.QuickTask = {
 
 	
 	/**
-	 * Make sure only one of the options in quicktask form is checked
+	 * Make sure only one of the options in quick task form is checked
 	 * - start tracking
 	 * - task done
 	 * 

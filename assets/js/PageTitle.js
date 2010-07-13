@@ -54,16 +54,17 @@ Todoyu.Ext.timetracking.PageTitle = {
 	
 	
 	/**
-	 * Show info in window title
+	 * Show info (tracked time versus percent of estimated) in browser window title
 	 */
-	showInfo: function() {	
-		this.update(true, this.task.id_project + '.' + this.task.tasknumber, this.task.title, this.ext.getTotalTime(), this.ext.getPercentOfTime());
+	showInfo: function() {
+		var taskNumber	= this.task.id_project + '.' + this.task.tasknumber;
+		this.update(true, taskNumber, this.task.title, this.ext.getTotalTime(), this.ext.getPercentOfTime());
 	},
 	
 	
 	
 	/**
-	 * Update window title
+	 * Update browser window title
 	 * 
 	 * @param	{Boolean}		show			Show time tracking info
 	 * @param	{String}		taskNumber		Task number (incl. project)
@@ -80,8 +81,8 @@ Todoyu.Ext.timetracking.PageTitle = {
 			var timeStr	= Todoyu.Time.timeFormatSeconds(time);
 			trackInfo	= ' - [' + taskNumber + ': ' + taskTitle.substr(0, 50) + ' [' + timeStr + percentStr + ']';			
 		}
-		
+
 		Todoyu.Ui.setTitle(blankTitle + trackInfo);
 	}
-	
+
 };
