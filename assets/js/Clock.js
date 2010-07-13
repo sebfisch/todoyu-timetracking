@@ -198,15 +198,18 @@ Todoyu.Ext.timetracking.Clock = {
 
 
 	/**
-	 * Get an array with the keys hours,minutes and seconds of the current time
+	 * Get an array with the keys hours, minutes and seconds of the current time
 	 *
 	 * @return	{Array}
 	 */
 	getTimeParts: function() {
+		var hours	= Math.floor(this.getTime() / Todoyu.Time.seconds.hour);
+		var minutes	= this.getTime() - (hours * Todoyu.Time.seconds.hour);
+
 		return {
-			'hours': 	Math.floor(this.getTime()/3600),
-			'minutes':	Math.floor((this.getTime()-Math.floor(this.getTime()/3600)*3600)/60),
-			'seconds':	this.getTime() - (Math.floor(this.getTime() / 3600) * 3600) - (Math.floor((this.getTime() - Math.floor(this.getTime() / 3600) * 3600) / 60)*60)
+			'hours': 	hours,
+			'minutes':	Math.floor(minutes / Todoyu.Time.seconds.minute),
+			'seconds':	minutes - (Math.floor(minutes / Todoyu.Time.seconds.minute) * Todoyu.Time.seconds.minute)
 		};
 	}
 
