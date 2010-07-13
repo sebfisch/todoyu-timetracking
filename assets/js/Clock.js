@@ -137,9 +137,9 @@ Todoyu.Ext.timetracking.Clock = {
 
 
 	/**
-	 * Enter description here...
+	 * Register given callback
 	 *
-	 * @param unknown_type callback
+	 * @param	{Function}	callback
 	 */
 	addCallback: function(callback) {
 		this.callbacks.push(callback);
@@ -148,7 +148,7 @@ Todoyu.Ext.timetracking.Clock = {
 
 
 	/**
-	 * Enter description here...
+	 * Call registered callback functions
 	 */
 	callCallbacks: function() {
 		this.callbacks.each(function(callback) {
@@ -173,7 +173,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Call updater function for all registered display areas
 	 *
-	 * @param	PeriodicalExecuter	pe
+	 * @param	{PeriodicalExecuter}	pe
 	 */
 	refreshAreas: function(pe) {
 		this.displayAreas.each(function(idDisplayArea) {
@@ -200,12 +200,14 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Get an array with the keys hours,minutes and seconds of the current time
 	 *
-	 * @return	Array
+	 * @return	{Array}
 	 */
 	getTimeParts: function() {
-		return {'hours': 	Math.floor(this.getTime()/3600),
-				'minutes':	Math.floor((this.getTime()-Math.floor(this.getTime()/3600)*3600)/60),
-				'seconds':	this.getTime() - (Math.floor(this.getTime() / 3600) * 3600) - (Math.floor((this.getTime() - Math.floor(this.getTime() / 3600) * 3600) / 60)*60)};
+		return {
+			'hours': 	Math.floor(this.getTime()/3600),
+			'minutes':	Math.floor((this.getTime()-Math.floor(this.getTime()/3600)*3600)/60),
+			'seconds':	this.getTime() - (Math.floor(this.getTime() / 3600) * 3600) - (Math.floor((this.getTime() - Math.floor(this.getTime() / 3600) * 3600) / 60)*60)
+		};
 	}
 
 };
