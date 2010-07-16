@@ -7,17 +7,14 @@
 		<field name="dummy" noStorage="true" />
 	</hiddenFields>
 	<fieldsets>
-
 		<fieldset name="config">
 
 			<elements>
 				<field type="checkbox" name="stopOnLogout">
 					<label>timetracking.extconf.stopOnLogout</label>
 				</field>
-
 			</elements>
 
 		</fieldset>
-
 	</fieldsets>
 </form>

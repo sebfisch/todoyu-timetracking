@@ -9,7 +9,11 @@
 		<label index="attr.workload_tracked">Workload</label>
 		<label index="attr.workload_chargeable">Chargeable</label>
 		<label index="attr.comment">Comment</label>
+		<label index="search.label">Time Tracking</label>
+		<label index="filter.timetrackedPerson">Person has tracked time</label>
+		<label index="filter.timetrackedRoles">Roles have tracked time</label>
 		<label index="task.attr.overtimed">Task Overbooked</label>
+		<label index="headlet.label">Time Tracking</label>
 		<label index="tasktab.time_elapsed">Total Tracked Time</label>
 		<label index="tasktab.edit">Click here to edit this record</label>
 		<label index="start">Start Time Tracking</label>
@@ -17,14 +21,10 @@
 		<label index="currentTask">Current Task</label>
 		<label index="showCurrentTaskInProject">Show task in project</label>
 		<label index="quicktask.workload_done">Time Already Worked</label>
-		<label index="extconf.stopOnLogout">Stop time tracking if a person clicks to logout</label>
-		<label index="search.label">Time Tracking</label>
-		<label index="filter.timetrackedPerson">Person has tracked time</label>
-		<label index="filter.timetrackedRoles">Roles have tracked time</label>
-		<label index="headlet.label">Time Tracking</label>
 		<label index="estimated_workload">Est. Workload</label>
 		<label index="jumpToTask">Click here to jump to this task</label>
 		<label index="jumpToProject">Click here to jump to this project</label>
+		<label index="extconf.stopOnLogout">Stop time tracking when logging out</label>
 	</labels>
 	<labels lang="de_DE">
 		<label index="ext.title">Zeiterfassung</label>
@@ -35,7 +35,11 @@
 		<label index="attr.workload_tracked">Arbeitsaufwand</label>
 		<label index="attr.workload_chargeable">Verrechenbar</label>
 		<label index="attr.comment">Kommentar</label>
+		<label index="search.label">Zeiterfassung</label>
+		<label index="filter.timetrackedPerson">Person hat Zeit erfasst</label>
+		<label index="filter.timetrackedRoles">Rollen haben Zeit erfasst</label>
 		<label index="task.attr.overtimed">Aufgabezeit überschritten</label>
+		<label index="headlet.label">Zeiterfassung</label>
 		<label index="tasktab.time_elapsed">Total erfasste Zeit</label>
 		<label index="tasktab.edit">Klicken Sie hier um diesen Eintrag zu bearbeiten</label>
 		<label index="start">Zeiterfassung starten</label>
@@ -43,13 +47,10 @@
 		<label index="currentTask">Aktuelle Aufgabe</label>
 		<label index="showCurrentTaskInProject">Aufgabe im Projekt anzeigen</label>
 		<label index="quicktask.workload_done">Schon gearbeitete Zeit</label>
-		<label index="search.label">Zeiterfassung</label>
-		<label index="filter.timetrackedPerson">Person hat Zeit erfasst</label>
-		<label index="filter.timetrackedRoles">Rollen haben Zeit erfasst</label>
-		<label index="headlet.label">Zeiterfassung</label>
 		<label index="estimated_workload">Aufw. geschätzt</label>
 		<label index="jumpToTask">Klicken Sie hier um zu diesem Task zu wechseln</label>
 		<label index="jumpToProject">Klicken Sie hier um zu diesem Projekt zu wechseln</label>
+		<label index="extconf.stopOnLogout">Laufende Zeiterfassung beim log-out stoppen</label>
 	</labels>
 	<labels lang="pt_BR">
 		<label index="ext.title">Gestão de Horas</label>
@@ -60,7 +61,11 @@
 		<label index="attr.workload_tracked">Workload</label>
 		<label index="attr.workload_chargeable">Honorários</label>
 		<label index="attr.comment">Nota</label>
+		<label index="search.label">Gestão de Horas</label>
+		<label index="filter.timetrackedPerson">Pessoa Possui Registro de Horas</label>
+		<label index="filter.timetrackedRoles">Permissões Posssuem Registro de Horas</label>
 		<label index="task.attr.overtimed">Tarefa Overbooked</label>
+		<label index="headlet.label">Gestão de Horas</label>
 		<label index="tasktab.time_elapsed">Total de Horas</label>
 		<label index="tasktab.edit">Click Aqui para Editar Este Registro</label>
 		<label index="start">Iniciar Gestão de Horas</label>
@@ -68,14 +73,10 @@
 		<label index="currentTask">Tarefa Atual</label>
 		<label index="showCurrentTaskInProject">Exibir Tarefa no Projeto</label>
 		<label index="quicktask.workload_done">Horas Já Trabalhadas</label>
-		<label index="extconf.stopOnLogout">Parar Gestão Se As Pessoas Fizerem Logoff</label>
-		<label index="search.label">Gestão de Horas</label>
-		<label index="filter.timetrackedPerson">Pessoa Possui Registro de Horas</label>
-		<label index="filter.timetrackedRoles">Permissões Posssuem Registro de Horas</label>
-		<label index="headlet.label">Gestão de Horas</label>
 		<label index="estimated_workload">Est. Workload</label>
 		<label index="jumpToTask">Click aqui para ir a esta tarefa</label>
 		<label index="jumpToProject">Click aqui para ir a este projeto</label>
+		<label index="extconf.stopOnLogout">Parar Gestão Se As Pessoas Fizerem Logoff</label>
 	</labels>
 	<labels lang="ru_RU">
 		<label index="ext.title">Учёт времени</label>
@@ -86,7 +87,11 @@
 		<label index="attr.workload_tracked">Загрузка</label>
 		<label index="attr.workload_chargeable">Оплачивается</label>
 		<label index="attr.comment">Комментарий</label>
+		<label index="search.label">Учёт времени</label>
+		<label index="filter.timetrackedPerson">Персона учитывала время</label>
+		<label index="filter.timetrackedRoles">Роль учитывала время</label>
 		<label index="task.attr.overtimed">Задача перегружена</label>
+		<label index="headlet.label">Учёт времени</label>
 		<label index="tasktab.time_elapsed">Всего учтено времени</label>
 		<label index="tasktab.edit">Нажмите тут для редактирования</label>
 		<label index="start">Начать учёт времени</label>
@@ -94,14 +99,10 @@
 		<label index="currentTask">Текущая задача</label>
 		<label index="showCurrentTaskInProject">Показать задачу в проекте</label>
 		<label index="quicktask.workload_done">Уже учтено</label>
-		<label index="extconf.stopOnLogout">Останавливать учёт времени при выходе из системы</label>
-		<label index="search.label">Учёт времени</label>
-		<label index="filter.timetrackedPerson">Персона учитывала время</label>
-		<label index="filter.timetrackedRoles">Роль учитывала время</label>
-		<label index="headlet.label">Учёт времени</label>
 		<label index="estimated_workload">План. загрузка</label>
 		<label index="jumpToTask">Нажмите тут, чтобы перейти к этой задаче</label>
 		<label index="jumpToProject">Нажмите тут, чтобы перейти к этому проекту</label>
+		<label index="extconf.stopOnLogout">Останавливать учёт времени при выходе из системы</label>
 	</labels>
 	<labels lang="nl_NL">
 		<label index="ext.title">Urenregistratie</label>
@@ -112,7 +113,11 @@
 		<label index="attr.workload_tracked">Hoeveelheid werk</label>
 		<label index="attr.workload_chargeable">Facturabel</label>
 		<label index="attr.comment">Opmerking</label>
+		<label index="search.label">Urenregistratie</label>
+		<label index="filter.timetrackedPerson">Persoon heeft uren geregistreerd</label>
+		<label index="filter.timetrackedRoles">Rollen hebben geregistreerde uren</label>
 		<label index="task.attr.overtimed">Taak is overboekt</label>
+		<label index="headlet.label">Urenregistratie</label>
 		<label index="tasktab.time_elapsed">Totaal geregistreerde uren</label>
 		<label index="tasktab.edit">Klik hier om het record te bewerken</label>
 		<label index="start">Urenregistratie starten</label>
@@ -120,14 +125,10 @@
 		<label index="currentTask">Huidige taak</label>
 		<label index="showCurrentTaskInProject">Taak in project weergeven</label>
 		<label index="quicktask.workload_done">Hoeveelheid werk reeds verstreken</label>
-		<label index="extconf.stopOnLogout">Urenregistratie stoppen als een persoon uitlogt</label>
-		<label index="search.label">Urenregistratie</label>
-		<label index="filter.timetrackedPerson">Persoon heeft uren geregistreerd</label>
-		<label index="filter.timetrackedRoles">Rollen hebben geregistreerde uren</label>
-		<label index="headlet.label">Urenregistratie</label>
 		<label index="estimated_workload">Geschatte hoeveelheid werk</label>
 		<label index="jumpToTask">Klik hier om naar deze taak te gaan</label>
 		<label index="jumpToProject">Klik hier om naar dit project te gaan</label>
+		<label index="extconf.stopOnLogout">Urenregistratie stoppen als een persoon uitlogt</label>
 	</labels>
 	<labels lang="cs_CZ">
 		<label index="ext.title">Sledování času</label>
@@ -138,7 +139,11 @@
 		<label index="attr.workload_tracked">Odpracovaný</label>
 		<label index="attr.workload_chargeable">Zpoplatněný</label>
 		<label index="attr.comment">Komentář</label>
+		<label index="search.label">Sledování času</label>
+		<label index="filter.timetrackedPerson">Zaznamenaný čas osoby</label>
+		<label index="filter.timetrackedRoles">Zaznamenaný čas role</label>
 		<label index="task.attr.overtimed">Úkol Overbooked</label>
+		<label index="headlet.label">Sledování času</label>
 		<label index="tasktab.time_elapsed">Celkový zaznamenaný čas</label>
 		<label index="tasktab.edit">Pro úpravu záznamu klikněte zde</label>
 		<label index="start">Začít sletovat čas</label>
@@ -146,14 +151,10 @@
 		<label index="currentTask">Současný úkol</label>
 		<label index="showCurrentTaskInProject">Zobrazit úkol v projektu</label>
 		<label index="quicktask.workload_done">Odpracovaný čas</label>
-		<label index="extconf.stopOnLogout">Ukončit sledování časku když uživatel klikne na odhlásit se</label>
-		<label index="search.label">Sledování času</label>
-		<label index="filter.timetrackedPerson">Zaznamenaný čas osoby</label>
-		<label index="filter.timetrackedRoles">Zaznamenaný čas role</label>
-		<label index="headlet.label">Sledování času</label>
 		<label index="estimated_workload">Časový odhad</label>
 		<label index="jumpToTask">Kliknutím přejít na úkol</label>
 		<label index="jumpToProject">Kliknutím přejít na projekt</label>
+		<label index="extconf.stopOnLogout">Ukončit sledování časku když uživatel klikne na odhlásit se</label>
 	</labels>
 	<labels lang="ja_JP">
 		<label index="ext.title">作業時間の記録</label>
@@ -165,6 +166,10 @@
 		<label index="attr.workload_chargeable">請求対象</label>
 		<label index="attr.comment">コメント</label>
 		<label index="task.attr.overtimed">タスクの衝突</label>
+		<label index="headlet.label">作業時間の記録</label>
+		<label index="search.label">作業時間の記録</label>
+		<label index="filter.timetrackedPerson">個人の作業時間の記録</label>
+		<label index="filter.timetrackedRoles">ロールの作業時間の記録</label>
 		<label index="tasktab.time_elapsed">作業時間の合計</label>
 		<label index="tasktab.edit">レコードを編集する</label>
 		<label index="start">作業時間を記録する</label>
@@ -172,13 +177,9 @@
 		<label index="currentTask">現在のタスク</label>
 		<label index="showCurrentTaskInProject">プロジェクトでタスクを表示</label>
 		<label index="quicktask.workload_done">既に働いています</label>
-		<label index="extconf.stopOnLogout">ログアウトをクリックした場合は作業時間の記録を停止する</label>
-		<label index="search.label">作業時間の記録</label>
-		<label index="filter.timetrackedPerson">個人の作業時間の記録</label>
-		<label index="filter.timetrackedRoles">ロールの作業時間の記録</label>
-		<label index="headlet.label">作業時間の記録</label>
 		<label index="estimated_workload">作業見積</label>
 		<label index="jumpToTask">このタスクに移動</label>
 		<label index="jumpToProject">このプロジェクトに移動</label>
+		<label index="extconf.stopOnLogout">ログアウトをクリックした場合は作業時間の記録を停止する</label>
 	</labels>
 </locallang>
