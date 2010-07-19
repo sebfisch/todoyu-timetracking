@@ -130,52 +130,6 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	private function getLastTrackedTasks() {
 		$numTasks	= intval(Todoyu::$CONFIG['EXT']['timetracking']['headletLastTasks']);
 
-		/*
-		// This version gets only the last tracking time
-		$query	= '	SELECT
-						SUM(track.workload_tracked) as trackedtime,
-						task.id,
-						task.id_project,
-						task.tasknumber,
-						task.title,
-						task.tasknumber,
-						task.type,
-						task.status,
-						project.title as projecttitle
-					FROM (
-						SELECT
-							id_task,
-							MAX(date_track) as last_update
-						FROM
-							`ext_timetracking_track`
-						WHERE
-							id_person_create	= ' . personid() . '
-						GROUP BY
-							id_task
-						ORDER BY
-							last_update DESC
-						LIMIT
-							' . (2 * $numTasks) . '
-					) AS latest_tracks
-					INNER JOIN
-						`ext_timetracking_track` AS track
-							ON		track.id_task 			= latest_tracks.id_task
-								AND track.date_track 		= latest_tracks.last_update
-								AND track.id_person_create	= ' . personid() . '
-					LEFT JOIN
-						ext_project_task task
-							ON track.id_task  = task.id
-					LEFT JOIN
-						ext_project_project project
-							ON task.id_project = project.id
-					GROUP BY
-						task.id
-					ORDER BY
-						track.date_track DESC
-					LIMIT
-						0,' . $numTasks;
-*/
-
 		$query	= '	SELECT
 						MAX(track.date_track) as last_update,
 						SUM(track.workload_tracked) as trackedtime,
@@ -196,7 +150,8 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 						`ext_project_project` project
 							ON task.id_project = project.id
 					WHERE
-						track.id_person_create = ' . personid() . '
+						track.id_person_create	= ' . personid() . ' AND
+						task.type				= ' . TASK_TYPE_TASK . '
 					GROUP BY
 						id_task
 					ORDER BY
@@ -208,7 +163,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 		$tasks		= Todoyu::db()->resourceToArray($resource);
 
 		foreach($tasks as $index => $task)	{
-			$tasks[$index]['isTrackable'] = TodoyuTimetracking::isTrackable($task['type'], $task['status']);
+			$tasks[$index]['isTrackable'] = TodoyuTimetracking::isTrackable(TASK_TYPE_TASK, $task['status'], $task['id']);
 		}
 
 		return $tasks;

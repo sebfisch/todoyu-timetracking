@@ -141,16 +141,18 @@ class TodoyuTimetrackingRenderer {
 	 * @return	String
 	 */
 	public static function renderTaskTrack($idTrack)	{
-		$idTrack	= intval($idTrack);
-
+		$idTrack= intval($idTrack);
 		$tmpl	= 'ext/timetracking/view/tasktab-track.tmpl';
 
 		$data = array(
-			'track'		=> array_merge(
-				TodoyuTimetracking::getTrack($idTrack),
-				TodoyuTimetracking::getTrackPersonData($idTrack)
-			)
+			'track'	=> TodoyuTimetracking::getTrack($idTrack),
+			'person'=> TodoyuTimetracking::getTrackPersonData($idTrack)
 		);
+
+		$idTask	= intval($data['track']['id_task']);
+		$task	= TodoyuTaskManager::getTask($idTask);
+
+		$data['task'] = $task->getTemplateData();
 
 		return render($tmpl, $data);
 	}

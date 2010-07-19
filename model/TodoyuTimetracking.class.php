@@ -367,8 +367,6 @@ class TodoyuTimetracking {
 	 * @return	Array
 	 */
 	public static function getTrack($idTrack) {
-		$idTrack	= intval($idTrack);
-
 		return TodoyuRecordManager::getRecordData(self::TABLE, $idTrack);
 	}
 
@@ -500,15 +498,18 @@ class TodoyuTimetracking {
 	 * @param	Integer		$status
 	 * @return	Boolean
 	 */
-	public static function isTrackable($type, $status) {
+	public static function isTrackable($type, $status, $idTask) {
 		$type	= intval($type);
 		$status	= intval($status);
+		$idTask	= intval($idTask);
 
 		if( $type === TASK_TYPE_TASK ) {
-			return self::isTrackableStatus($status);
-		} else {
-			return false;
+			if( self::isTrackableStatus($status) ) {
+				return TodoyuTaskManager::isLocked($idTask) === false;
+			}
 		}
+
+		return false;
 	}
 
 
