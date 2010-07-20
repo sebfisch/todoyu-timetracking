@@ -560,7 +560,7 @@ class TodoyuTimetracking {
 		$idTask	= intval($idTask);
 		$task	= TodoyuTaskManager::getTask($idTask);
 
-		if( $task->isTask() && self::isTrackableStatus($task->getStatus()) ) {
+		if( $task->isTask() && !$task->isLocked() && self::isTrackableStatus($task->getStatus()) ) {
 			if( self::isTaskRunning($idTask) ) {
 				$items['timetrackstop'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstop'];
 			} else {
