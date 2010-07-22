@@ -129,7 +129,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	updateTime: function(time) {
 		var headlet = $('headlet-timetracking-tracking');
 
-		if ( headlet ) {
+		if( headlet ) {
 			$('headlet-timetracking-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
 		}
 	},
