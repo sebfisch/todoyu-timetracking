@@ -28,25 +28,25 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 * @var	{Object}	ext
 	 */
 	ext: Todoyu.Ext.timetracking,
-	
+
 	fieldStart:		'quicktask-0-field-start-tracking',
 
 	fieldDone:		'quicktask-0-field-task-done',
 
 
-	
+
 	/**
 	 * Initialize: Add hooks for time tracking to quick task 
 	 */
 	init: function() {
 			// Called when quick task is opened (empty form)
-		Todoyu.Hook.add('QuickTaskOpen', this.onQuickTaskOpen.bind(this));		
+		Todoyu.Hook.add('QuickTaskOpen', this.onQuickTaskOpen.bind(this));
 			// Called when a quick task is saved
 		Todoyu.Hook.add('QuickTaskSaved', this.onQuickTaskSaved.bind(this));
 	},
-	
-	
-	
+
+
+
 	/**
 	 * Hook called when quick task popUp is loaded
 	 * Install observers on fields
@@ -57,9 +57,9 @@ Todoyu.Ext.timetracking.QuickTask = {
 		$(this.fieldStart).observe('change', this.preventStartDone.bindAsEventListener(this, 'start'));
 		$(this.fieldDone).observe('change', this.preventStartDone.bindAsEventListener(this, 'done'));
 	},
-	
-	
-	
+
+
+
 	/**
 	 * Hook called after quick task was saved
 	 * Start time tracking if PHP hook has sent the header
@@ -75,7 +75,7 @@ Todoyu.Ext.timetracking.QuickTask = {
 	},
 
 
-	
+
 	/**
 	 * Make sure only one of the options in quick task form is checked
 	 * - start tracking
@@ -96,5 +96,5 @@ Todoyu.Ext.timetracking.QuickTask = {
 			}
 		}
 	}
-	
+
 };

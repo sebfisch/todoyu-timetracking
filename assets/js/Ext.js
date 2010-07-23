@@ -70,8 +70,8 @@ Todoyu.Ext.timetracking = {
 		this.initWithoutTask();
 		this.start(this.getTaskID(), true);
 	},
-	
-	
+
+
 
 	/**
 	 * Start tracking time on given task
@@ -265,7 +265,7 @@ Todoyu.Ext.timetracking = {
 	},
 
 
-	
+
 	/**
 	 * Get ID of currently tracked task
 	 */

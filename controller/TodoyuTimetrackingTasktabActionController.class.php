@@ -96,9 +96,9 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 
 		return TodoyuTimetrackingRenderer::renderTaskTrack($idTrack);
 	}
-	
-	
-	
+
+
+
 	/**
 	 * Renders track by id
 	 * 

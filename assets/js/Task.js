@@ -43,7 +43,7 @@ Todoyu.Ext.timetracking.Task = {
 	 * @param {Number}t idTask
 	 */
 	start: function(idTask) {
-		this.ext.start(idTask);		
+		this.ext.start(idTask);
 	},
 
 
@@ -122,17 +122,17 @@ Todoyu.Ext.timetracking.Task = {
 	 * @param	{Number}	idTask
 	 * @param	{Boolean}	running
 	 */
-	setRunningStyle: function(idTask, running) {		
+	setRunningStyle: function(idTask, running) {
 		if( Todoyu.exists('task-' + idTask) ) {
 			if( running ) {
 				$('task-' + idTask).addClassName('running');
 			} else {
 				$('task-' + idTask).removeClassName('running');
-			}			
+			}
 			this.updateTab(idTask);
 		}
 	},
-	
+
 
 
 	/**
@@ -149,7 +149,7 @@ Todoyu.Ext.timetracking.Task = {
 			}
 		};
 		var target	= 'task-' + idTask + '-tabcontent-timetracking';
-		
+
 		if( Todoyu.exists(target) ) {
 			Todoyu.Ui.update(target, url, options);
 		}
@@ -260,10 +260,10 @@ Todoyu.Ext.timetracking.Task = {
 	 */
 	onTrackSaved: function(idTask, idTrack, response) {
 		this.updateTrackContent(idTask, idTrack, response.responseText);
-		
+
 			// Add the zebra for the list
 		var tracks	= $('task-' + idTask + '-timetracks').select('li');
-				
+
 		tracks.each(function(item, index){
 			item[index%2?'removeClassName':'addClassName']('odd');
 		});

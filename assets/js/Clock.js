@@ -88,7 +88,7 @@ Todoyu.Ext.timetracking.Clock = {
 	},
 
 
-	
+
 //	setTime: function(time) {
 //		Todoyu.Ext.timetracking.setTime(time);
 //	},

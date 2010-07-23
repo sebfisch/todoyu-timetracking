@@ -43,7 +43,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	}
 
 
-	
+
 	/**
 	 * Render content for overlay box
 	 *

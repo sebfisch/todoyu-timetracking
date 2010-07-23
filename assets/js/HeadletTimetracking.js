@@ -25,11 +25,11 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @var	{Object}	ext
 	 */
 	ext:	Todoyu.Ext.timetracking,
-	
+
 	button: null,
-	
+
 	info: null,
-	
+
 	barClasses: {},
 
 
@@ -43,8 +43,8 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		this.ext.registerClockCallback(this.onClockTick.bind(this));
 
 	},
-	
-	
+
+
 	/**
 	 * Handler when clicked on button
 	 * 
@@ -71,18 +71,29 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		this.setActive();
 	},
 
+
+
+	/**
+	 * @todo	comment
+	 * @param	event
+	 */
 	onBodyClick: function(event) {
 		if( this.isEventInOwnContent(event) ) {
 			event.stop();
 		}
 	},
-	
+
+
+
+	/**
+	 * @todo	comment
+	 */
 	hide: function() {
 		this.hideContent();
 		this.saveOpenStatus();
 	},
-	
-	
+
+
 
 	/**
 	 * Handle toggeling of timetracking (headlet). If timetracking started: show it, otherwise: hide it
@@ -107,9 +118,9 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		this.updateTime(time);
 		this.updatePercent();
 	},
-	
-	
-	
+
+
+
 	/**
 	 * Set tracking status for button
 	 * 
@@ -145,7 +156,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		if( Todoyu.exists(idPercent) && this.ext.hasEstimatedTime() ) {
 			var percent	= this.ext.getPercentOfTime();
 			$(idPercent).update(percent + '%');
-			
+
 			var progress= $('headlet-timetracking-progress');
 			this.barClasses.each(function(percent, pair){
 				if( percent >= pair.key ) {
@@ -154,12 +165,12 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 					});
 					throw $break;
 				}
-			}.bind(this, percent));			
+			}.bind(this, percent));
 		}
 	},
 
 
-	
+
 	/**
 	 * Set barClasses to internal storage
 	 * 
@@ -186,9 +197,9 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 		Todoyu.Ui.update(target, url, options);
 	},
-	
-	
-	
+
+
+
 	/**
 	 * Handler when content is updated
 	 * 
@@ -209,7 +220,13 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	stopTask: function(idTask) {
 		this.ext.stop(idTask);
 	},
-	
+
+
+
+	/**
+	 * @todo	comment
+	 * @param	idTask
+	 */
 	startTask: function(idTask) {
 		this.ext.start(idTask);
 	},
