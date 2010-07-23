@@ -267,6 +267,10 @@ Todoyu.Ext.timetracking.Task = {
 		tracks.each(function(item, index){
 			item[index%2?'removeClassName':'addClassName']('odd');
 		});
+
+
+		var totalTracked = response.getTodoyuHeader('totalTimeTracked');
+		$('task-' + idTask + '-timetrack-trackedtime').innerHTML = totalTracked;
 	},
 
 
