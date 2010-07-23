@@ -107,7 +107,7 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 	 */
 	public function trackcontentAction(array $params)	{
 		$idTrack	= intval($params['idTrack']);
-		
+
 		return TodoyuTimetrackingRenderer::renderTaskTrack($idTrack);
 	}
 }
