@@ -193,10 +193,10 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 * Check wether time is being currently tracked
+	 * Check whether time is being currently tracked
 	 */
 	isTracking: function() {
-		return this.task.id > 0;
+		return ( this.task.id > 0 );
 	},
 
 
