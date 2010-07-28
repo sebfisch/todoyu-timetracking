@@ -48,7 +48,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Handler when clicked on button
 	 * 
-	 * @param	{Event}	event
+	 * @param	{Event}		event
 	 */
 	onButtonClick: function(event) {
 		if( this.isContentVisible() ) {
@@ -183,7 +183,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Update timetracking headlet. Evokes rerendering of the headlet.
+	 * Update timetracking headlet. Evokes reRendering of the headlet.
 	 */
 	updateContent: function() {
 		var url		= Todoyu.getUrl('timetracking', 'headlet');
@@ -257,4 +257,5 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	isTaskInCurrentView: function(idTask) {
 		return Todoyu.exists('task-' + idTask);
 	}
+
 };
