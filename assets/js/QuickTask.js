@@ -40,9 +40,9 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 */
 	init: function() {
 			// Called when quick task is opened (empty form)
-		Todoyu.Hook.add('quickTaskOpen', this.onQuickTaskOpen.bind(this));
+		Todoyu.Hook.add('project.quickTask.formLoaded', this.onQuickTaskOpen.bind(this));
 			// Called when a quick task is saved
-		Todoyu.Hook.add('quickTaskSaved', this.onQuickTaskSaved.bind(this));
+		Todoyu.Hook.add('project.quickTask.saved', this.onQuickTaskSaved.bind(this));
 	},
 
 
