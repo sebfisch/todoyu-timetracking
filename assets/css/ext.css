@@ -1,11 +1,19 @@
+/* ----------------------------------------------
+	Extension icon: stand-alone and in heading
+   ---------------------------------------------- */
+span.extIconTimetracking {
+	background:url('../img/exticon.png') no-repeat 0 0px;
+}
+
 h1.extIconTimetracking .title {
 	background:url('../img/exticon.png') no-repeat 0 5px;
 }
 
-/* ------------------------------
-	Task contextmenu
-   ------------------------------ */
 
+
+/* ------------------------------
+	Task context menu
+   ------------------------------ */
 #contextmenu .task-timetrackstart {
 	background-image:url(../img/icons.png) !important;
 	background-position:4px -28px;
@@ -16,7 +24,11 @@ h1.extIconTimetracking .title {
 	background-position:4px 2px;
 }
 
-	/* Task injections */
+
+
+/* --------------------
+	Task injections
+   -------------------- */
 div.task.running div.headLabel {
 	font-weight:bold;
 }
@@ -26,7 +38,7 @@ div.task.running div.headLabel {
 	width:14px !important;
 }
 
-/* Timetracking tab in task */
+/* Time tracking tab in task */
 .taskTabs div.timetracking {
 	background:#fff;
 }
@@ -72,9 +84,9 @@ div.tabBlock .timetrackingButtons button.stopTracking .icon {
 }
 
 
-/* --------------------
+/* -------------------------
     Time track task tab
-   -------------------- */
+   ------------------------- */
 div.task div.taskTabs ul li.timetracking span.icon {
 	background:url(../img/icons.png) no-repeat 0 -205px;
 }
@@ -141,11 +153,10 @@ div.task div.taskTabs ul li.timetracking span.icon {
 
 
 /* --------------------
-    Time Form
+    Time tracks form
    -------------------- */
-
 .task .taskTabs .timetracks ul form {
-	background:#fff; /* not view hover effekt */
+	background:#fff; /* not view hover effect */
 	padding-top:10px;
 }
 
@@ -154,7 +165,6 @@ div.task div.taskTabs ul li.timetracking span.icon {
 /* ------------------
 	Panel
    ------------------ */
-
 #timetrackingPanel {
 	position:absolute;
 	right:2px;
