@@ -151,7 +151,8 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 							ON task.id_project = project.id
 					WHERE
 						track.id_person_create	= ' . personid() . ' AND
-						task.type				= ' . TASK_TYPE_TASK . '
+						task.type				= ' . TASK_TYPE_TASK . ' AND
+						task.deleted			= 0
 					GROUP BY
 						id_task
 					ORDER BY
@@ -164,8 +165,12 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 
 		foreach($tasks as $index => $task)	{
 			$tasks[$index]['isTrackable'] = TodoyuTimetracking::isTrackable(TASK_TYPE_TASK, $task['status'], $task['id']);
-		}
 
+			if(intval($tasks[$index]['id']) === 0)	{
+				unset($task[$index]);
+			}
+		}
+		
 		return $tasks;
 	}
 
