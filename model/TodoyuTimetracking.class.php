@@ -449,7 +449,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Update a timetrack record. Happens if a task has been tracked again or the workload has been modified manualy
+	 * Update a timetrack record. Happens if a task has been tracked again or the workload has been modified manually
 	 *
 	 * @param	Integer		$idRecord
 	 * @param	Integer		$workloadTracked
