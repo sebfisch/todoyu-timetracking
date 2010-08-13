@@ -76,7 +76,7 @@ div.tabBlock .timetrackingButtons button.stopTracking .icon {
 
 
 /* --------------------
-    Task
+	Task
    -------------------- */
 .task .taskHeadExtras .billingtime {
 	width:30px;
@@ -85,7 +85,7 @@ div.tabBlock .timetrackingButtons button.stopTracking .icon {
 
 
 /* -------------------------
-    Time track task tab
+	Time track task tab
    ------------------------- */
 div.task div.taskTabs ul li.timetracking span.icon {
 	background:url(../img/icons.png) no-repeat 0 -205px;
@@ -153,7 +153,7 @@ div.task div.taskTabs ul li.timetracking span.icon {
 
 
 /* --------------------
-    Time tracks form
+	Time tracks form
    -------------------- */
 .task .taskTabs .timetracks ul form {
 	background:#fff; /* not view hover effect */
