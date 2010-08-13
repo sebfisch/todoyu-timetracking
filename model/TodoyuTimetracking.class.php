@@ -82,7 +82,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Get ID of current running task
+	 * Get ID of currently tracked task
 	 *
 	 * @return	ID
 	 */
@@ -117,7 +117,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Get starttime of current timetracking
+	 * Get starttime of current time tracking
 	 *
 	 * @return	Integer
 	 */
@@ -130,7 +130,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Check whether task is currently running
+	 * Check whether task is currently being tracked
 	 *
 	 * @param	Integer		$idTask
 	 * @return	Boolean
@@ -145,7 +145,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Check whether timetracking is active
+	 * Check whether time tracking is active
 	 *
 	 * @return	Boolean
 	 */
@@ -156,7 +156,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Start timetracking for a task
+	 * Start time tracking for a task
 	 *
 	 * @param	Integer		$idTask
 	 */
@@ -186,7 +186,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Stop current timetracking
+	 * Stop current time tracking
 	 *
 	 * @return	Boolean		Has a tracking been stopped?
 	 */
