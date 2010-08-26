@@ -60,7 +60,26 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Add billing time to taskHeaderExtra
+	 * Add timetracking infos to task info data. -More time tracked than estimated? add marking CSS class
+	 *
+	 * @param	Array		$taskInfos
+	 * @param	Integer		$idTask
+	 * @return	Array
+	 */
+	public static function addTimetrackingInfosToTaskInfos(array $taskInfos, $idTask) {
+		$idTask	= intval($idTask);
+
+		if ( self::isTaskOvertimed($idTask) ) {
+			$taskInfos['estimated_workload']['className'] .= ' overtimed';
+		}
+
+		return $taskInfos;
+	}
+
+
+
+	/**
+	 * Add billable time to taskHeaderExtra
 	 * Hook: dataModifier
 	 *
 	 * @param	Array		$extras

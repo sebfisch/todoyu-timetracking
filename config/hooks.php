@@ -23,6 +23,9 @@ if( allowed('timetracking', 'general:use') ) {
 
 	TodoyuHookManager::registerHook('project', 'taskinfo', 'TodoyuTimetrackingManager::addTimetrackingInfosToTask');
 
+		// Add timetracking infos to task infos: more time tracked than estimated? add marking CSS class
+	TodoyuHookManager::registerHook('project', 'taskdata', 'TodoyuTimetrackingManager::addTimetrackingInfosToTaskInfos');
+
 	TodoyuHookManager::registerHook('project', 'taskHeaderExtras', 'TodoyuTimetrackingManager::addTimetrackingHeaderExtrasToTask');
 
 		// Quicktask: add timetracking fields

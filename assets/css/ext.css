@@ -33,10 +33,14 @@ div.task.running div.headLabel {
 	font-weight:bold;
 }
 
-.task .taskIcons .overtimed {
-	background:url(../img/icons.png) no-repeat 0 -297px;
-	width:14px !important;
+.task .overtimed {
+	color:#ad5050 !important;
 }
+
+	.task .taskIcons .overtimed {
+		background:url(../img/icons.png) no-repeat 0 -297px;
+		width:14px !important;
+	}
 
 /* Time tracking tab in task */
 .taskTabs div.timetracking {
