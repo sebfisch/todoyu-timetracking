@@ -131,6 +131,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 		$numTasks	= intval(Todoyu::$CONFIG['EXT']['timetracking']['headletLastTasks']);
 
 		$query	= '	SELECT
+						track.date_track,
 						MAX(track.date_track) as last_update,
 						SUM(track.workload_tracked) as trackedtime,
 						task.id,
@@ -152,7 +153,8 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 					WHERE
 						track.id_person_create	= ' . personid() . ' AND
 						task.type				= ' . TASK_TYPE_TASK . ' AND
-						task.deleted			= 0
+						task.deleted			= 0 AND
+						track.date_track		< ' . NOW . '
 					GROUP BY
 						id_task
 					ORDER BY
@@ -170,7 +172,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 				unset($task[$index]);
 			}
 		}
-		
+
 		return $tasks;
 	}
 
