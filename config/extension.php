@@ -22,15 +22,9 @@
  * Trackable task status
  */
 Todoyu::$CONFIG['EXT']['timetracking']['trackableStatus'] = array(
-//	STATUS_PLANNING,
 	STATUS_OPEN,
 	STATUS_PROGRESS,
-	STATUS_CONFIRM,
-//	STATUS_DONE,
-//	STATUS_ACCEPTED,
-//	STATUS_REJECTED,
-//	STATUS_WARRANTY,
-//	STATUS_CUSTOMER
+	STATUS_CONFIRM
 );
 
 
