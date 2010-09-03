@@ -59,9 +59,9 @@ Todoyu.Ext.timetracking = {
 	 * Init task timetracking, start tracking time of given task
 	 *
 	 * @param	{String}		taskJSON			Task data as JSON
-	 * @param	{Number}		trackedTotal			Already tracked and saved time
-	 * @param	{Number}		trackedCurrent		Currently tracking time which is not saved yet
-	 * @param	{Number}		estimatedTime		Total estimated time for task
+	 * @param	{Number}		trackedTotal		Total tracked time of the task
+	 * @param	{Number}		trackedToday		Today tracked time of the task
+	 * @param	{Number}		trackedCurrent		Current tracking time (not included in the others)
 	 */
 	initWithTask: function(taskJSON, trackedTotal, trackedToday, trackedCurrent) {
 		this.task			= taskJSON;
@@ -239,7 +239,6 @@ Todoyu.Ext.timetracking = {
 	 * Fire all registered clock callbacks
 	 */
 	fireClockCallbacks: function() {
-		console.log(this._callbacks.clock);
 		this._callbacks.clock.each(function(func){
 			func(this.task.id, this.trackedTotal, this.trackedToday, this.trackedCurrent);
 		}.bind(this));
