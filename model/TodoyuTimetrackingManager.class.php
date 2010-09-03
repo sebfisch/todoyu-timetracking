@@ -199,9 +199,8 @@ class TodoyuTimetrackingManager {
 			$idTask			= TodoyuTimetracking::getTaskID();
 			$taskData		= TodoyuTimetracking::getTask()->getTemplateData();
 			$trackedTotal	= TodoyuTimeTracking::getTrackedTaskTime($idTask);
-			$trackedToday	= TodoyuTimetracking::getTodayTrackedTime();
+			$trackedToday	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW);
 			$trackedCurrent	= TodoyuTimetracking::getTrackedTime();
-			$estimatedTime	= self::getEstimatedTaskWorkload($idTask);
 
 			$init	= 'Todoyu.Ext.timetracking.initWithTask.bind(Todoyu.Ext.timetracking, ' . json_encode($taskData) . ', ' . $trackedTotal . ', ' . $trackedToday . ', ' . $trackedCurrent . ')';
 		} else {

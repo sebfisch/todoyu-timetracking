@@ -37,9 +37,13 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 		TodoyuTimetracking::startTask($idTask);
 
 		$task			= TodoyuTaskManager::getTask($idTask);
-		$trackedTime	= TodoyuTimetracking::getTrackedTaskTime($idTask);
 
-		TodoyuHeader::sendTodoyuHeader('trackedTime', $trackedTime);
+		$trackedTotal	= TodoyuTimeTracking::getTrackedTaskTime($idTask);
+		$trackedToday	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW);
+
+		TodoyuHeader::sendTodoyuHeader('trackedTotal', $trackedTotal);
+		TodoyuHeader::sendTodoyuHeader('trackedToday', $trackedToday);
+
 		TodoyuHeader::sendTodoyuHeader('taskData', $task->getTemplateData());
 	}
 

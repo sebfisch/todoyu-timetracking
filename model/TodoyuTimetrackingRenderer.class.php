@@ -126,8 +126,6 @@ class TodoyuTimetrackingRenderer {
 			return true;
 		}
 
-		TodoyuDebug::printInFireBug('isTrackEditable');
-
 		if( is_null($trackData) ) {
 			$trackData	= TodoyuTimetracking::getTrack($idTrack);
 		}
