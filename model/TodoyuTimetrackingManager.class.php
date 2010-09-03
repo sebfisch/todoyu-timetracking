@@ -302,6 +302,28 @@ class TodoyuTimetrackingManager {
 		}
 	}
 
+
+
+	/**
+	 * Remove form field if the user only can edit the chargeable time
+	 *
+	 * @param	TodoyuForm		$form
+	 * @param	Integer			$idTrack
+	 */
+	public static function hookModifyTrackFields(TodoyuForm $form, $idTrack) {
+		$idTrack	= intval($idTrack);
+
+		if( $idTrack !== 0 ) {
+			$track	= TodoyuTimetracking::getTrack($idTrack);
+
+			if( allowed('timetracking', 'task:editAllChargeable') && $track['id_person_create'] != TodoyuAuth::getPersonID() ) {
+				$form->removeField('date_track', true);
+				$form->removeField('workload_tracked', true);
+				$form->removeField('comment', true);
+			}
+		}
+	}
+
 }
 
 ?>

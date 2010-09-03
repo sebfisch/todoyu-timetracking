@@ -1,6 +1,5 @@
 <li id="task-{$track.id_task}-track-{$track.id}" class="listItem {$class} {if isPersonID($track.id_person_create)}contextmenuTrack{/if}">
-	{if !$task.is_locked && ((isPersonID($track.id_person_create) && allowed('timetracking','task:editOwn')) || allowed('timetracking','task:editAll'))}
-		{$editable = true}
+	{if $track.editable}
 		<a class="editableItem hasIcon iconEdit overflow" href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})" title="{Label timetracking.tasktab.edit}">
 	{/if}
 		<span class="dateWithTime">
@@ -10,8 +9,7 @@
 	{if $track.comment}
 		<span class="taskComment timeTrackComment">{htmlencode $track.comment}</span>
 	{/if}
-	{if $editable}
+	{if $track.editable}
 		</a>
 	{/if}
 </li>
-{$editable = false}

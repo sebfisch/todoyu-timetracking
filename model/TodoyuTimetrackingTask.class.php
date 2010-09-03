@@ -86,16 +86,10 @@ class TodoyuTimetrackingTask {
 	/**
 	 * Save time tracking tab inline form
 	 *
-	 * @param	Array	$formData
+	 * @param	Array	$data
 	 */
-	public static function saveTabInlineForm(array $formData) {
-		$idTrack	= intval($formData['id']);
-		$data		= array(
-			'date_track'			=> TodoyuTime::parseDate($formData['date_track']),
-			'workload_tracked'		=> TodoyuTime::parseDuration($formData['workload_tracked']),
-			'workload_chargeable'	=> TodoyuTime::parseDuration($formData['workload_chargeable']),
-			'comment'				=> $formData['comment']
-		);
+	public static function updateTrack(array $data) {
+		$idTrack	= intval($data['id']);
 
 		TodoyuTimetracking::updateRecord($idTrack, $data);
 	}

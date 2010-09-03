@@ -89,15 +89,21 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 	 * @return	String
 	 */
 	public function updatetrackAction(array $params) {
-		$formData	= $params['timetrack'];
-		$idTrack	= intval($formData['id']);
-		$idTask		= intval($formData['id_task']);
-		
-		TodoyuTimetrackingTask::saveTabInlineForm($formData);
+		$data	= $params['timetrack'];
+		$idTrack= intval($data['id']);
+		$idTask	= intval($data['id_task']);
+
+		$xmlPath= 'ext/timetracking/config/form/track.xml';
+		$form	= TodoyuFormManager::getForm($xmlPath, $idTrack);
+
+		$storageData	= $form->getStorageData($data);
+
+		TodoyuTimetrackingTask::updateTrack($storageData);
+
 		$totalTrackedTime	= TodoyuTime::formatTime(TodoyuTimetracking::getTrackedTaskTimeTotal($idTask), true, false);
 
 		TodoyuHeader::sendTodoyuHeader('totalTimeTracked',$totalTrackedTime);
-		
+
 		return TodoyuTimetrackingRenderer::renderTaskTrack($idTrack);
 	}
 
@@ -105,7 +111,7 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 
 	/**
 	 * Renders track by id
-	 * 
+	 *
 	 * @param	Array	$params
 	 * @return	String
 	 */

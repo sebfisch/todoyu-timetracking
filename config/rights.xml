@@ -9,6 +9,7 @@
 		<right name="track" />
 		<right name="editOwn" />
 		<right name="editAll" require="task:editOwn" />
+		<right name="editAllChargeable" />
 	</section>
 
 </rights>

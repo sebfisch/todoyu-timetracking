@@ -35,6 +35,8 @@ if( allowed('timetracking', 'general:use') ) {
 
 		// Quicktask: Saved hook
 	TodoyuHookManager::registerHook('project', 'QuickTaskSaved', 'TodoyuTimetrackingManager::hookQuickTaskSaved');
+
+	TodoyuFormHook::registerBuildForm('ext/timetracking/config/form/track.xml', 'TodoyuTimetrackingManager::hookModifyTrackFields');
 }
 
 ?>

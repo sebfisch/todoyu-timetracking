@@ -96,6 +96,10 @@ class TodoyuTimetrackingRenderer {
 		$task	= TodoyuTaskManager::getTask($idTask);
 		$tracks	= TodoyuTimetrackingTask::getTaskTracks($idTask);
 
+		foreach($tracks as $index => $track) {
+			$tracks[$index]['editable'] = self::isTrackEditable($track['id'], $track);
+		}
+
 		$tmpl	= 'ext/timetracking/view/tasktab-list.tmpl';
 		$data	= array(
 			'idTask'	=> $idTask,
@@ -109,6 +113,42 @@ class TodoyuTimetrackingRenderer {
 
 
 	/**
+	 * Check whether a track is editable for the current person
+	 *
+	 * @param	Integer		$idTrack
+	 * @param	Array		$trackData
+	 * @return	Boolean
+	 */
+	public static function isTrackEditable($idTrack, array $trackData = null) {
+		$idTrack	= intval($idTrack);
+
+		if( TodoyuAuth::isAdmin() ) {
+			return true;
+		}
+
+		TodoyuDebug::printInFireBug('isTrackEditable');
+
+		if( is_null($trackData) ) {
+			$trackData	= TodoyuTimetracking::getTrack($idTrack);
+		}
+
+		$idTask	= intval($trackData['id_task']);
+		$task	= TodoyuTaskManager::getTask($idTask);
+
+		if( $task->isLocked() ) {
+			return false;
+		}
+
+		if( ($trackData['id_person_create'] == TodoyuAuth::getPersonID() && allowed('timetracking','task:editOwn')) || allowed('timetracking', 'task:editAllChargeable') || allowed('timetracking','task:editAll') ) {
+			return true;
+		}
+
+		return false;
+	}
+
+
+
+	/**
 	 * Render form to edit a track in task tab
 	 *
 	 * @param	Integer		$idTrack
@@ -116,14 +156,14 @@ class TodoyuTimetrackingRenderer {
 	 */
 	public static function renderTaskTabForm($idTrack) {
 		$idTrack	= intval($idTrack);
+		$track		= TodoyuTimetracking::getTrack($idTrack);
 
 			// Construct form object
 		$xmlPath	= PATH_EXT_TIMETRACKING . '/config/form/track.xml';
 		$form		= TodoyuFormManager::getForm($xmlPath, $idTrack);
 
 			// Load form data
-		$formData	= TodoyuTimetracking::getTrack($idTrack);
-		$formData	= TodoyuFormHook::callLoadData($xmlPath, $formData, $idTrack);
+		$formData	= TodoyuFormHook::callLoadData($xmlPath, $track, $idTrack);
 
 			// Set form data
 		$form->setFormData($formData);
@@ -151,6 +191,8 @@ class TodoyuTimetrackingRenderer {
 
 		$idTask	= intval($data['track']['id_task']);
 		$task	= TodoyuTaskManager::getTask($idTask);
+
+		$data['track']['editable'] = self::isTrackEditable($idTrack, $data['track']);
 
 		$data['task'] = $task->getTemplateData();
 

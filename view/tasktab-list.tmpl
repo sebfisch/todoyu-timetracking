@@ -2,7 +2,11 @@
 	<ul class="ulList tracksList ulListDotted withMouseHover overflow">
 	{$class='even'}
 	{foreach $tracks track}
-		{if $class=='odd'}{$class='even'}{else}{$class='odd'}{/if}
+		{if $class=='odd'}
+			{$class='even'}
+		{else}
+			{$class='odd'}
+		{/if}
 		{include ext/timetracking/view/tasktab-track.tmpl}
 	{/foreach}
 	</ul>
