@@ -47,7 +47,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 	/**
 	 * Handler when clicked on button
-	 * 
+	 *
 	 * @param	{Event}		event
 	 */
 	onButtonClick: function(event) {
@@ -114,8 +114,8 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	{Number}	idTask
 	 * @param	{Time}		time
 	 */
-	onClockTick: function(idTask, time) {
-		this.updateTime(time);
+	onClockTick: function(idTask, trackedTotal, trackedToday, trackedCurrent) {
+		this.updateTime(trackedToday+trackedCurrent);
 		this.updatePercent();
 	},
 
@@ -123,7 +123,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 	/**
 	 * Set tracking status for button
-	 * 
+	 *
 	 * @param	{Boolean}		tracking
 	 */
 	setTrackingStatus: function(tracking) {
@@ -173,7 +173,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 	/**
 	 * Set barClasses to internal storage
-	 * 
+	 *
 	 * @param	{Object}		barClasses
 	 */
 	setBarClasses: function(barClasses) {
@@ -202,7 +202,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 	/**
 	 * Handler when content is updated
-	 * 
+	 *
 	 * @param	{Ajax.Response}		response
 	 */
 	onContentUpdated: function(response) {

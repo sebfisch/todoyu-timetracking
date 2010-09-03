@@ -198,11 +198,12 @@ class TodoyuTimetrackingManager {
 		if( TodoyuTimetracking::isTrackingActive() && ! TodoyuRequest::isAjaxRequest() ) {
 			$idTask			= TodoyuTimetracking::getTaskID();
 			$taskData		= TodoyuTimetracking::getTask()->getTemplateData();
-			$trackedTime	= TodoyuTimeTracking::getTrackedTaskTime($idTask);
-			$trackingTime	= TodoyuTimetracking::getTrackedTime();
+			$trackedTotal	= TodoyuTimeTracking::getTrackedTaskTime($idTask);
+			$trackedToday	= TodoyuTimetracking::getTodayTrackedTime();
+			$trackedCurrent	= TodoyuTimetracking::getTrackedTime();
 			$estimatedTime	= self::getEstimatedTaskWorkload($idTask);
 
-			$init	= 'Todoyu.Ext.timetracking.initWithTask.bind(Todoyu.Ext.timetracking, ' . json_encode($taskData) . ', ' . $trackedTime . ', ' . $trackingTime . ', ' . $estimatedTime . ')';
+			$init	= 'Todoyu.Ext.timetracking.initWithTask.bind(Todoyu.Ext.timetracking, ' . json_encode($taskData) . ', ' . $trackedTotal . ', ' . $trackedToday . ', ' . $trackedCurrent . ')';
 		} else {
 			$init	= 'Todoyu.Ext.timetracking.initWithoutTask.bind(Todoyu.Ext.timetracking)';
 		}

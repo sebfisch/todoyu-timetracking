@@ -32,8 +32,9 @@ Todoyu.Ext.timetracking = {
 	},
 
 	task: {},
-	trackedTime: 0,
-	trackingTime: 0,
+	trackedTotal: 0,
+	trackedToday: 0,
+	trackedCurrent: 0,
 
 
 	/**
@@ -58,14 +59,15 @@ Todoyu.Ext.timetracking = {
 	 * Init task timetracking, start tracking time of given task
 	 *
 	 * @param	{String}		taskJSON			Task data as JSON
-	 * @param	{Number}		trackedTime			Already tracked and saved time
-	 * @param	{Number}		trackingTime		Currently tracking time which is not saved yet
+	 * @param	{Number}		trackedTotal			Already tracked and saved time
+	 * @param	{Number}		trackedCurrent		Currently tracking time which is not saved yet
 	 * @param	{Number}		estimatedTime		Total estimated time for task
 	 */
-	initWithTask: function(taskJSON, trackedTime, trackingTime) {
+	initWithTask: function(taskJSON, trackedTotal, trackedToday, trackedCurrent) {
 		this.task			= taskJSON;
-		this.trackedTime	= trackedTime;
-		this.trackingTime	= trackingTime;
+		this.trackedTotal	= trackedTotal;
+		this.trackedToday	= trackedToday;
+		this.trackedCurrent	= trackedCurrent;
 
 		this.initWithoutTask();
 		this.start(this.getTaskID(), true);
@@ -131,14 +133,14 @@ Todoyu.Ext.timetracking = {
 	 * Handler when tracking request has been sent (started or stoped)
 	 *
 	 * @param	{Number}			idTask
-	 * @param	{Boolean			started
+	 * @param	{Boolean}			started
 	 * @param	{Ajax.Response}		response
 	 */
 	onTrackingRequestSended: function(idTask, started, onComplete, response) {
 		if( started ) {
 			this.task			= response.getTodoyuHeader('taskData');
-			this.trackedTime	= Todoyu.Helper.intval(response.getTodoyuHeader('trackedTime'));
-			this.trackingTime	= 0;
+			this.trackedTotal	= Todoyu.Helper.intval(response.getTodoyuHeader('trackedTotal'));
+			this.trackedCurrent	= 0;
 
 			this.fireStartCallbacks();
 			this.Clock.start();
@@ -224,7 +226,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Register new callback to be evoked on clock event
 	 *
-	 * @param unknown_type func
+	 * @param	{Function}		func
 	 */
 	registerClockCallback: function(func) {
 		this._callbacks.clock.push(func);
@@ -237,8 +239,9 @@ Todoyu.Ext.timetracking = {
 	 * Fire all registered clock callbacks
 	 */
 	fireClockCallbacks: function() {
+		console.log(this._callbacks.clock);
 		this._callbacks.clock.each(function(func){
-			func(this.task.id, this.trackingTime);
+			func(this.task.id, this.trackedTotal, this.trackedToday, this.trackedCurrent);
 		}.bind(this));
 	},
 
@@ -249,8 +252,8 @@ Todoyu.Ext.timetracking = {
 	 */
 	reset: function() {
 		this.task 			= {};
-		this.trackingTime	= 0;
-		this.trackedTime	= 0;
+		this.trackedCurrent	= 0;
+		this.trackedTotal	= 0;
 	},
 
 
@@ -259,7 +262,7 @@ Todoyu.Ext.timetracking = {
 	 * Handle clockUpdate event
 	 */
 	onClockTick: function() {
-		this.trackingTime++;
+		this.trackedCurrent++;
 
 		this.fireClockCallbacks();
 	},
@@ -290,7 +293,7 @@ Todoyu.Ext.timetracking = {
 	 * Get parts of current time
 	 */
 	getTimeParts: function() {
-		return Todoyu.Time.getTimeParts(this.trackingTime);
+		return Todoyu.Time.getTimeParts(this.trackedCurrent);
 	},
 
 
@@ -299,7 +302,7 @@ Todoyu.Ext.timetracking = {
 	 * Get current tracked time formated
 	 */
 	getTimeFormatted: function() {
-		return Todoyu.Time.timeFormatSeconds(this.trackingTime);
+		return Todoyu.Time.timeFormatSeconds(this.trackedCurrent);
 	},
 
 
@@ -308,7 +311,7 @@ Todoyu.Ext.timetracking = {
 	 * Get tracked seconds of current task
 	 */
 	getTrackingTime: function() {
-		return this.trackingTime;
+		return this.trackedCurrent;
 	},
 
 
@@ -317,7 +320,7 @@ Todoyu.Ext.timetracking = {
 	 * Get already tracked time
 	 */
 	getTrackedTime: function() {
-		return this.trackedTime;
+		return this.trackedTotal;
 	},
 
 	getTotalTime: function() {

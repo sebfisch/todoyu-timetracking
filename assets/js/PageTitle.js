@@ -28,7 +28,7 @@ Todoyu.Ext.timetracking.PageTitle = {
 
 	/**
 	 * Handler when click is stopped/started
-	 * 
+	 *
 	 * @param	{Number}		idTask
 	 * @param	{Boolean}		start
 	 */
@@ -46,11 +46,11 @@ Todoyu.Ext.timetracking.PageTitle = {
 
 	/**
 	 * Handler when click ticks
-	 * 
+	 *
 	 * @param	{Number}		idTask
 	 * @param	{Number}		time
 	 */
-	onClockTick: function(idTask, time) {
+	onClockTick: function(idTask, trackedTotal, trackedToday, trackedCurrent) {
 		this.showInfo();
 	},
 
@@ -68,7 +68,7 @@ Todoyu.Ext.timetracking.PageTitle = {
 
 	/**
 	 * Update browser window title
-	 * 
+	 *
 	 * @param	{Boolean}		show			Show time tracking info
 	 * @param	{String}		taskNumber		Task number (incl. project)
 	 * @param	{String}		taskTitle		Task title

@@ -95,10 +95,10 @@ Todoyu.Ext.timetracking.Task = {
 	 * @param	{Number}	idTask
 	 * @param	{Time}  	time
 	 */
-	onClockTick: function(idTask, time) {
+	onClockTick: function(idTask, trackedTotal, trackedToday, trackedCurrent) {
 		var el = $('task-' + idTask + '-timetrack-currentsession');
 		if( el ) {
-			el.update(this.ext.getTimeFormatted());
+			el.update(Todoyu.Time.timeFormatSeconds(trackedTotal+trackedCurrent));
 		}
 	},
 
@@ -106,7 +106,7 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Check whether given task's timetracking tab is loaded
-	 * 
+	 *
 	 * @param	{Number}	idTask
 	 * @return	{Boolean}
 	 */
@@ -118,7 +118,7 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Set task style 'running', indicating visually that it is currently not / being timetracked
-	 * 
+	 *
 	 * @param	{Number}	idTask
 	 * @param	{Boolean}	running
 	 */
@@ -136,8 +136,8 @@ Todoyu.Ext.timetracking.Task = {
 
 
 	/**
-	 * Update timetracking tab (contains start / stop button, list of prev. tracked times, etc.) of given task. 
-	 * 
+	 * Update timetracking tab (contains start / stop button, list of prev. tracked times, etc.) of given task.
+	 *
 	 * @param	{Number}	idTask
 	 */
 	updateTab: function(idTask) {
@@ -159,7 +159,7 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Update timetracking list of given task
-	 * 
+	 *
 	 * @param	{Number}	idTask
 	 */
 	updateTrackList: function(idTask) {
@@ -178,8 +178,8 @@ Todoyu.Ext.timetracking.Task = {
 
 
 	/**
-	 * Update controll box in timetracking tab of given task 
-	 * 
+	 * Update controll box in timetracking tab of given task
+	 *
 	 * @param	{Number}	idTask
 	 */
 	updateTabControl: function(idTask) {
@@ -201,7 +201,7 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Get track edit form
-	 * 
+	 *
 	 * @param	{Number}	idTask
 	 *  @param	{Number}	idTrack
 	 */
@@ -223,7 +223,7 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Event handler: edit form loaded
-	 * 
+	 *
 	 * @param	{Number}	idTask
 	 * @param	{Number}	idTrack
 	 * @param	{Object}	response
@@ -236,7 +236,7 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Save edited track
-	 * 
+	 *
 	 * @param	{Number}	idTask
 	 * @param	{Number}	idTrack
 	 */
@@ -253,7 +253,7 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Event handler: being evoked after edited track has been saved
-	 * 
+	 *
 	 * @param	{Number}	idTask
 	 * @param	{Number}	idTrack
 	 * @param	{Object}	response
@@ -277,7 +277,7 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Cancel track editing
-	 * 
+	 *
 	  * @param	{Number}	idTask
 	 */
 	cancelTrackEditing: function(idTask, idTrack) {
@@ -288,7 +288,7 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Update timetracking tab content
-	 * 
+	 *
 	 * @param	{Number}	idTask
 	 * @param	{String}	tabContent
 	 */
@@ -300,7 +300,7 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Toggle timetracks list visibility
-	 * 
+	 *
 	 * @param	{Number}	idTask
 	 */
 	toggleList: function(idTask) {
@@ -311,7 +311,7 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Updates a single track
-	 * 
+	 *
 	 * @param	{Number}	idTask
 	 * @param	{Number}	idTrack
 	 */
