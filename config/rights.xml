@@ -8,8 +8,8 @@
 	<section name="task" require="general:use">
 		<right name="track" />
 		<right name="editOwn" />
+		<right name="editAllChargeable" require="task:editOwn" />
 		<right name="editAll" require="task:editOwn" />
-		<right name="editAllChargeable" />
 	</section>
 
 </rights>

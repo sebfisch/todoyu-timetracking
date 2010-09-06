@@ -137,7 +137,9 @@ class TodoyuTimetrackingRenderer {
 			return false;
 		}
 
-		if( ($trackData['id_person_create'] == TodoyuAuth::getPersonID() && allowed('timetracking','task:editOwn')) || allowed('timetracking', 'task:editAllChargeable') || allowed('timetracking','task:editAll') ) {
+		if( ($trackData['id_person_create'] == personid() && allowed('timetracking','task:editOwn'))
+			|| allowed('timetracking', 'task:editAllChargeable') || allowed('timetracking','task:editAll')
+		) {
 			return true;
 		}
 
