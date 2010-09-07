@@ -162,31 +162,7 @@ class TodoyuTimetrackingManager {
 		$trackedTime= TodoyuTimetracking::getTrackedTaskTimeTotal($idTask);
 		$task		= TodoyuTaskManager::getTask($idTask);
 
-		return $trackedTime > intval($task->get('estimated_workload'));
-	}
-
-
-
-	/**
-	 * Get Estimated workload of given task
-	 *
-	 * @param	Integer	$idTask
-	 * @return	Integer
-	 */
-	public static function getEstimatedTaskWorkload($idTask = 0) {
-		$idTask		= intval($idTask);
-		$workload	= 0;
-
-		if( $idTask === 0 && TodoyuTimetracking::isTrackingActive() ) {
-			$idTask	= TodoyuTimetracking::getTaskID();
-		}
-
-		if( $idTask !== 0 ) {
-			$task		= TodoyuTaskManager::getTask($idTask);
-			$workload	= intval($task->get('estimated_workload'));
-		}
-
-		return $workload;
+		return $trackedTime > $task->getEstimatedWorkload();
 	}
 
 

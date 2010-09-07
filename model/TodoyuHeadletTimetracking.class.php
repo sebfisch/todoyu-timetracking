@@ -91,11 +91,9 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 
 
 			// Get percent of task time
-		$estWorkload	= intval($task->estimated_workload);
-
-		if( $estWorkload > 0 ) {
+		if( $task->hasEstimatedWorkload() ) {
 			$totalTracked		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id, false, true);
-			$data['percent']	= round(($totalTracked/$estWorkload)*100, 0);
+			$data['percent']	= round(($totalTracked/$task->getEstimatedWorkload())*100, 0);
 			$data['showPercent']= true;
 		}
 
