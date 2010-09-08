@@ -207,7 +207,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 */
 	onContentUpdated: function(response) {
 
-		x = 4;
+		
 	},
 
 

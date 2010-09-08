@@ -24,7 +24,7 @@
  * @package		Todoyu
  * @subpackage	Timetracking
  */
-class TodoyuTimetrackingTask {
+class TodoyuTimetrackingTaskManager {
 
 	/**
 	 * @var	String		Default table for database requests

@@ -288,10 +288,14 @@ class TodoyuTimetrackingManager {
 	public static function hookModifyTrackFields(TodoyuForm $form, $idTrack) {
 		$idTrack	= intval($idTrack);
 
+		if( TodoyuAuth::isAdmin() ) {
+			return false;
+		}
+
 		if( $idTrack !== 0 ) {
 			$track	= TodoyuTimetracking::getTrack($idTrack);
 
-			if( allowed('timetracking', 'task:editAllChargeable') && $track['id_person_create'] != TodoyuAuth::getPersonID() ) {
+			if( allowed('timetracking', 'task:editAllChargeable') && !$track->isCurrentPersonCreator() ) {
 				$form->removeField('date_track', true);
 				$form->removeField('workload_tracked', true);
 				$form->removeField('comment', true);

@@ -173,7 +173,7 @@ class TodoyuTimetracking {
 
 			// Check if current task status allows more timetracking
 		if( self::isTrackableStatus($status) ) {
-				// Update task status to progess
+				// Update task status to progress
 			TodoyuTaskManager::updateTaskStatus($idTask, STATUS_PROGRESS);
 				// Register task as tracked in session
 			self::setRunningTask($idTask);
@@ -366,8 +366,20 @@ class TodoyuTimetracking {
 	 * @param	Integer		$idTrack
 	 * @return	Array
 	 */
-	public static function getTrack($idTrack) {
+	public static function getTrackData($idTrack) {
 		return TodoyuRecordManager::getRecordData(self::TABLE, $idTrack);
+	}
+
+
+
+	/**
+	 * Get track
+	 *
+	 * @param	Integer		$idTrack
+	 * @return	TodoyuTimetrackingTrack
+	 */
+	public static function getTrack($idTrack) {
+		return TodoyuRecordManager::getRecord('TodoyuTimetrackingTrack', $idTrack);
 	}
 
 

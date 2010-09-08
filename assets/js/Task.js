@@ -224,12 +224,16 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Event handler: edit form loaded
 	 *
-	 * @param	{Number}	idTask
-	 * @param	{Number}	idTrack
-	 * @param	{Object}	response
+	 * @param	{Number}		idTask
+	 * @param	{Number}		idTrack
+	 * @param	{Ajax.Response}	response
 	 */
 	onEditFormLoaded: function(idTask, idTrack, response) {
-		$('timetrack-' + idTrack + '-field-workload-tracked').select();
+		var field	= 'timetrack-' + idTrack + '-field-workload-tracked';
+
+		if( Todoyu.exists(field) ) {
+			$(field).select();
+		}
 	},
 
 
@@ -254,9 +258,9 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Event handler: being evoked after edited track has been saved
 	 *
-	 * @param	{Number}	idTask
-	 * @param	{Number}	idTrack
-	 * @param	{Object}	response
+	 * @param	{Number}		idTask
+	 * @param	{Number}		idTrack
+	 * @param	{Ajax.Response}	response
 	 */
 	onTrackSaved: function(idTask, idTrack, response) {
 		this.updateTrackContent(idTask, idTrack, response.responseText);

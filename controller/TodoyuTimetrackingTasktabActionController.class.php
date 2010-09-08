@@ -98,7 +98,7 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 
 		$storageData	= $form->getStorageData($data);
 
-		TodoyuTimetrackingTask::updateTrack($storageData);
+		TodoyuTimetrackingTaskManager::updateTrack($storageData);
 
 		$totalTrackedTime	= TodoyuTime::formatTime(TodoyuTimetracking::getTrackedTaskTimeTotal($idTask), true, false);
 

@@ -36,6 +36,7 @@ if( allowed('timetracking', 'general:use') ) {
 		// Quicktask: Saved hook
 	TodoyuHookManager::registerHook('project', 'QuickTaskSaved', 'TodoyuTimetrackingManager::hookQuickTaskSaved');
 
+		// Remove fields when editing foreign trackings
 	TodoyuFormHook::registerBuildForm('ext/timetracking/config/form/track.xml', 'TodoyuTimetrackingManager::hookModifyTrackFields');
 }
 

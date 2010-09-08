@@ -94,7 +94,7 @@ class TodoyuTimetrackingRenderer {
 	public static function renderTaskTabList($idTask) {
 		$idTask	= intval($idTask);
 		$task	= TodoyuTaskManager::getTask($idTask);
-		$tracks	= TodoyuTimetrackingTask::getTaskTracks($idTask);
+		$tracks	= TodoyuTimetrackingTaskManager::getTaskTracks($idTask);
 
 		foreach($tracks as $index => $track) {
 			$tracks[$index]['editable'] = self::isTrackEditable($track['id'], $track);
@@ -127,7 +127,7 @@ class TodoyuTimetrackingRenderer {
 		}
 
 		if( is_null($trackData) ) {
-			$trackData	= TodoyuTimetracking::getTrack($idTrack);
+			$trackData	= TodoyuTimetracking::getTrackData($idTrack);
 		}
 
 		$idTask	= intval($trackData['id_task']);
@@ -156,7 +156,7 @@ class TodoyuTimetrackingRenderer {
 	 */
 	public static function renderTaskTabForm($idTrack) {
 		$idTrack	= intval($idTrack);
-		$track		= TodoyuTimetracking::getTrack($idTrack);
+		$track		= TodoyuTimetracking::getTrackData($idTrack);
 
 			// Construct form object
 		$xmlPath	= PATH_EXT_TIMETRACKING . '/config/form/track.xml';
@@ -185,7 +185,7 @@ class TodoyuTimetrackingRenderer {
 		$tmpl	= 'ext/timetracking/view/tasktab-track.tmpl';
 
 		$data = array(
-			'track'	=> TodoyuTimetracking::getTrack($idTrack),
+			'track'	=> TodoyuTimetracking::getTrackData($idTrack),
 			'person'=> TodoyuTimetracking::getTrackPersonData($idTrack)
 		);
 
