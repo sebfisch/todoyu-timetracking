@@ -78,7 +78,10 @@ Todoyu.Ext.timetracking.Task = {
 	onClockToggle: function(idTask, start) {
 		if( start ) {
 			this.setRunningStyle(idTask, true);
-			Todoyu.Ext.project.Task.setStatus(idTask, 3); // In Progress
+
+			if(Todoyu.Ext.project.Task.getStatus(idTask) == 2)	{
+				Todoyu.Ext.project.Task.setStatus(idTask, 3); // In Progress
+			}
 		} else {
 			this.setRunningStyle(idTask, false);
 			if( this.isTaskTrackingTabLoaded(idTask) ) {
