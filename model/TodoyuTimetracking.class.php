@@ -308,7 +308,7 @@ class TodoyuTimetracking {
 
 		$dayRange= TodoyuTime::getDayRange($timestamp);
 
-		return self::getTrackedTaskTime($idTask, $dayRange['start'], $dayRange['end'], false, $idPerson, true);
+		return self::getTrackedTaskTime($idTask, $dayRange['start'], $dayRange['end'], false, $idPerson, false);
 	}
 
 

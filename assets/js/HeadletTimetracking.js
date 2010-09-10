@@ -115,7 +115,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	{Time}		time
 	 */
 	onClockTick: function(idTask, trackedTotal, trackedToday, trackedCurrent) {
-		this.updateTime(trackedToday+trackedCurrent);
+		this.updateTime(trackedCurrent);
 		this.updatePercent();
 	},
 

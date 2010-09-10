@@ -101,7 +101,7 @@ Todoyu.Ext.timetracking.Task = {
 	onClockTick: function(idTask, trackedTotal, trackedToday, trackedCurrent) {
 		var el = $('task-' + idTask + '-timetrack-currentsession');
 		if( el ) {
-			el.update(Todoyu.Time.timeFormatSeconds(trackedTotal+trackedCurrent));
+			el.update(Todoyu.Time.timeFormatSeconds(trackedCurrent));
 		}
 	},
 
