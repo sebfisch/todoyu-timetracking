@@ -303,6 +303,45 @@ class TodoyuTimetrackingManager {
 		}
 	}
 
+
+	
+	/**
+	 * Check whether a track is editable for the current person
+	 *
+	 * @param	Integer		$idTrack
+	 * @param	Array		$trackData
+	 * @return	Boolean
+	 */
+	public static function isTrackEditable($idTrack, array $trackData = null) {
+		$idTrack	= intval($idTrack);
+
+		if( is_null($trackData) ) {
+			$trackData	= TodoyuTimetracking::getTrackData($idTrack);
+		}
+
+		$idTask	= intval($trackData['id_task']);
+		$task	= TodoyuTaskManager::getTask($idTask);
+
+			// Locked overrules admin right
+		if( $task->isLocked() ) {
+			return false;
+		}
+
+			// If not locked, admin can edit the track
+		if( TodoyuAuth::isAdmin() ) {
+			return true;
+		}
+
+			// Check rights and ownership
+		if( ($trackData['id_person_create'] == personid() && allowed('timetracking','task:editOwn'))
+			|| allowed('timetracking', 'task:editAllChargeable') || allowed('timetracking','task:editAll')
+		) {
+			return true;
+		}
+
+		return false;
+	}
+
 }
 
 ?>

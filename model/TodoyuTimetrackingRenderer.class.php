@@ -97,7 +97,7 @@ class TodoyuTimetrackingRenderer {
 		$tracks	= TodoyuTimetrackingTaskManager::getTaskTracks($idTask);
 
 		foreach($tracks as $index => $track) {
-			$tracks[$index]['editable'] = self::isTrackEditable($track['id'], $track);
+			$tracks[$index]['editable'] = TodoyuTimetrackingManager::isTrackEditable($track['id'], $track);
 		}
 
 		$tmpl	= 'ext/timetracking/view/tasktab-list.tmpl';
@@ -108,42 +108,6 @@ class TodoyuTimetrackingRenderer {
 		);
 
 		return render($tmpl, $data);
-	}
-
-
-
-	/**
-	 * Check whether a track is editable for the current person
-	 *
-	 * @param	Integer		$idTrack
-	 * @param	Array		$trackData
-	 * @return	Boolean
-	 */
-	public static function isTrackEditable($idTrack, array $trackData = null) {
-		$idTrack	= intval($idTrack);
-
-		if( TodoyuAuth::isAdmin() ) {
-			return true;
-		}
-
-		if( is_null($trackData) ) {
-			$trackData	= TodoyuTimetracking::getTrackData($idTrack);
-		}
-
-		$idTask	= intval($trackData['id_task']);
-		$task	= TodoyuTaskManager::getTask($idTask);
-
-		if( $task->isLocked() ) {
-			return false;
-		}
-
-		if( ($trackData['id_person_create'] == personid() && allowed('timetracking','task:editOwn'))
-			|| allowed('timetracking', 'task:editAllChargeable') || allowed('timetracking','task:editAll')
-		) {
-			return true;
-		}
-
-		return false;
 	}
 
 
@@ -192,7 +156,7 @@ class TodoyuTimetrackingRenderer {
 		$idTask	= intval($data['track']['id_task']);
 		$task	= TodoyuTaskManager::getTask($idTask);
 
-		$data['track']['editable'] = self::isTrackEditable($idTrack, $data['track']);
+		$data['track']['editable'] = TodoyuTimetrackingManager::isTrackEditable($idTrack, $data['track']);
 
 		$data['task'] = $task->getTemplateData();
 
