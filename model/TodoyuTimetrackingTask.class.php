@@ -35,6 +35,21 @@ class TodoyuTimetrackingTask extends TodoyuTask {
 		return TodoyuTimetracking::getTrackedTaskTimeTotal($this->getID(), $checkChargeable);
 	}
 
+
+
+	/**
+	 * Get open time
+	 * Difference between estimated and tracked time, but only when positive
+	 * If more time than estimated was tracked, the open workload is 0 nevertheless
+	 *
+	 * @return	Integer
+	 */
+	public function getOpenWorkload() {
+		$openTime	= $this->getEstimatedWorkload() - $this->getTrackedTime();
+
+		return $openTime > 0 ? $openTime : 0;
+	}
+
 }
 
 ?>
