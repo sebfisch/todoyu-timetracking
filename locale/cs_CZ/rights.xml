@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<labels>
+	<label index="general">Obecné nastavení</label>
+	<label index="general.use">Používat sledování času</label>
+	<label index="task">Sledování úkolu</label>
+	<label index="task.track">Zaznamenávat čas úkolů</label>
+	<label index="task.editOwn">Může sledovat čas na vlastnich úkolech</label>
+	<label index="task.editAll">Může sledovat čas na všech úkolech</label>
+</labels>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<labels>
+	<label index="general">Allgemeine Einstellungen</label>
+	<label index="general.use">Benutze Zeiterfassung</label>
+	<label index="task">Zeiterfassung Aufgaben</label>
+	<label index="task.track">Zeit erfassen</label>
+	<label index="task.editOwn">Kann SELBST ERFASSTE Zeiten bearbeiten</label>
+	<label index="task.editAll">Kann ALLE Zeiten bearbeiten</label>
+	<label index="task.editAllChargeable">Kann verrechenbare Zeit bei allen Tasks bearbeiten</label>
+</labels>

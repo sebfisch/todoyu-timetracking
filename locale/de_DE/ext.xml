@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<labels>
+	<label index="ext.title">Zeiterfassung</label>
+	<label index="title">Zeiterfassung</label>
+	<label index="noTracksYet">Noch keine Zeiterfassungen.</label>
+	<label index="attr.date_create">Datum</label>
+	<label index="attr.date_track">Datum</label>
+	<label index="attr.workload_tracked">Arbeitsaufwand</label>
+	<label index="attr.workload_chargeable">Verrechenbar</label>
+	<label index="attr.comment">Kommentar</label>
+	<label index="search.label">Zeiterfassung</label>
+	<label index="filter.timetrackedPerson">Person hat Zeit erfasst</label>
+	<label index="filter.timetrackedRoles">Rollen haben Zeit erfasst</label>
+	<label index="task.attr.overtimed">Aufgabezeit überschritten</label>
+	<label index="headlet.label">Zeiterfassung</label>
+	<label index="tasktab.time_elapsed">Total erfasste Zeit</label>
+	<label index="tasktab.edit">Klicken Sie hier um diesen Eintrag zu bearbeiten</label>
+	<label index="start">Zeiterfassung starten</label>
+	<label index="stop">Zeiterf. stoppen</label>
+	<label index="currentTask">Aktuelle Aufgabe</label>
+	<label index="showCurrentTaskInProject">Aufgabe im Projekt anzeigen</label>
+	<label index="quicktask.workload_done">Schon gearbeitete Zeit</label>
+	<label index="estimated_workload">Aufw. geschätzt</label>
+	<label index="jumpToTask">Klicken Sie hier um zu diesem Task zu wechseln</label>
+	<label index="jumpToProject">Klicken Sie hier um zu diesem Projekt zu wechseln</label>
+	<label index="extconf.stopOnLogout">Laufende Zeiterfassung beim log-out stoppen</label>
+</labels>

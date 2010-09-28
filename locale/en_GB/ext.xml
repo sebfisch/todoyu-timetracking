@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<labels>
+	<label index="ext.title">Time Tracking</label>
+	<label index="title">Time Tracking</label>
+	<label index="noTracksYet">No tracked time yet</label>
+	<label index="attr.date_create">Date</label>
+	<label index="attr.date_track">Date</label>
+	<label index="attr.workload_tracked">Workload</label>
+	<label index="attr.workload_chargeable">Chargeable</label>
+	<label index="attr.comment">Comment</label>
+	<label index="search.label">Time Tracking</label>
+	<label index="filter.timetrackedPerson">Person has tracked time</label>
+	<label index="filter.timetrackedRoles">Roles have tracked time</label>
+	<label index="task.attr.overtimed">Task Overbooked</label>
+	<label index="headlet.label">Time Tracking</label>
+	<label index="tasktab.time_elapsed">Total Tracked Time</label>
+	<label index="tasktab.edit">Click here to edit this record</label>
+	<label index="start">Start Time Tracking</label>
+	<label index="stop">Stop Time Tracking</label>
+	<label index="currentTask">Current Task</label>
+	<label index="showCurrentTaskInProject">Show task in project</label>
+	<label index="quicktask.workload_done">Time Already Worked</label>
+	<label index="estimated_workload">Est. Workload</label>
+	<label index="jumpToTask">Click here to jump to this task</label>
+	<label index="jumpToProject">Click here to jump to this project</label>
+	<label index="extconf.stopOnLogout">Stop time tracking when logging out</label>
+</labels>

@@ -30,7 +30,7 @@ define('EXTID_TIMETRACKING', 119);
 define('PATH_EXT_TIMETRACKING', PATH_EXT . '/timetracking');
 
 	// Register module locales
-TodoyuLanguage::register('timetracking', PATH_EXT_TIMETRACKING . '/locale/ext.xml');
+TodoyuLabelManager::register('timetracking', 'timetracking', 'ext.xml');
 
 	// Request configurations
 	// @notice	Auto-loaded configs if available: admin, assets, create, contextmenu, extinfo, filters, form, page, panelwidgets, rights, search
