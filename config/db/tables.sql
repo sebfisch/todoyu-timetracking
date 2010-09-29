@@ -21,10 +21,10 @@ CREATE TABLE `ext_timetracking_track` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ext_timetracking_tracking`
+-- Table structure for table `ext_timetracking_active`
 --
 
-CREATE TABLE `ext_timetracking_tracking` (
+CREATE TABLE `ext_timetracking_active` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
 	`date_create` int(10) unsigned NOT NULL DEFAULT '0',
 	`date_update` int(10) unsigned NOT NULL DEFAULT '0',

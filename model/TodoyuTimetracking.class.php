@@ -46,7 +46,7 @@ class TodoyuTimetracking {
 	 */
 	private static function getCurrentTracking() {
 		$field	= '*';
-		$table	= 'ext_timetracking_tracking';
+		$table	= 'ext_timetracking_active';
 		$where	= 'id_person_create	= ' . TodoyuAuth::getPersonID();
 		$order	= 'date_create DESC';
 
@@ -64,7 +64,7 @@ class TodoyuTimetracking {
 			'id_task'	=> intval($idTask)
 		);
 
-		TodoyuRecordManager::addRecord('ext_timetracking_tracking', $data);
+		TodoyuRecordManager::addRecord('ext_timetracking_active', $data);
 	}
 
 
@@ -73,7 +73,7 @@ class TodoyuTimetracking {
 	 * @todo	comment
 	 */
 	private static function removeCurrentTracking() {
-		$table	= 'ext_timetracking_tracking';
+		$table	= 'ext_timetracking_active';
 		$where	= 'id_person_create	= ' . TodoyuAuth::getPersonID();
 
 		Todoyu::db()->doDelete($table, $where);
