@@ -154,7 +154,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 						task.deleted			= 0 AND
 						track.date_track		< ' . NOW . '
 					GROUP BY
-						id_task
+						track.id_task
 					ORDER BY
 						last_update DESC
 					LIMIT

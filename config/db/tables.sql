@@ -13,9 +13,9 @@ CREATE TABLE `ext_timetracking_track` (
 	`workload_chargeable` int(10) unsigned NOT NULL default '0',
 	`comment` text NOT NULL,
 	PRIMARY KEY  (`id`),
-	KEY `task` (`id_task`),
-	KEY `person` (`id_person_create`),
-  	KEY `date` (`date_track`)
+	 KEY `task` (`id_task`),
+     KEY `persondate` (`date_track`,`id_person_create`),
+     KEY `multi` (`id_person_create`,`date_track`,`id_task`,`date_create`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -30,5 +30,6 @@ CREATE TABLE `ext_timetracking_tracking` (
 	`date_update` int(10) unsigned NOT NULL DEFAULT '0',
 	`id_person_create` int(10) unsigned NOT NULL DEFAULT '0',
 	`id_task` int(10) unsigned NOT NULL DEFAULT '0',
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+	 KEY `persondate` (`id_person_create`,`date_create`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
