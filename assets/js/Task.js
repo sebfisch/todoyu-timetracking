@@ -40,7 +40,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Start timetracking of given task
 	 *
-	 * @param {Number}t idTask
+	 * @param {Number} idTask
 	 */
 	start: function(idTask) {
 		this.ext.start(idTask);
@@ -63,40 +63,73 @@ Todoyu.Ext.timetracking.Task = {
 	 * Register timetracking clock callbacks
 	 */
 	registerClockCallbacks: function() {
-		this.ext.registerToggleCallback(this.onClockToggle.bind(this));
-		this.ext.registerClockCallback(this.onClockTick.bind(this));
+		this.ext.addToggle('tasktab', this.onTrackingToggle.bind(this), this.onTrackingToggleUpdate.bind(this));
+		this.ext.addTick(this.onClockTick.bind(this));
 	},
 
 
 
 	/**
-	 * Event handler 'onClockToggle': evoked on toggle (start / stop) of clock with current running timetracking
+	 * Callback if tracking is toggled
 	 *
-	 * @param	{Number}		idTask
-	 * @param	{Boolean}		start
+	 * @param	{Number}	idTask
+	 * @param	{Boolean}	start
+	 * @return	{Array}		List of tasks to update
 	 */
-	onClockToggle: function(idTask, start) {
-		if( start ) {
-			this.setRunningStyle(idTask, true);
+	onTrackingToggle: function(idTask, start) {
+		var info = [];
+		var idTaskCurrent	= this.ext.getTaskID();
 
-			if(Todoyu.Ext.project.Task.getStatus(idTask) == 2)	{
+		this.setRunningStyle(idTask, start);
+
+		if( start ) {
+				// Update task status
+			if( Todoyu.Ext.project.Task.getStatus(idTask) == 2 ) { // Open
 				Todoyu.Ext.project.Task.setStatus(idTask, 3); // In Progress
 			}
-		} else {
-			this.setRunningStyle(idTask, false);
+
 			if( this.isTaskTrackingTabLoaded(idTask) ) {
-				this.updateTab(idTask);
+				info.push(idTask);
 			}
+
+			if( idTaskCurrent !== idTask && this.isTaskTrackingTabLoaded(idTaskCurrent) ) {
+				info.push(idTaskCurrent);
+			}
+		} else {
+			if( this.isTaskTrackingTabLoaded(idTask) ) {
+				info.push(idTask);
+			}
+		}
+
+		return info;
+	},
+
+
+
+	/**
+	 * Update task timetracking tabs with data from tracking request
+	 *
+	 * @param	{Number}		idTask
+	 * @param	{Object}		data
+	 * @param	{Ajax.Response}	response
+	 */
+	onTrackingToggleUpdate: function(idTask, data, response) {
+		if( typeof(data) === 'object' ) {
+			$H(data).each(function(pair){
+				this.setTabContent(pair.key, pair.value);
+			}.bind(this));
 		}
 	},
 
 
 
 	/**
-	 * Event handler: 'onClockTick': evoked on each tick of the clock showing the current time of the current running timetrack
+	 * Callback if clock ticked (every second
 	 *
 	 * @param	{Number}	idTask
-	 * @param	{Time}  	time
+	 * @param	{Number}	trackedTotal
+	 * @param	{Number}	trackedToday
+	 * @param	{Number}	trackedCurrent
 	 */
 	onClockTick: function(idTask, trackedTotal, trackedToday, trackedCurrent) {
 		var el = $('task-' + idTask + '-timetrack-currentsession');
@@ -132,7 +165,6 @@ Todoyu.Ext.timetracking.Task = {
 			} else {
 				$('task-' + idTask).removeClassName('running');
 			}
-			this.updateTab(idTask);
 		}
 	},
 
@@ -155,6 +187,22 @@ Todoyu.Ext.timetracking.Task = {
 
 		if( Todoyu.exists(target) ) {
 			Todoyu.Ui.update(target, url, options);
+		}
+	},
+
+
+
+	/**
+	 * Set new html content for tab content
+	 *
+	 * @param	{Number}	idTask
+	 * @param	{String}	html
+	 */
+	setTabContent: function(idTask, html) {
+		var target	= 'task-' + idTask + '-tabcontent-timetracking';
+
+		if( Todoyu.exists(target) ) {
+			$(target).update(html);
 		}
 	},
 
@@ -275,9 +323,7 @@ Todoyu.Ext.timetracking.Task = {
 			item[index%2?'removeClassName':'addClassName']('odd');
 		});
 
-
-		var totalTracked = response.getTodoyuHeader('totalTimeTracked');
-		$('task-' + idTask + '-timetrack-trackedtime').innerHTML = totalTracked;
+		$('task-' + idTask + '-timetrack-trackedtime').update(response.getTodoyuHeader('totalTimeTracked'));
 	},
 
 

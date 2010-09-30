@@ -26,12 +26,27 @@ Todoyu.Ext.timetracking = {
 
 	Headlet: {},
 
+	/**
+	 * Lists if callback functions for toogle and clock (every second) events
+	 */
 	_callbacks: {
 		'toggle': [],
 		'clock': []
 	},
 
+	callback: {
+		onToggle: {},
+		onTick: []
+	},
+
+	/**
+	 * Task record of the current tracked task
+	 */
 	task: {},
+
+	/**
+	 * Tracked time parts of current task
+	 */
 	trackedTotal: 0,
 	trackedToday: 0,
 	trackedCurrent: 0,
@@ -83,14 +98,13 @@ Todoyu.Ext.timetracking = {
 	 */
 	start: function(idTask, noRequest) {
 		if( noRequest === true ) {
-				// Start click ticking
+				// Start clock
 			this.Clock.start();
-		} else if( this.isTracking() ) {
-			this.Clock.stop();
-			this.sendTrackRequest(idTask, false, this.onStoppedBeforeStart.bind(this));
 		} else {
-				// Send request to server (and than start the clock)
-			this.sendTrackRequest(idTask, true);
+				// Stop clock until new task is started
+			this.Clock.stop();
+
+			this.sendRequest(idTask, true);
 		}
 	},
 
@@ -100,82 +114,73 @@ Todoyu.Ext.timetracking = {
 	 * Stop tracking time to given task
 	 */
 	stop: function() {
-		this.removeAllRunningStyles();
-		this.sendTrackRequest(this.task.id, false);
+		this.Clock.stop();
+
+		this.sendRequest(this.getTaskID(), false);
 	},
 
 
 
 	/**
-	 * Send track request
+	 * Send tracking request (start and stop)
+	 * The request includes all update requests of other extensions
+	 *
+	 * @param	{Number}	idTask
+	 * @param	{Boolean}	start
+	 * @param	{Function}	onComplete
 	 */
-	sendTrackRequest: function(idTask, start, onComplete) {
+	sendRequest: function(idTask, start, onComplete) {
+		var requestData = this.fireOnToggle(idTask, start);
+
 		var url		= Todoyu.getUrl('timetracking', 'track');
 		var options	= {
-			'parameters': {
-				'action':	start ? 'start' : 'stop',
-				'task':		idTask
+			parameters: {
+				action: 'track',
+				start:	start ? 1 : 0,
+				task:	idTask,
+				data:	Object.toJSON(requestData)
 			},
-			'onComplete': this.onTrackingRequestSended.bind(this, idTask, start, onComplete)
+			onComplete: this.onResponse.bind(this, idTask, start, requestData, onComplete)
 		};
 
 		Todoyu.send(url, options);
 	},
 
-	onStoppedBeforeStart: function(idTask, started, response) {
-			// Send request to server (and than start the clock)
-		this.sendTrackRequest(idTask, true);
-	},
-
-
 
 	/**
-	 * Handler when tracking request has been sent (started or stoped)
+	 * On request completed
+	 * - Load tracking data
+	 * - Start clock
+	 * - Share all update data with the registered callbacks
 	 *
-	 * @param	{Number}			idTask
-	 * @param	{Boolean}			started
-	 * @param	{Ajax.Response}		response
+	 * @param	{Number}		idTask
+	 * @param	{Boolean}		started
+	 * @param	{Object}		data		Request data
+	 * @param	{Function}		onComplete	Optinal onComplete handler
+	 * @param	{Ajax.Response}	response
 	 */
-	onTrackingRequestSended: function(idTask, started, onComplete, response) {
+	onResponse: function(idTask, started, data, onComplete, response) {
 		if( started ) {
-			this.task			= response.getTodoyuHeader('taskData');
-			this.trackedTotal	= response.getTodoyuHeader('trackedTotal');
-			this.trackedToday	= response.getTodoyuHeader('trackedToday');
+				// Load task and tracking info
+			this.task			= response.responseJSON.taskData;
+			this.trackedTotal	= response.responseJSON.trackedTotal;
+			this.trackedToday	= response.responseJSON.trackedToday;
 			this.trackedCurrent	= 0;
 
-			this.fireStartCallbacks();
 			this.Clock.start();
 		} else {
-			this.fireStopCallbacks();
 			this.Clock.stop();
 			this.reset();
 		}
 
+			// Call all callbacks with the response data
+		$H(this.callback.onToggle).each(function(pair){
+			pair.value.update.call(this, idTask, response.responseJSON.data[pair.key], response);
+		}.bind(this));
+
 		if( typeof onComplete === 'function' ) {
 			onComplete.call(this, idTask, started, response);
 		}
-	},
-
-
-
-	/**
-	 * Fire all registered start callbacks
-	 */
-	fireStartCallbacks: function() {
-		this._callbacks.toggle.each(function(func){
-			func(this.getTaskID(), true);
-		}.bind(this));
-	},
-
-
-
-	/**
-	 * Fire all registered stop callbacks
-	 */
-	fireStopCallbacks: function() {
-		this._callbacks.toggle.each(function(func){
-			func(this.getTaskID(), false);
-		}.bind(this));
 	},
 
 
@@ -199,7 +204,7 @@ Todoyu.Ext.timetracking = {
 	 * Check whether time is being currently tracked
 	 */
 	isTracking: function() {
-		return ( this.task.id > 0 );
+		return this.task.id > 0;
 	},
 
 
@@ -216,44 +221,50 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 * Register new callback function to be evoked on timetrack toggeling
-	 */
-	registerToggleCallback: function(func) {
-		this._callbacks.toggle.push(func);
-	},
-
-
-
-	/**
-	 * Register new callback to be evoked on clock event
+	 * Add toggle callbacks
+	 * Allows other extensions to hook in the request and transfer their data in the request
+	 * (no extra request needed for updates on tracking toggle)
 	 *
-	 * @param	{Function}		func
+	 * @param	{String}	key					Identifier on the server which renders the update content
+	 * @param	{Function}	callbackRequest		Function called just before sending request. Parameters: idTask, start - The return value is sent with the request to the server
+	 * @param	{Function}	callbackUpdate		Function called just after response. Parameters: idTask, info, response
 	 */
-	registerClockCallback: function(func) {
-		this._callbacks.clock.push(func);
+	addToggle: function(key, callbackRequest, callbackUpdate) {
+		this.callback.onToggle[key] = {
+			request: callbackRequest,
+			update: callbackUpdate
+		};
 	},
 
 
 
+	/**
+	 * Add tick callback
+	 * Callback is called every second if clock is running
+	 * Parameters: idTask, trackedTotal, trackedToday, trackedCurrent
+	 *
+	 * @param	{Function}	callback
+	 */
+	addTick: function(callback) {
+		this.callback.onTick.push(callback);
+	},
+
+
 
 	/**
-	 * Fire all registered clock callbacks
+	 * Collect custom request data from all registered callbacks
+	 *
+	 * @param	{Number}	idTask
+	 * @param	{Boolean}	start
 	 */
-	fireClockCallbacks: function() {
-		this._callbacks.clock.each(function(func){
-			func(this.task.id, this.trackedTotal, this.trackedToday, this.trackedCurrent);
+	fireOnToggle: function(idTask, start) {
+		var requestData = {};
+
+		$H(this.callback.onToggle).each(function(pair){
+			requestData[pair.key] = pair.value.request.call(this, idTask, start)
 		}.bind(this));
-	},
 
-
-
-	/**
-	 * Reset timetracking - stop track, reinit. time
-	 */
-	reset: function() {
-		this.task 			= {};
-		this.trackedCurrent	= 0;
-		this.trackedTotal	= 0;
+		return requestData;
 	},
 
 
@@ -264,7 +275,21 @@ Todoyu.Ext.timetracking = {
 	onClockTick: function() {
 		this.trackedCurrent++;
 
-		this.fireClockCallbacks();
+		this.callback.onTick.each(function(func){
+			func.call(this, this.getTaskID(), this.getTotalTime(), this.getTrackedToday(), this.getTrackedCurrent())
+		}.bind(this));
+	},
+
+
+
+	/**
+	 * Reset timetracking - stop track, reinit. time
+	 */
+	reset: function() {
+		this.task			= {};
+		this.trackedCurrent	= 0;
+		this.trackedToday	= 0;
+		this.trackedTotal	= 0;
 	},
 
 
@@ -273,7 +298,7 @@ Todoyu.Ext.timetracking = {
 	 * Get ID of currently tracked task
 	 */
 	getTaskID: function() {
-		return this.task.id;
+		return Todoyu.Helper.intval(this.task.id);
 	},
 
 
@@ -284,7 +309,7 @@ Todoyu.Ext.timetracking = {
 	 * @param	{String}		key
 	 */
 	getTaskData: function(key) {
-		return key === undefined ? this.task : this.task.key;
+		return key ? this.task[key] : this.task || {} ;
 	},
 
 
@@ -310,22 +335,37 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Get tracked seconds of current task
 	 */
-	getTrackingTime: function() {
+	getTrackedCurrent: function() {
 		return this.trackedCurrent;
 	},
 
 
 
 	/**
-	 * Get already tracked time
+	 * Get today tracked time
 	 */
-	getTrackedTime: function() {
+	getTrackedToday: function() {
+		return this.trackedToday;
+	},
+
+
+
+	/**
+	 * Get total tracked time
+	 */
+	getTrackedTotal: function() {
 		return this.trackedTotal;
 	},
 
+
+
+	/**
+	 * Get total tracked time with current time
+	 */
 	getTotalTime: function() {
-		return this.getTrackedTime() + this.getTrackingTime();
+		return this.getTrackedTotal() + this.getTrackedCurrent();
 	},
+
 
 
 	/**

@@ -175,7 +175,7 @@ class TodoyuTimetrackingManager {
 			$idTask			= TodoyuTimetracking::getTaskID();
 			$taskData		= TodoyuTimetracking::getTask()->getTemplateData();
 			$trackedTotal	= TodoyuTimeTracking::getTrackedTaskTime($idTask);
-			$trackedToday	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW);
+			$trackedToday	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW, personid());
 			$trackedCurrent	= TodoyuTimetracking::getTrackedTime();
 
 			$init	= 'Todoyu.Ext.timetracking.initWithTask.bind(Todoyu.Ext.timetracking, ' . json_encode($taskData) . ', ' . $trackedTotal . ', ' . $trackedToday . ', ' . $trackedCurrent . ')';
@@ -304,7 +304,7 @@ class TodoyuTimetrackingManager {
 	}
 
 
-	
+
 	/**
 	 * Check whether a track is editable for the current person
 	 *
@@ -340,6 +340,40 @@ class TodoyuTimetrackingManager {
 		}
 
 		return false;
+	}
+
+
+	/**
+	 * Callback to render content for all requested task tabs
+	 *
+	 * @param	Integer		$idTask
+	 * @param	Array		$info		List of task IDs to render
+	 * @return	Array		Content of task tab for requested tasks
+	 */
+	public static function callbackTaskTab($idTask, array $info) {
+		$taskIDs	= TodoyuArray::intval($info);
+		$response	= array();
+
+		foreach($taskIDs as $idTask) {
+			$response[$idTask] = TodoyuTimetrackingRenderer::renderTaskTab($idTask);
+		}
+
+		return $response;
+	}
+
+
+
+	/**
+	 * Callback to render the content for the tracking headlet
+	 *
+	 * @param	Integer		$idTask
+	 * @param	Boolean		$info		Don't care
+	 * @return	String		Content of the headlet
+	 */
+	public static function callbackHeadletOverlayContent($idTask, $info) {
+		$headlet	= new TodoyuHeadletTimetracking();
+
+		return $headlet->renderOverlayContent();
 	}
 
 }

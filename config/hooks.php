@@ -38,6 +38,10 @@ if( allowed('timetracking', 'general:use') ) {
 
 		// Remove fields when editing foreign trackings
 	TodoyuFormHook::registerBuildForm('ext/timetracking/config/form/track.xml', 'TodoyuTimetrackingManager::hookModifyTrackFields');
+
+		// Add timetracking update callbacks
+	TodoyuTimetrackingCallbackManager::add('tasktab', 'TodoyuTimetrackingManager::callbackTaskTab');
+	TodoyuTimetrackingCallbackManager::add('trackheadlet', 'TodoyuTimetrackingManager::callbackHeadletOverlayContent');
 }
 
 ?>

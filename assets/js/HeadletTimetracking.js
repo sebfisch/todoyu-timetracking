@@ -39,10 +39,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 */
 	init: function() {
 			// Register timetracking
-		this.ext.registerToggleCallback(this.onClockToggle.bind(this));
-		this.ext.registerClockCallback(this.onClockTick.bind(this));
-
+		this.ext.addToggle('trackheadlet', this.onTrackingToggle.bind(this), this.onTrackingToggleUpdate.bind(this));
+		this.ext.addTick(this.onClockTick.bind(this));
 	},
+
 
 
 	/**
@@ -96,14 +96,29 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Handle toggeling of timetracking (headlet). If timetracking started: show it, otherwise: hide it
+	 * Callback if timetracking is toggled
+	 *
+	 * @param	{Number}	idTask
+	 * @param	{Boolean}	start
+	 * @return	{Boolean}	No data to transmit. Just render new headlet content
+	 */
+	onTrackingToggle: function(idTask, start) {
+		this.setTrackingStatus(start);
+
+		return false;
+	},
+
+
+
+	/**
+	 * Update timetracking headlet with data from tracking request
 	 *
 	 * @param	{Number}		idTask
-	 * @param	{Boolean}		start
+	 * @param	{String}		data		New html content
+	 * @param	{Ajax.Response}	response
 	 */
-	onClockToggle: function(idTask, start) {
-		this.updateContent();
-		this.setTrackingStatus(start);
+	onTrackingToggleUpdate: function(idTask, data, response) {
+		this.setContent(data);
 	},
 
 
@@ -198,6 +213,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		Todoyu.Ui.update(target, url, options);
 	},
 
+	setContent: function(html) {
+		$('headlet-timetracking-content').update(html);
+	},
+
 
 
 	/**
@@ -207,7 +226,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 */
 	onContentUpdated: function(response) {
 
-		
+
 	},
 
 

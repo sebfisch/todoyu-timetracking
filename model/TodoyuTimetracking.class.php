@@ -45,12 +45,18 @@ class TodoyuTimetracking {
 	 * @return	Array		Or FALSE if no task is tracked
 	 */
 	private static function getCurrentTracking() {
+		TodoyuCache::disable();
+
 		$field	= '*';
 		$table	= 'ext_timetracking_active';
 		$where	= 'id_person_create	= ' . TodoyuAuth::getPersonID();
 		$order	= 'date_create DESC';
 
-		return Todoyu::db()->getRecordByQuery($field, $table, $where, '', $order);
+		$record	= Todoyu::db()->getRecordByQuery($field, $table, $where, '', $order);
+
+		TodoyuCache::enable();
+
+		return $record;
 	}
 
 
@@ -631,6 +637,16 @@ class TodoyuTimetracking {
 				self::stopTask();
 			}
 		}
+	}
+
+
+
+
+
+	public static function handleToggleCallbacks(array $data) {
+		return  TodoyuTimetrackingCallbackManager::callAll($data);
+
+
 	}
 
 }

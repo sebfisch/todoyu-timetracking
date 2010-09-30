@@ -69,7 +69,7 @@ Todoyu.Ext.timetracking.Clock = {
 
 	/**
 	 * Check whether clock (periodical execution update) is runnig
-	 * 
+	 *
 	 * @return	{Boolean}
 	 */
 	isRunning: function() {
@@ -131,7 +131,7 @@ Todoyu.Ext.timetracking.Clock = {
 	 * @return	{Number}
 	 */
 	getTime: function() {
-		return this.ext.getTrackingTime();
+		return this.ext.getTrackedCurrent();
 	},
 
 

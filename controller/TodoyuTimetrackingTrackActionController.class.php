@@ -27,6 +27,46 @@
 class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 
 	/**
+	 * Start and stop tracking
+	 *
+	 * @param	Array		$params
+	 * @return	String		JSON encoded data array
+	 */
+	public function trackAction(array $params) {
+		TodoyuHeader::sendTypeJSON();
+
+		$start	= intval($params['start']) === 1;
+		$idTask	= intval($params['task']);
+		$data	= json_decode($params['data'], true);
+
+			// Response data
+		$response	= array();
+
+			// Start or stop task
+		if( $start ) {
+			TodoyuTimetracking::startTask($idTask);
+
+			$task			= TodoyuTaskManager::getTask($idTask);
+
+			$response['taskData']		= $task->getTemplateData();
+			$response['trackedTotal']	= TodoyuTimeTracking::getTrackedTaskTime($idTask);;
+			$response['trackedToday']	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW, personid());
+		} else {
+			TodoyuTimetracking::stopTask();
+		}
+
+		$response['data']	= TodoyuTimetrackingCallbackManager::callAll($idTask, $data);
+
+		return json_encode($response);
+	}
+
+
+
+
+
+
+
+	/**
 	 * Start timetracking for task
 	 *
 	 * @param	Array		$params
