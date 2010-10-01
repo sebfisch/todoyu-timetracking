@@ -80,9 +80,11 @@ Todoyu.Ext.timetracking.Task = {
 		var info = [];
 		var idTaskCurrent	= this.ext.getTaskID();
 
-		this.setRunningStyle(idTask, start);
+		this.ext.removeAllRunningStyles();
 
 		if( start ) {
+			this.setRunningStyle(idTask, start);
+
 				// Update task status
 			if( Todoyu.Ext.project.Task.getStatus(idTask) == 2 ) { // Open
 				Todoyu.Ext.project.Task.setStatus(idTask, 3); // In Progress
