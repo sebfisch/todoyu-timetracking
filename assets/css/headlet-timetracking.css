@@ -45,9 +45,8 @@
 	margin:0 5px 0 0;
 }
 #headlet-timetracking-content span.time {
-	float:left;
 	width:50%;
-	display:block;
+	display:inline-block;
 }
 #headlets #headlet-timetracking-content  span.time span.container {
 	margin:0 0 0 5px;
