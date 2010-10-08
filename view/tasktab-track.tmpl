@@ -1,15 +1,22 @@
 <li id="task-{$track.id_task}-track-{$track.id}" class="listItem {$class} {if isPersonID($track.id_person_create)}contextmenuTrack{/if}">
-	{if $track.editable}
-		<a class="editableItem hasIcon iconEdit overflow" href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})" title="{Label timetracking.tasktab.edit}">
-	{/if}
-		<span class="dateWithTime">
-			{dateFormat $track.date_track D2M2Y2} - {HourMinSec $track.workload_tracked}
-		</span>
-		<span class="userName">{personLabel idPrefix="track_personowner" idRecord="$track.id" idPerson=$track.id_person_create}</span>
-	{if $track.comment}
-		<span class="taskComment timeTrackComment">{htmlencode $track.comment}</span>
-	{/if}
-	{if $track.editable}
-		</a>
-	{/if}
+	<dl>
+		<dt>
+			<span class="icon editableItem iconEdit pointerCursor" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})" title="{Label timetracking.tasktab.edit}"> </span>
+		</dt>
+		<dd>
+			{if $track.editable}
+				<a class="overflow" href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})" title="{Label timetracking.tasktab.edit}">
+			{/if}
+				<span class="dateWithTime">
+					{dateFormat $track.date_track D2M2Y2} - {HourMinSec $track.workload_tracked}
+				</span>
+				<span class="userName">{personLabel idPrefix="track_personowner" idRecord="$track.id" idPerson=$track.id_person_create}</span>
+			{if $track.comment}
+				<span class="taskComment timeTrackComment overflow">{htmlencode $track.comment}</span>
+			{/if}
+			{if $track.editable}
+				</a>
+			{/if}
+		</dd>
+	</dl>
 </li>
