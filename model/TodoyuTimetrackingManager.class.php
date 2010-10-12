@@ -69,7 +69,7 @@ class TodoyuTimetrackingManager {
 	public static function addTimetrackingInfosToTaskInfos(array $taskInfos, $idTask) {
 		$idTask	= intval($idTask);
 
-		if ( self::isTaskOvertimed($idTask) ) {
+		if( self::isTaskOvertimed($idTask) ) {
 			$taskInfos['estimated_workload']['className'] .= ' overtimed';
 		}
 
