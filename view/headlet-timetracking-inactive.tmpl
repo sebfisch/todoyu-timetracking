@@ -7,7 +7,7 @@
 				<span class="first taskNumber" title="{Label portal.tasktree.header.tasknumber}: {$task.id_project}.{$task.tasknumber}">
 					{$task.id_project}.{$task.tasknumber}
 				</span>
-				<span class="projectName" title="{Label project.project}: {$task.project.title} (ID: {$task.id_project}) / {Label task.task}: {$task.title}">
+				<span class="projectName" title="{Label project.project}: {htmlencode $task.project.title} (ID: {$task.id_project}) / {Label task.task}: {htmlencode $task.title}">
 					{htmlencode $task.projecttitle|truncate:45} - {htmlencode $task.title|truncate:45}
 				</span>
 				<span class="tracking" title="{Label timetracking.tasktab.time_elapsed}">
