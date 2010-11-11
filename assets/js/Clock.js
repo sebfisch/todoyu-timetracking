@@ -18,9 +18,15 @@
 *****************************************************************************/
 
 /**
- * Clock functions to display the current tracked time
+ * @module	Timetracking
  */
 
+/**
+ * Clock functions to display the current tracked time
+ *
+ * @class		Clock
+ * @namespace	Todoyu.Ext.timetracking
+ */
 Todoyu.Ext.timetracking.Clock = {
 
 	/**
