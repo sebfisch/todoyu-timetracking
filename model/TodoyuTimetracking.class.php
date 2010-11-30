@@ -281,7 +281,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Get total tracked time of a task
+	 * Get total tracked time (in seconds) of a task
 	 *
 	 * @param	Integer		$idTask				Task ID
 	 * @param	Boolean		$checkChargeable	Count chargeable time if available
