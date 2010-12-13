@@ -152,7 +152,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 						track.id_person_create	= ' . personid() . ' AND
 						task.type				= ' . TASK_TYPE_TASK . ' AND
 						task.deleted			= 0 AND
-						track.date_track		< ' . NOW . '
+						track.date_track		<= ' . NOW . '
 					GROUP BY
 						track.id_task
 					ORDER BY
@@ -184,7 +184,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 	public function getLabel() {
 		return Label('timetracking.headlet.label');
 	}
-	
+
 }
 
 ?>
