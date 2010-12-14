@@ -18,23 +18,11 @@
 * This copyright notice MUST APPEAR in all copies of the script.
 *****************************************************************************/
 
-/**
- * Extension main file for timetracking extension
- *
- * @package		Todoyu
- * @subpackage	Search
- */
-
 	// Declare ext ID, path
 define('EXTID_TIMETRACKING', 119);
 define('PATH_EXT_TIMETRACKING', PATH_EXT . '/timetracking');
 
 	// Register module locales
 TodoyuLabelManager::register('timetracking', 'timetracking', 'ext.xml');
-
-	// Request configurations
-	// @notice	Auto-loaded configs if available: admin, assets, create, contextmenu, extinfo, filters, form, page, panelwidgets, rights, search
-require_once( PATH_EXT_TIMETRACKING . '/config/extension.php');
-require_once( PATH_EXT_TIMETRACKING . '/config/hooks.php');
 
 ?>

@@ -18,30 +18,28 @@
 * This copyright notice MUST APPEAR in all copies of the script.
 *****************************************************************************/
 
-if( allowed('timetracking', 'general:use') ) {
-	TodoyuHookManager::registerHook('project', 'taskIcons', 'TodoyuTimetrackingManager::getTaskIcons');
+TodoyuHookManager::registerHook('project', 'taskIcons', 'TodoyuTimetrackingManager::getTaskIcons');
 
-	TodoyuHookManager::registerHook('project', 'taskinfo', 'TodoyuTimetrackingManager::addTimetrackingInfosToTask');
+TodoyuHookManager::registerHook('project', 'taskinfo', 'TodoyuTimetrackingManager::addTimetrackingInfosToTask');
 
-		// Add timetracking infos to task infos: more time tracked than estimated? add marking CSS class
-	TodoyuHookManager::registerHook('project', 'taskdata', 'TodoyuTimetrackingManager::addTimetrackingInfosToTaskInfos');
+	// Add timetracking infos to task infos: more time tracked than estimated? add marking CSS class
+TodoyuHookManager::registerHook('project', 'taskdata', 'TodoyuTimetrackingManager::addTimetrackingInfosToTaskInfos');
 
-	TodoyuHookManager::registerHook('project', 'taskHeaderExtras', 'TodoyuTimetrackingManager::addTimetrackingHeaderExtrasToTask');
+TodoyuHookManager::registerHook('project', 'taskHeaderExtras', 'TodoyuTimetrackingManager::addTimetrackingHeaderExtrasToTask');
 
-		// Quicktask: add timetracking fields
-	TodoyuFormHook::registerBuildForm('ext/project/config/form/quicktask.xml', 'TodoyuTimetrackingManager::addWorkloadFieldToQuicktask');
-		// Quicktask: Save timetracking fields
-	TodoyuFormHook::registerSaveData('ext/project/config/form/quicktask.xml', 'TodoyuTimetrackingManager::handleQuicktaskFormSave');
+	// Quicktask: add timetracking fields
+TodoyuFormHook::registerBuildForm('ext/project/config/form/quicktask.xml', 'TodoyuTimetrackingManager::addWorkloadFieldToQuicktask');
+	// Quicktask: Save timetracking fields
+TodoyuFormHook::registerSaveData('ext/project/config/form/quicktask.xml', 'TodoyuTimetrackingManager::handleQuicktaskFormSave');
 
-		// Quicktask: Saved hook
-	TodoyuHookManager::registerHook('project', 'QuickTaskSaved', 'TodoyuTimetrackingManager::hookQuickTaskSaved');
+	// Quicktask: Saved hook
+TodoyuHookManager::registerHook('project', 'QuickTaskSaved', 'TodoyuTimetrackingManager::hookQuickTaskSaved');
 
-		// Remove fields when editing foreign trackings
-	TodoyuFormHook::registerBuildForm('ext/timetracking/config/form/track.xml', 'TodoyuTimetrackingManager::hookModifyTrackFields');
+	// Remove fields when editing foreign trackings
+TodoyuFormHook::registerBuildForm('ext/timetracking/config/form/track.xml', 'TodoyuTimetrackingManager::hookModifyTrackFields');
 
-		// Add timetracking update callbacks
-	TodoyuTimetrackingCallbackManager::add('tasktab', 'TodoyuTimetrackingManager::callbackTaskTab');
-	TodoyuTimetrackingCallbackManager::add('trackheadlet', 'TodoyuTimetrackingManager::callbackHeadletOverlayContent');
-}
+	// Add timetracking update callbacks
+TodoyuTimetrackingCallbackManager::add('tasktab', 'TodoyuTimetrackingManager::callbackTaskTab');
+TodoyuTimetrackingCallbackManager::add('trackheadlet', 'TodoyuTimetrackingManager::callbackHeadletOverlayContent');
 
 ?>
