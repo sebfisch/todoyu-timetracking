@@ -100,7 +100,7 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * calculates the string given in format hh:mm:ss (hh:mm) in seconds
+	 * Calculates the string given in format hh:mm:ss (hh:mm) in seconds
 	 *
 	 * @param	String	$string
 	 * @return	Integer
