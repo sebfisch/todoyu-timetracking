@@ -231,7 +231,7 @@ Todoyu.Ext.timetracking.Task = {
 
 
 	/**
-	 * Update controll box in timetracking tab of given task
+	 * Update control box in timetracking tab of given task
 	 *
 	 * @param	{Number}	idTask
 	 */

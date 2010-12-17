@@ -127,7 +127,9 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * Handle update event of clock inside timetracking headlet
 	 *
 	 * @param	{Number}	idTask
-	 * @param	{Time}		time
+	 * @param	{Time}		trackedTotal
+	 * @param	{Time}		trackedToday
+	 * @param	{Time}		trackedCurrent
 	 */
 	onClockTick: function(idTask, trackedTotal, trackedToday, trackedCurrent) {
 		this.updateTime(trackedCurrent);

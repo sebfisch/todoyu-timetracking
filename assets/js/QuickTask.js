@@ -66,7 +66,7 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 * 
 	 * @param	{Number}			idTask
 	 * @param	{Number}			idProject
-	 * @param	{Ajax.Reponse}		response
+	 * @param	{Ajax.Response}		response
 	 */
 	onQuickTaskSaved: function(idTask, idProject, response) {
 		if( response.getTodoyuHeader('startTracking') == 1 ) {

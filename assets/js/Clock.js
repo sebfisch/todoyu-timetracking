@@ -43,7 +43,7 @@ Todoyu.Ext.timetracking.Clock = {
 
 //	callbacks:		[],
 	/**
-	 * Peridical executer
+	 * Periodical executer
 	 */
 	pe:		null,
 
@@ -74,7 +74,7 @@ Todoyu.Ext.timetracking.Clock = {
 
 
 	/**
-	 * Check whether clock (periodical execution update) is runnig
+	 * Check whether clock (periodical execution update) is running
 	 *
 	 * @return	{Boolean}
 	 */

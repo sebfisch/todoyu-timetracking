@@ -27,7 +27,7 @@ Todoyu.Ext.timetracking = {
 	Headlet: {},
 
 	/**
-	 * Lists if callback functions for toogle and clock (every second) events
+	 * Lists if callback functions for toggle and clock (every second) events
 	 */
 	_callbacks: {
 		'toggle': [],
@@ -156,7 +156,7 @@ Todoyu.Ext.timetracking = {
 	 * @param	{Number}		idTask
 	 * @param	{Boolean}		started
 	 * @param	{Object}		data		Request data
-	 * @param	{Function}		onComplete	Optinal onComplete handler
+	 * @param	{Function}		onComplete	Optional onComplete handler
 	 * @param	{Ajax.Response}	response
 	 */
 	onResponse: function(idTask, started, data, onComplete, response) {
@@ -324,7 +324,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 * Get current tracked time formated
+	 * Get current tracked time formatted
 	 */
 	getTimeFormatted: function() {
 		return Todoyu.Time.timeFormatSeconds(this.trackedCurrent);
