@@ -48,7 +48,7 @@ div.task.running div.headLabel {
 }
 
 div.timetrackform {
-	padding:10px 0 10px 20px;
+	padding:10px;
 	font-weight:bold;
 }
 
@@ -170,18 +170,33 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 .tracksList .listItem dl dd {
 	width:560px;
 	float:left;
+	line-height: 21px;
 }
 
 
+/* --------------------
+	task tab content
+   -------------------- */
+.task .tabContent .formTimeTrack {
+	background:white;
+	padding:0;
+}
+
+.task .tabContent .formTimeTrack legend {
+	left:-5px;
+	text-indent:5px;
+	border:none;
+}
+.task .tabContent .formTimeTrack fieldset {
+	padding-left:5px;
+}
+.task .tabContent .formTimeTrack fieldset.buttons {
+	margin-bottom: 10px;
+}
 
 /* --------------------
 	Time tracks form
    -------------------- */
-.task .taskTabs .timetracks ul form {
-	background:#fff; /* not view hover effect */
-	padding-top:10px;
-}
-
 
 
 /* ------------------
