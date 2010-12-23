@@ -183,12 +183,12 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 }
 
 .task .tabContent .formTimeTrack legend {
-	left:-5px;
-	text-indent:5px;
-	border:none;
+	display:none;
 }
 .task .tabContent .formTimeTrack fieldset {
+	padding-top:10px;
 	padding-left:5px;
+	border:none;
 }
 .task .tabContent .formTimeTrack fieldset.buttons {
 	margin-bottom: 10px;
