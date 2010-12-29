@@ -90,7 +90,7 @@ class TodoyuTimetracking {
 	/**
 	 * Get ID of currently tracked task
 	 *
-	 * @return	ID
+	 * @return	Integer
 	 */
 	public static function getTaskID() {
 		$record	= self::getCurrentTracking();
@@ -623,8 +623,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Hook. Called when person logs out
-	 * If configured, stop tracking
+	 * Hook. Called when person logs out. If configured, stop tracking
 	 */
 	public static function onLogout() {
 		$extConf	= TodoyuExtConfManager::getExtConf('timetracking');
@@ -642,12 +641,16 @@ class TodoyuTimetracking {
 
 
 
-
+	/**
+	 * Handle callbacks (call all) of tracking toggeling
+	 *
+	 * @todo check: $idTask parameter is missing!
+	 *
+	 * @param	Array	$data
+	 * @return	Array
+	 */
 	public static function handleToggleCallbacks(array $data) {
-//  @todo check: $idTask parameter is missing!
 		return  TodoyuTimetrackingCallbackManager::callAll($data);
-
-
 	}
 
 }
