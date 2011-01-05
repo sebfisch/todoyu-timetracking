@@ -45,14 +45,13 @@ if( allowed('timetracking', 'general:use') ) {
 
 
 Todoyu::$CONFIG['EXT']['timetracking']['headletBarClasses'] = array(
-	0	=> 'green',
+	0	=> '#cadb98', // green
 	80	=> 'yellow',
 	90	=> 'orange',
-	100	=> 'red'
+	100	=> 'red',
 );
 
 
 Todoyu::$CONFIG['EXT']['timetracking']['headletLastTasks']	= 5;
-
 
 ?>

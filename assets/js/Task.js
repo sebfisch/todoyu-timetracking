@@ -195,7 +195,7 @@ Todoyu.Ext.timetracking.Task = {
 
 
 	/**
-	 * Set new html content for tab content
+	 * Set new HTML content for tab content
 	 *
 	 * @param	{Number}	idTask
 	 * @param	{String}	html
@@ -245,7 +245,7 @@ Todoyu.Ext.timetracking.Task = {
 		};
 		var target	= 'task-' + idTask + '-timetrack-control' ;
 
-		if(Todoyu.exists(target))	{
+		if( Todoyu.exists(target) )	{
 			Todoyu.Ui.update(target, url, options);
 		}
 	},
@@ -334,6 +334,7 @@ Todoyu.Ext.timetracking.Task = {
 	 * Cancel track editing
 	 *
 	  * @param	{Number}	idTask
+	  * @param	{Number}	idTrack
 	 */
 	cancelTrackEditing: function(idTask, idTrack) {
 		this.updateTrack(idTask, idTrack);
@@ -345,6 +346,7 @@ Todoyu.Ext.timetracking.Task = {
 	 * Update timetracking tab content
 	 *
 	 * @param	{Number}	idTask
+	 * @param	{Number}	idTrack
 	 * @param	{String}	tabContent
 	 */
 	updateTrackContent: function(idTask, idTrack, tabContent) {

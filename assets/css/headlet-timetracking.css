@@ -95,11 +95,11 @@
 	display:block;
 	float:left;
 	border:1px solid #ccc;
-	background-color:#E3EACE;
+	background-color:#e3eace;
 }
 
 #headlet-timetracking-content span.percent span.bar span.progress {
-	background-color:#0f0;
+	background-color:#d0ddcf;
 	display:inline-block;
 	height:100%;
 }

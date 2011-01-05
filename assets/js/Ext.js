@@ -47,9 +47,9 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Tracked time parts of current task
 	 */
-	trackedTotal: 0,
-	trackedToday: 0,
-	trackedCurrent: 0,
+	trackedTotal:	0,
+	trackedToday:	0,
+	trackedCurrent:	0,
 
 
 	/**
@@ -147,6 +147,7 @@ Todoyu.Ext.timetracking = {
 	},
 
 
+
 	/**
 	 * On request completed
 	 * - Load tracking data
@@ -202,6 +203,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Check whether time is being currently tracked
+	 *
+	 * @return	{Boolean}
 	 */
 	isTracking: function() {
 		return this.task.id > 0;
@@ -210,9 +213,10 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 * Check if given task is tracked
+	 * Check whether given task is being tracked
 	 *
 	 * @param	{Number}		idTask
+	 * @return	{Boolean}
 	 */
 	isTrackingTask: function(idTask) {
 		return this.getTaskID() == idTask;
@@ -231,8 +235,8 @@ Todoyu.Ext.timetracking = {
 	 */
 	addToggle: function(key, callbackRequest, callbackUpdate) {
 		this.callback.onToggle[key] = {
-			request: callbackRequest,
-			update: callbackUpdate
+			request:	callbackRequest,
+			update:		callbackUpdate
 		};
 	},
 
@@ -256,6 +260,7 @@ Todoyu.Ext.timetracking = {
 	 *
 	 * @param	{Number}	idTask
 	 * @param	{Boolean}	start
+	 * @return	{Object}			requestData
 	 */
 	fireOnToggle: function(idTask, start) {
 		var requestData = {};
@@ -283,7 +288,7 @@ Todoyu.Ext.timetracking = {
 
 
 	/**
-	 * Reset timetracking - stop track, reinit. time
+	 * Reset timetracking - stop track, reinitialize time
 	 */
 	reset: function() {
 		this.task			= {};
@@ -296,6 +301,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Get ID of currently tracked task
+	 *
+	 * @return	{Number}
 	 */
 	getTaskID: function() {
 		return Todoyu.Helper.intval(this.task.id);
@@ -307,6 +314,7 @@ Todoyu.Ext.timetracking = {
 	 * Get task data (all or single value)
 	 *
 	 * @param	{String}		key
+	 * @return	{String|Object}
 	 */
 	getTaskData: function(key) {
 		return key ? this.task[key] : this.task || {} ;
@@ -316,6 +324,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Get parts of current time
+	 *
+	 * @return	{Object}
 	 */
 	getTimeParts: function() {
 		return Todoyu.Time.getTimeParts(this.trackedCurrent);
@@ -325,6 +335,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Get current tracked time formatted
+	 *
+	 * @return	{String}
 	 */
 	getTimeFormatted: function() {
 		return Todoyu.Time.timeFormatSeconds(this.trackedCurrent);
@@ -334,6 +346,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Get tracked seconds of current task
+	 *
+	 * @return	{Number}
 	 */
 	getTrackedCurrent: function() {
 		return this.trackedCurrent;
@@ -343,6 +357,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Get today tracked time
+	 *
+	 * @return	{Number}
 	 */
 	getTrackedToday: function() {
 		return this.trackedToday;
@@ -352,6 +368,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Get total tracked time
+	 *
+	 * @return	{Number}
 	 */
 	getTrackedTotal: function() {
 		return this.trackedTotal;
@@ -361,6 +379,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Get total tracked time with current time
+	 *
+	 * @return	{Number}
 	 */
 	getTotalTime: function() {
 		return this.getTrackedTotal() + this.getTrackedCurrent();
@@ -370,6 +390,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Get estimated workload of a task in seconds
+	 *
+	 * @return	{Number}
 	 */
 	getEstimatedTime: function() {
 		return Todoyu.Helper.intval(this.task.estimated_workload);
@@ -379,6 +401,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Check if estimated workload is set
+	 *
+	 * @return	{Boolean}
 	 */
 	hasEstimatedTime: function() {
 		return this.getEstimatedTime() > 0;
@@ -388,6 +412,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Get percent of time already tracked
+	 *
+	 * @return	{Number}
 	 */
 	getPercentOfTime: function() {
 		if( this.hasEstimatedTime() ) {

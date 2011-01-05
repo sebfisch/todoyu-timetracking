@@ -15,7 +15,7 @@ Todoyu.Ext.timetracking.PageTitle = {
 	task: null,
 
 	/**
-	 * Initialize callbacks and load taskdata
+	 * Initialize callbacks and load task data
 	 */
 	init: function() {
 		this.ext.addToggle('pagetitle', this.onTrackingToggle.bind(this), this.onTrackingToggleUpdate.bind(this));
@@ -31,6 +31,7 @@ Todoyu.Ext.timetracking.PageTitle = {
 	 *
 	 * @param	{Number}		idTask
 	 * @param	{Boolean}		start
+	 * @return	{Boolean}
 	 */
 	onTrackingToggle: function(idTask, start) {
 		return false;
@@ -39,10 +40,11 @@ Todoyu.Ext.timetracking.PageTitle = {
 
 
 	/**
+	 * Handle browser page title update on toggeling of tracking
 	 *
-	 * @param idTask
-	 * @param data
-	 * @param response
+	 * @param	{Number}	idTask
+	 * @param	{Object}	data
+	 * @param	{Response}	response
 	 */
 	onTrackingToggleUpdate: function(idTask, data, response) {
 		this.task = this.ext.getTaskData();
@@ -57,7 +59,7 @@ Todoyu.Ext.timetracking.PageTitle = {
 
 
 	/**
-	 * Handler when clock ticks
+	 * Handler clock tick
 	 *
 	 * @param	{Number}	idTask
 	 * @param	{Number}	trackedTotal
@@ -81,7 +83,7 @@ Todoyu.Ext.timetracking.PageTitle = {
 
 
 	/**
-	 * Hide tracking info (no task runnning)
+	 * Hide tracking info (no task running)
 	 */
 	hideInfo: function() {
 		this.update(false);
