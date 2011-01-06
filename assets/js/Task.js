@@ -245,7 +245,7 @@ Todoyu.Ext.timetracking.Task = {
 		};
 		var target	= 'task-' + idTask + '-timetrack-control' ;
 
-		if( Todoyu.exists(target) )	{
+		if( Todoyu.exists(target) ) {
 			Todoyu.Ui.update(target, url, options);
 		}
 	},
