@@ -54,8 +54,10 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 * @param	{Ajax.Response}		response		PopUp AJAX request response
 	 */
 	onQuickTaskOpen: function(response) {
-		$(this.fieldStart).observe('change', this.preventStartDone.bindAsEventListener(this, 'start'));
-		$(this.fieldDone).observe('change', this.preventStartDone.bindAsEventListener(this, 'done'));
+		if( Todoyu.exists(this.fieldStart) ) {
+			$(this.fieldStart).observe('change', this.preventStartDone.bindAsEventListener(this, 'start'));
+			$(this.fieldDone).observe('change', this.preventStartDone.bindAsEventListener(this, 'done'));
+		}
 	},
 
 
