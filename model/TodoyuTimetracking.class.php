@@ -62,7 +62,8 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * @todo	comment
+	 * Store currently running time track record
+	 *
 	 * @param	Integer		$idTask
 	 */
 	private static function setCurrentTracking($idTask) {
@@ -76,7 +77,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * @todo	comment
+	 * Remove running time track record from DB 
 	 */
 	private static function removeCurrentTracking() {
 		$table	= 'ext_timetracking_active';
