@@ -14,8 +14,8 @@ CREATE TABLE `ext_timetracking_track` (
 	`comment` text NOT NULL,
 	PRIMARY KEY  (`id`),
 	 KEY `task` (`id_task`),
-     KEY `persondate` (`date_track`,`id_person_create`),
-     KEY `multi` (`id_person_create`,`date_track`,`id_task`,`date_create`)
+	 KEY `persondate` (`date_track`,`id_person_create`),
+	 KEY `multi` (`id_person_create`,`date_track`,`id_task`,`date_create`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
