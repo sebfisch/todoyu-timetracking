@@ -80,18 +80,32 @@ class TodoyuTimetrackingTrack extends TodoyuBaseObject {
 
 
 	/**
-	 * 
-	 * @return int
+	 * Get amount of tracked workload of track
+	 *
+	 * @return	Integer
 	 */
 	public function getWorkloadTracked() {
 		return intval($this->get('workload_tracked'));
 	}
 
+
+
+	/**
+	 * Get amount of chargeable workload of track
+	 *
+	 * @return	Integer
+	 */
 	public function getWorkloadChargeable() {
 		return intval($this->get('workload_chargeable'));
 	}
 
 
+
+	/**
+	 * Get track comment
+	 *
+	 * @return	Mixed
+	 */
 	public function getComment() {
 		return $this->get('comment');
 	}
