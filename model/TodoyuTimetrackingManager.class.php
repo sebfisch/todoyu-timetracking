@@ -108,9 +108,7 @@ class TodoyuTimetrackingManager {
 	public static function calculateTrackedTimeFromString($string)	{
 		$timeArray = explode(':', $string);
 
-		$time	= is_array($timeArray) ? ($timeArray[0] * 3600 + $timeArray[1] * 60 + $timeArray[2]) : 0;
-
-		return $time;
+		return is_array($timeArray) ? ($timeArray[0] * TodoyuTime::SECONDS_HOUR + $timeArray[1] * TodoyuTime::SECONDS_MIN + $timeArray[2]) : 0;
 	}
 
 
