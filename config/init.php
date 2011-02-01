@@ -22,9 +22,11 @@ if( allowed('timetracking', 'general:use') ) {
 	require_once( PATH_EXT_TIMETRACKING . '/config/hooks.php');
 }
 
-/**
- * Trackable task status
- */
+
+
+/* ----------------------------
+	Trackable task status
+   ---------------------------- */
 Todoyu::$CONFIG['EXT']['timetracking']['trackableStatus'] = array(
 	STATUS_OPEN,
 	STATUS_PROGRESS,
@@ -32,6 +34,10 @@ Todoyu::$CONFIG['EXT']['timetracking']['trackableStatus'] = array(
 );
 
 
+
+/* ------------------------------------------
+	Add inline sub tabs into task element
+   ------------------------------------------ */
 if( allowed('timetracking', 'general:use') ) {
 		// Register tab for task
 	TodoyuTaskManager::addTaskTab('timetracking', 'TodoyuTimetrackingTaskManager::getTabLabel', 'TodoyuTimetrackingTaskManager::getTabContent', 10);
@@ -44,14 +50,16 @@ if( allowed('timetracking', 'general:use') ) {
 }
 
 
+/* ------------------------
+	Headlet parameters
+   ------------------------ */
 Todoyu::$CONFIG['EXT']['timetracking']['headletBarClasses'] = array(
 	0	=> '#cadb98', // green
 	80	=> 'yellow',
 	90	=> 'orange',
 	100	=> 'red',
 );
-
-
+	// Amount of previous tracks to be listed
 Todoyu::$CONFIG['EXT']['timetracking']['headletLastTasks']	= 5;
 
 ?>
