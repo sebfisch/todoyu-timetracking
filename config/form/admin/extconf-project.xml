@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<hiddenFields>
+		<field name="id" />
+	</hiddenFields>
+	<fieldsets>
+
+		<fieldset name="timetracking">
+			<legend>Main timetracking preset data</legend>
+			<class>timetrackingprojectpresets</class>
+			<elements>
+
+				<field type="checkbox" name="start_tracking">
+					<label>timetracking.taskpreset.start_tracking</label>
+				</field>
+
+			</elements>
+		</fieldset>
+
+	</fieldsets>
+</form>

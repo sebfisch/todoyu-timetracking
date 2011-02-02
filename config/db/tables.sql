@@ -33,3 +33,14 @@ CREATE TABLE `ext_timetracking_active` (
 	PRIMARY KEY (`id`),
 	 KEY `persondate` (`id_person_create`,`date_create`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Extend table `ext_project_taskpreset`
+--
+
+CREATE TABLE `ext_project_taskpreset` (
+	`start_tracking` tinyint(1) unsigned NOT NULL DEFAULT '0'
+	PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;

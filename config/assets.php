@@ -33,7 +33,7 @@ Todoyu::$CONFIG['EXT']['timetracking']['assets'] = array(
 		),
 		array(
 			'file'		=> 'ext/timetracking/assets/js/Task.js',
-			'position'	=> 101
+			'position'	=> 102
 		),
 		array(
 			'file'		=> 'ext/timetracking/assets/js/QuickTask.js',

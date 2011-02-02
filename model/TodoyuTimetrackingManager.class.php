@@ -188,7 +188,7 @@ class TodoyuTimetrackingManager {
 
 	/**
 	 * Formhook
-	 * Add time tracking fields to quick task
+	 * Add time tracking fields to quickTask
 	 *
 	 * @param	TodoyuForm		$form
 	 * @param	Integer			$idTask
@@ -207,7 +207,36 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Formhook: Handle (save) special fields added to quick task by time tracking
+	 * Set task default data: check whether quickTask preset contains start_timetracking
+	 *
+	 * @param	Array	$data
+	 * @return	Array
+	 */
+	public static function setTaskDefaultData($data) {
+		$idProject	= intval($data['id_project']);
+
+		if( $idProject > 0 ) {
+			$project	= TodoyuProjectManager::getProject($idProject);
+
+				// Get presets from taskpreset set (if assigned) or extension config
+			$idTaskpreset	= $project->getTaskpresetID();
+			if( intval($idTaskpreset) > 0 ) {
+				$presets	= TodoyuTaskpresetManager::getTaskpresetData($idTaskpreset);
+				$presets['title']	= $presets['tasktitle'];
+			} else {
+				$presets	= TodoyuExtConfManager::getExtConf('project');
+			}
+
+			$data['start_tracking']	= intval($presets['start_timetracking']);
+		}
+
+		return $data;
+	}
+
+
+
+	/**
+	 * Formhook: Handle (save) special fields added to quickTask by time tracking
 	 *
 	 * @param	Array		$data
 	 * @param	Integer		$idTask
@@ -372,6 +401,35 @@ class TodoyuTimetrackingManager {
 		$headlet	= new TodoyuHeadletTimetracking();
 
 		return $headlet->renderOverlayContent();
+	}
+
+
+
+	/**
+	 * Add to attributes array of project preset data list
+	 *
+	 * @param	Integer		$idProject
+	 * @return	Array
+	 */
+	public static function getProjectPresetDataAttributes($idProject) {
+		$idProject	= intval($idProject);
+		$info		= array();
+
+		$project		= TodoyuProjectManager::getProject($idProject);
+		$idTaskPreset	= $project->get('id_taskpreset');
+
+		if( $idTaskPreset > 0 ) {
+			$taskPreset	= TodoyuTaskpresetManager::getTaskpresetData($idTaskPreset);
+
+				// Taskpreset set title
+			$info[]	= array(
+				'label'		=> Label('timetracking.taskpreset.start_tracking'),
+				'value'		=> intval($taskPreset['start_tracking']) ? Label('core.yes') : Label('core.no'),
+				'position'	=> 80
+			);
+		}
+
+		return $info;
 	}
 
 }

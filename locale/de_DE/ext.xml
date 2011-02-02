@@ -24,4 +24,5 @@
 	<label index="jumpToTask">Klicken Sie hier um zu diesem Task zu wechseln</label>
 	<label index="jumpToProject">Klicken Sie hier um zu diesem Projekt zu wechseln</label>
 	<label index="extconf.stopOnLogout">Laufende Zeiterfassung beim log-out stoppen</label>
+	<label index="taskpreset.start_tracking">Schnellaufgabe: Zeiterfassung starten?</label>
 </labels>
