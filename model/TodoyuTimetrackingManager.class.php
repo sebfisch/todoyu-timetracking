@@ -370,6 +370,7 @@ class TodoyuTimetrackingManager {
 	}
 
 
+
 	/**
 	 * Callback to render content for all requested task tabs
 	 *
