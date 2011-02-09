@@ -163,7 +163,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 		$resource	= Todoyu::db()->query($query);
 		$tasks		= Todoyu::db()->resourceToArray($resource);
 
-		foreach($tasks as $index => $task)	{
+		foreach($tasks as $index => $task) {
 			$tasks[$index]['isTrackable'] = TodoyuTimetracking::isTrackable(TASK_TYPE_TASK, $task['status'], $task['id']);
 
 			if( intval($tasks[$index]['id']) === 0 ) {

@@ -105,7 +105,7 @@ class TodoyuTimetrackingManager {
 	 * @param	String	$string
 	 * @return	Integer
 	 */
-	public static function calculateTrackedTimeFromString($string)	{
+	public static function calculateTrackedTimeFromString($string) {
 		$timeArray = explode(':', $string);
 
 		return is_array($timeArray) ? ($timeArray[0] * TodoyuTime::SECONDS_HOUR + $timeArray[1] * TodoyuTime::SECONDS_MIN + $timeArray[2]) : 0;
@@ -118,7 +118,7 @@ class TodoyuTimetrackingManager {
 	 *
 	 * @param	Array $data
 	 */
-	public static function saveWorkloadRecord(array $data)	{
+	public static function saveWorkloadRecord(array $data) {
 		Todoyu::db()->doInsert(self::TABLE, $data);
 	}
 

@@ -399,7 +399,7 @@ class TodoyuTimetracking {
 	 * @param	Integer		$idTrack
 	 * @return	Array
 	 */
-	public static function getTrackPersonData($idTrack)	{
+	public static function getTrackPersonData($idTrack) {
 		$idTrack= intval($idTrack);
 
 		$fields	= '	u.firstname,

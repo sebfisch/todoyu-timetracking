@@ -144,7 +144,7 @@ class TodoyuTimetrackingRenderer {
 	 * @param	Integer	$idTrack
 	 * @return	String
 	 */
-	public static function renderTaskTrack($idTrack)	{
+	public static function renderTaskTrack($idTrack) {
 		$idTrack= intval($idTrack);
 		$tmpl	= 'ext/timetracking/view/tasktab-track.tmpl';
 
