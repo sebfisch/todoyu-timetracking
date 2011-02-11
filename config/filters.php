@@ -19,7 +19,7 @@
 *****************************************************************************/
 
 /**
- * Task where an person has tracked time
+ * Task where a person has tracked time
  */
 Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['timetrackedPerson'] = array(
 	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_timetrackedPerson',
