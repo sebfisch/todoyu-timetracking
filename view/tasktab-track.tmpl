@@ -1,7 +1,11 @@
 <li id="task-{$track.id_task}-track-{$track.id}" class="listItem {$class} {if isPersonID($track.id_person_create)}contextmenuTrack{/if}">
 	<dl>
 		<dt>
-			<span class="icon editableItem iconEdit pointerCursor" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})" title="{Label timetracking.tasktab.edit}"> </span>
+			{if $track.editable}
+				<span class="icon editableItem iconEdit pointerCursor" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})" title="{Label timetracking.tasktab.edit}"> </span>
+			{else}
+				<span class="icon""> </span>
+			{/if}
 		</dt>
 		<dd>
 			{if $track.editable}
