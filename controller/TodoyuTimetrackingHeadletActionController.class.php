@@ -27,6 +27,17 @@
 class TodoyuTimetrackingHeadletActionController extends TodoyuActionController {
 
 	/**
+	 * Restrict access
+	 *
+	 * @param	Array	$params
+	 */
+	public function init(array $params) {
+		restrict('timetracking', 'general:use');
+	}
+
+
+
+	/**
 	 * Update headlet info content
 	 *
 	 * @param	Array		$params

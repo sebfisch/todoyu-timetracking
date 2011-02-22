@@ -27,6 +27,17 @@
 class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 
 	/**
+	 * Restrict access
+	 *
+	 * @param	Array		$params
+	 */
+	public function init(array $params) {
+		restrict('timetracking', 'general:use');
+	}
+
+
+
+	/**
 	 * Get task tab content
 	 *
 	 * @param	Array		$params
@@ -77,6 +88,8 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 	public function edittrackAction(array $params) {
 		$idTrack= intval($params['track']);
 
+		TodoyuTimetrackingRights::restrictEdit($idTrack);
+
 		return TodoyuTimetrackingRenderer::renderTaskTabForm($idTrack);
 	}
 
@@ -92,6 +105,8 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 		$data	= $params['timetrack'];
 		$idTrack= intval($data['id']);
 		$idTask	= intval($data['id_task']);
+
+		TodoyuTimetrackingRights::restrictEdit($idTrack);
 
 		$xmlPath= 'ext/timetracking/config/form/track.xml';
 		$form	= TodoyuFormManager::getForm($xmlPath, $idTrack);
@@ -110,7 +125,7 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 
 
 	/**
-	 * Renders track by id
+	 * Render a single track in task tab
 	 *
 	 * @param	Array	$params
 	 * @return	String
