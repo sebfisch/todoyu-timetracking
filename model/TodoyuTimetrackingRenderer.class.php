@@ -97,7 +97,7 @@ class TodoyuTimetrackingRenderer {
 		$tracks	= TodoyuTimetrackingTaskManager::getTaskTracks($idTask);
 
 		foreach($tracks as $index => $track) {
-			$tracks[$index]['editable'] = TodoyuTimetrackingManager::isTrackEditable($track['id'], $track);
+			$tracks[$index]['editable'] = TodoyuTimetrackingManager::isTrackEditable($track['id']);
 		}
 
 		$tmpl	= 'ext/timetracking/view/tasktab-list.tmpl';
@@ -156,7 +156,7 @@ class TodoyuTimetrackingRenderer {
 		$idTask	= intval($data['track']['id_task']);
 		$task	= TodoyuTaskManager::getTask($idTask);
 
-		$data['track']['editable'] = TodoyuTimetrackingManager::isTrackEditable($idTrack, $data['track']);
+		$data['track']['editable'] = TodoyuTimetrackingManager::isTrackEditable($idTrack);
 
 		$data['task'] = $task->getTemplateData();
 

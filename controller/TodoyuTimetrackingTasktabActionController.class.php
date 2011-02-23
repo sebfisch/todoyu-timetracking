@@ -46,6 +46,8 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 	public function updateAction(array $params) {
 		$idTask	= intval($params['task']);
 
+		TodoyuTaskRights::restrictSee($idTask);
+
 		return TodoyuTimetrackingRenderer::renderTaskTab($idTask);
 	}
 
@@ -60,6 +62,8 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 	public function tracklistAction(array $params) {
 		$idTask	= intval($params['task']);
 
+		TodoyuTaskRights::restrictSee($idTask);
+
 		return TodoyuTimetrackingRenderer::renderTaskTabList($idTask);
 	}
 
@@ -73,6 +77,8 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 	 */
 	public function controlAction(array $params) {
 		$idTask	= intval($params['task']);
+
+		TodoyuTaskRights::restrictSee($idTask);
 
 		return TodoyuTimetrackingRenderer::renderTaskTabControl($idTask);
 	}
@@ -132,6 +138,8 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 	 */
 	public function trackcontentAction(array $params) {
 		$idTrack	= intval($params['idTrack']);
+
+		TodoyuTimetrackingRights::restrictSee($idTrack);
 
 		return TodoyuTimetrackingRenderer::renderTaskTrack($idTrack);
 	}

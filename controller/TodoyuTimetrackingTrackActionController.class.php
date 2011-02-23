@@ -27,6 +27,17 @@
 class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 
 	/**
+	 * Restrict access
+	 *
+	 * @param	Array		$params
+	 */
+	public function init(array $params) {
+		restrict('timetracking', 'general:use');
+	}
+
+
+
+	/**
 	 * Start and stop tracking
 	 *
 	 * @param	Array		$params
@@ -38,6 +49,8 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 		$start	= intval($params['start']) === 1;
 		$idTask	= intval($params['task']);
 		$data	= json_decode($params['data'], true);
+
+		TodoyuTimetrackingRights::restrictTrack($idTask);
 
 			// Response data
 		$response	= array();
@@ -73,6 +86,8 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 	 */
 	public function startAction(array $params) {
 		$idTask	= intval($params['task']);
+
+		TodoyuTimetrackingRights::restrictTrack($idTask);
 
 		TodoyuTimetracking::startTask($idTask);
 

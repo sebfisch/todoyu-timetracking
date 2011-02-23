@@ -61,16 +61,67 @@ class TodoyuTimetrackingRights {
 	public static function isEditAllowed($idTrack) {
 		$idTrack	= intval($idTrack);
 		$track		= TodoyuTimetracking::getTrack($idTrack);
+		$idTask		= $track->getTaskID();
 
-		if( $track->isCurrentPersonCreator() ) {
-			if( allowed('timetracking', 'task:editOwn') ) {
-				return true;
+
+		if( ! TodoyuTaskManager::isLocked($idTask) && TodoyuTaskRights::isSeeAllowed($idTask) ) {
+			if( $track->isCurrentPersonCreator() ) {
+				if( allowed('timetracking', 'task:editOwn') ) {
+					return true;
+				}
+			} else {
+				return allowedAny('timetracking', 'task:editAll,task:editAllChargeable');
 			}
-		} else {
-			return allowedAny('timetracking', 'editAll,editAllChargeable');
 		}
 
 		return false;
+	}
+
+
+
+	/**
+	 * Checks if timetracking in general and for current task is allowed
+	 *
+	 * @static
+	 * @param	Integer	$idTask
+	 */
+	public static function isTrackAllowed($idTask) {
+		if(TodoyuAuth::isAdmin()) {
+			return true;
+		}
+
+		$idTask	= intval($idTask);
+
+		return (allowed('timetracking', 'task:track') && TodoyuTaskRights::isSeeAllowed($idTask)) ;
+	}
+
+
+
+	/**
+	 * Restricts access to track time on given task
+	 *
+	 * @static
+	 * @param	Integer	$idTrack
+	 */
+	public static function restrictTrack($idTask) {
+		if( ! self::isTrackAllowed($idTask)) {
+			self::deny('task:track');
+		}
+	}
+
+
+	
+	/**
+	 * Restricts seeing of given track (depends on see-right of task)
+	 * 
+	 * @static
+	 * @param	Integer	$idTrack
+	 */
+	public static function restrictSee($idTrack) {
+		$idTrack	= intval($idTrack);
+		$idTask	= TodoyuTimetracking::getTrack($idTrack)->getTaskID();
+
+		TodoyuTaskRights::restrictSee($idTask);
 	}
 
 }

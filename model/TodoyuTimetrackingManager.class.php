@@ -323,9 +323,11 @@ class TodoyuTimetrackingManager {
 			$track	= TodoyuTimetracking::getTrack($idTrack);
 
 			if( allowed('timetracking', 'task:editAllChargeable') && ! $track->isCurrentPersonCreator() ) {
-				$form->removeField('date_track', true);
-				$form->removeField('workload_tracked', true);
-				$form->removeField('comment', true);
+				if( ! allowed('timetracking', 'task:editAll') ) {
+					$form->removeField('date_track', true);
+					$form->removeField('workload_tracked', true);
+					$form->removeField('comment', true);
+				}
 			}
 		}
 	}
@@ -339,34 +341,17 @@ class TodoyuTimetrackingManager {
 	 * @param	Array		$trackData
 	 * @return	Boolean
 	 */
-	public static function isTrackEditable($idTrack, array $trackData = null) {
+	public static function isTrackEditable($idTrack) {
 		$idTrack	= intval($idTrack);
-
-		if( is_null($trackData) ) {
-			$trackData	= TodoyuTimetracking::getTrackData($idTrack);
-		}
-
-		$idTask	= intval($trackData['id_task']);
-		$task	= TodoyuTaskManager::getTask($idTask);
+		$track		= TodoyuTimetracking::getTrack($idTrack);
+		$task		= $track->getTask();
 
 			// Locked overrules admin right
 		if( $task->isLocked() ) {
 			return false;
 		}
 
-			// If not locked, admin can edit the track
-		if( TodoyuAuth::isAdmin() ) {
-			return true;
-		}
-
-			// Check rights and ownership
-		if( ($trackData['id_person_create'] == personid() && allowed('timetracking','task:editOwn'))
-			|| allowed('timetracking', 'task:editAllChargeable') || allowed('timetracking','task:editAll')
-		) {
-			return true;
-		}
-
-		return false;
+		return TodoyuTimetrackingRights::isEditAllowed($idTrack);
 	}
 
 
