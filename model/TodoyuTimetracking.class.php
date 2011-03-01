@@ -562,8 +562,8 @@ class TodoyuTimetracking {
 		$fields	= '*';
 		$table	= self::TABLE;
 		$where	= '		id_person_create	= ' . personid() .
-				  ' AND	id_task			= ' . $idTask .
-				  ' AND	date_track BETWEEN ' . $range['start'] . ' AND ' . $range['end'];
+				  ' AND	id_task				= ' . $idTask .
+				  ' AND	date_track 			BETWEEN ' . $range['start'] . ' AND ' . $range['end'];
 
 		return Todoyu::db()->getRecordByQuery($fields, $table, $where);
 	}
@@ -651,7 +651,7 @@ class TodoyuTimetracking {
 	 * @return	Array
 	 */
 	public static function handleToggleCallbacks(array $data) {
-		return  TodoyuTimetrackingCallbackManager::callAll($data);
+		return  TodoyuTimetrackingCallbackManager::callAll(0, $data);
 	}
 
 }
