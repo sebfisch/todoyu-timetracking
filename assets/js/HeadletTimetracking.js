@@ -17,7 +17,7 @@
 * This copyright notice MUST APPEAR in all copies of the script.
 *****************************************************************************/
 
-Todoyu.Ext.timetracking.Headlet.Timetracking = {
+Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 
 	/**
 	 * Ext shortcut
@@ -25,8 +25,6 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @var	{Object}	ext
 	 */
 	ext:	Todoyu.Ext.timetracking,
-
-	button: null,
 
 	info: null,
 
@@ -37,7 +35,9 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	/**
 	 * Initialize timetracking headlet (register timetracking).
 	 */
-	init: function() {
+	initialize: function($super, name) {
+		$super(name);
+
 			// Register timetracking
 		this.ext.addToggle('trackheadlet', this.onTrackingToggle.bind(this), this.onTrackingToggleUpdate.bind(this));
 		this.ext.addTick(this.onClockTick.bind(this));
@@ -50,14 +50,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 *
 	 * @param	{Event}		event
 	 */
-	onButtonClick: function(event) {
-		if( this.isContentVisible() ) {
-			this.hide();
-		} else {
-			this.hideOthers();
-			this.showContent();
-			this.saveOpenStatus();
-		}
+	onButtonClick: function($super, event) {
+		$super(event);
+
+		this.saveOpenStatus();
 	},
 
 
@@ -74,23 +70,11 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 
 
 	/**
-	 * Handle click on body: stop event bubbling if occured inside timetracking headlet content
-	 *
-	 * @param	{Event}		event
-	 */
-	onBodyClick: function(event) {
-		if( this.isEventInOwnContent(event) ) {
-			event.stop();
-		}
-	},
-
-
-
-	/**
 	 * Hide timetracking headlet, save display state
 	 */
-	hide: function() {
-		this.hideContent();
+	hide: function($super) {
+		$super();
+
 		this.saveOpenStatus();
 	},
 
@@ -145,7 +129,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	{Boolean}		tracking
 	 */
 	setTrackingStatus: function(tracking) {
-		this.headlet.getButton('timetracking')[tracking?'addClassName':'removeClassName']('tracking');
+		this.getButton()[tracking?'addClassName':'removeClassName']('tracking');
 	},
 
 
@@ -156,10 +140,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	{Time}  	time
 	 */
 	updateTime: function(time) {
-		var headlet = $('todoyutimetrackingheadlettracking-tracking');
+		var headlet = $(this.name + '-tracking');
 
 		if( headlet ) {
-			$('todoyutimetrackingheadlettracking-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
+			$(this.name + '-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
 		}
 	},
 
@@ -169,13 +153,13 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * Update (used amount of estimated task workload in) percent inside headlet
 	 */
 	updatePercent: function() {
-		var idPercent = 'todoyutimetrackingheadlettracking-percent';
+		var idPercent = this.name + '-percent';
 
 		if( Todoyu.exists(idPercent) && this.ext.hasEstimatedTime() ) {
 			var percent	= this.ext.getPercentOfTime();
 			$(idPercent).update(percent + '%');
 
-			var progress= $('todoyutimetrackingheadlettracking-progress');
+			var progress= $(this.name + '-progress');
 			this.barClasses.each(function(percent, pair){
 				if( percent >= pair.key ) {
 					progress.setStyle({
@@ -211,7 +195,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 			},
 			'onComplete':	this.onContentUpdated.bind(this)
 		};
-		var target	= 'todoyutimetrackingheadlettracking-content';
+		var target	= this.getContent();
 
 		Todoyu.Ui.update(target, url, options);
 	},
@@ -224,7 +208,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	{String}	html
 	 */
 	setContent: function(html) {
-		$('todoyutimetrackingheadlettracking-content').update(html);
+		this.getContent().update(html);
 	},
 
 
@@ -288,4 +272,4 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 		return Todoyu.exists('task-' + idTask);
 	}
 
-};
+});

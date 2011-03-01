@@ -39,7 +39,7 @@ class TodoyuTimetrackingHeadletTracking extends TodoyuHeadletTypeOverlay {
 
 			// Get bar classes and init JS object
 		$barClassJSON	= self::getBarClassesJSON();
-		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.timetracking.Headlet.Timetracking.setBarClasses.bind(Todoyu.Ext.timetracking.Headlet.Timetracking,' . $barClassJSON . ')', 160);
+		TodoyuPage::addJsOnloadedFunction('function(){Todoyu.Headlets.getHeadlet(\'todoyutimetrackingheadlettracking\').setBarClasses(' . $barClassJSON . ');}', 160);
 	}
 
 
