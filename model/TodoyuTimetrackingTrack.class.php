@@ -39,7 +39,7 @@ class TodoyuTimetrackingTrack extends TodoyuBaseObject {
 	/**
 	 * Get tracking person
 	 *
-	 * @return	TodoyuPerson
+	 * @return	TodoyuContactPerson
 	 */
 	public function getTrackingPerson() {
 		return $this->getPerson('create');
@@ -72,10 +72,10 @@ class TodoyuTimetrackingTrack extends TodoyuBaseObject {
 	/**
 	 * Get task on which was tracked
 	 *
-	 * @return	TodoyuTask
+	 * @return	TodoyuProjectTask
 	 */
 	public function getTask() {
-		return TodoyuTaskManager::getTask($this->getTaskID());
+		return TodoyuProjectTaskManager::getTask($this->getTaskID());
 	}
 
 

@@ -57,7 +57,7 @@ class TodoyuTimetrackingRenderer {
 	 */
 	public static function renderTaskTabControl($idTask) {
 		$idTask	= intval($idTask);
-		$task	= TodoyuTaskManager::getTask($idTask);
+		$task	= TodoyuProjectTaskManager::getTask($idTask);
 
 		$tmpl	= 'ext/timetracking/view/tasktab-control.tmpl';
 		$data	= array(
@@ -93,7 +93,7 @@ class TodoyuTimetrackingRenderer {
 	 */
 	public static function renderTaskTabList($idTask) {
 		$idTask	= intval($idTask);
-		$task	= TodoyuTaskManager::getTask($idTask);
+		$task	= TodoyuProjectTaskManager::getTask($idTask);
 		$tracks	= TodoyuTimetrackingTaskManager::getTaskTracks($idTask);
 
 		foreach($tracks as $index => $track) {
@@ -154,7 +154,7 @@ class TodoyuTimetrackingRenderer {
 		);
 
 		$idTask	= intval($data['track']['id_task']);
-		$task	= TodoyuTaskManager::getTask($idTask);
+		$task	= TodoyuProjectTaskManager::getTask($idTask);
 
 		$data['track']['editable'] = TodoyuTimetrackingManager::isTrackEditable($idTrack);
 

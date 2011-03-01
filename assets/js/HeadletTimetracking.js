@@ -156,10 +156,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	{Time}  	time
 	 */
 	updateTime: function(time) {
-		var headlet = $('headlet-timetracking-tracking');
+		var headlet = $('todoyutimetrackingheadlettracking-tracking');
 
 		if( headlet ) {
-			$('headlet-timetracking-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
+			$('todoyutimetrackingheadlettracking-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
 		}
 	},
 
@@ -169,13 +169,13 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * Update (used amount of estimated task workload in) percent inside headlet
 	 */
 	updatePercent: function() {
-		var idPercent = 'headlet-timetracking-percent';
+		var idPercent = 'todoyutimetrackingheadlettracking-percent';
 
 		if( Todoyu.exists(idPercent) && this.ext.hasEstimatedTime() ) {
 			var percent	= this.ext.getPercentOfTime();
 			$(idPercent).update(percent + '%');
 
-			var progress= $('headlet-timetracking-progress');
+			var progress= $('todoyutimetrackingheadlettracking-progress');
 			this.barClasses.each(function(percent, pair){
 				if( percent >= pair.key ) {
 					progress.setStyle({
@@ -211,7 +211,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 			},
 			'onComplete':	this.onContentUpdated.bind(this)
 		};
-		var target	= 'headlet-timetracking-content';
+		var target	= 'todoyutimetrackingheadlettracking-content';
 
 		Todoyu.Ui.update(target, url, options);
 	},
@@ -224,7 +224,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = {
 	 * @param	{String}	html
 	 */
 	setContent: function(html) {
-		$('headlet-timetracking-content').update(html);
+		$('todoyutimetrackingheadlettracking-content').update(html);
 	},
 
 

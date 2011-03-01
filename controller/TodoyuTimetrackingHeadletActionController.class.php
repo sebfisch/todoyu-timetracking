@@ -44,7 +44,7 @@ class TodoyuTimetrackingHeadletActionController extends TodoyuActionController {
 	 * @return	String
 	 */
 	public function updateAction(array $params) {
-		$headlet	= new TodoyuHeadletTimetracking();
+		$headlet	= new TodoyuTimetrackingHeadletTracking();
 
 		return $headlet->renderOverlayContent();
 	}

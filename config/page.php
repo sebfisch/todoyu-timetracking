@@ -25,7 +25,7 @@ if( allowed('timetracking', 'general:use') ) {
 
 	// Add headlet if tracking is allowed
 if( allowed('timetracking', 'task:track') ) {
-	TodoyuHeadManager::addHeadlet('TodoyuHeadletTimetracking', 100);
+	TodoyuHeadManager::addHeadlet('TodoyuTimetrackingHeadletTracking', 100);
 }
 
 ?>

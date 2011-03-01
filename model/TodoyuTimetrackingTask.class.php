@@ -24,7 +24,7 @@
  * @package		Todoyu
  * @subpackage	Timetracking
  */
-class TodoyuTimetrackingTask extends TodoyuTask {
+class TodoyuTimetrackingTask extends TodoyuProjectTask {
 
 	/**
 	 * Get tracked time of the task

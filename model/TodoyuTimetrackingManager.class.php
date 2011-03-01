@@ -49,7 +49,7 @@ class TodoyuTimetrackingManager {
 		}
 
 		if( $infoLevel >= 3 ) {
-			$task	= TodoyuTaskManager::getTask($idTask);
+			$task	= TodoyuProjectTaskManager::getTask($idTask);
 			$taskData['tracked_time']	= TodoyuTimetracking::getTrackedTaskTime($task->getID(), $task->getStartDate(), $task->getEndDate());
 			$taskData['billable_time']	= TodoyuTimetracking::getTrackedTaskTime($task->getID(), $task->getStartDate(), $task->getEndDate(), true);
 		}
@@ -158,7 +158,7 @@ class TodoyuTimetrackingManager {
 		$idTask		= intval($idTask);
 
 		$trackedTime= TodoyuTimetracking::getTrackedTaskTimeTotal($idTask);
-		$task		= TodoyuTaskManager::getTask($idTask);
+		$task		= TodoyuProjectTaskManager::getTask($idTask);
 
 		return $trackedTime > $task->getEstimatedWorkload();
 	}
@@ -200,7 +200,7 @@ class TodoyuTimetrackingManager {
 		$workloadDone	= $insertForm->getField('workload_done');
 		$startTracking	= $insertForm->getField('start_tracking');
 
-		$form->getFieldset('main')->addField('workload_done', $workloadDone, 'after:id_worktype');
+		$form->getFieldset('main')->addField('workload_done', $workloadDone, 'after:id_activity');
 		$form->getFieldset('main')->addField('start_tracking', $startTracking, 'after:workload_done');
 	}
 
@@ -216,15 +216,15 @@ class TodoyuTimetrackingManager {
 		$idProject	= intval($data['id_project']);
 
 		if( $idProject > 0 ) {
-			$project	= TodoyuProjectManager::getProject($idProject);
+			$project	= TodoyuProjectProjectManager::getProject($idProject);
 
 				// Get presets from taskpreset set (if assigned) or extension config
 			$idTaskpreset	= $project->getTaskpresetID();
 			if( intval($idTaskpreset) > 0 ) {
-				$presets	= TodoyuTaskpresetManager::getTaskpresetData($idTaskpreset);
+				$presets	= TodoyuProjectTaskpresetManager::getTaskpresetData($idTaskpreset);
 				$presets['title']	= $presets['tasktitle'];
 			} else {
-				$presets	= TodoyuExtConfManager::getExtConf('project');
+				$presets	= TodoyuSysmanagerExtConfManager::getExtConf('project');
 			}
 
 			$data['start_tracking']	= intval($presets['start_timetracking']);
@@ -324,12 +324,12 @@ class TodoyuTimetrackingManager {
 
 			if( allowed('timetracking', 'task:editAllChargeable') && ! $track->isCurrentPersonCreator() ) {
 				if( ! allowed('timetracking', 'task:editAll') ) {
-					$form->removeField('date_track', true);
-					$form->removeField('workload_tracked', true);
-					$form->removeField('comment', true);
-				}
+				$form->removeField('date_track', true);
+				$form->removeField('workload_tracked', true);
+				$form->removeField('comment', true);
 			}
 		}
+	}
 	}
 
 
@@ -352,7 +352,7 @@ class TodoyuTimetrackingManager {
 		}
 
 		return TodoyuTimetrackingRights::isEditAllowed($idTrack);
-	}
+		}
 
 
 
@@ -384,7 +384,7 @@ class TodoyuTimetrackingManager {
 	 * @return	String		Content of the headlet
 	 */
 	public static function callbackHeadletOverlayContent($idTask, $info) {
-		$headlet	= new TodoyuHeadletTimetracking();
+		$headlet	= new TodoyuTimetrackingHeadletTracking();
 
 		return $headlet->renderOverlayContent();
 	}
@@ -401,11 +401,11 @@ class TodoyuTimetrackingManager {
 		$idProject	= intval($idProject);
 		$info		= array();
 
-		$project		= TodoyuProjectManager::getProject($idProject);
+		$project		= TodoyuProjectProjectManager::getProject($idProject);
 		$idTaskPreset	= $project->get('id_taskpreset');
 
 		if( $idTaskPreset > 0 ) {
-			$taskPreset	= TodoyuTaskpresetManager::getTaskpresetData($idTaskPreset);
+			$taskPreset	= TodoyuProjectTaskpresetManager::getTaskpresetData($idTaskPreset);
 
 				// Taskpreset set title
 			$info[]	= array(

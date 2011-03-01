@@ -59,7 +59,7 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 		if( $start ) {
 			TodoyuTimetracking::startTask($idTask);
 
-			$task			= TodoyuTaskManager::getTask($idTask);
+			$task			= TodoyuProjectTaskManager::getTask($idTask);
 
 			$response['taskData']		= $task->getTemplateData();
 			$response['trackedTotal']	= TodoyuTimeTracking::getTrackedTaskTime($idTask);;
@@ -91,7 +91,7 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 
 		TodoyuTimetracking::startTask($idTask);
 
-		$task			= TodoyuTaskManager::getTask($idTask);
+		$task			= TodoyuProjectTaskManager::getTask($idTask);
 
 		$trackedTotal	= TodoyuTimeTracking::getTrackedTaskTime($idTask);
 		$trackedToday	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW);

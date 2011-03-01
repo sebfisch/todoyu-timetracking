@@ -40,7 +40,7 @@ Todoyu::$CONFIG['EXT']['timetracking']['trackableStatus'] = array(
    ------------------------------------------ */
 if( allowed('timetracking', 'general:use') ) {
 		// Register tab for task
-	TodoyuTaskManager::addTaskTab('timetracking', 'TodoyuTimetrackingTaskManager::getTabLabel', 'TodoyuTimetrackingTaskManager::getTabContent', 10);
+	TodoyuProjectTaskManager::addTaskTab('timetracking', 'TodoyuTimetrackingTaskManager::getTabLabel', 'TodoyuTimetrackingTaskManager::getTabContent', 10);
 
 	if( allowed('timetracking', 'task:track') ) {
 			// Register context menu function for task

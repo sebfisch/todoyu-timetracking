@@ -77,7 +77,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Remove running time track record from DB 
+	 * Remove running time track record from DB
 	 */
 	private static function removeCurrentTracking() {
 		$table	= 'ext_timetracking_active';
@@ -104,10 +104,10 @@ class TodoyuTimetracking {
 	/**
 	 * Get current tracked task
 	 *
-	 * @return	TodoyuTask
+	 * @return	TodoyuProjectTask
 	 */
 	public static function getTask() {
-		return TodoyuTaskManager::getTask(self::getTaskID());
+		return TodoyuProjectTaskManager::getTask(self::getTaskID());
 	}
 
 
@@ -118,7 +118,7 @@ class TodoyuTimetracking {
 	 * @return	Array
 	 */
 	public static function getTaskArray() {
-		return TodoyuTaskManager::getTaskData(self::getTaskID());
+		return TodoyuProjectTaskManager::getTaskData(self::getTaskID());
 	}
 
 
@@ -175,14 +175,14 @@ class TodoyuTimetracking {
 			self::stopTask();
 		}
 
-		$task 	= TodoyuTaskManager::getTask($idTask);
+		$task 	= TodoyuProjectTaskManager::getTask($idTask);
 		$status	= $task->getStatus();
 
 			// Check if current task status allows more timetracking
 		if( self::isTrackableStatus($status) ) {
 				// Update task status to progress
 			if( $status < STATUS_PROGRESS ) {
-				TodoyuTaskManager::updateTaskStatus($idTask, STATUS_PROGRESS);
+				TodoyuProjectTaskManager::updateTaskStatus($idTask, STATUS_PROGRESS);
 			}
 				// Register task as tracked in session
 			self::setRunningTask($idTask);
@@ -526,7 +526,7 @@ class TodoyuTimetracking {
 
 		if( $type === TASK_TYPE_TASK ) {
 			if( self::isTrackableStatus($status) ) {
-				return TodoyuTaskManager::isLocked($idTask) === false;
+				return TodoyuProjectTaskManager::isLocked($idTask) === false;
 			}
 		}
 
@@ -579,7 +579,7 @@ class TodoyuTimetracking {
 	 */
 	public static function getContextMenuItems($idTask, array $items) {
 		$idTask	= intval($idTask);
-		$task	= TodoyuTaskManager::getTask($idTask);
+		$task	= TodoyuProjectTaskManager::getTask($idTask);
 
 		if( $task->isTask() && ! $task->isLocked() && self::isTrackableStatus($task->getStatus()) ) {
 			if( self::isTaskRunning($idTask) ) {
@@ -627,7 +627,7 @@ class TodoyuTimetracking {
 	 * Hook. Called when person logs out. If configured, stop tracking
 	 */
 	public static function onLogout() {
-		$extConf	= TodoyuExtConfManager::getExtConf('timetracking');
+		$extConf	= TodoyuSysmanagerExtConfManager::getExtConf('timetracking');
 
 			// Check if timetracking stop if configured for logout
 		if( intval($extConf['stopOnLogout']) === 1 ) {

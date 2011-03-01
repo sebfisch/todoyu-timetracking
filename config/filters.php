@@ -28,9 +28,9 @@ Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['timetrackedPerson'] = array(
 	'widget'	=> 'text',
 	'wConf' => array(
 		'autocomplete'	=> true,
-		'FuncRef'		=> 'TodoyuPersonFilterDataSource::autocompletePersons',
+		'FuncRef'		=> 'TodoyuContactPersonFilterDataSource::autocompletePersons',
 		'FuncParams'	=> array(),
-		'LabelFuncRef'	=> 'TodoyuPersonFilterDataSource::getLabel',
+		'LabelFuncRef'	=> 'TodoyuContactPersonFilterDataSource::getLabel',
 		'negation'		=> 'default'
 	)
 );

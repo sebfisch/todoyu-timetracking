@@ -64,7 +64,7 @@ class TodoyuTimetrackingRights {
 		$idTask		= $track->getTaskID();
 
 
-		if( ! TodoyuTaskManager::isLocked($idTask) && TodoyuTaskRights::isSeeAllowed($idTask) ) {
+		if( ! TodoyuProjectTaskManager::isLocked($idTask) && TodoyuProjectTaskRights::isSeeAllowed($idTask) ) {
 			if( $track->isCurrentPersonCreator() ) {
 				if( allowed('timetracking', 'task:editOwn') ) {
 					return true;
@@ -92,7 +92,7 @@ class TodoyuTimetrackingRights {
 
 		$idTask	= intval($idTask);
 
-		return (allowed('timetracking', 'task:track') && TodoyuTaskRights::isSeeAllowed($idTask)) ;
+		return (allowed('timetracking', 'task:track') && TodoyuProjectTaskRights::isSeeAllowed($idTask)) ;
 	}
 
 
@@ -110,10 +110,10 @@ class TodoyuTimetrackingRights {
 	}
 
 
-	
+
 	/**
 	 * Restricts seeing of given track (depends on see-right of task)
-	 * 
+	 *
 	 * @static
 	 * @param	Integer	$idTrack
 	 */
@@ -121,7 +121,7 @@ class TodoyuTimetrackingRights {
 		$idTrack	= intval($idTrack);
 		$idTask	= TodoyuTimetracking::getTrack($idTrack)->getTaskID();
 
-		TodoyuTaskRights::restrictSee($idTask);
+		TodoyuProjectTaskRights::restrictSee($idTask);
 	}
 
 }

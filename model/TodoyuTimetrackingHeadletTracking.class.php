@@ -24,7 +24,7 @@
  * @package		Todoyu
  * @subpackage	Timetracking
  */
-class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
+class TodoyuTimetrackingHeadletTracking extends TodoyuHeadletTypeOverlay {
 
 	/**
 	 * Initialize headlet
@@ -83,7 +83,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 
 		$tmpl	= 'ext/timetracking/view/headlet-timetracking-active.tmpl';
 		$data	= array(
-			'id'		=> $this->getID(),
+			'name'		=> $this->getName(),
 			'task'		=> $task->getTemplateData(2),
 			'tracked'	=> TodoyuTimetracking::getTrackedTaskTimeTotal($task->id),
 			'tracking'	=> TodoyuTimetracking::getTrackedTime()
@@ -111,7 +111,7 @@ class TodoyuHeadletTimetracking extends TodoyuHeadletTypeOverlay {
 		$tmpl	= 'ext/timetracking/view/headlet-timetracking-inactive.tmpl';
 
 		$data	= array(
-			'id'	=> $this->getID(),
+			'name'	=> $this->getName(),
 			'tasks'	=> $this->getLastTrackedTasks()
 		);
 
