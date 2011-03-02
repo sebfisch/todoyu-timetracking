@@ -182,7 +182,7 @@ class TodoyuTimetrackingHeadletTracking extends TodoyuHeadletTypeOverlay {
 	 * @return	String
 	 */
 	public function getLabel() {
-		return Label('timetracking.headlet.label');
+		return Label('timetracking.ext.headlet.label');
 	}
 
 }

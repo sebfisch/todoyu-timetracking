@@ -11,7 +11,7 @@
 
 			<elements>
 				<field type="checkbox" name="stopOnLogout">
-					<label>timetracking.extconf.stopOnLogout</label>
+					<label>timetracking.ext.extconf.stopOnLogout</label>
 				</field>
 			</elements>
 

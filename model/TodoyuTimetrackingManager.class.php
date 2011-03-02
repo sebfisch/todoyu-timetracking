@@ -138,7 +138,7 @@ class TodoyuTimetrackingManager {
 			$icons['overtimed'] = array(
 				'id'		=> 'task-' . $idTask . '-overtimed',
 				'class'		=> 'overtimed',
-				'label'		=> 'LLL:timetracking.task.attr.overtimed',
+				'label'		=> 'LLL:timetracking.ext.task.attr.overtimed',
 				'position'	=> 20
 			);
 		}
@@ -409,8 +409,8 @@ class TodoyuTimetrackingManager {
 
 				// Taskpreset set title
 			$info[]	= array(
-				'label'		=> Label('timetracking.taskpreset.start_tracking'),
-				'value'		=> intval($taskPreset['start_tracking']) ? Label('core.yes') : Label('core.no'),
+				'label'		=> Label('timetracking.ext.taskpreset.start_tracking'),
+				'value'		=> intval($taskPreset['start_tracking']) ? Label('core.global.yes') : Label('core.global.no'),
 				'position'	=> 80
 			);
 		}

@@ -2,14 +2,14 @@
 	<span class="trackingContainer">
 		<span class="currentTask">
 			<span class="container">
-				<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject(0,{$task.project.id})" title="{Label LLL:timetracking.jumpToProject}" class="project">{htmlencode(truncate($task.company.title, 25))}:{htmlencode(truncate($task.project.title, 25))}</a>
-				<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject({$task.id})" title="{Label LLL:timetracking.jumpToTask}" class="title">{$task.id_project}.{$task.tasknumber}: {htmlencode(truncate($task.title, 25, '...', true))}</a>
+				<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject(0,{$task.project.id})" title="{Label LLL:timetracking.ext.jumpToProject}" class="project">{htmlencode(truncate($task.company.title, 25))}:{htmlencode(truncate($task.project.title, 25))}</a>
+				<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject({$task.id})" title="{Label LLL:timetracking.ext.jumpToTask}" class="title">{$task.id_project}.{$task.tasknumber}: {htmlencode(truncate($task.title, 25, '...', true))}</a>
 			</span>
 		</span>
 		<span class="time">
 			<span class="container">
-				<span class="tracking" title="{Label LLL:timetracking.tasktab.time_elapsed}">
-					{Label LLL:timetracking.tasktab.time_elapsed} {HourMinSec $tracked} + <span id="{$id}-tracking" class="currentTracking">{HourMinSec $tracking}</span>
+				<span class="tracking" title="{Label LLL:timetracking.ext.tasktab.time_elapsed}">
+					{Label LLL:timetracking.ext.tasktab.time_elapsed} {HourMinSec $tracked} + <span id="{$id}-tracking" class="currentTracking">{HourMinSec $tracking}</span>
 				</span>
 				{if $showPercent}
 				<span class="percent">
@@ -24,13 +24,13 @@
 						{/if}
 						<span class="progress {$barClass}" id="{$id}-progress" style="width:{$length}px"></span>
 					</span>
-					<span class="estimatedWorkload">({Label LLL:timetracking.estimated_workload}: {HourMin $task.estimated_workload})</span>
+					<span class="estimatedWorkload">({Label LLL:timetracking.ext.estimated_workload}: {HourMin $task.estimated_workload})</span>
 				</span>
 				{/if}
 			</span>
 		</span>
 		<span class="stop">
-			{Button  onclick="Todoyu.Ext.timetracking.Task.stop($task.id)" class="stopTracking" title="LLL:timetracking.stop" label=""}
+			{Button  onclick="Todoyu.Ext.timetracking.Task.stop($task.id)" class="stopTracking" title="LLL:timetracking.ext.stop" label=""}
 		</span>
 	</span>
 </li>

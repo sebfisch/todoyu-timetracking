@@ -16,19 +16,19 @@
 			<elements>
 
 				<field type="date" name="date_track">
-					<label>timetracking.attr.date_track</label>
+					<label>timetracking.ext.attr.date_track</label>
 				</field>
 
 				<field type="duration" name="workload_tracked">
-					<label>timetracking.attr.workload_tracked</label>
+					<label>timetracking.ext.attr.workload_tracked</label>
 				</field>
 
 				<field type="duration" name="workload_chargeable">
-					<label>timetracking.attr.workload_chargeable</label>
+					<label>timetracking.ext.attr.workload_chargeable</label>
 				</field>
 
 				<field type="text" name="comment">
-					<label>timetracking.attr.comment</label>
+					<label>timetracking.ext.attr.comment</label>
 				</field>
 
 			</elements>

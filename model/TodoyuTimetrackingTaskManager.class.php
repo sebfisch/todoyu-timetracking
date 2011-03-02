@@ -63,7 +63,7 @@ class TodoyuTimetrackingTaskManager {
 	 * @return	String
 	 */
 	public static function getTabLabel($idTask) {
-		return Label('timetracking.title');
+		return Label('timetracking.ext.title');
 	}
 
 

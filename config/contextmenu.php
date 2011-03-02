@@ -29,14 +29,14 @@
 Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task'] = array(
 	'timetrackstart'	=> array(
 		'key'		=> 'timetrackstart',
-		'label'		=> 'timetracking.start',
+		'label'		=> 'timetracking.ext.start',
 		'jsAction'	=> 'Todoyu.Ext.timetracking.Task.start(#ID#)',
 		'class'		=> 'taskContextMenu task-timetrackstart',
 		'position'	=> 99
 	),
 	'timetrackstop'	=> array(
 		'key'		=> 'timetrackstop',
-		'label'		=> 'timetracking.stop',
+		'label'		=> 'timetracking.ext.stop',
 		'jsAction'	=> 'Todoyu.Ext.timetracking.Task.stop(#ID#)',
 		'class'		=> 'taskContextMenu task-timetrackstop',
 		'position'	=> 99

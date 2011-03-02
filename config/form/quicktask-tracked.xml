@@ -7,11 +7,11 @@
 			<elements>
 
 				<field type="duration" name="workload_done">
-					<label>timetracking.quicktask.workload_done</label>
+					<label>timetracking.ext.quicktask.workload_done</label>
 				</field>
 
 				<field type="checkbox" name="start_tracking">
-					<label>timetracking.start</label>
+					<label>timetracking.ext.start</label>
 				</field>
 
 			</elements>
