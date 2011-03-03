@@ -54,6 +54,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Initialize timetracking extension
+	 *
+	 * @method	init
 	 */
 	init: function() {
 		this.QuickTask.init();
@@ -62,6 +64,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Init task timetracking
+	 *
+	 * @method	initWithoutTask
 	 */
 	initWithoutTask: function() {
 		this.Task.init();
@@ -73,6 +77,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Init task timetracking, start tracking time of given task
 	 *
+	 * @method	initWithTask
 	 * @param	{String}		taskJSON			Task data as JSON
 	 * @param	{Number}		trackedTotal		Total tracked time of the task
 	 * @param	{Number}		trackedToday		Today tracked time of the task
@@ -93,6 +98,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Start tracking time on given task
 	 *
+	 * @method	start
 	 * @param	{Number}	idTask
 	 * @param	{Boolean}	noRequest
 	 */
@@ -112,6 +118,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Stop tracking time to given task
+	 *
+	 * @method	stop
 	 */
 	stop: function() {
 		this.Clock.stop();
@@ -125,6 +133,7 @@ Todoyu.Ext.timetracking = {
 	 * Send tracking request (start and stop)
 	 * The request includes all update requests of other extensions
 	 *
+	 * @method	sendRequest
 	 * @param	{Number}	idTask
 	 * @param	{Boolean}	start
 	 * @param	{Function}	onComplete
@@ -154,6 +163,7 @@ Todoyu.Ext.timetracking = {
 	 * - Start clock
 	 * - Share all update data with the registered callbacks
 	 *
+	 * @method	onResponse
 	 * @param	{Number}		idTask
 	 * @param	{Boolean}		started
 	 * @param	{Object}		data		Request data
@@ -189,6 +199,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Toggle timetracking	of given task
 	 *
+	 * @method	toggle
 	 * @param	{Number}		idTask
 	 */
 	toggle: function(idTask) {
@@ -204,6 +215,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Check whether time is being currently tracked
 	 *
+	 * @method	isTracking
 	 * @return	{Boolean}
 	 */
 	isTracking: function() {
@@ -215,6 +227,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Check whether given task is being tracked
 	 *
+	 * @method	isTrackingTask
 	 * @param	{Number}		idTask
 	 * @return	{Boolean}
 	 */
@@ -229,6 +242,7 @@ Todoyu.Ext.timetracking = {
 	 * Allows other extensions to hook in the request and transfer their data in the request
 	 * (no extra request needed for updates on tracking toggle)
 	 *
+	 * @method	addToggle
 	 * @param	{String}	key					Identifier on the server which renders the update content
 	 * @param	{Function}	callbackRequest		Function called just before sending request. Parameters: idTask, start - The return value is sent with the request to the server
 	 * @param	{Function}	callbackUpdate		Function called just after response. Parameters: idTask, info, response
@@ -247,6 +261,7 @@ Todoyu.Ext.timetracking = {
 	 * Callback is called every second if clock is running
 	 * Parameters: idTask, trackedTotal, trackedToday, trackedCurrent
 	 *
+	 * @method	addTick
 	 * @param	{Function}	callback
 	 */
 	addTick: function(callback) {
@@ -258,6 +273,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Collect custom request data from all registered callbacks
 	 *
+	 * @method	fireOnToggle
 	 * @param	{Number}	idTask
 	 * @param	{Boolean}	start
 	 * @return	{Object}			requestData
@@ -276,6 +292,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Handle clockUpdate event
+	 *
+	 * @method	onClockTick
 	 */
 	onClockTick: function() {
 		this.trackedCurrent++;
@@ -289,6 +307,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Reset timetracking - stop track, reinitialize time
+	 *
+	 * @method	reset
 	 */
 	reset: function() {
 		this.task			= {};
@@ -302,6 +322,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Get ID of currently tracked task
 	 *
+	 * @method	getTaskID
 	 * @return	{Number}
 	 */
 	getTaskID: function() {
@@ -313,6 +334,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Get task data (all or single value)
 	 *
+	 * @method	getTaskData
 	 * @param	{String}		key
 	 * @return	{String|Object}
 	 */
@@ -325,6 +347,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Get parts of current time
 	 *
+	 * @method	getTimeParts
 	 * @return	{Object}
 	 */
 	getTimeParts: function() {
@@ -336,6 +359,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Get current tracked time formatted
 	 *
+	 * @method	getTimeFormatted
 	 * @return	{String}
 	 */
 	getTimeFormatted: function() {
@@ -347,6 +371,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Get tracked seconds of current task
 	 *
+	 * @method	getTrackedCurrent
 	 * @return	{Number}
 	 */
 	getTrackedCurrent: function() {
@@ -358,6 +383,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Get today tracked time
 	 *
+	 * @method	getTrackedToday
 	 * @return	{Number}
 	 */
 	getTrackedToday: function() {
@@ -369,6 +395,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Get total tracked time
 	 *
+	 * @method	getTrackedTotal
 	 * @return	{Number}
 	 */
 	getTrackedTotal: function() {
@@ -380,6 +407,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Get total tracked time with current time
 	 *
+	 * @method	getTotalTime
 	 * @return	{Number}
 	 */
 	getTotalTime: function() {
@@ -391,6 +419,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Get estimated workload of a task in seconds
 	 *
+	 * @method	getEstimatedTime
 	 * @return	{Number}
 	 */
 	getEstimatedTime: function() {
@@ -402,6 +431,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Check if estimated workload is set
 	 *
+	 * @method	hasEstimatedTime
 	 * @return	{Boolean}
 	 */
 	hasEstimatedTime: function() {
@@ -413,6 +443,7 @@ Todoyu.Ext.timetracking = {
 	/**
 	 * Get percent of time already tracked
 	 *
+	 * @method	getPercentOfTime
 	 * @return	{Number}
 	 */
 	getPercentOfTime: function() {
@@ -427,6 +458,8 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Remove the 'running' class from all DIV elements (no task is marked as running anymore)
+	 *
+	 * @method	removeAllRunningStyles
 	 */
 	removeAllRunningStyles: function() {
 		$$('div.running').invoke('removeClassName', 'running');

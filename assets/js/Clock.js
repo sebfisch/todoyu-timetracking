@@ -52,6 +52,8 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Start loop which refreshes the clock every second
 	 * Prevents making multiple instances (the clock would run faster every time!)
+	 *
+	 * @method	start
 	 */
 	start: function() {
 		if( ! this.isRunning() ) {
@@ -63,6 +65,8 @@ Todoyu.Ext.timetracking.Clock = {
 
 	/**
 	 * Stop clock refreshing
+	 *
+	 * @method	stop
 	 */
 	stop: function() {
 		if( this.isRunning() ) {
@@ -76,6 +80,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Check whether clock (periodical execution update) is running
 	 *
+	 * @method	isRunning
 	 * @return	{Boolean}
 	 */
 	isRunning: function() {
@@ -87,6 +92,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Handler for clock tick: evoke timetracking clock ticking handler
 	 *
+	 * @method	onClockTick
 	 * @param	{Object}	periodicalExecuter
 	 */
 	onClockTick: function(periodicalExecuter) {
@@ -104,6 +110,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Show a new clock in a display area. Can be initialized with a start time
 	 *
+	 * @method	showClock
 	 * @param	{String}		idDisplayArea
 	 * @param	{Number}		startTime
 	 */
@@ -123,7 +130,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Get current tracked task
 	 *
-	 * @todo	check: used?
+	 * @method	getTask
 	 */
 	getTask: function() {
 		return Todoyu.Ext.timetracking.getTask();
@@ -134,6 +141,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Get currently tracked time
 	 *
+	 * @method	getTime
 	 * @return	{Number}
 	 */
 	getTime: function() {
@@ -145,6 +153,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Register given callback
 	 *
+	 * @method	addCallback
 	 * @param	{Function}	callback
 	 */
 	addCallback: function(callback) {
@@ -155,6 +164,8 @@ Todoyu.Ext.timetracking.Clock = {
 
 	/**
 	 * Call registered callback functions
+	 *
+	 * @method	callCallbacks
 	 */
 	callCallbacks: function() {
 		this.callbacks.each(function(callback) {
@@ -167,6 +178,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Add a new display area to the list of updated elements
 	 *
+	 * @method	addDisplayArea
 	 * @param	{String}		idDisplayArea
 	 */
 	addDisplayArea: function(idDisplayArea) {
@@ -179,6 +191,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Call updater function for all registered display areas
 	 *
+	 * @method	refreshAreas
 	 * @param	{PeriodicalExecuter}	pe
 	 */
 	refreshAreas: function(pe) {
@@ -192,6 +205,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Update a display area with the current time
 	 *
+	 * @method	updateDisplayArea
 	 * @param	{String}		idDisplayArea
 	 * @param	{Number}		seconds
 	 */
@@ -206,6 +220,7 @@ Todoyu.Ext.timetracking.Clock = {
 	/**
 	 * Get an array with the keys hours, minutes and seconds of the current time
 	 *
+	 * @method	getTimeParts
 	 * @return	{Array}
 	 */
 	getTimeParts: function() {

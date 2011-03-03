@@ -30,6 +30,8 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Initialize timetracking: register clock callbacks
+	 *
+	 * @method	init
 	 */
 	init: function() {
 		this.registerClockCallbacks();
@@ -40,7 +42,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Start timetracking of given task
 	 *
-	 * @param {Number} idTask
+	 * @method	start
+	 * @param	{Number}	idTask
 	 */
 	start: function(idTask) {
 		this.ext.start(idTask);
@@ -51,7 +54,8 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Stop timetracking of given task, reset timetrack button style
 	 *
-	 * @param {Number} idTask
+	 * @method	stop
+	 * @param	{Number}	idTask
 	 */
 	stop: function(idTask) {
 		this.ext.stop();
@@ -61,6 +65,8 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * Register timetracking clock callbacks
+	 *
+	 * @method	registerClockCallbacks
 	 */
 	registerClockCallbacks: function() {
 		this.ext.addToggle('tasktab', this.onTrackingToggle.bind(this), this.onTrackingToggleUpdate.bind(this));
@@ -72,6 +78,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Callback if tracking is toggled
 	 *
+	 * @method	onTrackingToggle
 	 * @param	{Number}	idTask
 	 * @param	{Boolean}	start
 	 * @return	{Array}		List of tasks to update
@@ -111,6 +118,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Update task timetracking tabs with data from tracking request
 	 *
+	 * @method	onTrackingToggleUpdate
 	 * @param	{Number}		idTask
 	 * @param	{Object}		data
 	 * @param	{Ajax.Response}	response
@@ -128,6 +136,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Callback if clock ticked (every second
 	 *
+	 * @method	onClockTick
 	 * @param	{Number}	idTask
 	 * @param	{Number}	trackedTotal
 	 * @param	{Number}	trackedToday
@@ -145,6 +154,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Check whether given task's timetracking tab is loaded
 	 *
+	 * @method	isTaskTrackingTabLoaded
 	 * @param	{Number}	idTask
 	 * @return	{Boolean}
 	 */
@@ -157,6 +167,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Set task style 'running', indicating visually that it is currently not / being timetracked
 	 *
+	 * @method	setRunningStyle
 	 * @param	{Number}	idTask
 	 * @param	{Boolean}	running
 	 */
@@ -175,6 +186,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Update timetracking tab (contains start / stop button, list of prev. tracked times, etc.) of given task.
 	 *
+	 * @method	updateTab
 	 * @param	{Number}	idTask
 	 */
 	updateTab: function(idTask) {
@@ -197,6 +209,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Set new HTML content for tab content
 	 *
+	 * @method	setTabContent
 	 * @param	{Number}	idTask
 	 * @param	{String}	html
 	 */
@@ -213,6 +226,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Update timetracking list of given task
 	 *
+	 * @method	updateTrackList
 	 * @param	{Number}	idTask
 	 */
 	updateTrackList: function(idTask) {
@@ -233,6 +247,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Update control box in timetracking tab of given task
 	 *
+	 * @method	updateTabControl
 	 * @param	{Number}	idTask
 	 */
 	updateTabControl: function(idTask) {
@@ -255,8 +270,9 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Get track edit form
 	 *
+	 * @method	editTrack
 	 * @param	{Number}	idTask
-	 *  @param	{Number}	idTrack
+	 * @param	{Number}	idTrack
 	 */
 	editTrack: function(idTask, idTrack) {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
@@ -277,6 +293,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Event handler: edit form loaded
 	 *
+	 * @method	onEditFormLoaded
 	 * @param	{Number}		idTask
 	 * @param	{Number}		idTrack
 	 * @param	{Ajax.Response}	response
@@ -294,6 +311,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Save edited track
 	 *
+	 * @method	saveTrack
 	 * @param	{Number}	idTask
 	 * @param	{Number}	idTrack
 	 */
@@ -311,6 +329,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Event handler: being evoked after edited track has been saved
 	 *
+	 * @method	onTrackSaved
 	 * @param	{Number}		idTask
 	 * @param	{Number}		idTrack
 	 * @param	{Ajax.Response}	response
@@ -333,8 +352,9 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Cancel track editing
 	 *
-	  * @param	{Number}	idTask
-	  * @param	{Number}	idTrack
+	 * @method	cancelTrackEditing
+	 * @param	{Number}	idTask
+	 * @param	{Number}	idTrack
 	 */
 	cancelTrackEditing: function(idTask, idTrack) {
 		this.updateTrack(idTask, idTrack);
@@ -345,6 +365,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Update timetracking tab content
 	 *
+	 * @method	updateTrackContent
 	 * @param	{Number}	idTask
 	 * @param	{Number}	idTrack
 	 * @param	{String}	tabContent
@@ -358,6 +379,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Toggle timetracks list visibility
 	 *
+	 * @method	toggleList
 	 * @param	{Number}	idTask
 	 */
 	toggleList: function(idTask) {
@@ -369,6 +391,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Updates a single track
 	 *
+	 * @method	updateTrack
 	 * @param	{Number}	idTask
 	 * @param	{Number}	idTrack
 	 */

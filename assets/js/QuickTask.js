@@ -36,7 +36,9 @@ Todoyu.Ext.timetracking.QuickTask = {
 
 
 	/**
-	 * Initialize: Add hooks for time tracking to quick task 
+	 * Initialize: Add hooks for time tracking to quick task
+	 *
+	 * @method	init
 	 */
 	init: function() {
 			// Called when quick task is opened (empty form)
@@ -50,7 +52,8 @@ Todoyu.Ext.timetracking.QuickTask = {
 	/**
 	 * Hook called when quick task popUp is loaded
 	 * Install observers on fields
-	 * 
+	 *
+	 * @method	onQuickTaskOpen
 	 * @param	{Ajax.Response}		response		PopUp AJAX request response
 	 */
 	onQuickTaskOpen: function(response) {
@@ -65,7 +68,8 @@ Todoyu.Ext.timetracking.QuickTask = {
 	/**
 	 * Hook called after quick task was saved
 	 * Start time tracking if PHP hook has sent the header
-	 * 
+	 *
+	 * @method	onQuickTaskSaved
 	 * @param	{Number}			idTask
 	 * @param	{Number}			idProject
 	 * @param	{Ajax.Response}		response
@@ -82,7 +86,8 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 * Make sure only one of the options in quick task form is checked
 	 * - start tracking
 	 * - task done
-	 * 
+	 *
+	 * @method	preventStartDone
 	 * @param	{Event}		event
 	 * @param	{String}	key
 	 */
