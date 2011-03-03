@@ -22,7 +22,4 @@
 define('EXTID_TIMETRACKING', 119);
 define('PATH_EXT_TIMETRACKING', PATH_EXT . '/timetracking');
 
-	// Register module locales
-//TodoyuLabelManager::register('timetracking', 'timetracking', 'ext.xml');
-
 ?>
