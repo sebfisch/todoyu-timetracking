@@ -157,8 +157,7 @@
 }
 
 #todoyutimetrackingheadlettracking .content .inactiveTaskList li span.headLabel {
-	border-left-style:solid;
-	border-left-width:8px;
+	border-left:8px solid;
 	display:block;
 	padding:1px 0 1px 0;
 }

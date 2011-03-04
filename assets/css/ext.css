@@ -135,8 +135,7 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 }
 
 .task .taskTabs .timetracks ul li a.editableItem {
-	background:url(../../../../core/assets/img/icons.png) no-repeat;
-	background-position:3px -775px;
+	background:url(../../../../core/assets/img/icons.png) no-repeat 3px -775px;
 	line-height:20px;
 }
 
