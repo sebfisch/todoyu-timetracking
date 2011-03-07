@@ -17,6 +17,16 @@
 * This copyright notice MUST APPEAR in all copies of the script.
 *****************************************************************************/
 
+/**
+ * @module	Timetracking
+ */
+
+/**
+ * Timetracking headlet
+ *
+ * @class		Timetracking
+ * @namespace	Todoyu.Ext.timetracking.Headlet
+ */
 Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 
 	/**
