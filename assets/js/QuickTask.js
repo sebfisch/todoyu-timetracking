@@ -23,14 +23,23 @@
 Todoyu.Ext.timetracking.QuickTask = {
 
 	/**
-	 * Extension backlink
+	 * Reference to extension
 	 *
-	 * @var	{Object}	ext
+	 * @property	ext
+	 * @type		Object
 	 */
 	ext: Todoyu.Ext.timetracking,
 
+	/**
+	 * @property	fieldStart
+	 * @type		String
+	 */
 	fieldStart:		'quicktask-0-field-start-tracking',
 
+	/**
+	 * @property	fieldDone
+	 * @type		String
+	 */
 	fieldDone:		'quicktask-0-field-task-done',
 
 

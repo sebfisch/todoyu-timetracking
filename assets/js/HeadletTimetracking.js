@@ -30,14 +30,23 @@
 Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 
 	/**
-	 * Ext shortcut
+	 * Reference to extension
 	 *
-	 * @var	{Object}	ext
+	 * @property	ext
+	 * @type		Object
 	 */
 	ext:	Todoyu.Ext.timetracking,
 
+	/**
+	 * @property	info
+	 * @type		unknown
+	 */
 	info: null,
 
+	/**
+	 * @property	barClasses
+	 * @type		Object
+	 */
 	barClasses: {},
 
 

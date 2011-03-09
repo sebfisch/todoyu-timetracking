@@ -22,18 +22,33 @@
  */
 Todoyu.Ext.timetracking = {
 
+	/**
+	 * @property	PanelWidget
+	 * @type		Object
+	 */
 	PanelWidget: {},
 
+	/**
+	 * @property	Headlet
+	 * @type		Object
+	 */
 	Headlet: {},
 
 	/**
 	 * Lists if callback functions for toggle and clock (every second) events
+	 *
+	 * @property	_callbacks
+	 * @type		Object
 	 */
 	_callbacks: {
 		'toggle': [],
 		'clock': []
 	},
 
+	/**
+	 * @property	callback
+	 * @type		Object
+	 */
 	callback: {
 		onToggle: {},
 		onTick: []
@@ -41,15 +56,32 @@ Todoyu.Ext.timetracking = {
 
 	/**
 	 * Task record of the current tracked task
+	 *
+	 * @property	task
+	 * @type		Object
 	 */
 	task: {},
 
 	/**
 	 * Tracked time parts of current task
+	 *
+	 * @property	trackedTotal
+	 * @type		Number
 	 */
 	trackedTotal:	0,
+
+	/**
+	 * @property	trackedToday
+	 * @type		Number
+	 */
 	trackedToday:	0,
+
+	/**
+	 * @property	trackedCurrent
+	 * @type		Number
+	 */
 	trackedCurrent:	0,
+
 
 
 	/**

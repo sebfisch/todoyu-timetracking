@@ -30,20 +30,25 @@
 Todoyu.Ext.timetracking.Clock = {
 
 	/**
-	 * Ext shortcut
+	 * Reference to extension
 	 *
-	 * @var	{Object}	ext
+	 * @property	ext
+	 * @type		Object
 	 */
 	ext:	Todoyu.Ext.timetracking,
 
-	/**
-	 * Areas to display the clock
-	 */
+//	/**
+//	 * Areas to display the clock
+//	 */
 //	displayAreas:	[],
-
+//
 //	callbacks:		[],
+
 	/**
 	 * Periodical executer
+	 *
+	 * @property	pe
+	 * @type		PeriodicalExecuter
 	 */
 	pe:		null,
 

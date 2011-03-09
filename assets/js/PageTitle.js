@@ -2,8 +2,12 @@
  * Update page title with current timetracking info
  */
 Todoyu.Ext.timetracking.PageTitle = {
+
 	/**
-	 * Extension backlink
+	 * Reference to extension
+	 *
+	 * @property	ext
+	 * @type		Object
 	 */
 	ext: Todoyu.Ext.timetracking,
 
@@ -11,8 +15,13 @@ Todoyu.Ext.timetracking.PageTitle = {
 
 	/**
 	 * Task data container
+	 *
+	 * @property	task
+	 * @type		Object
 	 */
 	task: null,
+
+
 
 	/**
 	 * Initialize callbacks and load task data
