@@ -18,6 +18,10 @@
 *****************************************************************************/
 
 /**
+ * @module	Timetracking
+ */
+
+/**
  * Quick task modifications to time tracking
  */
 Todoyu.Ext.timetracking.QuickTask = {

@@ -18,7 +18,14 @@
 *****************************************************************************/
 
 /**
- *	Ext: timetracking
+ * @module	Timetracking
+ */
+
+/**
+ * Main timetracking object
+ *
+ * @class		timetracking
+ * @namespace	Todoyu.Ext
  */
 Todoyu.Ext.timetracking = {
 
