@@ -1,7 +1,20 @@
-todoyu timertacking changelog
+todoyu timetracking changelog
 
-timertacking 1.1.0
-	* 2.1 dev version
+timetracking 1.1.0 (requires core >= 2.1) - not released yet
+	* Feature: Rights Cleanup - Fixed missing init methods in controller
+	* Feature: Added rights checks
+	* Changed: Updated loading structure- load boot.php, init request, load init.php
+	* Changed: Changed locale format
 
-timertacking 1.0.6
- 	* Start changelog
+timetracking 1.0.6
+	* Bugfix: quicktask creation option "start timetracking" was shown to persons w/o timetracking access
+	* Feature: Ext init Cleanup
+	* Bugfix: timetracking task filter joins were not separated from where, query used 100% of mysql resources
+	* Bugfix: Last tracked tasks in timetracking headlet
+	* Feature: Added italian translation
+	* Bugfix: HTML encoding in timetracking headlet
+	* Bugfix: Malformed mockup of timetrack comments with long text
+	* Bugfix: Current timetracking was not visible in chrome
+	* Feature: Merged all tracking request into a single request (much faster now)
+	* Feature: Added indexes to tables to improve SQL performance
+  	* Feature: Added changelog
