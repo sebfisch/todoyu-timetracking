@@ -48,7 +48,6 @@ div.task.running div.headLabel {
 }
 
 div.timetrackform {
-	padding:10px;
 	font-weight:bold;
 }
 
@@ -121,7 +120,7 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 	Time tracks
    ------------------------- */
 .task .taskTabs .timetracks {
-	padding:0 5px 5px 5px;
+	padding-top: 5px;
 	background:#fff;
 }
 
