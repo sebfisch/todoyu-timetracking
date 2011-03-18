@@ -28,37 +28,37 @@
 Todoyu::$CONFIG['EXT']['timetracking']['assets'] = array(
 	'js' => array(
 		array(
-			'file'		=> 'ext/timetracking/assets/js/Ext.js',
+			'file'		=> 'ext/timetracking/asset/js/Ext.js',
 			'position'	=> 100
 		),
 		array(
-			'file'		=> 'ext/timetracking/assets/js/Task.js',
+			'file'		=> 'ext/timetracking/asset/js/Task.js',
 			'position'	=> 102
 		),
 		array(
-			'file'		=> 'ext/timetracking/assets/js/QuickTask.js',
+			'file'		=> 'ext/timetracking/asset/js/QuickTask.js',
 			'position'	=> 110
 		),
 		array(
-			'file'		=> 'ext/timetracking/assets/js/Clock.js',
+			'file'		=> 'ext/timetracking/asset/js/Clock.js',
 			'position'	=> 105
 		),
 		array(
-			'file'		=> 'ext/timetracking/assets/js/PageTitle.js',
+			'file'		=> 'ext/timetracking/asset/js/PageTitle.js',
 			'position'	=> 106
 		),
 		array(
-			'file'		=> 'ext/timetracking/assets/js/HeadletTimetracking.js',
+			'file'		=> 'ext/timetracking/asset/js/HeadletTimetracking.js',
 			'position'	=> 110
 		)
 	),
 	'css' => array(
 		array(
-			'file'		=> 'ext/timetracking/assets/css/ext.css',
+			'file'		=> 'ext/timetracking/asset/css/ext.css',
 			'position'	=> 100
 		),
 		array(
-			'file'		=> 'ext/timetracking/assets/css/headlet-timetracking.css',
+			'file'		=> 'ext/timetracking/asset/css/headlet-timetracking.css',
 			'position'	=> 110
 		)
 	)
