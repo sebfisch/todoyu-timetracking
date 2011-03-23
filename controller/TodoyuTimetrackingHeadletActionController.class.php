@@ -32,7 +32,7 @@ class TodoyuTimetrackingHeadletActionController extends TodoyuActionController {
 	 * @param	Array	$params
 	 */
 	public function init(array $params) {
-		restrict('timetracking', 'general:use');
+		restrict('timetracking', 'task:track');
 	}
 
 
