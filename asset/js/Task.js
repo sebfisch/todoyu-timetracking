@@ -197,8 +197,8 @@ Todoyu.Ext.timetracking.Task = {
 	updateTab: function(idTask) {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
 		var options	= {
-			'parameters': {
-				'action':	'update',
+			parameters: {
+				action:	'update',
 				'task':		idTask
 			}
 		};
@@ -237,8 +237,8 @@ Todoyu.Ext.timetracking.Task = {
 	updateTrackList: function(idTask) {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
 		var options	= {
-			'parameters': {
-				'action':	'tracklist',
+			parameters: {
+				action:	'tracklist',
 				'task':		idTask
 			}
 		};
@@ -258,8 +258,8 @@ Todoyu.Ext.timetracking.Task = {
 	updateTabControl: function(idTask) {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
 		var options	= {
-			'parameters': {
-				'action':	'control',
+			parameters: {
+				action:	'control',
 				'task':		idTask
 			}
 		};
@@ -282,11 +282,11 @@ Todoyu.Ext.timetracking.Task = {
 	editTrack: function(idTask, idTrack) {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
 		var options	= {
-			'parameters': {
-				'action':	'edittrack',
+			parameters: {
+				action:	'edittrack',
 				'track':	idTrack
 			},
-			'onComplete': this.onEditFormLoaded.bind(this, idTask, idTrack)
+			onComplete: this.onEditFormLoaded.bind(this, idTask, idTrack)
 		};
 		var target 	= 'task-' + idTask + '-track-' + idTrack;
 
@@ -322,10 +322,10 @@ Todoyu.Ext.timetracking.Task = {
 	 */
 	saveTrack: function(idTask, idTrack) {
 		$('timetrack-' + idTrack + '-form').request({
-			'parameters': {
-				'action': 'updatetrack'
+			parameters: {
+				action: 'updatetrack'
 			},
-			'onComplete': this.onTrackSaved.bind(this, idTask, idTrack)
+			onComplete: this.onTrackSaved.bind(this, idTask, idTrack)
 		});
 	},
 
@@ -403,8 +403,8 @@ Todoyu.Ext.timetracking.Task = {
 	updateTrack: function(idTask, idTrack){
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
 		var options	= {
-			'parameters': {
-				'action':	'trackcontent',
+			parameters: {
+				action:	'trackcontent',
 				'idTrack':	idTrack
 			}
 		};

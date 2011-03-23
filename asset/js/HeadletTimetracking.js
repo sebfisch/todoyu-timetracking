@@ -228,10 +228,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	updateContent: function() {
 		var url		= Todoyu.getUrl('timetracking', 'headlet');
 		var options	= {
-			'parameters': {
-				'action':	'update'
+			parameters: {
+				action:	'update'
 			},
-			'onComplete':	this.onContentUpdated.bind(this)
+			onComplete:	this.onContentUpdated.bind(this)
 		};
 		var target	= this.getContent();
 
