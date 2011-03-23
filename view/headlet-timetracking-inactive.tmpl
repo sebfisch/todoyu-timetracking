@@ -4,7 +4,7 @@
 		<li>
 			<span class="headLabel bcStatus{$task.status}" title="{$task.fulltitle}">
 			<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject({$task.id})" title="{Label timetracking.ext.jumpToTask}" class="title">
-				<span class="first taskNumber" title="{Label portal.tasktree.header.tasknumber}: {$task.id_project}.{$task.tasknumber}">
+				<span class="first taskNumber" title="{Label portal.ext.tasktree.header.tasknumber}: {$task.id_project}.{$task.tasknumber}">
 					{$task.id_project}.{$task.tasknumber}
 				</span>
 				<span class="projectName" title="{Label project.ext.project}: {htmlencode $task.project.title} (ID: {$task.id_project}) / {Label project.task.task}: {htmlencode $task.title}">
