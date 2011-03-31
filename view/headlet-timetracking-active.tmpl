@@ -9,11 +9,11 @@
 		<span class="time">
 			<span class="container">
 				<span class="tracking" title="{Label LLL:timetracking.ext.tasktab.time_elapsed}">
-					{Label LLL:timetracking.ext.tasktab.time_elapsed} {HourMinSec $tracked} + <span id="{$id}-tracking" class="currentTracking">{HourMinSec $tracking}</span>
+					{Label LLL:timetracking.ext.tasktab.time_elapsed} {HourMinSec $tracked} + <span id="{$name}-tracking" class="currentTracking">{HourMinSec $tracking}</span>
 				</span>
 				{if $showPercent}
 				<span class="percent">
-				<span class="number" id="{$id}-percent">
+				<span class="number" id="{$name}-percent">
 						{$percent}%
 					</span>
 					<span class="bar">
@@ -22,7 +22,7 @@
 						{if $length>$max}
 							{$length = $max}
 						{/if}
-						<span class="progress {$barClass}" id="{$id}-progress" style="width:{$length}px"></span>
+						<span class="progress {$barClass}" id="{$name}-progress" style="width:{$length}px"></span>
 					</span>
 					<span class="estimatedWorkload">({Label LLL:timetracking.ext.estimated_workload}: {HourMin $task.estimated_workload})</span>
 				</span>

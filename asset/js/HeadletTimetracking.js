@@ -173,10 +173,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 * @param	{Time}  	time
 	 */
 	updateTime: function(time) {
-		var headlet = $(this.name + '-tracking');
+		var divCurrentTime = $(this.name + '-tracking');
 
-		if( headlet ) {
-			$(this.name + '-tracking').update( Todoyu.Time.timeFormatSeconds(time) );
+		if( divCurrentTime ) {
+			divCurrentTime.update( Todoyu.Time.timeFormatSeconds(time) );
 		}
 	},
 
