@@ -1,10 +1,11 @@
 todoyu timetracking changelog
 
-timetracking 1.1.0 (requires core >= 2.1) - not released yet
+timetracking 1.1.0 - beta release
+	* Changed: Requires core 2.1
+	* Changed: Structure for 2.1
+	* Changed: All classes are prefixed with extension name
 	* Feature: Rights Cleanup - Fixed missing init methods in controller
 	* Feature: Added rights checks
-	* Changed: Updated loading structure- load boot.php, init request, load init.php
-	* Changed: Changed locale format
 
 timetracking 1.0.6
 	* Changed: Changed comment field of timetrack to varchar(250)
