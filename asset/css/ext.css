@@ -57,12 +57,12 @@ span.notracksyet {
 }
 
 div.tabBlock .timetrackingButtons .button {
-	margin-right:10px;
+	margin-right:5px;
 	float:left;
 }
 
 div.tabBlock .timetrackingButtons .elapsedTime {
-	margin-top:5px;
+	margin:5px 0 0 5px;
 	float:left;
 }
 

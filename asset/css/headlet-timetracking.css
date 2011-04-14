@@ -161,6 +161,7 @@
 	border-left-style:solid;
 	display:block;
 	padding:1px 0 1px 0;
+	background-color:#fff;
 }
 
 #todoyutimetrackingheadlettracking .content .inactiveTaskList span.headLabel .first {
@@ -194,7 +195,7 @@
 #todoyutimetrackingheadlettracking .content .inactiveTaskList .projectName {
 	display:inline-block;
 	float:none;
-	width:70%;
+	width:75%;
 }
 #todoyutimetrackingheadlettracking .content .inactiveTaskList .tracking {
 	display:inline-block;
