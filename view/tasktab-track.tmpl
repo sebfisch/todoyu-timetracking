@@ -2,14 +2,14 @@
 	<dl>
 		<dt>
 			{if $track.editable}
-				<span class="icon editableItem iconEdit pointerCursor" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})" title="{Label timetracking.tasktab.edit}"> </span>
+				<span class="icon editableItem iconEdit pointerCursor" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})" title="{Label timetracking.ext.tasktab.edit}"> </span>
 			{else}
 				<span class="icon""> </span>
 			{/if}
 		</dt>
 		<dd>
 			{if $track.editable}
-				<a class="overflow" href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})" title="{Label timetracking.tasktab.edit}">
+				<a class="overflow" href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})" title="{Label timetracking.ext.tasktab.edit}">
 			{/if}
 				<span class="dateWithTime">
 					{dateFormat $track.date_track D2M2Y2} - {HourMinSec $track.workload_tracked}
