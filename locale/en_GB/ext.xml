@@ -5,8 +5,8 @@
 	<label index="noTracksYet">No tracked time yet</label>
 	<label index="attr.date_create">Date</label>
 	<label index="attr.date_track">Date</label>
-	<label index="attr.workload_tracked">Workload</label>
-	<label index="attr.workload_chargeable">Chargeable</label>
+	<label index="attr.workload_tracked">Tracked Time</label>
+	<label index="attr.workload_chargeable">Chargeable Time</label>
 	<label index="attr.comment">Comment</label>
 	<label index="search.label">Time Tracking</label>
 	<label index="filter.timetrackedPerson">Person has tracked time</label>
