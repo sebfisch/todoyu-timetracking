@@ -86,7 +86,7 @@ class TodoyuTimetrackingRights {
 	 * @param	Integer	$idTask
 	 */
 	public static function isTrackAllowed($idTask) {
-		if(TodoyuAuth::isAdmin()) {
+		if( TodoyuAuth::isAdmin() ) {
 			return true;
 		}
 
