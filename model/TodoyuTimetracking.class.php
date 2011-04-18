@@ -639,20 +639,5 @@ class TodoyuTimetracking {
 		}
 	}
 
-
-
-
-	/**
-	 * Handle callbacks (call all) of tracking toggeling
-	 *
-	 * @todo check: $idTask parameter is missing!
-	 *
-	 * @param	Array	$data
-	 * @return	Array
-	 */
-	public static function handleToggleCallbacks(array $data) {
-		return  TodoyuTimetrackingCallbackManager::callAll(0, $data);
-	}
-
 }
 ?>
