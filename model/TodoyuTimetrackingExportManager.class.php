@@ -38,6 +38,8 @@ class TodoyuTimetrackingExportManager {
 
 			// Tracked Time
 		$exportData[Label('timetracking.ext.attr.workload_tracked')] = TodoyuTime::formatTime($task->getTrackedTime());
+			// Chargeable Time
+		$exportData[Label('timetracking.ext.attr.workload_chargeable')] = TodoyuTime::formatTime($task->getChargeableTime());
 
 		return $exportData;
 	}

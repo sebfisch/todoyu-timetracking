@@ -27,12 +27,23 @@
 class TodoyuTimetrackingTask extends TodoyuProjectTask {
 
 	/**
-	 * Get tracked time of the task
+	 * Get sum of tracked time of the task
 	 *
 	 * @return	Integer		 Seconds
 	 */
 	public function getTrackedTime($checkChargeable = false) {
 		return TodoyuTimetracking::getTrackedTaskTimeTotal($this->getID(), $checkChargeable);
+	}
+
+
+
+	/**
+	 * Get amount of chargeable time of the task
+	 *
+	 * @return	Integer
+	 */
+	public function getChargeableTime() {
+		return $this->getTrackedTime(true);
 	}
 
 

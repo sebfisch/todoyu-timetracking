@@ -6,7 +6,7 @@
 	<label index="attr.date_create">Datum</label>
 	<label index="attr.date_track">Datum</label>
 	<label index="attr.workload_tracked">Arbeitsaufwand</label>
-	<label index="attr.workload_chargeable">Verrechenbar</label>
+	<label index="attr.workload_chargeable">Verrechenbarer Arbeitsaufwand</label>
 	<label index="attr.comment">Kommentar</label>
 	<label index="search.label">Zeiterfassung</label>
 	<label index="filter.timetrackedPerson">Person hat Zeit erfasst</label>
