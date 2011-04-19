@@ -32,6 +32,19 @@ class TodoyuTimetrackingTaskManager {
 	const TABLE = 'ext_timetracking_track';
 
 
+	/**
+	 * Get Timetracking Task
+	 *
+	 * @param	Integer		$idTask
+	 * @return TodoyuTimetrackingTask
+	 */
+	public static function getTask($idTask) {
+		$idTask	= intval($idTask);
+
+		return new TodoyuTimetrackingTask($idTask);
+	}
+
+
 
 	/**
 	 * Get time tracking task tracks

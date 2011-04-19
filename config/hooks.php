@@ -19,15 +19,15 @@
 *****************************************************************************/
 
 TodoyuHookManager::registerHook('project', 'taskIcons', 'TodoyuTimetrackingManager::getTaskIcons');
-
 TodoyuHookManager::registerHook('project', 'taskinfo', 'TodoyuTimetrackingManager::addTimetrackingInfosToTask');
-
 TodoyuHookManager::registerHook('project', 'taskDefaultData', 'TodoyuTimetrackingManager::setTaskDefaultData');
 
 	// Add timetracking infos to task infos: more time tracked than estimated? add marking CSS class
 TodoyuHookManager::registerHook('project', 'taskdata', 'TodoyuTimetrackingManager::addTimetrackingInfosToTaskInfos');
-
 TodoyuHookManager::registerHook('project', 'taskHeaderExtras', 'TodoyuTimetrackingManager::addTimetrackingHeaderExtrasToTask');
+
+	// On export (task)
+TodoyuHookManager::registerHook('project', 'taskCSVExportParseData', 'TodoyuTimetrackingExportManager::parseTaskDataForExport');
 
 	// Quicktask: add timetracking fields
 TodoyuFormHook::registerBuildForm('ext/project/config/form/quicktask.xml', 'TodoyuTimetrackingManager::addWorkloadFieldToQuicktask');
@@ -48,5 +48,7 @@ TodoyuTimetrackingCallbackManager::add('trackheadlet', 'TodoyuTimetrackingManage
 TodoyuHookManager::registerHook('project', 'projectpresetdata', 'TodoyuTimetrackingManager::getProjectPresetDataAttributes');
 TodoyuFormHook::registerBuildForm('ext/project/config/form/extconf.xml', 'TodoyuTimetrackingExtManagerRenderer::onRenderProjectExtConfig');
 TodoyuFormHook::registerBuildForm('ext/project/config/form/admin/taskpreset.xml', 'TodoyuTimetrackingSysmanagerRenderer::onBuildFormTaskpreset');
+
+
 
 ?>
