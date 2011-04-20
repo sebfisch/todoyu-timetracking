@@ -3,15 +3,15 @@
 --
 
 CREATE TABLE `ext_timetracking_track` (
-	`id` int(10) NOT NULL auto_increment,
+	`id` int(10) NOT NULL AUTO_INCREMENT,
 	`date_create` int(10) unsigned NOT NULL default '0',
-	`date_update` int(10) unsigned NOT NULL,
+	`date_update` int(10) unsigned NOT NULL default '0',
 	`id_person_create` int(10) unsigned NOT NULL default '0',
 	`date_track` int(10) unsigned NOT NULL default '0',
 	`id_task` int(10) unsigned NOT NULL default '0',
 	`workload_tracked` int(10) unsigned NOT NULL default '0',
 	`workload_chargeable` int(10) unsigned NOT NULL default '0',
-	`comment` varchar(250) NOT NULL,
+	`comment` varchar(250) NOT NULL default '',
 	PRIMARY KEY  (`id`),
 	 KEY `task` (`id_task`),
 	 KEY `persondate` (`date_track`,`id_person_create`),
@@ -26,10 +26,10 @@ CREATE TABLE `ext_timetracking_track` (
 
 CREATE TABLE `ext_timetracking_active` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-	`date_create` int(10) unsigned NOT NULL DEFAULT '0',
-	`date_update` int(10) unsigned NOT NULL DEFAULT '0',
-	`id_person_create` int(10) unsigned NOT NULL DEFAULT '0',
-	`id_task` int(10) unsigned NOT NULL DEFAULT '0',
+	`date_create` int(10) unsigned NOT NULL default '0',
+	`date_update` int(10) unsigned NOT NULL default '0',
+	`id_person_create` int(10) unsigned NOT NULL default '0',
+	`id_task` int(10) unsigned NOT NULL default '0',
 	PRIMARY KEY (`id`),
 	 KEY `persondate` (`id_person_create`,`date_create`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -41,6 +41,6 @@ CREATE TABLE `ext_timetracking_active` (
 --
 
 CREATE TABLE `ext_project_taskpreset` (
-	`start_tracking` tinyint(1) unsigned NOT NULL DEFAULT '0'
+	`start_tracking` tinyint(1) unsigned NOT NULL default '0',
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
