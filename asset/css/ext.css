@@ -120,7 +120,7 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 	Time tracks
    ------------------------- */
 .task .taskTabs .timetracks {
-	padding-top: 5px;
+	padding-top:5px;
 	background:#fff;
 }
 
@@ -168,7 +168,7 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 .tracksList .listItem dl dd {
 	width:560px;
 	float:left;
-	line-height: 21px;
+	line-height:21px;
 }
 
 
@@ -189,7 +189,7 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 	border:none;
 }
 .task .tabContent .formTimeTrack fieldset.buttons {
-	margin-bottom: 10px;
+	margin-bottom:10px;
 }
 
 /* --------------------
