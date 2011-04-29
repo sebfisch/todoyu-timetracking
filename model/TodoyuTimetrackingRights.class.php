@@ -80,9 +80,8 @@ class TodoyuTimetrackingRights {
 
 
 	/**
-	 * Checks if timetracking in general and for current task is allowed
+	 * Checks whether timetracking generally allowed and in particular for current task
 	 *
-	 * @static
 	 * @param	Integer	$idTask
 	 */
 	public static function isTrackAllowed($idTask) {
@@ -100,8 +99,7 @@ class TodoyuTimetrackingRights {
 	/**
 	 * Restricts access to track time on given task
 	 *
-	 * @static
-	 * @param	Integer	$idTrack
+	 * @param	Integer	$idTask
 	 */
 	public static function restrictTrack($idTask) {
 		if( ! self::isTrackAllowed($idTask)) {
@@ -114,11 +112,10 @@ class TodoyuTimetrackingRights {
 	/**
 	 * Restricts seeing of given track (depends on see-right of task)
 	 *
-	 * @static
 	 * @param	Integer	$idTrack
 	 */
 	public static function restrictSee($idTrack) {
-		$idTrack	= intval($idTrack);
+		$idTrack= intval($idTrack);
 		$idTask	= TodoyuTimetracking::getTrack($idTrack)->getTaskID();
 
 		TodoyuProjectTaskRights::restrictSee($idTask);

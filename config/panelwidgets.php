@@ -25,7 +25,7 @@
 
 
 
-	// add panel widgets
+	// Add panel widgets
 //TodoyuPanelWidgetManager::addDefaultPanelWidget('timetracking', 'PanelWidgetName', 20);
 
 
