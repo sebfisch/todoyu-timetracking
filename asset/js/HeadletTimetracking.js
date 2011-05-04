@@ -61,9 +61,29 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	initialize: function($super, name) {
 		$super(name);
 
+			// Listen to task status changes
+		Todoyu.Hook.add('project.task.statusUpdated', this.onTaskStatusChange.bind(this));
+
 			// Register timetracking
 		this.ext.addToggle('trackheadlet', this.onTrackingToggle.bind(this), this.onTrackingToggleUpdate.bind(this));
 		this.ext.addTick(this.onClockTick.bind(this));
+	},
+
+
+
+	/**
+	 * Hook called when a task status changes
+	 * Change status of headlet task if loaded
+	 *
+	 * @param	{Number}	idTask
+	 * @param	{Number}	status
+	 */
+	onTaskStatusChange: function(idTask, status) {
+		var task	= $('todoyutimetrackingheadlettracking-task-' + idTask);
+
+		if( task ) {
+			Todoyu.Ext.project.setStatusOfElement(task.down('.headLabel'), status);
+		}
 	},
 
 

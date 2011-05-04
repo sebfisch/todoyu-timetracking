@@ -98,8 +98,10 @@ Todoyu.Ext.timetracking.Task = {
 			this.setRunningStyle(idTask, start);
 
 				// Update task status
-			if( Todoyu.Ext.project.Task.getStatus(idTask) == 2 ) { // Open
-				Todoyu.Ext.project.Task.setStatus(idTask, 3); // In Progress
+			if( Todoyu.Ext.project.Task.isLoaded(idTask) ) {
+				if( Todoyu.Ext.project.Task.getStatus(idTask) == 2 ) { // Open
+					Todoyu.Ext.project.Task.setStatus(idTask, 3); // In Progress
+				}
 			}
 
 			if( this.isTaskTrackingTabLoaded(idTask) ) {
