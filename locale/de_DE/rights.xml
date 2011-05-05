@@ -4,7 +4,8 @@
 	<label index="general.use">Benutze Zeiterfassung</label>
 	<label index="task">Zeiterfassung Aufgaben</label>
 	<label index="task.track">Zeit erfassen</label>
-	<label index="task.editOwn">Kann SELBST ERFASSTE Zeiten bearbeiten</label>
-	<label index="task.editAll">Kann ALLE Zeiten bearbeiten</label>
-	<label index="task.editAllChargeable">Kann verrechenbare Zeit bei allen Tasks bearbeiten</label>
+	<label index="task.editOwn">Kann Arbeitsaufwand von eigenen Zeiten bearbeiten</label>
+	<label index="task.editOwnChargeable">Kann die verrechenbare Zeit von eigenen Zeiten bearbeiten</label>
+	<label index="task.editAll">Kann den Arbeitsaufwand aller Benutzer bearbeiten</label>
+	<label index="task.editAllChargeable">Kann die verrechenbare Zeit aller Benutzer bearbeiten</label>
 </labels>

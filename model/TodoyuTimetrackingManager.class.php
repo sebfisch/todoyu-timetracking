@@ -322,14 +322,16 @@ class TodoyuTimetrackingManager {
 		if( $idTrack !== 0 ) {
 			$track	= TodoyuTimetracking::getTrack($idTrack);
 
-			if( allowed('timetracking', 'task:editAllChargeable') && ! $track->isCurrentPersonCreator() ) {
-				if( ! allowed('timetracking', 'task:editAll') ) {
+			if( ! $track->isCurrentPersonCreator() ) {
 				$form->removeField('date_track', true);
-				$form->removeField('workload_tracked', true);
 				$form->removeField('comment', true);
+				if( !allowed('timetracking', 'task:editAll') ) $form->removeField('workload_tracked', true);
+				if( !allowed('timetracking', 'task:editAllChargeable') ) $form->removeField('workload_chargeable', true);
+			} else {
+				if( ! allowed('timetracking', 'task:editOwn') ) $form->removeField('workload_tracked', true);
+				if( ! allowed('timetracking', 'task:editOwnChargeable') ) $form->removeField('workload_chargeable', true);
 			}
 		}
-	}
 	}
 
 

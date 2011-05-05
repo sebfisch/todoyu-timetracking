@@ -7,9 +7,10 @@
 
 	<section name="task" require="general:use">
 		<right name="track" />
-		<right name="editOwn" />
-		<right name="editAllChargeable" require="task:editOwn" />
+		<right name="editOwn" requrie="task:track" />
+		<right name="editOwnChargeable" requrie="task:track" />
 		<right name="editAll" require="task:editOwn" />
+		<right name="editAllChargeable" require="task:editOwnChargeable" />
 	</section>
 
 </rights>

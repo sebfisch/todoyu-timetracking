@@ -7,6 +7,6 @@
 </div>
 <div class="clear"><!-- --></div>
 
-{if allowed('timetracking','task:editOwn') || allowed('timetracking','task:editAll')}
+{if allowed('timetracking','task:editOwn') || allowed('timetracking','task:editAll') || allowed('timetracking', 'editOwnChargeable')}
 	<div id="task-{$idTask}-timetrackedit" class="tbBlock" style="display:none">{$editform}</div>
 {/if}

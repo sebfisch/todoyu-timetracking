@@ -66,9 +66,7 @@ class TodoyuTimetrackingRights {
 
 		if( ! TodoyuProjectTaskManager::isLocked($idTask) && TodoyuProjectTaskRights::isSeeAllowed($idTask) ) {
 			if( $track->isCurrentPersonCreator() ) {
-				if( allowed('timetracking', 'task:editOwn') ) {
-					return true;
-				}
+				return allowedAny('timetracking', 'task:editOwn,task:editOwnChargeable');
 			} else {
 				return allowedAny('timetracking', 'task:editAll,task:editAllChargeable');
 			}

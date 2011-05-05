@@ -4,7 +4,8 @@
 	<label index="general.use">Use Time Tracking</label>
 	<label index="task">Task Tracking</label>
 	<label index="task.track">Track Time</label>
-	<label index="task.editOwn">Can edit own tracks on task</label>
-	<label index="task.editAll">Can edit all tracks on task</label>
-	<label index="task.editAllChargeable">Can edit chargeable time on all tracks</label>
+	<label index="task.editOwn">Can edit tracked time of own tracks</label>
+	<label index="task.editOwnChargeable">Can edit chargeable time of own tracks</label>
+	<label index="task.editAll">Can edit tracked time of all users</label>
+	<label index="task.editAllChargeable">Can edit chargeable time of all users</label>
 </labels>
