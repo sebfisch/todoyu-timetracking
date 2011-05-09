@@ -32,7 +32,7 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 	 * @param	Array		$params
 	 */
 	public function init(array $params) {
-		restrict('timetracking', 'general:use');
+		Todoyu::restrict('timetracking', 'general:use');
 	}
 
 
@@ -63,7 +63,7 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 
 			$response['taskData']		= $task->getTemplateData();
 			$response['trackedTotal']	= TodoyuTimeTracking::getTrackedTaskTime($idTask);;
-			$response['trackedToday']	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW, personid());
+			$response['trackedToday']	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW, Todoyu::personid());
 		} else {
 			TodoyuTimetracking::stopTask();
 		}

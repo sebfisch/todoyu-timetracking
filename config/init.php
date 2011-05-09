@@ -18,7 +18,7 @@
 * This copyright notice MUST APPEAR in all copies of the script.
 *****************************************************************************/
 
-if( allowed('timetracking', 'general:use') ) {
+if( Todoyu::allowed('timetracking', 'general:use') ) {
 	require_once( PATH_EXT_TIMETRACKING . '/config/hooks.php');
 }
 
@@ -38,11 +38,11 @@ Todoyu::$CONFIG['EXT']['timetracking']['trackableStatus'] = array(
 /* ------------------------------------------
 	Add inline sub tabs into task element
    ------------------------------------------ */
-if( allowed('timetracking', 'general:use') ) {
+if( Todoyu::allowed('timetracking', 'general:use') ) {
 		// Register tab for task
 	TodoyuProjectTaskManager::addTaskTab('timetracking', 'TodoyuTimetrackingTaskManager::getTabLabel', 'TodoyuTimetrackingTaskManager::getTabContent', 10);
 
-	if( allowed('timetracking', 'task:track') ) {
+	if( Todoyu::allowed('timetracking', 'task:track') ) {
 			// Register context menu function for task
 		TodoyuContextMenuManager::addFunction('task', 'TodoyuTimetracking::getContextMenuItems', 100);
 		TodoyuHookManager::registerHook('core', 'logout', 'TodoyuTimetracking::onLogout');

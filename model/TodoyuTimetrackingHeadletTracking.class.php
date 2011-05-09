@@ -97,7 +97,7 @@ class TodoyuTimetrackingHeadletTracking extends TodoyuHeadletTypeOverlay {
 			$data['showPercent']= true;
 		}
 
-		return render($tmpl, $data);
+		return Todoyu::render($tmpl, $data);
 	}
 
 
@@ -115,7 +115,7 @@ class TodoyuTimetrackingHeadletTracking extends TodoyuHeadletTypeOverlay {
 			'tasks'	=> $this->getLastTrackedTasks()
 		);
 
-		return render($tmpl, $data);
+		return Todoyu::render($tmpl, $data);
 	}
 
 
@@ -149,7 +149,7 @@ class TodoyuTimetrackingHeadletTracking extends TodoyuHeadletTypeOverlay {
 						`ext_project_project` project
 							ON task.id_project = project.id
 					WHERE
-						track.id_person_create	= ' . personid() . ' AND
+						track.id_person_create	= ' . Todoyu::personid() . ' AND
 						task.type				= ' . TASK_TYPE_TASK . ' AND
 						task.deleted			= 0 AND
 						track.date_track		<= ' . NOW . '
@@ -182,7 +182,7 @@ class TodoyuTimetrackingHeadletTracking extends TodoyuHeadletTypeOverlay {
 	 * @return	String
 	 */
 	public function getLabel() {
-		return Label('timetracking.ext.headlet.label');
+		return Todoyu::Label('timetracking.ext.headlet.label');
 	}
 
 }

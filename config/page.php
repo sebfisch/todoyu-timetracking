@@ -19,12 +19,12 @@
 *****************************************************************************/
 
 	// Add JavaScript init to page body
-if( allowed('timetracking', 'general:use') ) {
+if( Todoyu::allowed('timetracking', 'general:use') ) {
 	TodoyuTimetrackingManager::addTimetrackingJsInitToPage();
 }
 
 	// Add headlet if tracking is allowed
-if( allowed('timetracking', 'task:track') ) {
+if( Todoyu::allowed('timetracking', 'task:track') ) {
 	TodoyuHeadManager::addHeadlet('TodoyuTimetrackingHeadletTracking', 100);
 }
 

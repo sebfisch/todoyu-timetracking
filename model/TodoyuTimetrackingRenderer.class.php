@@ -44,7 +44,7 @@ class TodoyuTimetrackingRenderer {
 			'list'		=> $list
 		);
 
-		return render($tmpl, $data);
+		return Todoyu::render($tmpl, $data);
 	}
 
 
@@ -80,7 +80,7 @@ class TodoyuTimetrackingRenderer {
 			$data['trackedTime']	= 0;
 		}
 
-		return render($tmpl, $data);
+		return Todoyu::render($tmpl, $data);
 	}
 
 
@@ -107,7 +107,7 @@ class TodoyuTimetrackingRenderer {
 			'task'		=> $task->getTemplateData()
 		);
 
-		return render($tmpl, $data);
+		return Todoyu::render($tmpl, $data);
 	}
 
 
@@ -160,7 +160,7 @@ class TodoyuTimetrackingRenderer {
 
 		$data['task'] = $task->getTemplateData();
 
-		return render($tmpl, $data);
+		return Todoyu::render($tmpl, $data);
 	}
 
 }

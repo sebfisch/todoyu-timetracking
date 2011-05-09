@@ -173,7 +173,7 @@ class TodoyuTimetrackingManager {
 			$idTask			= TodoyuTimetracking::getTaskID();
 			$taskData		= TodoyuTimetracking::getTask()->getTemplateData();
 			$trackedTotal	= TodoyuTimeTracking::getTrackedTaskTime($idTask);
-			$trackedToday	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW, personid());
+			$trackedToday	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW, Todoyu::personid());
 			$trackedCurrent	= TodoyuTimetracking::getTrackedTime();
 
 			$init	= 'Todoyu.Ext.timetracking.initWithTask.bind(Todoyu.Ext.timetracking, ' . json_encode($taskData) . ', ' . $trackedTotal . ', ' . $trackedToday . ', ' . $trackedCurrent . ')';
@@ -325,11 +325,11 @@ class TodoyuTimetrackingManager {
 			if( ! $track->isCurrentPersonCreator() ) {
 				$form->removeField('date_track', true);
 				$form->removeField('comment', true);
-				if( !allowed('timetracking', 'task:editAll') ) $form->removeField('workload_tracked', true);
-				if( !allowed('timetracking', 'task:editAllChargeable') ) $form->removeField('workload_chargeable', true);
+				if( !Todoyu::allowed('timetracking', 'task:editAll') ) $form->removeField('workload_tracked', true);
+				if( !Todoyu::allowed('timetracking', 'task:editAllChargeable') ) $form->removeField('workload_chargeable', true);
 			} else {
-				if( ! allowed('timetracking', 'task:editOwn') ) $form->removeField('workload_tracked', true);
-				if( ! allowed('timetracking', 'task:editOwnChargeable') ) $form->removeField('workload_chargeable', true);
+				if( ! Todoyu::allowed('timetracking', 'task:editOwn') ) $form->removeField('workload_tracked', true);
+				if( ! Todoyu::allowed('timetracking', 'task:editOwnChargeable') ) $form->removeField('workload_chargeable', true);
 			}
 		}
 	}
@@ -411,8 +411,8 @@ class TodoyuTimetrackingManager {
 
 				// Taskpreset set title
 			$info[]	= array(
-				'label'		=> Label('timetracking.ext.taskpreset.start_tracking'),
-				'value'		=> intval($taskPreset['start_tracking']) ? Label('core.global.yes') : Label('core.global.no'),
+				'label'		=> Todoyu::Label('timetracking.ext.taskpreset.start_tracking'),
+				'value'		=> intval($taskPreset['start_tracking']) ? Todoyu::Label('core.global.yes') : Todoyu::Label('core.global.no'),
 				'position'	=> 80
 			);
 		}

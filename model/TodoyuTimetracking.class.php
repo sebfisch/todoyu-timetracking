@@ -326,7 +326,7 @@ class TodoyuTimetracking {
 	 * @return	Integer
 	 */
 	public static function getTodayTrackedTime() {
-		return self::getTrackedTaskTimeOfDay(0, NOW, personid());
+		return self::getTrackedTaskTimeOfDay(0, NOW, Todoyu::personid());
 	}
 
 
@@ -342,7 +342,7 @@ class TodoyuTimetracking {
 	public static function getPersonTracks($dateStart, $dateEnd, $idPerson = 0) {
 		$dateStart	= intval($dateStart);
 		$dateEnd	= intval($dateEnd);
-		$idPerson	= personid($idPerson);
+		$idPerson	= Todoyu::personid($idPerson);
 
 		$fields	= '*';
 		$table	= self::TABLE;
@@ -561,7 +561,7 @@ class TodoyuTimetracking {
 
 		$fields	= '*';
 		$table	= self::TABLE;
-		$where	= '		id_person_create	= ' . personid() .
+		$where	= '		id_person_create	= ' . Todoyu::personid() .
 				  ' AND	id_task				= ' . $idTask .
 				  ' AND	date_track 			BETWEEN ' . $range['start'] . ' AND ' . $range['end'];
 
@@ -603,7 +603,7 @@ class TodoyuTimetracking {
 	 * @return	Array
 	 */
 	public static function getTrackedTaskIDs($timeStart = 0, $timeEnd = 0, $idPerson = 0) {
-		$idPerson	= personid($idPerson);
+		$idPerson	= Todoyu::personid($idPerson);
 		$timeStart	= intval($timeStart);
 		$timeEnd	= intval($timeEnd);
 
