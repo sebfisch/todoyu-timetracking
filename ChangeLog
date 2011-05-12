@@ -1,11 +1,15 @@
 todoyu timetracking changelog
 
 timetracking 1.1.0 - beta release
+	* Feature: Extended task CSV export with tracked time sum
+	* Feature: Extended task CSV export with chargeable time
+	* Feature: Change status color of task in timeracking headlet on status change
 	* Changed: Requires core 2.1
 	* Changed: Structure for 2.1
 	* Changed: All classes are prefixed with extension name
 	* Feature: Rights Cleanup - Fixed missing init methods in controller
 	* Feature: Added rights checks
+
 
 timetracking 1.0.6
 	* Changed: Changed comment field of timetrack to varchar(250)
