@@ -6,9 +6,10 @@
 	<hiddenFields>
 		<field name="dummy" noStorage="true" />
 	</hiddenFields>
+
 	<fieldsets>
 		<fieldset name="config">
-
+			<legend>timetracking.form.legend.admin.basics</legend>
 			<elements>
 				<field type="checkbox" name="stopOnLogout">
 					<label>timetracking.ext.extconf.stopOnLogout</label>
