@@ -285,7 +285,7 @@ Todoyu.Ext.timetracking.Task = {
 		var url		= Todoyu.getUrl('timetracking', 'tasktab');
 		var options	= {
 			parameters: {
-				action:	'edittrack',
+				action:		'edittrack',
 				'track':	idTrack
 			},
 			onComplete: this.onEditFormLoaded.bind(this, idTask, idTrack)
@@ -342,16 +342,7 @@ Todoyu.Ext.timetracking.Task = {
 	 * @param	{Ajax.Response}	response
 	 */
 	onTrackSaved: function(idTask, idTrack, response) {
-		this.updateTrackContent(idTask, idTrack, response.responseText);
-
-			// Add the zebra for the list
-		var tracks	= $('task-' + idTask + '-timetracks').select('li');
-
-		tracks.each(function(item, index){
-			item[index%2?'removeClassName':'addClassName']('odd');
-		});
-
-		$('task-' + idTask + '-timetrack-trackedtime').update(response.getTodoyuHeader('totalTimeTracked'));
+		this.updateTab(idTask);
 	},
 
 
