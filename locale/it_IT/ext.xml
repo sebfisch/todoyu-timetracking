@@ -10,7 +10,7 @@
 		<label index="attr.comment">Commento</label>
 		<label index="search.label">Tracciamento temporale</label>
 		<label index="filter.timetrackedPerson">La persona ha tracciato il tempo</label>
-		<label index="filter.timetrackedRoles">I ruoli hanno  tracciato il tempo</label>
+		<label index="filter.timetrackedRoles">I ruoli hanno tracciato il tempo</label>
 		<label index="task.attr.overtimed">Durata eccessiva attività</label>
 		<label index="headlet.label">Tracciamento temporale</label>
 		<label index="tasktab.time_elapsed">Tempo totale tracciato</label>
