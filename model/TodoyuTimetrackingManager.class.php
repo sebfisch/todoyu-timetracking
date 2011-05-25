@@ -39,6 +39,7 @@ class TodoyuTimetrackingManager {
 	 * @param	Array		$taskData		Task data array
 	 * @param	Integer		$idTask			Task ID
 	 * @param	Integer		$infoLevel		Task infolevel
+	 * @return	Array
 	 */
 	public static function addTimetrackingInfosToTask(array $taskData, $idTask, $infoLevel = 0) {
 		$idTask		= intval($idTask);
@@ -311,6 +312,7 @@ class TodoyuTimetrackingManager {
 	 *
 	 * @param	TodoyuForm		$form
 	 * @param	Integer			$idTrack
+	 * @return	Void|Boolean
 	 */
 	public static function hookModifyTrackFields(TodoyuForm $form, $idTrack) {
 		$idTrack	= intval($idTrack);
@@ -352,7 +354,6 @@ class TodoyuTimetrackingManager {
 	 * Check whether a track is editable for the current person
 	 *
 	 * @param	Integer		$idTrack
-	 * @param	Array		$trackData
 	 * @return	Boolean
 	 */
 	public static function isTrackEditable($idTrack) {

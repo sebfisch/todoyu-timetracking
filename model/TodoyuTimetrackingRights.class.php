@@ -81,6 +81,7 @@ class TodoyuTimetrackingRights {
 	 * Checks whether timetracking generally allowed and in particular for current task
 	 *
 	 * @param	Integer	$idTask
+	 * @return	Boolean
 	 */
 	public static function isTrackAllowed($idTask) {
 		if( TodoyuAuth::isAdmin() ) {

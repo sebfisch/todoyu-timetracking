@@ -33,6 +33,7 @@ class TodoyuTimetrackingPreferences {
 	 * @param	String		$value
 	 * @param	Integer		$idItem
 	 * @param	Boolean		$unique
+	 * @param	Integer		$idArea
 	 * @param	Integer		$idPerson
 	 */
 	public static function savePref($preference, $value, $idItem = 0, $unique = false, $idArea = 0, $idPerson = 0) {
@@ -46,6 +47,8 @@ class TodoyuTimetrackingPreferences {
 	 *
 	 * @param	String		$preference
 	 * @param	Integer		$idItem
+	 * @param	Integer		$idArea
+	 * @param	Boolean		$unserialize
 	 * @param	Integer		$idPerson
 	 * @return	String
 	 */

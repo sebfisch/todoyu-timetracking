@@ -286,6 +286,7 @@ class TodoyuTimetracking {
 	 *
 	 * @param	Integer		$idTask				Task ID
 	 * @param	Boolean		$checkChargeable	Count chargeable time if available
+	 * @param	Boolean		$addCurrentTracking
 	 * @return	Integer
 	 */
 	public static function getTrackedTaskTimeTotal($idTask, $checkChargeable = false, $addCurrentTracking = false) {
@@ -448,7 +449,8 @@ class TodoyuTimetracking {
 	 * Add a new timetracking record to database
 	 *
 	 * @param	Integer		$idTask				Task ID
-	 * @param	Integer		$trackedTime		Tracked seconds
+	 * @param	Integer		$timeTracked		In Seconds
+	 * @param	Integer		$timeChargeable		In Seconds
 	 * @return	Integer
 	 */
 
@@ -472,7 +474,7 @@ class TodoyuTimetracking {
 	/**
 	 * Update a timetrack record. Happens if a task has been tracked again or the workload has been modified manually
 	 *
-	 * @param	Integer		$idRecord
+	 * @param	Integer		$idTrack
 	 * @param	Integer		$workloadTracked
 	 * @param	Integer		$chargeableWorkload
 	 * @param	String		$comment
@@ -517,6 +519,7 @@ class TodoyuTimetracking {
 	 *
 	 * @param	Integer		$type
 	 * @param	Integer		$status
+	 * @param	Integer		$idTask
 	 * @return	Boolean
 	 */
 	public static function isTrackable($type, $status, $idTask) {
@@ -551,9 +554,9 @@ class TodoyuTimetracking {
 	/**
 	 * Get stored workload of a task for a day. Only one record is created for a task per day
 	 *
-	 * @param	Integer		$idTask
-	 * @param	Integer		$timestamp
-	 * @return	Array		Or FALSE of no record found
+	 * @param	Integer				$idTask
+	 * @param	Integer|Boolean		$timestamp
+	 * @return	Array|Boolean
 	 */
 	private static function getDayWorkloadRecord($idTask, $timestamp = false) {
 		$idTask	= intval($idTask);
