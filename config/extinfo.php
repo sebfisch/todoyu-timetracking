@@ -38,7 +38,8 @@ Todoyu::$CONFIG['EXT']['timetracking']['info'] = array(
 			'project' 	=> '1.1.0'
 		),
 		'conflicts' => array()
-	)
+	),
+	'urlDocumentation'	=> 'http://doc.todoyu.com/?timetracking'
 );
 
 ?>
