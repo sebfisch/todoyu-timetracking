@@ -38,21 +38,24 @@ class TodoyuTimetrackingManager {
 	 *
 	 * @param	Array		$taskData		Task data array
 	 * @param	Integer		$idTask			Task ID
-	 * @param	Integer		$infoLevel		Task infolevel
+	 * @param	Integer		$infoLevel		Task info level
 	 * @return	Array
 	 */
 	public static function addTimetrackingInfosToTask(array $taskData, $idTask, $infoLevel = 0) {
 		$idTask		= intval($idTask);
 		$infoLevel	= intval($infoLevel);
 
-		if( TodoyuTimetracking::isTaskRunning($idTask) ) {
-			$taskData['class'] .= ' running';
-		}
+			// Is task? (there's no timetracking for containers)
+		if( TodoyuProjectTaskManager::getTask($idTask)->isTask() ) {
+			if( TodoyuTimetracking::isTaskRunning($idTask) ) {
+				$taskData['class'] .= ' running';
+			}
 
-		if( $infoLevel >= 3 ) {
-			$task	= TodoyuProjectTaskManager::getTask($idTask);
-			$taskData['tracked_time']	= TodoyuTimetracking::getTrackedTaskTime($task->getID(), $task->getStartDate(), $task->getEndDate());
-			$taskData['billable_time']	= TodoyuTimetracking::getTrackedTaskTime($task->getID(), $task->getStartDate(), $task->getEndDate(), true);
+			if( $infoLevel >= 3 ) {
+				$task	= TodoyuProjectTaskManager::getTask($idTask);
+				$taskData['tracked_time']	= TodoyuTimetracking::getTrackedTaskTime($task->getID(), $task->getStartDate(), $task->getEndDate());
+				$taskData['billable_time']	= TodoyuTimetracking::getTrackedTaskTime($task->getID(), $task->getStartDate(), $task->getEndDate(), true);
+			}
 		}
 
 		return $taskData;
@@ -70,8 +73,11 @@ class TodoyuTimetrackingManager {
 	public static function addTimetrackingInfosToTaskInfos(array $taskInfos, $idTask) {
 		$idTask	= intval($idTask);
 
-		if( self::isTaskOvertimed($idTask) ) {
-			$taskInfos['estimated_workload']['className'] .= ' overtimed';
+			// Is task? (there's no timetracking for containers)
+		if( TodoyuProjectTaskManager::getTask($idTask)->isTask() ) {
+			if( self::isTaskOvertimed($idTask) ) {
+				$taskInfos['estimated_workload']['className'] .= ' overtimed';
+			}
 		}
 
 		return $taskInfos;
@@ -80,7 +86,7 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Add billable time to taskHeaderExtra
+	 * Add billable time to taskHeaderExtra of tasks
 	 * Hook: dataModifier
 	 *
 	 * @param	Array		$extras
@@ -88,12 +94,15 @@ class TodoyuTimetrackingManager {
 	 * @return	Array
 	 */
 	public static function addTimetrackingHeaderExtrasToTask(array $extras, $idTask) {
-		$time	= TodoyuTimeTracking::getTrackedTaskTime($idTask, 0, 0, true);
+			// Is task? (there's no timetracking for containers)
+		if( TodoyuProjectTaskManager::getTask($idTask)->isTask() ) {
+			$time	= TodoyuTimeTracking::getTrackedTaskTime($idTask, 0, 0, true);
 
-		$extras['billableTime']	= array(
-			'key'		=> 'billingtime',
-			'content'	=> TodoyuTime::sec2hour($time)
-		);
+			$extras['billableTime']	= array(
+				'key'		=> 'billingtime',
+				'content'	=> TodoyuTime::sec2hour($time)
+			);
+		}
 
 		return $extras;
 	}
