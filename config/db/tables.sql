@@ -11,7 +11,7 @@ CREATE TABLE `ext_timetracking_track` (
 	`id_task` int(10) unsigned NOT NULL default '0',
 	`workload_tracked` int(10) unsigned NOT NULL default '0',
 	`workload_chargeable` int(10) unsigned NOT NULL default '0',
-	`comment` varchar(250) NOT NULL default '',
+	`comment` text NOT NULL,
 	PRIMARY KEY  (`id`),
 	 KEY `task` (`id_task`),
 	 KEY `persondate` (`date_track`,`id_person_create`),
