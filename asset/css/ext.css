@@ -166,7 +166,7 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 }
 
 .tracksList .listItem dl dd {
-	width:560px;
+	width:540px;
 	float:left;
 	line-height:21px;
 }
