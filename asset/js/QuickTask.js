@@ -71,8 +71,8 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 */
 	onQuickTaskOpen: function(response) {
 		if( Todoyu.exists(this.fieldStart) ) {
-			$(this.fieldStart).observe('change', this.preventStartDone.bindAsEventListener(this, 'start'));
-			$(this.fieldDone).observe('change', this.preventStartDone.bindAsEventListener(this, 'done'));
+			$(this.fieldStart).on('change', this.preventStartDone.bind(this, 'start'));
+			$(this.fieldDone).on('change', this.preventStartDone.bind(this, 'done'));
 		}
 	},
 
@@ -101,10 +101,10 @@ Todoyu.Ext.timetracking.QuickTask = {
 	 * - task done
 	 *
 	 * @method	preventStartDone
-	 * @param	{Event}		event
 	 * @param	{String}	key
+	 * @param	{Event}		event
 	 */
-	preventStartDone: function(event, key) {
+	preventStartDone: function(key, event) {
 		if( key === 'start' ) {
 			if( $(this.fieldDone).checked ) {
 				$(this.fieldDone).checked = false;
