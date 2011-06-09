@@ -24,4 +24,5 @@
 	<label index="jumpToTask">Нажмите тут, чтобы перейти к этой задаче</label>
 	<label index="jumpToProject">Нажмите тут, чтобы перейти к этому проекту</label>
 	<label index="extconf.stopOnLogout">Останавливать учёт времени при выходе из системы</label>
+	<label index="taskpreset.start_tracking">Начать учёт времени быстрой задачи?</label>
 </labels>
