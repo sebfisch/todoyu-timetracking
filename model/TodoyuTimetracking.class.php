@@ -345,14 +345,17 @@ class TodoyuTimetracking {
 		$dateEnd	= intval($dateEnd);
 		$idPerson	= Todoyu::personid($idPerson);
 
-		$fields	= '*';
-		$table	= self::TABLE;
-		$where	= '		id_person_create	= ' . $idPerson .
-				  ' AND	date_track BETWEEN ' . $dateStart . ' AND ' . $dateEnd;
+		$fields	= ' track.*';
+		$tables	= 	self::TABLE		. ' track,
+					ext_project_task	task';
+		$where	= '		track.id_person_create	= 		' . $idPerson .
+				  ' AND	track.date_track		BETWEEN ' . $dateStart . ' AND ' . $dateEnd .
+				  ' AND task.id					= 			track.id_task ' .
+				  ' AND task.deleted			= 			0';
 		$group	= '';
-		$order	= 'date_track';
+		$order	= 'track.date_track';
 
-		return Todoyu::db()->getArray($fields, $table, $where, $group, $order);
+		return Todoyu::db()->getArray($fields, $tables, $where, $group, $order);
 	}
 
 

@@ -90,7 +90,7 @@ class TodoyuTimetrackingRights {
 
 		$idTask	= intval($idTask);
 
-		return (Todoyu::allowed('timetracking', 'task:track') && TodoyuProjectTaskRights::isSeeAllowed($idTask)) ;
+		return Todoyu::allowed('timetracking', 'task:track') && TodoyuProjectTaskRights::isSeeAllowed($idTask);
 	}
 
 
