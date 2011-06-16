@@ -48,8 +48,8 @@ Todoyu.Ext.timetracking = {
 	 * @type		Object
 	 */
 	_callbacks: {
-		'toggle': [],
-		'clock': []
+		'toggle':	[],
+		'clock':	[]
 	},
 
 	/**
@@ -57,8 +57,8 @@ Todoyu.Ext.timetracking = {
 	 * @type		Object
 	 */
 	callback: {
-		onToggle: {},
-		onTick: []
+		onToggle:	{},
+		onTick:		[]
 	},
 
 	/**
@@ -99,6 +99,7 @@ Todoyu.Ext.timetracking = {
 	init: function() {
 		this.QuickTask.init();
 	},
+
 
 
 	/**
