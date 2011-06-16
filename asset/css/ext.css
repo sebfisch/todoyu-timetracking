@@ -87,6 +87,7 @@ div.tabBlock .timetrackingButtons button.stopTracking .icon {
 }
 
 
+
 /* -------------------------
 	Time track task tab
    ------------------------- */
@@ -114,6 +115,7 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 	width:16px;
 	background:url(../../../../core/asset/img/icons.png) no-repeat 0 -1095px;
 }
+
 
 
 /* -------------------------
@@ -156,8 +158,6 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 	padding-bottom:10px;
 }
 
-
-
 .tracksList .listItem dl dt {
 	width:20px;
 	clear:left;
@@ -170,6 +170,7 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 	float:left;
 	line-height:21px;
 }
+
 
 
 /* --------------------
@@ -192,9 +193,6 @@ div.task.running div.taskTabs ul li.timetracking span.icon {
 	margin-bottom:10px;
 }
 
-/* --------------------
-	Time tracks form
-   -------------------- */
 
 
 /* ------------------
