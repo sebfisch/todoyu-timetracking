@@ -21,8 +21,8 @@
 /**
  * Timetracking ExportManager
  *
- * @package		todoyu
- * @subpackage	timetracking
+ * @package		Todoyu
+ * @subpackage	Timetracking
  */
 class TodoyuTimetrackingExportManager {
 
