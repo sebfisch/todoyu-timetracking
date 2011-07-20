@@ -75,6 +75,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 * Hook called when a task status changes
 	 * Change status of headlet task if loaded
 	 *
+	 * @method	onTaskStatusChange
 	 * @param	{Number}	idTask
 	 * @param	{Number}	status
 	 */
