@@ -216,14 +216,14 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 			$(idPercent).update(percent + '%');
 
 			var progress= $(this.name + '-progress');
-			this.barClasses.each(function(percent, pair){
+			this.barClasses.each(function(pair){
 				if( percent >= pair.key ) {
 					progress.setStyle({
 						'backgroundColor': pair.value
 					});
 					throw $break;
 				}
-			}.bind(this, percent));
+			}, true);
 		}
 	},
 
