@@ -1,5 +1,8 @@
 todoyu timetracking changelog
 
+timetracking 1.1.1 - not released yet
+	* Bugfix: Spellingmistake in rights (track - editOwn, editOwnChargeable)
+
 timetracking 1.1.0 - 2011-06-17
 	* Feature: Extended task CSV export with tracked time sum
 	* Feature: Extended task CSV export with chargeable time
