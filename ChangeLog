@@ -2,6 +2,7 @@ todoyu timetracking changelog
 
 timetracking 1.1.1 - not released yet
 	* Bugfix: Spellingmistake in rights (track - editOwn, editOwnChargeable)
+	* Change: Add field for task presets directly to the fieldset quicktaskSpecific
 
 timetracking 1.1.0 - 2011-06-17
 	* Feature: Extended task CSV export with tracked time sum
