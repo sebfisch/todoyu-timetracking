@@ -141,7 +141,7 @@ Todoyu.Ext.timetracking.Task = {
 
 
 	/**
-	 * Callback if clock ticked (every second
+	 * Callback if clock ticked (every second)
 	 *
 	 * @method	onClockTick
 	 * @param	{Number}	idTask
