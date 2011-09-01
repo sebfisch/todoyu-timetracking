@@ -459,7 +459,6 @@ class TodoyuTimetracking {
 	 * @param	Integer		$timeChargeable		In Seconds
 	 * @return	Integer
 	 */
-
 	private static function addTracking($idTask, $timeTracked, $timeChargeable = 0) {
 		$idTask			= intval($idTask);
 		$timeTracked	= intval($timeTracked);
