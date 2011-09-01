@@ -19,7 +19,7 @@
 *****************************************************************************/
 
 /**
- * Task track
+ * Task time track object
  *
  * @package		Todoyu
  * @subpackage	Timetracking
@@ -27,7 +27,6 @@
 class TodoyuTimetrackingTrack extends TodoyuBaseObject {
 
 	/**
-	 *
 	 * @param	Integer		$idTrack
 	 */
 	public function __construct($idTrack) {
