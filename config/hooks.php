@@ -20,7 +20,7 @@
 
 TodoyuHookManager::registerHook('project', 'taskIcons', 'TodoyuTimetrackingManager::getTaskIcons');
 TodoyuHookManager::registerHook('project', 'taskinfo', 'TodoyuTimetrackingManager::addTimetrackingInfosToTask');
-TodoyuHookManager::registerHook('project', 'taskDefaultData', 'TodoyuTimetrackingManager::setTaskDefaultData');
+TodoyuHookManager::registerHook('project', 'task.defaultData', 'TodoyuTimetrackingManager::setTaskDefaultData');
 
 	// Add timetracking infos to task infos: more time tracked than estimated? add marking CSS class
 TodoyuHookManager::registerHook('project', 'taskdata', 'TodoyuTimetrackingManager::addTimetrackingInfosToTaskInfos');
@@ -35,7 +35,7 @@ TodoyuFormHook::registerBuildForm('ext/project/config/form/quicktask.xml', 'Todo
 TodoyuFormHook::registerSaveData('ext/project/config/form/quicktask.xml', 'TodoyuTimetrackingManager::handleQuicktaskFormSave');
 
 	// Quicktask: Saved hook
-TodoyuHookManager::registerHook('project', 'QuickTaskSaved', 'TodoyuTimetrackingManager::hookQuickTaskSaved');
+TodoyuHookManager::registerHook('project', 'quicktask.saved', 'TodoyuTimetrackingManager::hookQuickTaskSaved');
 
 	// Remove fields when editing foreign trackings
 TodoyuFormHook::registerBuildForm('ext/timetracking/config/form/track.xml', 'TodoyuTimetrackingManager::hookModifyTrackFields');

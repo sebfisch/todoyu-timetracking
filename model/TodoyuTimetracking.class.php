@@ -194,6 +194,8 @@ class TodoyuTimetracking {
 				// Return error status
 			//echo "NOT TRACKABLE";
 		}
+
+		TodoyuHookManager::callHook('timetracking', 'tracking.start', array($idTask));
 	}
 
 
@@ -201,7 +203,6 @@ class TodoyuTimetracking {
 	/**
 	 * Stop current time tracking
 	 *
-	 * @return	Boolean		Has a tracking been stopped?
 	 */
 	public static function stopTask() {
 		if( self::isTrackingActive() ) {
@@ -217,13 +218,9 @@ class TodoyuTimetracking {
 			}
 
 			self::removeCurrentTracking();
-
-			return true;
-		} else {
-			//echo "NOT ACTIVE";
+			
+			TodoyuHookManager::callHook('timetracking', 'tracking.stop', array($idTask));
 		}
-
-		return false;
 	}
 
 
