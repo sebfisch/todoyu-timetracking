@@ -1,6 +1,7 @@
 todoyu timetracking changelog
 
 timetracking 1.1.1 - not released yet
+	* Change: timetracking icon (changed from alarm clock to stopwatch)
 	* Bugfix: Spellingmistake in rights (track - editOwn, editOwnChargeable)
 	* Change: Add field for task presets directly to the fieldset quicktaskSpecific
 	* Change: Adapted registered hooks due rename in project extension
