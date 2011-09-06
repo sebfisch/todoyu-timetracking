@@ -150,7 +150,7 @@ class TodoyuTimetrackingManager {
 			$icons['overtimed'] = array(
 				'id'		=> 'task-' . $idTask . '-overtimed',
 				'class'		=> 'overtimed',
-				'label'		=> 'LLL:timetracking.ext.task.attr.overtimed',
+				'label'		=> 'timetracking.ext.task.attr.overtimed',
 				'position'	=> 20
 			);
 		}
