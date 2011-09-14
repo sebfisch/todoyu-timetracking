@@ -55,7 +55,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 * Initialize timetracking headlet (register timetracking).
 	 *
 	 * @method	initialize
-	 * @param	{Function}	$super
+	 * @param	{Function}	$super		Parent constructor: Todoyu.Headlet.initialize
 	 * @param	{String}	name
 	 */
 	initialize: function($super, name) {
@@ -93,6 +93,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 * Handler when clicked on button
 	 *
 	 * @method	onButtonClick
+	 * @param	{Function}	$super		Todoyu.Headlet.onButtonClick
 	 * @param	{Event}		event
 	 */
 	onButtonClick: function($super, event) {
@@ -119,7 +120,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 * Hide timetracking headlet, save display state
 	 *
 	 * @method	hide
-	 * @param	{Function}	$super
+	 * @param	{Function}	$super		Todoyu.Headlet.hide
 	 */
 	hide: function($super) {
 		$super();

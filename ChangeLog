@@ -2,7 +2,7 @@ todoyu timetracking changelog
 
 timetracking 1.1.1 - not released yet
 	* Change: timetracking icon (changed from alarm clock to stopwatch)
-	* Bugfix: Spellingmistake in rights (track - editOwn, editOwnChargeable)
+	* Bugfix: Spelling mistake in rights (track - editOwn, editOwnChargeable)
 	* Change: Add field for task presets directly to the fieldset quicktaskSpecific
 	* Change: Adapted registered hooks due rename in project extension
 	* Add: Hooks: timetracking.start, timetracking.stop
@@ -10,7 +10,7 @@ timetracking 1.1.1 - not released yet
 timetracking 1.1.0 - 2011-06-17
 	* Feature: Extended task CSV export with tracked time sum
 	* Feature: Extended task CSV export with chargeable time
-	* Feature: Change status color of task in timeracking headlet on status change
+	* Feature: Change status color of task in timetracking headlet on status change
 	* Changed: Requires core 2.1
 	* Changed: Structure for 2.1
 	* Changed: All classes are prefixed with extension name
@@ -26,7 +26,7 @@ timetracking 1.0.6
 	* Bugfix: Last tracked tasks in timetracking headlet
 	* Feature: Added italian translation
 	* Bugfix: HTML encoding in timetracking headlet
-	* Bugfix: Malformed mockup of timetrack comments with long text
+	* Bugfix: Malformed mock-up of timetrack comments with long text
 	* Bugfix: Current timetracking was not visible in chrome
 	* Feature: Merged all tracking request into a single request (much faster now)
 	* Feature: Added indexes to tables to improve SQL performance
