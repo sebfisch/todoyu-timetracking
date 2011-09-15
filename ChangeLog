@@ -1,11 +1,11 @@
 todoyu timetracking changelog
 
-timetracking 1.1.1 - not released yet
-	* Change: timetracking icon (changed from alarm clock to stopwatch)
+timetracking 1.1.1 - 2011-09-15
+	* Changed: timetracking icon (changed from alarm clock to stopwatch)
 	* Bugfix: Spelling mistake in rights (track - editOwn, editOwnChargeable)
-	* Change: Add field for task presets directly to the fieldset quicktaskSpecific
-	* Change: Adapted registered hooks due rename in project extension
-	* Add: Hooks: timetracking.start, timetracking.stop
+	* Changed: Add field for task presets directly to the fieldset quicktaskSpecific
+	* Changed: Adapted registered hooks due rename in project extension
+	* Added: Hooks: timetracking.start, timetracking.stop
 
 timetracking 1.1.0 - 2011-06-17
 	* Feature: Extended task CSV export with tracked time sum
@@ -30,4 +30,3 @@ timetracking 1.0.6
 	* Bugfix: Current timetracking was not visible in chrome
 	* Feature: Merged all tracking request into a single request (much faster now)
 	* Feature: Added indexes to tables to improve SQL performance
-  	* Feature: Added changelog
