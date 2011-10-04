@@ -29,7 +29,10 @@ h1.extIconTimetracking .title {
 /* --------------------
 	Task injections
    -------------------- */
-div.task.running div.headLabel {
+.task.running h3 {
+	background-color:#f2f2d2;
+}
+.task.running h3 .headLabel span {
 	font-weight:bold;
 }
 
@@ -98,25 +101,6 @@ div.task div.taskTabs ul li.timetracking span.icon {
 div.task.running div.taskTabs ul li.timetracking span.icon {
 	background:url(../img/icons.png) no-repeat 0 5px;
 }
-
-#taskList .activeTabContent .timetrackform {
-	padding-bottom:10px;
-}
-
-#taskList .activeTabContent .timetrackform input {
-	margin-right:20px;
-}
-
-#taskList .activeTabContent .timetrackform a.timing {
-	display:block;
-	position:absolute;
-	top:10px;
-	right:20px;
-	height:16px;
-	width:16px;
-	background:url(../../../../core/asset/img/icons.png) no-repeat 0 -1095px;
-}
-
 
 
 /* -------------------------
