@@ -1,5 +1,8 @@
 todoyu timetracking changelog
 
+timetracking 1.1.2 - not released yet
+	* Translation: Polish
+
 timetracking 1.1.1 - 2011-09-15
 	* Changed: timetracking icon (changed from alarm clock to stopwatch)
 	* Bugfix: Spelling mistake in rights (track - editOwn, editOwnChargeable)
