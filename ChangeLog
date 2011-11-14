@@ -1,6 +1,7 @@
 todoyu timetracking changelog
 
 timetracking 1.1.2 - not released yet
+	* Changed: Don't hide open timetracking headlet when tracking is active
 	* Translation: Polish
 
 timetracking 1.1.1 - 2011-09-15

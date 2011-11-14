@@ -336,6 +336,30 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 */
 	isTaskInCurrentView: function(idTask) {
 		return Todoyu.exists('task-' + idTask);
+	},
+
+
+
+	/**
+	 * Check whether tracking is active
+	 *
+	 * @return	{Boolean}
+	 */
+	isTrackingActive: function() {
+		return this.ext.isTracking();
+	},
+
+
+
+	/**
+	 * Keep headlet open when tracking is active
+	 *
+	 * @method	onBodyClick
+	 */
+	onBodyClick: function($super) {
+		if( !this.isTrackingActive() ) {
+			$super();
+		}
 	}
 
 });
