@@ -25,7 +25,7 @@ timetracking 1.0.6
 	* Changed: Changed comment field of timetrack to varchar(250)
 	* Bugfix: quicktask creation option "start timetracking" was shown to persons w/o timetracking access
 	* Feature: Ext init Cleanup
-	* Bugfix: timetracking task filter joins were not separated from where, query used 100% of mysql resources
+	* Bugfix: timetracking task filter joins were not separated from where, query used 100% of MySQL resources
 	* Bugfix: Last tracked tasks in timetracking headlet
 	* Feature: Added italian translation
 	* Bugfix: HTML encoding in timetracking headlet
