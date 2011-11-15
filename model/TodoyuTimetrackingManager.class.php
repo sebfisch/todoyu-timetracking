@@ -199,6 +199,33 @@ class TodoyuTimetrackingManager {
 
 
 	/**
+	 * Get task contextmenu item for start/stop tracking
+	 *
+	 * @param	{Integer}	$idTask
+	 * @return	Array
+	 */
+	public static function getContextMenuItemStartStop($idTask) {
+ 		$idTask	= intval($idTask);
+		$task	= TodoyuProjectTaskManager::getTask($idTask);
+
+		$items	= array();
+
+			// Check if task has a trackable status
+		if( TodoyuTimetracking::isTrackable($task->getType(), $task->getStatus(), $idTask) && Todoyu::allowed('timetracking', 'task:track') ) {
+				// Add stop or start button
+			if( TodoyuTimetracking::isTaskRunning($idTask) ) {
+				$items['timetrackstop'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstop'];
+			} else {
+				$items['timetrackstart'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstart'];
+			}
+		}
+
+		return $items;
+	}
+
+
+
+	/**
 	 * Formhook
 	 * Add time tracking fields to quickTask
 	 *

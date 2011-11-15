@@ -50,6 +50,7 @@ if( Todoyu::allowed('timetracking', 'general:use') ) {
 }
 
 
+
 /* ------------------------
 	Headlet parameters
    ------------------------ */
