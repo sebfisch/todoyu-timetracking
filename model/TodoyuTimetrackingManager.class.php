@@ -210,13 +210,16 @@ class TodoyuTimetrackingManager {
 
 		$items	= array();
 
-			// Check if task has a trackable status
-		if( TodoyuTimetracking::isTrackable($task->getType(), $task->getStatus(), $idTask) && Todoyu::allowed('timetracking', 'task:track') ) {
-				// Add stop or start button
-			if( TodoyuTimetracking::isTaskRunning($idTask) ) {
-				$items['timetrackstop'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstop'];
-			} else {
-				$items['timetrackstart'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstart'];
+			// Ignore deleted tasks
+		if( ! $task->isDeleted() ) {
+				// Check if task has a trackable status
+			if( TodoyuTimetracking::isTrackable($task->getType(), $task->getStatus(), $idTask) && Todoyu::allowed('timetracking', 'task:track') ) {
+					// Add stop or start button
+				if( TodoyuTimetracking::isTaskRunning($idTask) ) {
+					$items['timetrackstop'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstop'];
+				} else {
+					$items['timetrackstart'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstart'];
+				}
 			}
 		}
 

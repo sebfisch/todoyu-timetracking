@@ -529,7 +529,7 @@ class TodoyuTimetracking {
 		$status	= intval($status);
 		$idTask	= intval($idTask);
 
-		if( $type === TASK_TYPE_TASK ) {
+		if( ! TodoyuProjectTaskManager::isDeleted($idTask) && $type === TASK_TYPE_TASK ) {
 			if( self::isTrackableStatus($status) ) {
 				return TodoyuProjectTaskManager::isLocked($idTask) === false;
 			}
@@ -585,6 +585,11 @@ class TodoyuTimetracking {
 	public static function getContextMenuItems($idTask, array $items) {
 		$idTask	= intval($idTask);
 		$task	= TodoyuProjectTaskManager::getTask($idTask);
+
+			// Ignore deleted tasks
+		if( $task->isDeleted() ) {
+			return $items;
+		}
 
 		if( $task->isTask() && ! $task->isLocked() && self::isTrackableStatus($task->getStatus()) ) {
 			if( self::isTaskRunning($idTask) ) {
