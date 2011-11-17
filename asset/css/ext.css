@@ -36,6 +36,10 @@ h1.extIconTimetracking .title {
 	font-weight:bold;
 }
 
+.task.running .subtasks h3 .headLabel span {
+	font-weight:normal;
+}
+
 .task .overtimed {
 	color:#ad5050 !important;
 }

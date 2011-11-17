@@ -226,6 +226,7 @@ Todoyu.Ext.timetracking = {
 
 			// Call all callbacks with the response data
 		$H(this.callback.onToggle).each(function(pair){
+			console.log(idTask);
 			pair.value.update.call(this, idTask, response.responseJSON.data[pair.key], response);
 		}.bind(this));
 
