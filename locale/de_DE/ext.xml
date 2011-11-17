@@ -16,13 +16,13 @@
 	<label index="tasktab.time_elapsed">Total erfasste Zeit</label>
 	<label index="tasktab.edit">Klicken Sie hier um diesen Eintrag zu bearbeiten</label>
 	<label index="start">Zeiterfassung starten</label>
-	<label index="stop">Zeiterf. stoppen</label>
+	<label index="stop">Zeiterfassung stoppen</label>
 	<label index="currentTask">Aktuelle Aufgabe</label>
 	<label index="showCurrentTaskInProject">Aufgabe im Projekt anzeigen</label>
 	<label index="quicktask.workload_done">Schon gearbeitete Zeit</label>
 	<label index="estimated_workload">Aufw. geschätzt</label>
 	<label index="jumpToTask">Klicken Sie hier um zu diesem Task zu wechseln</label>
 	<label index="jumpToProject">Klicken Sie hier um zu diesem Projekt zu wechseln</label>
-	<label index="extconf.stopOnLogout">Laufende Zeiterfassung beim log-out stoppen</label>
+	<label index="extconf.stopOnLogout">Laufende Zeiterfassung bei Log-Out stoppen</label>
 	<label index="taskpreset.start_tracking">Schnellaufgabe: Zeiterfassung starten?</label>
 </labels>
