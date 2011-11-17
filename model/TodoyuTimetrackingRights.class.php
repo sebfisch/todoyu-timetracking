@@ -89,6 +89,11 @@ class TodoyuTimetrackingRights {
 		}
 
 		$idTask	= intval($idTask);
+		$running= TodoyuTimetracking::isTaskRunning($idTask);
+
+		if( $running ) {
+			return true;
+		}
 
 		return Todoyu::allowed('timetracking', 'task:track') && TodoyuProjectTaskRights::isSeeAllowed($idTask);
 	}
