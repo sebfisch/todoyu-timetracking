@@ -1,5 +1,8 @@
 todoyu timetracking changelog
 
+timetracking 1.1.3 - not released yet
+	* Bugfix: Subtasks were marked as running too
+
 timetracking 1.1.2 - 2011-11-17
 	* Changed: Timetracking does not add anymore contextmenu items to deleted tasks
 	* Changed: Don't hide open timetracking headlet when tracking is active

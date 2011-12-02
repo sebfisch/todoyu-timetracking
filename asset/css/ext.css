@@ -29,15 +29,11 @@ h1.extIconTimetracking .title {
 /* --------------------
 	Task injections
    -------------------- */
-.task.running h3 {
+.task.running > h3 {
 	background-color:#f2f2d2;
 }
-.task.running h3 .headLabel span {
+.task.running > h3 .headLabel span {
 	font-weight:bold;
-}
-
-.task.running .subtasks h3 .headLabel span {
-	font-weight:normal;
 }
 
 .task .overtimed {
