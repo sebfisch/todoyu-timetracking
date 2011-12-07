@@ -198,7 +198,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 		var divCurrentTime = $(this.name + '-tracking');
 
 		if( divCurrentTime ) {
-			divCurrentTime.update( Todoyu.Time.timeFormatSeconds(time) );
+			divCurrentTime.update(Todoyu.Time.timeFormatSeconds(time));
 		}
 	},
 

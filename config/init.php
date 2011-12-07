@@ -19,7 +19,7 @@
 *****************************************************************************/
 
 if( Todoyu::allowed('timetracking', 'general:use') ) {
-	require_once( PATH_EXT_TIMETRACKING . '/config/hooks.php');
+	require_once( PATH_EXT_TIMETRACKING . '/config/hooks.php' );
 }
 
 
