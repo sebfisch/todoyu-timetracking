@@ -109,6 +109,40 @@ class TodoyuTimetrackingTaskManager {
 		TodoyuTimetracking::updateRecord($idTrack, $data);
 	}
 
+
+
+	/**
+	 * Set task default data: check whether quickTask preset contains start_timetracking
+	 *
+	 * @param	Array		$data
+	 * @param	Integer		$type
+	 * @param	Integer		$idProject
+	 * @param	Integer		$idParentTask
+	 * @param	Boolean		$isQuickTask
+	 * @return	Array
+	 */
+	public static function hookTaskDefaultData($data, $type, $idProject, $idParentTask, $isQuickTask) {
+		$type			= intval($type);
+		$idProject		= intval($idProject);
+		$idParentTask	= intval($idParentTask);
+
+		if( $idProject === 0 ) {
+			$idProject = intval($data['id_project']);
+		}
+
+		if( $idProject !== 0 && $isQuickTask ) {
+			$project	= TodoyuTimetrackingProjectManager::getProject($idProject);
+
+			if( $project->hasTaskPreset() ) {
+				$taskPreset	= $project->getTaskPreset();
+				$presetData	= $taskPreset->getTimetrackingPresetData();
+				$data		= array_merge($data, $presetData);
+			}
+		}
+
+		return $data;
+	}
+
 }
 
 ?>

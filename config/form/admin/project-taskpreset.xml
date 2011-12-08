@@ -10,8 +10,12 @@
 			<class>timetrackingprojectpresets</class>
 			<elements>
 
-				<field type="checkbox" name="start_tracking">
-					<label>timetracking.ext.taskpreset.start_tracking</label>
+				<field type="checkbox" name="ext_timetracking_start_tracking">
+					<label>timetracking.ext.start</label>
+				</field>
+
+				<field type="duration" name="ext_timetracking_workload_done">
+					<label>timetracking.ext.quicktask.workload_done</label>
 				</field>
 
 			</elements>

@@ -249,35 +249,6 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Set task default data: check whether quickTask preset contains start_timetracking
-	 *
-	 * @param	Array	$data
-	 * @return	Array
-	 */
-	public static function setTaskDefaultData($data) {
-		$idProject	= intval($data['id_project']);
-
-		if( $idProject > 0 ) {
-			$project	= TodoyuProjectProjectManager::getProject($idProject);
-
-				// Get presets from taskpreset set (if assigned) or extension config
-			$idTaskpreset	= $project->getTaskpresetID();
-			if( intval($idTaskpreset) > 0 ) {
-				$presets	= TodoyuProjectTaskpresetManager::getTaskpresetData($idTaskpreset);
-				$presets['title']	= $presets['tasktitle'];
-			} else {
-				$presets	= TodoyuSysmanagerExtConfManager::getExtConf('project');
-			}
-
-			$data['start_tracking']	= intval($presets['start_timetracking']);
-		}
-
-		return $data;
-	}
-
-
-
-	/**
 	 * Formhook: Handle (save) special fields added to quickTask by time tracking
 	 *
 	 * @param	Array		$data
@@ -455,18 +426,16 @@ class TodoyuTimetrackingManager {
 	 */
 	public static function getProjectPresetDataAttributes($idProject) {
 		$idProject	= intval($idProject);
+		$project	= TodoyuTimetrackingProjectManager::getProject($idProject);
 		$info		= array();
 
-		$project		= TodoyuProjectProjectManager::getProject($idProject);
-		$idTaskPreset	= $project->get('id_taskpreset');
-
-		if( $idTaskPreset > 0 ) {
-			$taskPreset	= TodoyuProjectTaskpresetManager::getTaskpresetData($idTaskPreset);
+		if( $project->hasTaskPreset() ) {
+			$taskPreset	= $project->getTaskPreset();
 
 				// Taskpreset set title
 			$info[]	= array(
-				'label'		=> Todoyu::Label('timetracking.ext.taskpreset.start_tracking'),
-				'value'		=> intval($taskPreset['start_tracking']) ? Todoyu::Label('core.global.yes') : Todoyu::Label('core.global.no'),
+				'label'		=> 'timetracking.ext.taskpreset.start_tracking',
+				'value'		=> $taskPreset->getStartTimetrackingLabel(),
 				'position'	=> 80
 			);
 		}

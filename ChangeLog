@@ -2,6 +2,11 @@ todoyu timetracking changelog
 
 timetracking 1.1.3 - not released yet
 	* Bugfix: Subtasks were marked as running too
+	* Added: TimetrackingProject (+Manager)
+	* Added: TimetrackingTaskPreset (+Manager)
+	* Renamed: TodoyuTimetrackingSysmanagerRenderer => TodoyuTimetrackingSysmanagerManager
+	* Database: Renamed start_tracking to ext_timetracking_start_tracking in task preset
+	* Database: Added ext_timetracking_workload_done to task preset
 
 timetracking 1.1.2 - 2011-11-17
 	* Changed: Timetracking does not add anymore contextmenu items to deleted tasks

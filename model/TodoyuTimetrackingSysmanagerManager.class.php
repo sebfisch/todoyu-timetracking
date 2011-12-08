@@ -24,19 +24,19 @@
  * @package		Todoyu
  * @subpackage	Timetracking
  */
-class TodoyuTimetrackingSysmanagerRenderer {
+class TodoyuTimetrackingSysmanagerManager {
 
 	/**
 	 * Hooked-in when rendering taskpreset record form in sysmanager
 	 *
 	 * @param	TodoyuForm		$form
-	 * @param	Integer			$idRecord
+	 * @param	Integer			$idTaskPreset
 	 * @param	Array			$params
 	 * @return	TodoyuForm
 	 */
-	public static function onBuildFormTaskpreset(TodoyuForm $form, $idRecord, $params) {
+	public static function hookBuildFormTaskPreset(TodoyuForm $form, $idTaskPreset, $params) {
 			// Add billing-type to default settings of extconf form
-		$xmlPath	= 'ext/timetracking/config/form/admin/extconf-project.xml';
+		$xmlPath	= 'ext/timetracking/config/form/admin/project-taskpreset.xml';
 		$form->getFieldset('quicktaskSpecific')->addElementsFromXMLAfter($xmlPath, 'quicktask_duration_days');
 
 		return $form;
