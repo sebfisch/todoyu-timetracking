@@ -1,12 +1,12 @@
 todoyu timetracking changelog
 
 timetracking 1.1.3 - not released yet
-	* Bugfix: Subtasks were marked as running too
+	* Bugfix: Sub tasks were marked as running too
 	* Added: TimetrackingProject (+Manager)
 	* Added: TimetrackingTaskPreset (+Manager)
-	* Renamed: TodoyuTimetrackingSysmanagerRenderer => TodoyuTimetrackingSysmanagerManager
-	* Database: Renamed start_tracking to ext_timetracking_start_tracking in task preset
-	* Database: Added ext_timetracking_workload_done to task preset
+	* Added: ext_timetracking_workload_done to task preset
+	* Changed: Renamed TodoyuTimetrackingSysmanagerRenderer => TodoyuTimetrackingSysmanagerManager
+	* Changed: Task preset DB rename of start_tracking => ext_timetracking_start_tracking
 
 timetracking 1.1.2 - 2011-11-17
 	* Changed: Timetracking does not add anymore contextmenu items to deleted tasks
@@ -14,21 +14,21 @@ timetracking 1.1.2 - 2011-11-17
 	* Translation: Polish
 
 timetracking 1.1.1 - 2011-09-15
-	* Changed: Timetracking icon (changed from alarm clock to stopwatch)
 	* Bugfix: Spelling mistake in rights (track - editOwn, editOwnChargeable)
+	* Added: Hooks: timetracking.start, timetracking.stop
+	* Changed: Timetracking icon (changed from alarm clock to stopwatch)
 	* Changed: Add field for task presets directly to the fieldset quicktaskSpecific
 	* Changed: Adapted registered hooks due rename in project extension
-	* Added: Hooks: timetracking.start, timetracking.stop
 
 timetracking 1.1.0 - 2011-06-17
 	* Feature: Extended task CSV export with tracked time sum
 	* Feature: Extended task CSV export with chargeable time
 	* Feature: Change status color of task in timetracking headlet on status change
+	* Feature: Rights Cleanup - Fixed missing init methods in controller
+	* Feature: Added rights checks
 	* Changed: Requires core 2.1
 	* Changed: Structure for 2.1
 	* Changed: All classes are prefixed with extension name
-	* Feature: Rights Cleanup - Fixed missing init methods in controller
-	* Feature: Added rights checks
 
 
 timetracking 1.0.6
