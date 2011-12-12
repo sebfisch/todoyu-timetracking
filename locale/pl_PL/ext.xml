@@ -24,5 +24,4 @@
 	<label index="jumpToTask">Kliknij tu, aby przejść do tego zadania</label>
 	<label index="jumpToProject">Kliknij tu, aby przejść do tego projektu</label>
 	<label index="extconf.stopOnLogout">Zakończ zapis czasu po wylogowaniu</label>
-	<label index="taskpreset.start_tracking">Rozpocząć zapis czasu dla szybkiego zadania?</label>
 </labels>

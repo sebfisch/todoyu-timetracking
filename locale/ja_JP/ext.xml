@@ -24,5 +24,4 @@
 	<label index="jumpToTask">このタスクに移動</label>
 	<label index="jumpToProject">このプロジェクトに移動</label>
 	<label index="extconf.stopOnLogout">ログアウトをクリックした場合は作業時間の記録を停止する</label>
-	<label index="taskpreset.start_tracking">クイックタスクの作業時間の記録を開始しますか？</label>
 </labels>
