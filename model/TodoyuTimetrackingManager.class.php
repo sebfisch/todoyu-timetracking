@@ -434,7 +434,7 @@ class TodoyuTimetrackingManager {
 
 				// Taskpreset set title
 			$info[]	= array(
-				'label'		=> 'timetracking.ext.taskpreset.start_tracking',
+				'label'		=> 'timetracking.ext.start',
 				'value'		=> $taskPreset->getStartTimetrackingLabel(),
 				'position'	=> 80
 			);
