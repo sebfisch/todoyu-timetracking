@@ -62,6 +62,17 @@ class TodoyuTimetrackingTask extends TodoyuProjectTask {
 		return $openTime > 0 ? $openTime : 0;
 	}
 
+
+
+	/**
+	 * Check whether tracking is currently running for this task
+	 *
+	 * @return	Boolean
+	 */
+	public function isRunning() {
+		return TodoyuTimetracking::isTaskRunning($this->getID());
+	}
+
 }
 
 ?>

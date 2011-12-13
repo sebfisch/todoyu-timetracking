@@ -45,11 +45,12 @@ class TodoyuTimetrackingManager {
 	 */
 	public static function addTimetrackingInfosToTask(array $taskData, $idTask, $infoLevel = 0) {
 		$idTask		= intval($idTask);
+		$task		= TodoyuTimetrackingTaskManager::getTask($idTask);
 		$infoLevel	= intval($infoLevel);
-
+		
 			// Is task? (there's no timetracking for containers)
-		if( TodoyuProjectTaskManager::getTask($idTask)->isTask() ) {
-			if( TodoyuTimetracking::isTaskRunning($idTask) ) {
+		if( $task->isTask() ) {
+			if( $task->isRunning() ) {
 				$taskData['class'] .= ' running';
 			}
 
