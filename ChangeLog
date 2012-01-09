@@ -5,6 +5,7 @@ timetracking 1.1.3 - 2011-12-13
 	* Added: TimetrackingProject (+Manager)
 	* Added: TimetrackingTaskPreset (+Manager)
 	* Added: ext_timetracking_workload_done to task preset
+	* Changed: Used task type differentiated task tabs registration, incremented project dependency to 1.3.0
 	* Changed: Renamed TodoyuTimetrackingSysmanagerRenderer => TodoyuTimetrackingSysmanagerManager
 	* Changed: Task preset DB rename of start_tracking => ext_timetracking_start_tracking
 
