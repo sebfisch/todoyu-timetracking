@@ -24,14 +24,14 @@
 
 Todoyu::$CONFIG['EXT']['timetracking']['info'] = array(
 	'title'			=> 'Time Tracking',
-	'description' 	=> 'Individual Tracking for Tasks',
-	'author' 		=> array(
+	'description'	=> 'Individual Tracking for Tasks',
+	'author'		=> array(
 		'name'		=> 'todoyu Core Developer Team',
 		'email'		=> 'team@todoyu.com',
 		'company'	=> 'snowflake productions GmbH, Zurich'
 	),
-	'state' 		=> 'stable',
-	'version' 		=> '1.1.3',
+	'state'			=> 'stable',
+	'version'		=> '1.1.3',
 	'constraints' => array(
 		'depends' => array(
 			'contact'	=> '1.1.0',

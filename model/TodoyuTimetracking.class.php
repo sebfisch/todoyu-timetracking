@@ -31,7 +31,7 @@ class TodoyuTimetracking {
 	 *
 	 * @var	String
 	 */
-	const SESS_KEY 	= 'timetracking';
+	const SESS_KEY	= 'timetracking';
 
 	/**
 	 * Working table
@@ -179,7 +179,7 @@ class TodoyuTimetracking {
 			self::stopTask();
 		}
 
-		$task 	= TodoyuProjectTaskManager::getTask($idTask);
+		$task	= TodoyuProjectTaskManager::getTask($idTask);
 		$status	= $task->getStatus();
 
 			// Check if current task status allows more timetracking
@@ -347,11 +347,11 @@ class TodoyuTimetracking {
 		$idPerson	= Todoyu::personid($idPerson);
 
 		$fields	= ' track.*, task.deleted is_task_deleted';
-		$tables	= 	self::TABLE		. ' track,
+		$tables	=	self::TABLE		. ' track,
 					ext_project_task	task';
-		$where	= '		track.id_person_create	= 		' . $idPerson .
+		$where	= '		track.id_person_create	=		' . $idPerson .
 				  ' AND	track.date_track		BETWEEN ' . $dateStart . ' AND ' . $dateEnd .
-				  ' AND task.id					= 			track.id_task ';
+				  ' AND task.id					=			track.id_task ';
 		$group	= '';
 		$order	= 'track.date_track';
 
@@ -408,10 +408,10 @@ class TodoyuTimetracking {
 
 		$fields	= '	u.firstname,
 					u.lastname';
-		$tables	= 	self::TABLE . ' t,
+		$tables	=	self::TABLE . ' t,
 					ext_contact_person u';
-		$where	= '		t.id 				= ' . $idTrack .
-				  ' AND	t.id_person_create 	= u.id';
+		$where	= '		t.id				= ' . $idTrack .
+				  ' AND	t.id_person_create	= u.id';
 		$order	= '	t.date_track DESC';
 
 		return Todoyu::db()->getRecordByQuery($fields, $tables, $where, '', $order);
@@ -568,7 +568,7 @@ class TodoyuTimetracking {
 		$table	= self::TABLE;
 		$where	= '		id_person_create	= ' . Todoyu::personid() .
 				  ' AND	id_task				= ' . $idTask .
-				  ' AND	date_track 			BETWEEN ' . $range['start'] . ' AND ' . $range['end'];
+				  ' AND	date_track			BETWEEN ' . $range['start'] . ' AND ' . $range['end'];
 
 		return Todoyu::db()->getRecordByQuery($fields, $table, $where);
 	}

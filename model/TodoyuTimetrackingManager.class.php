@@ -206,7 +206,7 @@ class TodoyuTimetrackingManager {
 	 * @return	Array
 	 */
 	public static function getContextMenuItemStartStop($idTask) {
- 		$idTask	= intval($idTask);
+		$idTask	= intval($idTask);
 		$task	= TodoyuProjectTaskManager::getTask($idTask);
 
 		$items	= array();
