@@ -131,7 +131,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 
 
 	/**
-	 * Callback for timetracking toggeling
+	 * Callback for timetracking toggling
 	 *
 	 * @method	onTrackingToggle
 	 * @param	{Number}	idTask

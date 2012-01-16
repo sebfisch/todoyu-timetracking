@@ -73,7 +73,7 @@ Todoyu.Ext.timetracking.PageTitle = {
 
 
 	/**
-	 * Handle browser page title update on toggeling of tracking
+	 * Handle browser page title update on toggling of tracking
 	 *
 	 * @method	onTrackingToggleUpdate
 	 * @param	{Number}	idTask
