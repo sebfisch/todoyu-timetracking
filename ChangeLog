@@ -31,7 +31,6 @@ timetracking 1.1.0 - 2011-06-17
 	* Changed: Structure for 2.1
 	* Changed: All classes are prefixed with extension name
 
-
 timetracking 1.0.6
 	* Bugfix: Quicktask creation option "start timetracking" was shown to persons w/o timetracking access
 	* Bugfix: Timetracking task filter joins were not separated from where, query used 100% of MySQL resources
