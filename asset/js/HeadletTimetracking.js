@@ -214,13 +214,23 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 
 		if( Todoyu.exists(idPercent) && this.ext.hasEstimatedTime() ) {
 			var percent	= this.ext.getPercentOfTime();
+
+				// Update numeric percentage info
 			$(idPercent).update(percent + '%');
 
-			var progress= $(this.name + '-progress');
+				// Update progressive percentage bar
+			var progressSpan = $(this.name + '-progress');
+			if( percent > 100 ) {
+				percent = 100;
+			}
+			progressSpan.setStyle({
+				width:	percent + '%'
+			});
+				// Update sub elements of bar
 			this.barClasses.each(function(pair){
 				if( percent >= pair.key ) {
-					progress.setStyle({
-						'backgroundColor': pair.value
+					progressSpan.setStyle({
+						backgroundColor: pair.value
 					});
 					throw $break;
 				}
@@ -235,6 +245,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 *
 	 * @method	setBarClasses
 	 * @param	{Object}		barClasses
+	 * @see		TodoyuTimetrackingHeadletTracking.class.php		Called during page init onLoaded handling
 	 */
 	setBarClasses: function(barClasses) {
 		this.barClasses	= $H(barClasses);

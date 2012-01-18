@@ -1,5 +1,8 @@
 todoyu timetracking changelog
 
+timetracking 1.1.4 - not released yet
+	* Bugfix: Progress bar inside timetracking headlet was not updated in realtime
+
 timetracking 1.1.3 - 2011-12-13
 	* Bugfix: Sub tasks were marked as running too
 	* Added: TimetrackingProject (+Manager)
