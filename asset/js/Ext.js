@@ -48,8 +48,8 @@ Todoyu.Ext.timetracking = {
 	 * @type		Object
 	 */
 	_callbacks: {
-		'toggle':	[],
-		'clock':	[]
+		toggle:	[],
+		clock:	[]
 	},
 
 	/**

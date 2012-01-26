@@ -233,9 +233,9 @@ Todoyu.Ext.timetracking.Clock = {
 		var minutes	= this.getTime() - (hours * Todoyu.Time.seconds.hour);
 
 		return {
-			'hours': 	hours,
-			'minutes':	Math.floor(minutes / Todoyu.Time.seconds.minute),
-			'seconds':	minutes - (Math.floor(minutes / Todoyu.Time.seconds.minute) * Todoyu.Time.seconds.minute)
+			hours: 		hours,
+			minutes:	Math.floor(minutes / Todoyu.Time.seconds.minute),
+			seconds:	minutes - (Math.floor(minutes / Todoyu.Time.seconds.minute) * Todoyu.Time.seconds.minute)
 		};
 	}
 
