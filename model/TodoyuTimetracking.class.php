@@ -210,7 +210,7 @@ class TodoyuTimetracking {
 			$dayWorkload= self::getDayWorkloadRecord($idTask, NOW);
 			$trackedTime= self::getTrackedTime();
 
-			if( $dayWorkload === false ) {
+			if( !$dayWorkload ) {
 				self::addTracking($idTask, $trackedTime);
 			} else {
 				$workload = $dayWorkload['workload_tracked'] + $trackedTime;
