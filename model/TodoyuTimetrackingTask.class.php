@@ -56,10 +56,23 @@ class TodoyuTimetrackingTask extends TodoyuProjectTask {
 	 *
 	 * @return	Integer
 	 */
-	public function getOpenWorkload() {
+	public function getRemainingWorkload() {
 		$openTime	= $this->getEstimatedWorkload() - $this->getTrackedTime();
 
 		return $openTime > 0 ? $openTime : 0;
+	}
+
+
+
+	/**
+	 * Get remaining workload
+	 *
+	 * @depreceated
+	 * @see		getRemainingWorkload
+	 * @return	Integer
+	 */
+	public function getOpenWorkload() {
+		return $this->getRemainingWorkload();
 	}
 
 
