@@ -24,4 +24,5 @@
 	<label index="jumpToTask">Кликни овде да би пребацио на овај задатак</label>
 	<label index="jumpToProject">Кликни овде да би пребацио на овај пројекат</label>
 	<label index="extconf.stopOnLogout">Заустави забељежавање времена пре одјављивања</label>
+	<label index="taskpreset.start_tracking">Покрени забељеживање време брзог задатка?</label>
 </labels>
