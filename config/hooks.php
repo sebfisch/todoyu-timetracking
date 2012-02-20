@@ -23,7 +23,7 @@ TodoyuHookManager::registerHook('project', 'taskinfo', 'TodoyuTimetrackingManage
 TodoyuHookManager::registerHook('project', 'task.defaultData', 'TodoyuTimetrackingTaskManager::hookTaskDefaultData');
 
 	// Add timetracking infos to task infos: more time tracked than estimated? add marking CSS class
-TodoyuHookManager::registerHook('project', 'taskdata', 'TodoyuTimetrackingManager::addTimetrackingInfosToTaskInfos');
+TodoyuHookManager::registerHook('project', 'taskdata', 'TodoyuTimetrackingManager::hookAddWorkloadOverbookedWarning');
 TodoyuHookManager::registerHook('project', 'taskHeaderExtras', 'TodoyuTimetrackingManager::addTimetrackingHeaderExtrasToTask');
 
 	// On export (task)

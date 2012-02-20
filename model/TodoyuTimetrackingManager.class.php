@@ -73,7 +73,7 @@ class TodoyuTimetrackingManager {
 	 * @param	Integer		$idTask
 	 * @return	Array
 	 */
-	public static function addTimetrackingInfosToTaskInfos(array $taskInfos, $idTask) {
+	public static function hookAddWorkloadOverbookedWarning(array $taskInfos, $idTask) {
 		$idTask	= intval($idTask);
 
 			// Is task? (there's no timetracking for containers)
