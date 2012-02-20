@@ -55,7 +55,7 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 			// Response data
 		$response	= array();
 
-			// Start or stop task
+			// Start time tracking of task
 		if( $start ) {
 			TodoyuTimetracking::startTask($idTask);
 
@@ -65,6 +65,7 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 			$response['trackedTotal']	= TodoyuTimeTracking::getTrackedTaskTime($idTask);;
 			$response['trackedToday']	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW, Todoyu::personid());
 		} else {
+				// Stop time tracking of task
 			TodoyuTimetracking::stopTask();
 		}
 

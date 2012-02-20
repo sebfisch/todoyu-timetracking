@@ -174,7 +174,7 @@ class TodoyuTimetracking {
 	public static function startTask($idTask) {
 		$idTask	= intval($idTask);
 
-			// Stop current task if one is running
+			// Stop current task if any is running
 		if( self::isTrackingActive() ) {
 			self::stopTask();
 		}
@@ -182,14 +182,21 @@ class TodoyuTimetracking {
 		$task	= TodoyuProjectTaskManager::getTask($idTask);
 		$status	= $task->getStatus();
 
-			// Check if current task status allows more timetracking
+			// Check if current task status allows timetracking
 		if( self::isTrackableStatus($status) ) {
 				// Update task status to progress
-			if( $status < STATUS_PROGRESS ) {
+			 if( $status < STATUS_PROGRESS ) {
 				TodoyuProjectTaskManager::updateTaskStatus($idTask, STATUS_PROGRESS);
 			}
 				// Register task as tracked in session
 			self::setRunningTask($idTask);
+
+				// No person+task tracking stored for today yet?
+			$dayWorkload= self::getDayWorkloadRecord($idTask, NOW);
+			if( !$dayWorkload ) {
+					// Store initial '0:00' tracked time so started tracking is shown to other persons
+				self::addTracking($idTask, 0);
+			}
 		} else {
 				// Return error status
 			//echo "NOT TRACKABLE";
@@ -207,12 +214,15 @@ class TodoyuTimetracking {
 	public static function stopTask() {
 		if( self::isTrackingActive() ) {
 			$idTask		= self::getTaskID();
+				// Get today's tracked time of task
 			$dayWorkload= self::getDayWorkloadRecord($idTask, NOW);
 			$trackedTime= self::getTrackedTime();
 
 			if( !$dayWorkload ) {
+					// There's no tracking on this person+task today yet, create a new one
 				self::addTracking($idTask, $trackedTime);
 			} else {
+					// Add tracked time to today's track of person+task
 				$workload = $dayWorkload['workload_tracked'] + $trackedTime;
 				self::updateTracking($dayWorkload['id'], $workload);
 			}
