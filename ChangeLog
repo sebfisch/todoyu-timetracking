@@ -1,6 +1,8 @@
 todoyu timetracking changelog
 
 timetracking 1.1.4 - not released yet
+	* Changed: made also status "rejected" and "waiting" trackable
+	* Changed: on starting timetracking, task status is always updated to "in progress"
 	* Added: Starting first tracking of task of person in current day immediately stores a 0:00 track, visible for other persons as well (was previously stored not until stopping the tracking) 
 	* Bugfix: Progress bar inside timetracking headlet was not updated in realtime
 

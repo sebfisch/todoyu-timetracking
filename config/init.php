@@ -30,7 +30,9 @@ if( Todoyu::allowed('timetracking', 'general:use') ) {
 Todoyu::$CONFIG['EXT']['timetracking']['trackableStatus'] = array(
 	STATUS_OPEN,
 	STATUS_PROGRESS,
-	STATUS_CONFIRM
+	STATUS_CONFIRM,
+	STATUS_REJECTED,
+	STATUS_WAITING
 );
 
 

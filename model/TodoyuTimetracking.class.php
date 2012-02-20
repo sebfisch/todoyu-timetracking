@@ -184,8 +184,8 @@ class TodoyuTimetracking {
 
 			// Check if current task status allows timetracking
 		if( self::isTrackableStatus($status) ) {
-				// Update task status to progress
-			 if( $status < STATUS_PROGRESS ) {
+				// Update trackable task status to progress
+			if( $status !== STATUS_PROGRESS ) {
 				TodoyuProjectTaskManager::updateTaskStatus($idTask, STATUS_PROGRESS);
 			}
 				// Register task as tracked in session
