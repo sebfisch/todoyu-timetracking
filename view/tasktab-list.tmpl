@@ -1,14 +1,43 @@
 {if sizeof($tracks) > 0}
-	<ul class="ulList tracksList ulListDotted">
-	{$class='even'}
-	{foreach $tracks track}
-		{if $class=='odd'}
-			{$class='even'}
-		{else}
-			{$class='odd'}
-		{/if}
-		{include ext/timetracking/view/tasktab-track.tmpl}
-	{/foreach}
+	<ul class="ulList tracksList ulListDotted" id="task-{$idTask}-timetracks-list">
+		{foreach $tracks track}
+			{$hasChargeableTime = $track.workload_chargeable}
+			<li id="task-{$track.id_task}-track-{$track.id}" class="listItem {cycle values="odd,even"} {if $track.editable}contextmenuTrack edit{/if}">
+				<span class="icon" {if $track.editable}onclick="Todoyu.Ext.timetracking.Task.editTrack({$idTask}, {$track.id})"{/if}></span>
+				<span class="date">{dateFormat $track.date_track D2M2Y2}</span>
+				<span class="trackedTime {if $hasChargeableTime}chargeableTime{/if}" {if $hasChargeableTime}title="Chargeable Workload: {HourMinSec $track.workload_chargeable}"{/if}>{HourMinSec $track.workload_tracked}</span>
+				<span class="name">{personLabel idPrefix="track_personowner" idRecord="$track.id" idPerson=$track.id_person_create}</span>
+				<span class="comment">{htmlencode $track.comment}</span>
+
+
+				{*
+				<dl>
+					<dt>
+						{if $track.editable}
+							<span class="icon editableItem iconEdit pointerCursor"  title="{Label timetracking.ext.tasktab.edit}"> </span>
+						{else}
+							<span class="icon"> </span>
+						{/if}
+					</dt>
+					<dd>
+						{if $track.editable}
+							<a class="overflow" href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.editTrack({$track.id_task}, {$track.id})" title="{Label timetracking.ext.tasktab.edit}">
+						{/if}
+							<span class="dateWithTime">
+								{dateFormat $track.date_track D2M2Y2} - {HourMinSec $track.workload_tracked}
+							</span>
+							<span class="userName">{personLabel idPrefix="track_personowner" idRecord="$track.id" idPerson=$track.id_person_create}</span>
+						{if $track.comment}
+							<span class="taskComment timeTrackComment overflow">{htmlencode $track.comment}</span>
+						{/if}
+						{if $track.editable}
+							</a>
+						{/if}
+					</dd>
+				</dl>
+				*}
+			</li>
+		{/foreach}
 	</ul>
 {else}
 	<span class="notracksyet">{Label timetracking.ext.noTracksYet}</span>

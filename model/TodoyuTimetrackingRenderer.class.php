@@ -137,32 +137,6 @@ class TodoyuTimetrackingRenderer {
 		return $form->render();
 	}
 
-
-
-	/**
-	 *
-	 * @param	Integer	$idTrack
-	 * @return	String
-	 */
-	public static function renderTaskTrack($idTrack) {
-		$idTrack= intval($idTrack);
-		$tmpl	= 'ext/timetracking/view/tasktab-track.tmpl';
-
-		$data = array(
-			'track'	=> TodoyuTimetracking::getTrackData($idTrack),
-			'person'=> TodoyuTimetracking::getTrackPersonData($idTrack)
-		);
-
-		$idTask	= intval($data['track']['id_task']);
-		$task	= TodoyuProjectTaskManager::getTask($idTask);
-
-		$data['track']['editable'] = TodoyuTimetrackingManager::isTrackEditable($idTrack);
-
-		$data['task'] = $task->getTemplateData();
-
-		return Todoyu::render($tmpl, $data);
-	}
-
 }
 
 ?>

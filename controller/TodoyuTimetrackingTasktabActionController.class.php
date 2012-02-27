@@ -114,35 +114,13 @@ class TodoyuTimetrackingTaskTabActionController extends TodoyuActionController {
 
 		TodoyuTimetrackingRights::restrictEdit($idTrack);
 
-		$xmlPath= 'ext/timetracking/config/form/track.xml';
-		$form	= TodoyuFormManager::getForm($xmlPath, $idTrack);
-
-		$storageData	= $form->getStorageData($data);
+		$xmlPath	= 'ext/timetracking/config/form/track.xml';
+		$form		= TodoyuFormManager::getForm($xmlPath, $idTrack);
+		$storageData= $form->getStorageData($data);
 
 		TodoyuTimetrackingTaskManager::updateTrack($storageData);
-
-		$totalTrackedTime	= TodoyuTime::formatTime(TodoyuTimetracking::getTrackedTaskTimeTotal($idTask), true, false);
-
-		TodoyuHeader::sendTodoyuHeader('totalTimeTracked',$totalTrackedTime);
-
-		return TodoyuTimetrackingRenderer::renderTaskTrack($idTrack);
 	}
 
-
-
-	/**
-	 * Render a single track in task tab
-	 *
-	 * @param	Array	$params
-	 * @return	String
-	 */
-	public function trackcontentAction(array $params) {
-		$idTrack	= intval($params['idTrack']);
-
-		TodoyuTimetrackingRights::restrictSee($idTrack);
-
-		return TodoyuTimetrackingRenderer::renderTaskTrack($idTrack);
-	}
 }
 
 ?>

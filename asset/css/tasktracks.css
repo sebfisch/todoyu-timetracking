@@ -1,0 +1,93 @@
+/****************************************************************************
+* todoyu is published under the BSD License:
+* http://www.opensource.org/licenses/bsd-license.php
+*
+* Copyright (c) 2012, snowflake productions GmbH, Switzerland
+* All rights reserved.
+*
+* This script is part of the todoyu project.
+* The todoyu project is free software; you can redistribute it and/or modify
+* it under the terms of the BSD License.
+*
+* This script is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the BSD License
+* for more details.
+*
+* This copyright notice MUST APPEAR in all copies of the script.
+*****************************************************************************/
+
+/* -------------------------
+	Task time tracks
+   ------------------------- */
+.task .timetracks {
+	padding-top:5px;
+	background:#fff;
+}
+
+.task .timetracks ul {
+	margin:0;
+	padding:0;
+	border-top:1px solid #ddd;
+}
+
+.task .timetracks ul li {
+	padding:2px;
+}
+
+.task .timetracks ul li span {
+	display: inline-block;
+}
+
+.task .timetracks ul li span.icon {
+	margin-right: 5px;
+}
+
+.task .timetracks ul li.edit:hover > span.icon {
+	cursor: pointer;
+	background:url(../../../../core/asset/img/icons.png) no-repeat 3px -776px;
+}
+
+.task .timetracks ul li span.date {
+	width:45px;
+	margin-right: 8px;
+}
+
+.task .timetracks ul li span.trackedTime {
+	width:65px;
+	margin-right: 8px;
+}
+
+.task .timetracks ul li span.trackedTime.chargeableTime {
+	font-weight: bold;
+	cursor: help;
+}
+
+.task .timetracks ul li:hover span.trackedTime.chargeableTime {
+	background:url(../img/icons.png) no-repeat 43px -330px;
+}
+
+.task .timetracks ul li span.name {
+	width:150px;
+	margin-right: 8px;
+}
+
+.task .timetracks ul li span.comment {
+	width:320px;
+}
+
+
+/* --------------------
+	Track Form
+   -------------------- */
+.task .tabContent .formTimetrack {
+	background:#FFF;
+	border: 1px solid #CCC;
+	padding:5px 5px 10px 5px;
+}
+.task .tabContent .formTimetrack legend {
+	display:none;
+}
+.task .tabContent .formTimetrack .main {
+	padding:10px 0;
+}

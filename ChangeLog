@@ -1,5 +1,8 @@
 todoyu timetracking changelog
 
+timetracking 1.2.0 - not released yet
+	* Added: Show info about chargeable workload in track in the tracks list
+
 timetracking 1.1.4 - not released yet
 	* Changed: made also status "rejected" and "waiting" trackable
 	* Changed: on starting timetracking, task status is always updated to "in progress"

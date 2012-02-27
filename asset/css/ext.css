@@ -93,89 +93,13 @@ div.tabBlock .timetrackingButtons button.stopTracking .icon {
 
 
 /* -------------------------
-	Time track task tab
+	Task timetracking tab
    ------------------------- */
 .task .taskTabs .tabs .timetracking .icon {
 	background:url(../img/icons.png) no-repeat 0 -205px;
 }
 .task.running > .details .taskTabs .tabs  .timetracking .icon {
 	background-position:0 5px;
-}
-
-
-/* -------------------------
-	Time tracks
-   ------------------------- */
-.task .taskTabs .timetracks {
-	padding-top:5px;
-	background:#fff;
-}
-
-.task .taskTabs .timetracks ul {
-	margin:0;
-	padding:0;
-	border-top:1px solid #ddd;
-}
-
-.task .taskTabs .timetracks ul li {
-}
-
-.task .taskTabs .timetracks ul li a.editableItem {
-	background:url(../../../../core/asset/img/icons.png) no-repeat 3px -775px;
-	line-height:20px;
-}
-
-.task .taskTabs .timetracks ul li button span {
-	float:left; /* reset */
-}
-
-
-.task .taskTabs .timetracks .dateWithTime {
-	width:130px;
-}
-.task .taskTabs .timetracks .userName {
-	width:150px;
-	padding:0 4px 0 4px;
-}
-
-.task .taskTabs .newForm .taskOptionBlock {
-	padding-top:10px;
-	padding-bottom:10px;
-}
-
-.tracksList .listItem dl dt {
-	width:20px;
-	clear:left;
-	float:left;
-	padding:2px 4px 2px;
-}
-
-.tracksList .listItem dl dd {
-	width:540px;
-	float:left;
-	line-height:21px;
-}
-
-
-
-/* --------------------
-	task tab content
-   -------------------- */
-.task .tabContent .formTimeTrack {
-	background:white;
-	padding:0;
-}
-
-.task .tabContent .formTimeTrack legend {
-	display:none;
-}
-.task .tabContent .formTimeTrack fieldset {
-	padding-top:10px;
-	padding-left:5px;
-	border:none;
-}
-.task .tabContent .formTimeTrack fieldset.buttons {
-	margin-bottom:10px;
 }
 
 

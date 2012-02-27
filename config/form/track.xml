@@ -3,16 +3,15 @@
 	<attributes>
 		<attribute name="action">?ext=timetracking&amp;controller=tasktab</attribute>
 		<attribute name="name">timetrack</attribute>
-		<attribute name="class">formTimeTrack overflow</attribute>
 	</attributes>
 	<hiddenFields>
 		<field name="id" />
 		<field name="id_task" />
 	</hiddenFields>
 	<fieldsets>
-		<fieldset name="fieldset">
+		<fieldset name="main">
 			<legend>Edit timetracking record</legend>
-			<class>myFieldsetClass</class>
+			<class>main</class>
 			<elements>
 
 				<field type="date" name="date_track">

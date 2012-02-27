@@ -134,6 +134,7 @@ Todoyu.Ext.timetracking.Task = {
 		if( typeof(data) === 'object' ) {
 			$H(data).each(function(pair){
 				this.setTabContent(pair.key, pair.value);
+				this.onTabUpdated(pair.key);
 			}.bind(this));
 		}
 	},
@@ -241,12 +242,24 @@ Todoyu.Ext.timetracking.Task = {
 		var options	= {
 			parameters: {
 				action:	'tracklist',
-				task:		idTask
-			}
+				task:	idTask
+			},
+			onComplete: this.onTrackListUpdated.bind(this, idTask)
 		};
 		var target	= 'task-' + idTask + '-timetracks' ;
 
 		Todoyu.Ui.update(target, url, options);
+	},
+
+
+	/**
+	 * Handle track list updated
+	 *
+	 * @param	{Number}		idTask
+	 * @param	{Ajax.Response}	response
+	 */
+	onTrackListUpdated: function(idTask, response) {
+
 	},
 
 
@@ -262,7 +275,7 @@ Todoyu.Ext.timetracking.Task = {
 		var options	= {
 			parameters: {
 				action:	'control',
-				task:		idTask
+				task:	idTask
 			}
 		};
 		var target	= 'task-' + idTask + '-timetrack-control' ;
@@ -306,10 +319,10 @@ Todoyu.Ext.timetracking.Task = {
 	 * @param	{Ajax.Response}	response
 	 */
 	onEditFormLoaded: function(idTask, idTrack, response) {
-		var field	= 'timetrack-' + idTrack + '-field-workload-tracked';
+		var fieldTrackedTime	= 'timetrack-' + idTrack + '-fieldTrackedTime-workload-tracked';
 
-		if( Todoyu.exists(field) ) {
-			$(field).select();
+		if( Todoyu.exists(fieldTrackedTime) ) {
+			$(fieldTrackedTime).select();
 		}
 	},
 
@@ -355,21 +368,7 @@ Todoyu.Ext.timetracking.Task = {
 	 * @param	{Number}	idTrack
 	 */
 	cancelTrackEditing: function(idTask, idTrack) {
-		this.updateTrack(idTask, idTrack);
-	},
-
-
-
-	/**
-	 * Update timetracking tab content
-	 *
-	 * @method	updateTrackContent
-	 * @param	{Number}	idTask
-	 * @param	{Number}	idTrack
-	 * @param	{String}	tabContent
-	 */
-	updateTrackContent: function(idTask, idTrack, tabContent) {
-		$('task-' + idTask + '-track-' + idTrack).replace(tabContent);
+		this.updateTab(idTask);
 	},
 
 
@@ -382,29 +381,6 @@ Todoyu.Ext.timetracking.Task = {
 	 */
 	toggleList: function(idTask) {
 		Todoyu.Ui.toggle('task-' + idTask + '-timetracks');
-	},
-
-
-
-	/**
-	 * Updates a single track
-	 *
-	 * @method	updateTrack
-	 * @param	{Number}	idTask
-	 * @param	{Number}	idTrack
-	 */
-	updateTrack: function(idTask, idTrack){
-		var url		= Todoyu.getUrl('timetracking', 'tasktab');
-		var options	= {
-			parameters: {
-				action:		'trackcontent',
-				idTrack:	idTrack
-			}
-		};
-
-		var target 	= 'task-' + idTask + '-track-' + idTrack;
-
-		Todoyu.Ui.replace(target, url, options);
 	}
 
 };
