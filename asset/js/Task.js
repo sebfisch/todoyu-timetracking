@@ -134,8 +134,7 @@ Todoyu.Ext.timetracking.Task = {
 		if( typeof(data) === 'object' ) {
 			$H(data).each(function(pair){
 				this.setTabContent(pair.key, pair.value);
-				this.onTabUpdated(pair.key);
-			}.bind(this));
+			}, this);
 		}
 	},
 
