@@ -32,7 +32,7 @@ class TodoyuTimetrackingTaskPreset extends TodoyuProjectTaskPreset {
 	 * @return	Integer
 	 */
 	public function getStartTimetracking() {
-		return intval($this->get('ext_timetracking_start_tracking'));
+		return $this->getInt('ext_timetracking_start_tracking');
 	}
 
 
@@ -56,7 +56,7 @@ class TodoyuTimetrackingTaskPreset extends TodoyuProjectTaskPreset {
 	 * @return	Integer
 	 */
 	public function getWorkloadDone() {
-		return intval($this->get('ext_timetracking_workload_done'));
+		return $this->getInt('ext_timetracking_workload_done');
 	}
 
 
