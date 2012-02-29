@@ -41,7 +41,7 @@ class TodoyuTimetrackingTrack extends TodoyuBaseObject {
 	 * @return	TodoyuContactPerson
 	 */
 	public function getTrackingPerson() {
-		return $this->getPerson('create');
+		return $this->getPersonCreate();
 	}
 
 
