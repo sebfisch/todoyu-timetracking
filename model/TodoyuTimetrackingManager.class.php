@@ -56,8 +56,8 @@ class TodoyuTimetrackingManager {
 
 			if( $infoLevel >= 3 ) {
 				$task	= TodoyuProjectTaskManager::getTask($idTask);
-				$taskData['tracked_time']	= TodoyuTimetracking::getTrackedTaskTime($task->getID(), $task->getStartDate(), $task->getEndDate());
-				$taskData['billable_time']	= TodoyuTimetracking::getTrackedTaskTime($task->getID(), $task->getStartDate(), $task->getEndDate(), true);
+				$taskData['tracked_time']	= TodoyuTimetracking::getTrackedTaskTime($task->getID(), $task->getDateStart(), $task->getDateEnd());
+				$taskData['billable_time']	= TodoyuTimetracking::getTrackedTaskTime($task->getID(), $task->getDateStart(), $task->getDateEnd(), true);
 			}
 		}
 
