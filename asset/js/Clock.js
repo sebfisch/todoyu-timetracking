@@ -37,13 +37,6 @@ Todoyu.Ext.timetracking.Clock = {
 	 */
 	ext:	Todoyu.Ext.timetracking,
 
-//	/**
-//	 * Areas to display the clock
-//	 */
-//	displayAreas:	[],
-//
-//	callbacks:		[],
-
 	/**
 	 * Periodical executer
 	 *
@@ -103,12 +96,6 @@ Todoyu.Ext.timetracking.Clock = {
 	onClockTick: function(periodicalExecuter) {
 		this.ext.onClockTick();
 	},
-
-
-
-//	setTime: function(time) {
-//		Todoyu.Ext.timetracking.setTime(time);
-//	},
 
 
 
