@@ -103,7 +103,7 @@ class TodoyuTimetrackingManager {
 
 			$extras['billableTime']	= array(
 				'key'		=> 'billingtime',
-				'content'	=> TodoyuTime::sec2hour($time)
+				'content'	=> TodoyuTime::formatHours($time)
 			);
 		}
 
