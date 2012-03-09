@@ -213,7 +213,7 @@ Todoyu.Ext.timetracking.Clock = {
 	 * Get an array with the keys hours, minutes and seconds of the current time
 	 *
 	 * @method	getTimeParts
-	 * @return	{Array}
+	 * @return	{Object}
 	 */
 	getTimeParts: function() {
 		var hours	= Math.floor(this.getTime() / Todoyu.Time.seconds.hour);
