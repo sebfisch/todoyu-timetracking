@@ -1,7 +1,7 @@
 todoyu timetracking changelog
 
 timetracking 1.2.0 - not released yet
-	* Added: Person filter widget: has tracked time in project
+	* Added: Person filter widgets: has tracked time in project, tracked time for customer
 	* Added: Show info about chargeable workload in track in the tracks list
 
 timetracking 1.1.4 - not released yet

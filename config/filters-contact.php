@@ -19,14 +19,14 @@
  *****************************************************************************/
 
 /**
- * Timetracking related person filters - added via hook
+ * Timetracking related person filters
  *
  * @package		Todoyu
  * @subpackage	Timetracking
  * @see			TodoyuTimetrackingManager::hookLoadContactFilterConfig
  */
 
-	// Persons assigned in project
+	// Persons tracked time in project
 Todoyu::$CONFIG['FILTERS']['PERSON']['widgets']['trackedinproject'] = array(
 	'funcRef'	=> 'TodoyuTimetrackingContactPersonFilter::Filter_trackedinproject',
 	'label'		=> 'timetracking.filter.person.trackedinproject',
@@ -35,6 +35,21 @@ Todoyu::$CONFIG['FILTERS']['PERSON']['widgets']['trackedinproject'] = array(
 	'wConf' => array(
 		'autocomplete'	=> true,
 		'FuncRef'		=> 'TodoyuProjectProjectFilterDataSource::autocompleteProjects',
+		'FuncParams'	=> array(),
+		'LabelFuncRef'	=> 'TodoyuProjectProjectFilterDataSource::getLabel',
+		'negation'		=> false
+	)
+);
+
+// Persons tracked time in project of customer company
+Todoyu::$CONFIG['FILTERS']['PERSON']['widgets']['trackedforcustomer'] = array(
+	'funcRef'	=> 'TodoyuTimetrackingContactPersonFilter::Filter_trackedforcustomer',
+	'label'		=> 'timetracking.filter.person.trackedforcustomer',
+	'optgroup'	=> 'timetracking.filter.optgroup',
+	'widget'	=> 'text',
+	'wConf' => array(
+		'autocomplete'	=> true,
+		'FuncRef'		=> 'TodoyuContactCompanyFilterDataSource::autocompleteCompanies',
 		'FuncParams'	=> array(),
 		'LabelFuncRef'	=> 'TodoyuProjectProjectFilterDataSource::getLabel',
 		'negation'		=> false

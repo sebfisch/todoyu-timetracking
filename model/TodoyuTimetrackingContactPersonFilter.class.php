@@ -47,7 +47,7 @@ class TodoyuTimetrackingContactPersonFilter extends TodoyuSearchFilterBase imple
 
 
 	/**
-	 * Person filter: assigned (has projectrole) in given project
+	 * Person filter: tracked time in given project
 	 *
 	 * @param	Integer		$idProject
 	 * @param	Boolean		$negate
@@ -65,6 +65,45 @@ class TodoyuTimetrackingContactPersonFilter extends TodoyuSearchFilterBase imple
 			);
 
 			$where  = ' 		ext_project_task.id_project		= ' . $idProject
+					. ' AND		ext_project_task.deleted		= 0 '
+					. ' AND		ext_timetracking_track.id_task	= ext_project_task.id '
+					. ' AND		ext_contact_person.id			= ext_timetracking_track.id_person_create';
+
+			$queryParts = array(
+				'tables'=> $tables,
+				'where'	=> $where
+			);
+		}
+
+		TodoyuDebug::printInFirebug($where);
+
+		return $queryParts;
+	}
+
+
+
+	/**
+	 * Person filter: tracked time in project of given customer company
+	 *
+	 * @param	Integer		$idCompany
+	 * @param	Boolean		$negate
+	 * @return	Array
+	 */
+	public function Filter_trackedforcustomer($idCompany, $negate = false) {
+		$idCompany	= intval($idCompany);
+		$queryParts	= false;
+
+		if( $idCompany > 0 ) {
+			$tables = array(
+				'ext_contact_person',
+				'ext_project_project',
+				'ext_project_task',
+				'ext_timetracking_track'
+			);
+
+			$where  = ' 		ext_project_project.id_company	= ' . $idCompany
+					. ' AND		ext_project_project.deleted		= 0 '
+					. ' AND		ext_project_task.id_project		= ext_project_project.id '
 					. ' AND		ext_project_task.deleted		= 0 '
 					. ' AND		ext_timetracking_track.id_task	= ext_project_task.id '
 					. ' AND		ext_contact_person.id			= ext_timetracking_track.id_person_create';

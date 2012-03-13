@@ -19,7 +19,7 @@
  *****************************************************************************/
 
 /**
- * Timetracking related task filters - added via hook
+ * Timetracking related task filters
  *
  * @package		Todoyu
  * @subpackage	Timetracking

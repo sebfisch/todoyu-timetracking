@@ -4,4 +4,5 @@
 	<label index="timetrackedPerson">Person hat Zeit erfasst</label>
 	<label index="timetrackedRoles">Rollen haben Zeit erfasst</label>
 	<label index="person.trackedinproject">Hat Zeit in Projekt erfasst</label>
+	<label index="person.trackedforcustomer">Hat Zeit in Project von Firma erfasst</label>
 </labels>
