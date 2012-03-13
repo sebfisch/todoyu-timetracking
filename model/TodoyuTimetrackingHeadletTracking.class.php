@@ -36,10 +36,6 @@ class TodoyuTimetrackingHeadletTracking extends TodoyuHeadletTypeOverlay {
 		if( TodoyuTimetracking::isTrackingActive() ) {
 			$this->addButtonClass('tracking');
 		}
-
-			// Get bar classes and init JS object
-		$barClassJSON	= self::getBarClassesJSON();
-		TodoyuPage::addJsOnloadedFunction('function(){Todoyu.Headlets.getHeadlet(\'todoyutimetrackingheadlettracking\').setBarClasses(' . $barClassJSON . ');}', 160);
 	}
 
 
@@ -60,20 +56,6 @@ class TodoyuTimetrackingHeadletTracking extends TodoyuHeadletTypeOverlay {
 
 
 	/**
-	 * Get progress bar classes as json array
-	 *
-	 * @return	String
-	 */
-	public static function getBarClassesJSON() {
-		$barClasses			= TodoyuArray::assure(Todoyu::$CONFIG['EXT']['timetracking']['headletBarClasses']);
-		krsort($barClasses);
-
-		return json_encode($barClasses);
-	}
-
-
-
-	/**
 	 * Render overlay content for active timetracking
 	 *
 	 * @return	String
@@ -85,14 +67,14 @@ class TodoyuTimetrackingHeadletTracking extends TodoyuHeadletTypeOverlay {
 		$data	= array(
 			'name'		=> $this->getName(),
 			'task'		=> $task->getTemplateData(2),
-			'tracked'	=> TodoyuTimetracking::getTrackedTaskTimeTotal($task->id),
+			'tracked'	=> TodoyuTimetracking::getTrackedTaskTimeTotal($task->getID()),
 			'tracking'	=> TodoyuTimetracking::getTrackedTime()
 		);
 
 
 			// Get percent of task time
 		if( $task->hasEstimatedWorkload() ) {
-			$totalTracked		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->id, false, true);
+			$totalTracked		= TodoyuTimetracking::getTrackedTaskTimeTotal($task->getID(), false, true);
 			$data['percent']	= round(($totalTracked/$task->getEstimatedWorkload())*100, 0);
 			$data['showPercent']= true;
 		}

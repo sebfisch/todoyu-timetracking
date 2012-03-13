@@ -47,7 +47,12 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 * @property	barClasses
 	 * @type		Object
 	 */
-	barClasses: {},
+	barClasses: {
+		100: 'red',
+		90: 'orange',
+		80: 'yellow',
+		0: '#cadb98'
+	},
 
 
 
@@ -212,7 +217,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	updatePercent: function() {
 		var idPercent = this.name + '-percent';
 
-		if( Todoyu.exists(idPercent) && this.ext.hasEstimatedTime() ) {
+		if( this.isVisible() && Todoyu.exists(idPercent) ) {
 			var percent	= this.ext.getPercentOfTime();
 
 				// Update numeric percentage info
@@ -227,28 +232,15 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 				width:	percent + '%'
 			});
 				// Update sub elements of bar
-			this.barClasses.each(function(pair){
+			$H(this.barClasses).detect(function(pair){
 				if( percent >= pair.key ) {
 					progressSpan.setStyle({
 						backgroundColor: pair.value
 					});
-					throw $break;
+					return true;
 				}
 			}, true);
 		}
-	},
-
-
-
-	/**
-	 * Set barClasses to internal storage
-	 *
-	 * @method	setBarClasses
-	 * @param	{Object}		barClasses
-	 * @see		TodoyuTimetrackingHeadletTracking.class.php		Called during page init onLoaded handling
-	 */
-	setBarClasses: function(barClasses) {
-		this.barClasses	= $H(barClasses);
 	},
 
 

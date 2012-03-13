@@ -56,12 +56,6 @@ if( Todoyu::allowed('timetracking', 'general:use') ) {
 /* ------------------------
 	Headlet parameters
    ------------------------ */
-Todoyu::$CONFIG['EXT']['timetracking']['headletBarClasses'] = array(
-	0	=> '#cadb98', // Green
-	80	=> 'yellow',
-	90	=> 'orange',
-	100	=> 'red',
-);
 	// Amount of previous tracks to be listed
 Todoyu::$CONFIG['EXT']['timetracking']['headletLastTasks']	= 5;
 
