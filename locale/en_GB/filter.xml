@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<labels>
+	<label index="optgroup">Time Tracking</label>
+	<label index="timetrackedPerson">Person has tracked time</label>
+	<label index="timetrackedRoles">Roles have tracked time</label>
+	<label index="person.trackedinproject">Tracked time in project</label>
+</labels>

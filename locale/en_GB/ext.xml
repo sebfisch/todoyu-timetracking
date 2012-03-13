@@ -9,8 +9,6 @@
 	<label index="attr.workload_chargeable">Chargeable Time</label>
 	<label index="attr.comment">Comment</label>
 	<label index="search.label">Time Tracking</label>
-	<label index="filter.timetrackedPerson">Person has tracked time</label>
-	<label index="filter.timetrackedRoles">Roles have tracked time</label>
 	<label index="task.attr.overtimed">Task Overbooked</label>
 	<label index="headlet.label">Time Tracking</label>
 	<label index="tasktab.time_elapsed">Total Tracked Time</label>

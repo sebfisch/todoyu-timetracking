@@ -444,6 +444,17 @@ class TodoyuTimetrackingManager {
 		return $info;
 	}
 
+
+
+	/**
+	 * Load configs of timetracking related filter widgets of contact persons
+	 */
+	public static function hookLoadContactFilterConfig() {
+		$filePath	= realpath(PATH_EXT_TIMETRACKING . DIR_SEP . 'config' . DIR_SEP . 'filters-contact.php');
+
+		include_once($filePath);
+	}
+
 }
 
 ?>

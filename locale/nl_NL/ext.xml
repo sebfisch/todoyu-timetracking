@@ -9,8 +9,6 @@
 	<label index="attr.workload_chargeable">Facturabel</label>
 	<label index="attr.comment">Opmerking</label>
 	<label index="search.label">Urenregistratie</label>
-	<label index="filter.timetrackedPerson">Persoon heeft uren geregistreerd</label>
-	<label index="filter.timetrackedRoles">Rollen hebben geregistreerde uren</label>
 	<label index="task.attr.overtimed">Taak is overboekt</label>
 	<label index="headlet.label">Urenregistratie</label>
 	<label index="tasktab.time_elapsed">Totaal geregistreerde uren</label>

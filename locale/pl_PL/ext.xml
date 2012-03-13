@@ -9,8 +9,6 @@
 	<label index="attr.workload_chargeable">Należny czas</label>
 	<label index="attr.comment">Komentarz</label>
 	<label index="search.label">Śledzenie czasu</label>
-	<label index="filter.timetrackedPerson">Osoba ma prześledzony czas</label>
-	<label index="filter.timetrackedRoles">Role mają prześledzony czas</label>
 	<label index="task.attr.overtimed">Zadanie zawyżone</label>
 	<label index="headlet.label">Śledzenie czasu</label>
 	<label index="tasktab.time_elapsed">Całkowity prześledzonyc czas</label>

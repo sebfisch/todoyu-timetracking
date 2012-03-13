@@ -23,7 +23,7 @@
  */
 Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['timetrackedPerson'] = array(
 	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_timetrackedPerson',
-	'label'		=> 'timetracking.ext.filter.timetrackedPerson',
+	'label'		=> 'timetracking.filter.timetrackedPerson',
 	'optgroup'	=> 'timetracking.ext.search.label',
 	'widget'	=> 'text',
 	'require'	=> 'timetracking.general:use',
@@ -39,7 +39,7 @@ Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['timetrackedPerson'] = array(
 
 Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['timetrackedRoles'] = array(
 	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_timetrackedRoles',
-	'label'		=> 'timetracking.ext.filter.timetrackedRoles',
+	'label'		=> 'timetracking.filter.timetrackedRoles',
 	'optgroup'	=> 'timetracking.ext.search.label',
 	'widget'	=> 'select',
 	'require'	=> 'timetracking.general:use',

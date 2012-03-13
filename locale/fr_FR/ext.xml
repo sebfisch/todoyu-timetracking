@@ -18,8 +18,6 @@
 	<label index="quicktask.workload_done">Temps déjà affecté à un travail</label>
 	<label index="extconf.stopOnLogout">Arrêter le suivi du temps si une personne se déconnecte</label>
 	<label index="search.label">Suivi du temps</label>
-	<label index="filter.timetrackedPerson">La personne a enregistré un suivi de son temps</label>
-	<label index="filter.timetrackedRoles">Les rôles ont enregistré un suivi de leur temps</label>
 	<label index="headlet.label">Suivi du temps</label>
 	<label index="estimated_workload">Charge de travail estimée</label>
 	<label index="jumpToTask">Cliquez ici pour aller à cette tâche</label>

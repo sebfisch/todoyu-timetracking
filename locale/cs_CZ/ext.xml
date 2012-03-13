@@ -9,8 +9,6 @@
 	<label index="attr.workload_chargeable">Zpoplatněný</label>
 	<label index="attr.comment">Komentář</label>
 	<label index="search.label">Sledování času</label>
-	<label index="filter.timetrackedPerson">Zaznamenaný čas osoby</label>
-	<label index="filter.timetrackedRoles">Zaznamenaný čas role</label>
 	<label index="task.attr.overtimed">Úkol Overbooked</label>
 	<label index="headlet.label">Sledování času</label>
 	<label index="tasktab.time_elapsed">Celkový zaznamenaný čas</label>

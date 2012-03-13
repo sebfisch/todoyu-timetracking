@@ -9,8 +9,6 @@
 	<label index="attr.workload_chargeable">Оплачивается</label>
 	<label index="attr.comment">Комментарий</label>
 	<label index="search.label">Учёт времени</label>
-	<label index="filter.timetrackedPerson">Персона учитывала время</label>
-	<label index="filter.timetrackedRoles">Роль учитывала время</label>
 	<label index="task.attr.overtimed">Задача перегружена</label>
 	<label index="headlet.label">Учёт времени</label>
 	<label index="tasktab.time_elapsed">Всего учтено времени</label>

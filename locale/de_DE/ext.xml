@@ -9,8 +9,6 @@
 	<label index="attr.workload_chargeable">Verrechenbarer Arbeitsaufwand</label>
 	<label index="attr.comment">Kommentar</label>
 	<label index="search.label">Zeiterfassung</label>
-	<label index="filter.timetrackedPerson">Person hat Zeit erfasst</label>
-	<label index="filter.timetrackedRoles">Rollen haben Zeit erfasst</label>
 	<label index="task.attr.overtimed">Aufgabezeit überschritten</label>
 	<label index="headlet.label">Zeiterfassung</label>
 	<label index="tasktab.time_elapsed">Total erfasste Zeit</label>

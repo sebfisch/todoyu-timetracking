@@ -49,4 +49,7 @@ TodoyuHookManager::registerHook('project', 'projectpresetdata', 'TodoyuTimetrack
 TodoyuFormHook::registerBuildForm('ext/project/config/form/extconf.xml', 'TodoyuTimetrackingExtManagerRenderer::onRenderProjectExtConfig');
 TodoyuFormHook::registerBuildForm('ext/project/config/form/admin/taskpreset.xml', 'TodoyuTimetrackingSysmanagerManager::hookBuildFormTaskPreset');
 
+	// Callbacks for exteding filter widgets of other extensions
+TodoyuHookManager::registerHook('core', 'loadconfig.contact.filters', 'TodoyuTimetrackingManager::hookLoadContactFilterConfig');
+
 ?>

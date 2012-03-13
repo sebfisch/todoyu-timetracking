@@ -9,8 +9,6 @@
 	<label index="attr.workload_chargeable">請求対象</label>
 	<label index="attr.comment">コメント</label>
 	<label index="search.label">作業時間の記録</label>
-	<label index="filter.timetrackedPerson">個人の作業時間の記録</label>
-	<label index="filter.timetrackedRoles">ロールの作業時間の記録</label>
 	<label index="task.attr.overtimed">タスクの衝突</label>
 	<label index="headlet.label">作業時間の記録</label>
 	<label index="tasktab.time_elapsed">作業時間の合計</label>

@@ -9,8 +9,6 @@
 	<label index="attr.workload_chargeable">Honorários</label>
 	<label index="attr.comment">Nota</label>
 	<label index="search.label">Gestão de Horas</label>
-	<label index="filter.timetrackedPerson">Pessoa Possui Registro de Horas</label>
-	<label index="filter.timetrackedRoles">Permissões Posssuem Registro de Horas</label>
 	<label index="task.attr.overtimed">Tarefa Overbooked</label>
 	<label index="headlet.label">Gestão de Horas</label>
 	<label index="tasktab.time_elapsed">Total de Horas</label>

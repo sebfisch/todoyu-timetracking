@@ -9,8 +9,6 @@
 	<label index="attr.workload_chargeable">Наплатљиво</label>
 	<label index="attr.comment">Коментар</label>
 	<label index="search.label">Забељежавање времена</label>
-	<label index="filter.timetrackedPerson">Особа је забељежила време</label>
-	<label index="filter.timetrackedRoles">Улоге су забељежиле време</label>
 	<label index="task.attr.overtimed">Време прекорачено</label>
 	<label index="headlet.label">Забељежавање времена</label>
 	<label index="tasktab.time_elapsed">Тотално забељежено време</label>
