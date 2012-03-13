@@ -41,7 +41,7 @@ Todoyu::$CONFIG['FILTERS']['PERSON']['widgets']['trackedinproject'] = array(
 	)
 );
 
-// Persons tracked time in project of customer company
+	// Persons tracked time in project of customer company
 Todoyu::$CONFIG['FILTERS']['PERSON']['widgets']['trackedforcustomer'] = array(
 	'funcRef'	=> 'TodoyuTimetrackingContactPersonFilter::Filter_trackedforcustomer',
 	'label'		=> 'timetracking.filter.person.trackedforcustomer',
