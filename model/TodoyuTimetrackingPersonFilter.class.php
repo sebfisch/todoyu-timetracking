@@ -24,7 +24,7 @@
  * @package		Todoyu
  * @subpackage	Timetracking
  */
-class TodoyuTimetrackingContactPersonFilter extends TodoyuSearchFilterBase implements TodoyuFilterInterface {
+class TodoyuTimetrackingPersonFilter extends TodoyuSearchFilterBase implements TodoyuFilterInterface {
 
 	/**
 	 * Default table for database requests
@@ -75,8 +75,6 @@ class TodoyuTimetrackingContactPersonFilter extends TodoyuSearchFilterBase imple
 			);
 		}
 
-		TodoyuDebug::printInFirebug($where);
-
 		return $queryParts;
 	}
 
@@ -113,8 +111,6 @@ class TodoyuTimetrackingContactPersonFilter extends TodoyuSearchFilterBase imple
 				'where'	=> $where
 			);
 		}
-
-		TodoyuDebug::printInFirebug($where);
 
 		return $queryParts;
 	}
