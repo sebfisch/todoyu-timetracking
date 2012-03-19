@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form>
 	<attributes>
-		<attribute name="action">?ext=timetracking&amp;controller=tasktab</attribute>
+		<attribute name="action">index.php?ext=timetracking&amp;controller=tasktab</attribute>
 		<attribute name="name">timetrack</attribute>
 	</attributes>
 	<hiddenFields>
