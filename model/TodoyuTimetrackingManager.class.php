@@ -189,12 +189,12 @@ class TodoyuTimetrackingManager {
 			$trackedToday	= TodoyuTimetracking::getTrackedTaskTimeOfDay($idTask, NOW, Todoyu::personid());
 			$trackedCurrent	= TodoyuTimetracking::getTrackedTime();
 
-			$init	= 'Todoyu.Ext.timetracking.initWithTask.bind(Todoyu.Ext.timetracking, ' . json_encode($taskData) . ', ' . $trackedTotal . ', ' . $trackedToday . ', ' . $trackedCurrent . ')';
+			$jsInitCode	= 'Todoyu.Ext.timetracking.initWithTask(' . json_encode($taskData) . ', ' . $trackedTotal . ', ' . $trackedToday . ', ' . $trackedCurrent . ')';
 		} else {
-			$init	= 'Todoyu.Ext.timetracking.initWithoutTask.bind(Todoyu.Ext.timetracking)';
+			$jsInitCode	= 'Todoyu.Ext.timetracking.initWithoutTask()';
 		}
 
-		TodoyuPage::addJsOnloadedFunction($init, 100);
+		TodoyuPage::addJsInit($jsInitCode);
 	}
 
 
