@@ -337,7 +337,8 @@ Todoyu.Ext.timetracking.Task = {
 	saveTrack: function(idTask, idTrack) {
 		$('timetrack-' + idTrack + '-form').request({
 			parameters: {
-				action: 'updatetrack'
+				action: 'updatetrack',
+				area:	Todoyu.getArea()
 			},
 			onComplete: this.onTrackSaved.bind(this, idTask, idTrack)
 		});
