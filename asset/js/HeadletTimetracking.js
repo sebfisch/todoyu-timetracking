@@ -104,7 +104,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	onButtonClick: function($super, event) {
 		$super(event);
 
-		this.saveOpenStatus();
+//		this.saveOpenStatus();
 	},
 
 
@@ -130,7 +130,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	hide: function($super) {
 		$super();
 
-		this.saveOpenStatus();
+//		this.saveOpenStatus();
 	},
 
 
