@@ -18,7 +18,7 @@
 	<label index="currentTask">Aktuelle Aufgabe</label>
 	<label index="showCurrentTaskInProject">Aufgabe im Projekt anzeigen</label>
 	<label index="quicktask.workload_done">Schon gearbeitete Zeit</label>
-	<label index="estimated_workload">Aufw. geschätzt</label>
+	<label index="estimated_workload">geschätzt</label>
 	<label index="jumpToTask">Klicken Sie hier um zu diesem Task zu wechseln</label>
 	<label index="jumpToProject">Klicken Sie hier um zu diesem Projekt zu wechseln</label>
 	<label index="extconf.stopOnLogout">Laufende Zeiterfassung bei Log-Out stoppen</label>

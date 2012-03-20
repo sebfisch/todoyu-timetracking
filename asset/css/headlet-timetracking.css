@@ -1,95 +1,60 @@
 #todoyutimetrackingheadlettracking a.button {
 	background:url(../img/icons.png) no-repeat 1px -235px;
 }
-#todoyutimetrackingheadlettracking .button.tracking {
-	background-position:1px -55px;
-}
 
 #todoyutimetrackingheadlettracking .content {
-	margin-left:-451px;
-	padding:5px;
+	margin-left:-380px;
+	width:550px;
+	padding:2px;
+	padding-top:3px;
+}
+
+
+/* ----------------------------------------------
+	Active tracking
+   ---------------------------------------------- */
+#todoyutimetrackingheadlettracking li.tracking {
 
 }
 
-#todoyutimetrackingheadlettracking .content li {
+#todoyutimetrackingheadlettracking li.tracking > div {
+	display: inline-block;
 }
 
-#todoyutimetrackingheadlettracking .content li a {
-	display:inline;
-	white-space:nowrap;
-}
-
-/**
- * Active headlet content
- */
-#todoyutimetrackingheadlettracking .content li.tracking {
-	width:548px;
-}
-
-#todoyutimetrackingheadlettracking .content span.trackingContainer {
-	display:block;
-}
-
-#todoyutimetrackingheadlettracking .content span.currentTask {
-	display:block;
-	width:37%;
-	float:left;
-	border-right:1px solid #ddd;
-}
-
-#todoyutimetrackingheadlettracking .content span.container {
+#todoyutimetrackingheadlettracking .tracking .taskDetails {
+	width:270px;
 	overflow:hidden;
-	display:block;
-}
-#todoyutimetrackingheadlettracking .content  span.currentTask span.container {
-	margin:0 5px 0 0;
-}
-#todoyutimetrackingheadlettracking .content span.time {
-	width:50%;
-	display:inline-block;
-}
-#todoyutimetrackingheadlettracking .content  span.time span.container {
-	margin:0 0 0 5px;
+	border-right:1px solid #ddd;
+	margin-left: 3px;
 }
 
-#todoyutimetrackingheadlettracking .content span.stop {
-	position:absolute;
-	top:0;
-	right:0;
-}
-
-#todoyutimetrackingheadlettracking .content a {
-	display:inline;
+#todoyutimetrackingheadlettracking .tracking .taskDetails a {
+	display: inline-block !important;
+	width:100%;
 	padding:0;
+	height: 15px;
 }
 
-#headlets li #headlet-timetracking-content a,
-#headlets li:hover #headlet-timetracking-content a {
-	background:none !important;
+#todoyutimetrackingheadlettracking .tracking .taskTime {
+	width:230px;
+	margin-left: 5px;
 }
 
-#todoyutimetrackingheadlettracking .content a.title {
-	font-size:11px;
-	font-weight:bold;
-}
-#todoyutimetrackingheadlettracking .content  a:hover {
-	color:#6f6f6f;
+#todoyutimetrackingheadlettracking .tracking .taskTime > div {
+	display: inline-block;
+	height:15px;
 }
 
-#todoyutimetrackingheadlettracking .content span.currentTracking {
-	font-weight:bold;
+#todoyutimetrackingheadlettracking .tracking .taskTime .currentTracking {
+	font-weight: bold;
 }
 
-#todoyutimetrackingheadlettracking .content span.tracked {
-
-}
-
-#todoyutimetrackingheadlettracking .content span.percent span.number {
+#todoyutimetrackingheadlettracking .tracking .taskTime .percent .number {
 	float:left;
 	margin-right:5px;
 }
 
-#todoyutimetrackingheadlettracking .content span.percent span.bar {
+#todoyutimetrackingheadlettracking .tracking .taskTime .percent .bar {
 	width:100px;
 	height:12px;
 	display:block;
@@ -98,114 +63,82 @@
 	background-color:#e3eace;
 }
 
-#todoyutimetrackingheadlettracking .content span.percent span.bar span.progress {
+#todoyutimetrackingheadlettracking .tracking .taskTime .percent .bar .progress {
 	background-color:#d0ddcf;
 	display:inline-block;
 	height:100%;
 }
 
-#todoyutimetrackingheadlettracking .content span.percent {
-	display:block;
-	height:14px;
-	position:absolute;
-	overflow:hidden;
-}
-
-#todoyutimetrackingheadlettracking .content span.estimatedWorkload {
+#todoyutimetrackingheadlettracking .tracking .taskTime .estimatedWorkload {
 	float:left;
-	display:block;
 	margin-left:5px;
 }
 
-#todoyutimetrackingheadlettracking .content .button {
-	float:right;
+#todoyutimetrackingheadlettracking .tracking .stop {
+	position:absolute;
+	top:6px;
+	right:4px;
 }
 
-#todoyutimetrackingheadlettracking .content .button .label {
+#todoyutimetrackingheadlettracking .tracking .stop .icon {
+	background-position: 2px 1px;
+}
+
+
+/* ----------------------------------------------
+	Inactive tracking
+   ---------------------------------------------- */
+#todoyutimetrackingheadlettracking .inactive {
+	padding: 2px;
+}
+
+#todoyutimetrackingheadlettracking .inactive > li {
+	border-left-width:4px;
+	border-left-style:solid;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #DDD;
+	display:block;
+	padding:5px;
+	background-color:#fff;
+	position: relative;
+}
+
+#todoyutimetrackingheadlettracking .inactive > li > div {
+	display: inline-block;
+	width:500px;
+}
+
+#todoyutimetrackingheadlettracking .inactive > li > .title {
+	cursor: pointer;
+}
+
+#todoyutimetrackingheadlettracking .inactive > li > .title > div {
+	display: inline-block;
+}
+
+#todoyutimetrackingheadlettracking .inactive > li > .title .taskNumber {
+	width:60px;
+}
+#todoyutimetrackingheadlettracking .inactive > li > .title .taskTitle {
+	width:380px;
+}
+
+#todoyutimetrackingheadlettracking .inactive > li > .title .taskTime {
+	width:50px;
+}
+
+#todoyutimetrackingheadlettracking .inactive .startTracking {
+	position: absolute;
+	top: 0;
+	right: 4px;
+	width: 30px;
+}
+
+#todoyutimetrackingheadlettracking .inactive .startTracking .label {
 	display:none;
 }
 
-#todoyutimetrackingheadlettracking .content h1 {
-	margin:0;
-}
-
-#todoyutimetrackingheadlettracking .content li.tracking,
-#todoyutimetrackingheadlettracking .content li.inactiveTaskList {
-
-}
-
-#todoyutimetrackingheadlettracking .content li.tracking a.project {
-	text-transform:uppercase;
-	display:block;
-}
-
-/**
- * Inactive headlet content
- */
-
-#todoyutimetrackingheadlettracking .content .inactiveTaskList ul {
-	position:relative;
-	border:none;
-	top:0;
-	left:0;
-	width:521px;
-	border-top:1px solid #ddd;
-}
-
-#todoyutimetrackingheadlettracking .content .inactiveTaskList li {
-	border-bottom:1px solid #ddd;
-}
-
-#todoyutimetrackingheadlettracking .content .inactiveTaskList li span.headLabel {
-	border-left-width:4px;
-	border-left-style:solid;
-	display:block;
-	padding:1px 0 1px 0;
-	background-color:#fff;
-}
-
-#todoyutimetrackingheadlettracking .content .inactiveTaskList span.headLabel .first {
-	padding-left:17px;
-}
-
-#todoyutimetrackingheadlettracking .content .inactiveTaskList a.title {
-	display:block;
-	width:90%;
-	font-weight:normal;
-	height:auto;
-	line-height:0;
-}
-
-#todoyutimetrackingheadlettracking .content .inactiveTaskList a.title .taskNumber,
-#todoyutimetrackingheadlettracking .content .inactiveTaskList a.title .projectName {
-	margin-right:5px;
-}
-
-#todoyutimetrackingheadlettracking .content .inactiveTaskList a.title span {
-	line-height:22px;
-	white-space:nowrap;
-}
-
-#todoyutimetrackingheadlettracking .content .inactiveTaskList .taskNumber {
-	display:inline-block;
-	float:none;
-	width:10%;
-}
-
-#todoyutimetrackingheadlettracking .content .inactiveTaskList .projectName {
-	display:inline-block;
-	float:none;
-	width:75%;
-}
-#todoyutimetrackingheadlettracking .content .inactiveTaskList .tracking {
-	display:inline-block;
-	float:none;
-	text-align:right;
-}
-
-#todoyutimetrackingheadlettracking .content .inactiveTaskList .start {
-	width:35px;
-	position:absolute;
-	top:1px;
-	right:0;
+#todoyutimetrackingheadlettracking .inactive .startTracking .icon {
+	background-position: 1px -29px;
 }

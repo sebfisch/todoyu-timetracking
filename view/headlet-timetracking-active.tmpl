@@ -1,36 +1,30 @@
 <li class="tracking">
-	<span class="trackingContainer">
-		<span class="currentTask">
-			<span class="container">
-				<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject(0,{$task.project.id})" title="{Label LLL:timetracking.ext.jumpToProject}" class="project">{htmlencode(truncate($task.company.title, 25))}:{htmlencode(truncate($task.project.title, 25))}</a>
-				<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject({$task.id})" title="{Label LLL:timetracking.ext.jumpToTask}" class="title">{$task.id_project}.{$task.tasknumber}: {htmlencode(truncate($task.title, 25, '...', true))}</a>
-			</span>
-		</span>
-		<span class="time">
-			<span class="container">
-				<span class="tracking" title="{Label LLL:timetracking.ext.tasktab.time_elapsed}">
-					{Label LLL:timetracking.ext.tasktab.time_elapsed} {HourMinSec $tracked} + <span id="{$name}-tracking" class="currentTracking">{HourMinSec $tracking}</span>
-				</span>
-				{if $showPercent}
-				<span class="percent">
-				<span class="number" id="{$name}-percent">
-						{$percent}%
-					</span>
-					<span class="bar">
-						{$max = 100}
-						{$length = $percent/100*$max}
-						{if $length>$max}
-							{$length = $max}
-						{/if}
-						<span class="progress {$barClass}" id="{$name}-progress" style="width:{$length}px"></span>
-					</span>
-					<span class="estimatedWorkload">({Label LLL:timetracking.ext.estimated_workload}: {HourMin $task.estimated_workload})</span>
-				</span>
+	<div class="taskDetails">
+		<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject(0,{$task.project.id})" title="{Label LLL:timetracking.ext.jumpToProject}" class="project">
+			{htmlencode(truncate($task.company.shortname, 25))}: {htmlencode(truncate($task.project.title, 40))}
+		</a>
+		<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject({$task.id})" title="{htmlencode $task.title}" class="title">
+			{$task.id_project}.{$task.tasknumber}: <strong>{htmlencode(truncate($task.title, 37, '...', true))}</strong>
+		</a>
+	</div>
+	<div class="taskTime">
+		<div class="tracking" title="{Label LLL:timetracking.ext.tasktab.time_elapsed}">
+			{Label LLL:timetracking.ext.tasktab.time_elapsed} {HourMinSec $tracked} + <span id="{$name}-tracking" class="currentTracking">{HourMinSec $tracking}</span>
+		</div>
+		<div class="percent">
+			<span class="number" id="{$name}-percent">{$percent}%</span>
+			<span class="bar">
+				{$max = 100}
+				{$length = $percent/100*$max}
+				{if $length>$max}
+					{$length = $max}
 				{/if}
+				<span class="progress {$barClass}" id="{$name}-progress" style="width:{$length}px"></span>
 			</span>
-		</span>
-		<span class="stop">
-			{Button onclick="Todoyu.Ext.timetracking.Task.stop($task.id)" class="stopTracking" title="LLL:timetracking.ext.stop" label=""}
-		</span>
-	</span>
+			<span class="estimatedWorkload">({Label LLL:timetracking.ext.estimated_workload}: {HourMin $task.estimated_workload})</span>
+		</div>
+	</div>
+	<div class="stop">
+		{Button onclick="Todoyu.Ext.timetracking.Task.stop($task.id)" class="stopTracking" title="LLL:timetracking.ext.stop" label=""}
+	</div>
 </li>

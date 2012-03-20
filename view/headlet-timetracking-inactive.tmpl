@@ -1,24 +1,23 @@
-<li class="inactiveTaskList">
-	<ul>
+<li>
+	<ul class="inactive">
 		{foreach $tasks task}
-			<li id="{$name}-task-{$task.id}">
-				<span class="headLabel bcStatus{$task.status}" title="{$task.fulltitle}">
-				<a href="javascript:void(0)" onclick="Todoyu.Ext.project.goToTaskInProject({$task.id})" title="{Label timetracking.ext.jumpToTask}" class="title">
-					<span class="first taskNumber" title="{Label portal.ext.tasktree.header.tasknumber}: {$task.id_project}.{$task.tasknumber}">
+			<li id="{$name}-task-{$task.id}" class="bcStatus{$task.status}">
+				<div class="title" onclick="Todoyu.Ext.project.goToTaskInProject({$task.id})">
+					<div class="taskNumber" title="{Label portal.ext.tasktree.header.tasknumber}: {$task.id_project}.{$task.tasknumber}">
 						{$task.id_project}.{$task.tasknumber}
-					</span>
-					<span class="projectName" title="{Label project.ext.project}: {htmlencode $task.project.title} (ID: {$task.id_project}) / {Label project.task.task}: {htmlencode $task.title}">
-						{htmlencode $task.projecttitle|truncate:45} - {htmlencode $task.title|truncate:45}
-					</span>
-					<span class="tracking" title="{Label timetracking.ext.tasktab.time_elapsed}">
+					</div>
+					<div class="taskTitle" title="{Label project.ext.project}: {htmlencode $task.project.title} (ID: {$task.id_project}) / {Label project.task.task}: {htmlencode $task.title}">
+						{htmlencode $task.projecttitle|truncate:45} - <strong>{htmlencode(truncate($task.title, 40, '...', true))}</strong>
+					</div>
+					<div class="taskTime" title="{Label timetracking.ext.tasktab.time_elapsed}">
 						{HourMinSec $task.trackedtime}
-					</span>
-				</a>
-
+					</div>
+				</div>
 				{if $task.isTrackable}
-					<span class="start startTracking">{Button onclick="Todoyu.Headlets.getHeadlet('todoyutimetrackingheadlettracking').startTask($task.id)" class="startTracking" label="LLL:timetracking.ext.start" disable=true}</span>
+					<div class="startTracking">
+						{Button onclick="Todoyu.Headlets.getHeadlet('todoyutimetrackingheadlettracking').startTask($task.id)" class="startTracking" label="LLL:timetracking.ext.start" disable=true}
+					</div>
 				{/if}
-				</span>
 			</li>
 		{/foreach}
 	</ul>

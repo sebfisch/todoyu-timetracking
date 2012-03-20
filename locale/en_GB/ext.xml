@@ -18,7 +18,7 @@
 	<label index="currentTask">Current Task</label>
 	<label index="showCurrentTaskInProject">Show task in project</label>
 	<label index="quicktask.workload_done">Time Already Worked</label>
-	<label index="estimated_workload">Est. Workload</label>
+	<label index="estimated_workload">estimated</label>
 	<label index="jumpToTask">Click here to jump to this task</label>
 	<label index="jumpToProject">Click here to jump to this project</label>
 	<label index="extconf.stopOnLogout">Stop time tracking when logging out</label>
