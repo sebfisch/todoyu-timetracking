@@ -13,11 +13,15 @@
 /* ----------------------------------------------
 	Active tracking
    ---------------------------------------------- */
-#todoyutimetrackingheadlettracking li.tracking {
+#todoyutimetrackingheadlettracking > a.button.tracking {
+	background-position:1px -55px;
+}
+
+#todoyutimetrackingheadlettracking .tracking {
 
 }
 
-#todoyutimetrackingheadlettracking li.tracking > div {
+#todoyutimetrackingheadlettracking .tracking > div {
 	display: inline-block;
 }
 
