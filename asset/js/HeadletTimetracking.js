@@ -47,12 +47,20 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 * @property	barClasses
 	 * @type		Object
 	 */
-	barClasses: {
-		100: 'red',
-		90: 'orange',
-		80: 'yellow',
-		0: '#cadb98'
-	},
+	barClasses: [{
+			value: 100,
+			color: 'red'
+		},{
+			value: 90,
+			color: 'orange'
+		},{
+			value: 80,
+			color: 'yellow'
+		},{
+			value: 0,
+			color: '#cadb98'
+		}
+	],
 
 
 
@@ -232,10 +240,10 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 				width:	percent + '%'
 			});
 				// Update sub elements of bar
-			$H(this.barClasses).detect(function(pair){
-				if( percent >= pair.key ) {
+			this.barClasses.detect(function(barClass){
+				if( percent >= barClass.value ) {
 					progressSpan.setStyle({
-						backgroundColor: pair.value
+						backgroundColor: barClass.color
 					});
 					return true;
 				}
