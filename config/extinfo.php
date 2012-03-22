@@ -33,11 +33,11 @@ Todoyu::$CONFIG['EXT']['timetracking']['info'] = array(
 	'state'			=> 'stable',
 	'version'		=> '1.2.0b',
 	'constraints' => array(
-		'depends' => array(
-			'contact'	=> '1.1.0',
+		'core'		=> '2.2.0b',
+		'depends'	=> array(
+			'contact'	=> '1.2.0b',
 			'project' 	=> '1.3.0b'
-		),
-		'conflicts' => array()
+		)
 	),
 	'urlDocumentation'	=> 'http://doc.todoyu.com/?timetracking'
 );
