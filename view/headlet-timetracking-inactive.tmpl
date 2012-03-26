@@ -2,7 +2,7 @@
 	<ul class="inactive">
 		{foreach $tasks task}
 			<li id="{$name}-task-{$task.id}" class="bcStatus{$task.status}">
-				<div class="title" onclick="Todoyu.Ext.project.goToTaskInProject({$task.id})">
+				<div class="title" onclick="Todoyu.Ext.timetracking.Task.goToTask(null, {$task.id}, true)">
 					<div class="taskNumber" title="{Label portal.ext.tasktree.header.tasknumber}: {$task.id_project}.{$task.tasknumber}">
 						{$task.id_project}.{$task.tasknumber}
 					</div>

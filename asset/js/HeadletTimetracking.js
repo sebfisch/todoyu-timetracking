@@ -111,8 +111,6 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 */
 	onButtonClick: function($super, event) {
 		$super(event);
-
-//		this.saveOpenStatus();
 	},
 
 
@@ -137,8 +135,6 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 */
 	hide: function($super) {
 		$super();
-
-//		this.saveOpenStatus();
 	},
 
 
@@ -329,24 +325,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 * @param	{Number}	idTask
 	 */
 	goToTask: function(idProject, idTask) {
-		if( this.isTaskInCurrentView(idTask) ) {
-			$('task-' + idTask).scrollToElement();
-		} else {
-			Todoyu.Ext.project.goToTaskInProject(idTask, idProject);
-		}
-	},
-
-
-
-	/**
-	 * Check whether given task exists in current view
-	 *
-	 * @method	isTaskInCurrentView
-	 * @param	{Number}	idTask
-	 * @return	{Boolean}
-	 */
-	isTaskInCurrentView: function(idTask) {
-		return Todoyu.exists('task-' + idTask);
+		this.ext.goToTask(idProject, idTask);
 	},
 
 

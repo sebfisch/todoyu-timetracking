@@ -381,6 +381,45 @@ Todoyu.Ext.timetracking.Task = {
 	 */
 	toggleList: function(idTask) {
 		Todoyu.Ui.toggle('task-' + idTask + '-timetracks');
+	},
+
+
+
+	/**
+	 * Check whether given task exists in current view
+	 *
+	 * @method	isTaskInCurrentView
+	 * @param	{Number}	idTask
+	 * @return	{Boolean}
+	 */
+	isTaskInCurrentView: function(idTask) {
+		return Todoyu.exists('task-' + idTask);
+	},
+
+
+
+	/**
+	 * Scroll to given task if in current page, otherwise show in project area. Optionally close headlet before going to task
+	 *
+	 * @method	goToTask
+	 * @param	{Number}	idProject
+	 * @param	{Number}	idTask
+	 * @param	{Boolean}	closeHeadletBefore
+	 */
+	goToTask: function(idProject, idTask, closeHeadletBefore) {
+		closeHeadletBefore	= closeHeadletBefore || false;
+
+		if( closeHeadletBefore !== false ) {
+				// Close headlet via AJAX return here after via onComplete reference
+			Todoyu.Headlets.getHeadlet('todoyutimetrackingheadlettracking').hide();
+			Todoyu.Headlets.submitOpenStatus(this.goToTask.bind(this, idProject, idTask, false));
+		} else {
+			if( this.isTaskInCurrentView(idTask) ) {
+				$('task-' + idTask).scrollToElement();
+			} else {
+				Todoyu.Ext.project.goToTaskInProject(idTask, idProject);
+			}
+		}
 	}
 
 };
