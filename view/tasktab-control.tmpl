@@ -3,8 +3,12 @@
 	{Button label=$buttonLabel id="task-$idTask-timetracking-button" class=$class onclick="Todoyu.Ext.timetracking.Task.$function($idTask)" disable=true}
 {/if}
 	<div class="elapsedTime">
-		{Label timetracking.ext.tasktab.time_elapsed}
-		<span id="task-{$idTask}-timetrack-trackedtime">{HourMinSec $totalTrackedTime}</span>
+		{if $totalTrackedTime > 0}
+			{Label timetracking.ext.tasktab.time_elapsed}
+			<span id="task-{$idTask}-timetrack-trackedtime">{HourMinSec $totalTrackedTime}</span>
+		{else}
+			{Label timetracking.ext.noTracksYet}
+		{/if}
 		<span class="timeCurrentSession">
 		| +
 		<span id="task-{$idTask}-timetrack-currentsession">{HourMinSec $trackedTime}</span>
