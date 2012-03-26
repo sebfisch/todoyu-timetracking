@@ -32,6 +32,9 @@ h1.extIconTimetracking .title {
 .task.running > h3 {
 	background-color:#f2f2d2;
 }
+.task.running.expanded > h3 {
+	background-color:#e6e6c7;
+}
 .task.running > h3 .headLabel span {
 	font-weight:bold;
 }
