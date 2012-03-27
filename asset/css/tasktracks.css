@@ -6,52 +6,57 @@
 	background:#fff;
 }
 
-.task .timetracks ul {
+.task .timetracks .tracksList {
 	margin:0;
 	padding:0;
 	border-top:1px solid #ddd;
 }
 
-.task .timetracks ul li {
+.task .timetracks .tracksList .track {
 	padding:2px;
 }
 
-.task .timetracks ul li span {
+.task .timetracks .tracksList .track span.link {
+	cursor: pointer;
+}
+
+.task .timetracks .tracksList .track span {
 	display:inline-block;
 }
 
-.task .timetracks ul li span.icon {
+.task .timetracks .tracksList .track span.icon {
 	margin-right:5px;
 }
 
-.task .timetracks ul li.edit:hover > span.icon {
-	cursor:pointer;
+.task .timetracks .tracksList .track.edit:hover > .link > span.icon {
 	background:url(../../../../core/asset/img/icons.png) no-repeat 3px -776px;
 }
 
-.task .timetracks ul li span.date {
+.task .timetracks .tracksList .track span.date {
 	width:45px;
 	margin-right:8px;
 }
 
-.task .timetracks ul li span.trackedTime {
-	width:65px;
-	margin-right:8px;
+.task .timetracks .tracksList .track span.trackedTime {
+	width:45px;
+	margin-right: 4px;
+}
+.task .timetracks .tracksList .track span.trackedTime.hasChargeableTime {
+	color: #999;
+}
+.task .timetracks .tracksList .track span.chargeableTime {
+	width:45px;
+	margin-right: 10px;
 }
 
-.task .timetracks ul li span.trackedTime.chargeableTime {
-	font-weight:bold;
-	cursor:help;
-	background:url(../img/icons.png) no-repeat 45px -330px;
+.task .timetracks .tracksList .track span.name {
+	width:130px;
+	margin-right:10px;
+	margin-left:10px;
 }
 
-.task .timetracks ul li span.name {
-	width:150px;
-	margin-right:8px;
-}
-
-.task .timetracks ul li span.comment {
-	width:320px;
+.task .timetracks .tracksList .track span.comment {
+	width:280px;
 }
 
 

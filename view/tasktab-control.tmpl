@@ -1,18 +1,25 @@
-<div class="tabBlock timetrackingButtons">
 {if $trackable || $running}
 	{Button label=$buttonLabel id="task-$idTask-timetracking-button" class=$class onclick="Todoyu.Ext.timetracking.Task.$function($idTask)" disable=true}
 {/if}
-	<div class="elapsedTime">
+
+<div class="trackingInfo">
+	<span class="trackedTime">
 		{if $totalTrackedTime > 0}
-			{Label timetracking.ext.tasktab.time_elapsed}
-			<span id="task-{$idTask}-timetrack-trackedtime">{HourMinSec $totalTrackedTime}</span>
+			<span class="label">{Label timetracking.ext.tasktab.time_elapsed}</span>
+			<span id="task-{$idTask}-timetrack-trackedtime" class="time">{HourMinSec $totalTrackedTime}</span>
 		{else}
-			{Label timetracking.ext.noTracksYet}
+			<span>{Label timetracking.ext.noTracksYet}</span>
 		{/if}
-		<span class="timeCurrentSession">
-		| +
-		<span id="task-{$idTask}-timetrack-currentsession">{HourMinSec $trackedTime}</span>
-		</span>
-	</div>
-	<div class="clear"><!-- //--></div>
+	</span>
+	<span class="currentTime">
+		<span class="label">| +</span>
+		<span id="task-{$idTask}-timetrack-currentsession" class="time">{HourMinSec $trackedTime}</span>
+	</span>
+	{if $totalChargeableTime}
+	<span class="totalChargeableTime">
+		<span class="label">Verrechenbar:</span>
+		<span class="time">{HourMinSec $totalChargeableTime}</span>
+	</span>
+	{/if}
 </div>
+<div class="clear"><!-- //--></div>

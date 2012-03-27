@@ -1,13 +1,15 @@
 {if sizeof($tracks) > 0}
 	<ul class="ulList tracksList ulListDotted" id="task-{$idTask}-timetracks-list">
 		{foreach $tracks track}
-			{$hasChargeableTime = $track.workload_chargeable}
-			<li id="task-{$track.id_task}-track-{$track.id}" class="listItem {cycle values="odd,even"} {if $track.editable}contextmenuTrack edit{/if}">
-				<span class="icon" {if $track.editable}onclick="Todoyu.Ext.timetracking.Task.editTrack({$idTask}, {$track.id})"{/if}></span>
-				<span class="date">{dateFormat $track.date_track D2M2Y2}</span>
-				<span class="trackedTime {if $hasChargeableTime}chargeableTime{/if}" {if $hasChargeableTime}title="{Label timetracking.ext.attr.workload_chargeable}: {HourMinSec $track.workload_chargeable}"{/if}>{HourMinSec $track.workload_tracked}</span>
-				<span class="name">{personLabel idPrefix="track_personowner" idRecord="$track.id" idPerson=$track.id_person_create}</span>
-				<span class="comment">{htmlencode $track.comment}</span>
+			<li id="task-{$track.id_task}-track-{$track.id}" class="listItem track {cycle values="odd,even"} {if $track.editable}contextmenuTrack edit{/if}">
+				<span class="link" {if $track.editable}onclick="Todoyu.Ext.timetracking.Task.editTrack({$idTask}, {$track.id})"{/if}">
+					<span class="icon"></span>
+					<span class="date">{dateFormat $track.date_track D2M2Y2}</span>
+					<span class="trackedTime{if $track.workload_chargeable} hasChargeableTime{/if}">{HourMinSec $track.workload_tracked}</span>
+					<span class="chargeableTime">{if $track.workload_chargeable}{HourMinSec $track.workload_chargeable}{else}&nbsp;{/if}</span>
+					<span class="name">{personLabel idPrefix="track_personowner" idRecord="$track.id" idPerson=$track.id_person_create}</span>
+					<span class="comment">{htmlencode $track.comment}</span>
+				</span>
 			</li>
 		{/foreach}
 	</ul>

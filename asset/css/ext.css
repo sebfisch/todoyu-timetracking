@@ -10,6 +10,18 @@ h1.extIconTimetracking .title {
 }
 
 
+button.startTracking .icon {
+	background:url(../img/icons.png) no-repeat 3px -28px;
+	width:26px;
+}
+
+button.stopTracking .icon {
+	background:url(../img/icons.png) no-repeat 3px 2px;
+	width:26px;
+}
+
+
+
 
 /* ------------------------------
 	Task context menu
@@ -48,40 +60,42 @@ h1.extIconTimetracking .title {
 		width:14px !important;
 	}
 
-/* Time tracking tab in task */
-.taskTabs div.timetracking {
-	background:#fff;
-}
 
-div.timetrackform {
-	font-weight:bold;
-}
 
+
+/* --------------------
+	Task tab
+   -------------------- */
 span.notracksyet {
 	padding-left:5px;
 }
 
-div.tabBlock .timetrackingButtons .button {
+
+.taskTabs .trackingControl .button {
 	margin-right:5px;
 	float:left;
 }
 
-div.tabBlock .timetrackingButtons .elapsedTime {
+.taskTabs .trackingControl .trackingInfo {
 	margin:5px 0 0 5px;
 	float:left;
 }
 
-button.startTracking .icon,
-div.tabBlock .timetrackingButtons button.startTracking .icon {
-	background:url(../img/icons.png) no-repeat 3px -28px;
-	width:26px;
+.taskTabs .trackingControl .trackingInfo span {
+	display: inline-block;
 }
 
-button.stopTracking .icon,
-div.tabBlock .timetrackingButtons button.stopTracking .icon {
-	background:url(../img/icons.png) no-repeat 3px 2px;
-	width:26px;
+.taskTabs .trackingControl .trackingInfo span .label {
+	margin-right:3px;
 }
+
+.taskTabs .trackingControl .trackingInfo .time {
+	font-weight: bold;
+}
+.taskTabs .trackingControl .trackingInfo .totalChargeableTime {
+	margin-left:20px;
+}
+
 
 
 

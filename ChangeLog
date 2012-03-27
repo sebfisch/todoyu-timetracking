@@ -1,10 +1,10 @@
 todoyu timetracking changelog
 
 timetracking 1.2.0 - not released yet
-	* Bugfix: More than 999% tracked breaks line out of tracking headlet
 	* Added: Person filter widgets: has tracked time in project, tracked time for customer
 	* Added: Show info about chargeable workload in track in the tracks list
 	* Changed: After jumping to task from headlet the headlet popout is now closed
+	* Changed: Show chargeable time in tracking list
 
 timetracking 1.1.4 - not released yet
 	* Changed: made also status "rejected" and "waiting" trackable

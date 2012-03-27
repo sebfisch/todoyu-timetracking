@@ -39,9 +39,9 @@ class TodoyuTimetrackingRenderer {
 
 		$tmpl	= 'ext/timetracking/view/tasktab.tmpl';
 		$data	= array(
-			'idTask'	=> $idTask,
-			'control'	=> $control,
-			'list'		=> $list
+			'idTask'			=> $idTask,
+			'trackingControl'	=> $control,
+			'tracksList'		=> $list
 		);
 
 		return Todoyu::render($tmpl, $data);
@@ -62,8 +62,9 @@ class TodoyuTimetrackingRenderer {
 		$tmpl	= 'ext/timetracking/view/tasktab-control.tmpl';
 		$data	= array(
 			'idTask' => $idTask,
-			'totalTrackedTime'	=> TodoyuTimetracking::getTrackedTaskTimeTotal($idTask),
-			'trackable'			=> TodoyuTimetracking::isTrackableStatus($task->getStatus())
+			'totalTrackedTime'		=> TodoyuTimetracking::getTrackedTaskTimeTotal($idTask),
+			'totalChargeableTime'	=> TodoyuTimetracking::getTrackedTaskTimeTotal($idTask, true),
+			'trackable'				=> TodoyuTimetracking::isTrackableStatus($task->getStatus())
 		);
 
 		if( TodoyuTimetracking::isTaskRunning($idTask) ) {
