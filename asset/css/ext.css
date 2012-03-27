@@ -74,13 +74,13 @@ div.tabBlock .timetrackingButtons .elapsedTime {
 button.startTracking .icon,
 div.tabBlock .timetrackingButtons button.startTracking .icon {
 	background:url(../img/icons.png) no-repeat 3px -28px;
-	width:22px;
+	width:26px;
 }
 
 button.stopTracking .icon,
 div.tabBlock .timetrackingButtons button.stopTracking .icon {
 	background:url(../img/icons.png) no-repeat 3px 2px;
-	width:22px;
+	width:26px;
 }
 
 

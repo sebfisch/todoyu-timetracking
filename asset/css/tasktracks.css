@@ -1,22 +1,3 @@
-/****************************************************************************
-* todoyu is published under the BSD License:
-* http://www.opensource.org/licenses/bsd-license.php
-*
-* Copyright (c) 2012, snowflake productions GmbH, Switzerland
-* All rights reserved.
-*
-* This script is part of the todoyu project.
-* The todoyu project is free software; you can redistribute it and/or modify
-* it under the terms of the BSD License.
-*
-* This script is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the BSD License
-* for more details.
-*
-* This copyright notice MUST APPEAR in all copies of the script.
-*****************************************************************************/
-
 /* -------------------------
 	Task time tracks
    ------------------------- */
@@ -36,37 +17,37 @@
 }
 
 .task .timetracks ul li span {
-	display: inline-block;
+	display:inline-block;
 }
 
 .task .timetracks ul li span.icon {
-	margin-right: 5px;
+	margin-right:5px;
 }
 
 .task .timetracks ul li.edit:hover > span.icon {
-	cursor: pointer;
+	cursor:pointer;
 	background:url(../../../../core/asset/img/icons.png) no-repeat 3px -776px;
 }
 
 .task .timetracks ul li span.date {
 	width:45px;
-	margin-right: 8px;
+	margin-right:8px;
 }
 
 .task .timetracks ul li span.trackedTime {
 	width:65px;
-	margin-right: 8px;
+	margin-right:8px;
 }
 
 .task .timetracks ul li span.trackedTime.chargeableTime {
-	font-weight: bold;
-	cursor: help;
+	font-weight:bold;
+	cursor:help;
 	background:url(../img/icons.png) no-repeat 45px -330px;
 }
 
 .task .timetracks ul li span.name {
 	width:150px;
-	margin-right: 8px;
+	margin-right:8px;
 }
 
 .task .timetracks ul li span.comment {
@@ -78,8 +59,8 @@
 	Track Form
    -------------------- */
 .task .tabContent .formTimetrack {
-	background:#FFF;
-	border: 1px solid #CCC;
+	background:#fff;
+	border:1px solid #ccc;
 	padding:5px 5px 10px 5px;
 }
 .task .tabContent .formTimetrack legend {
