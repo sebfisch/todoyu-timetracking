@@ -3,6 +3,7 @@
 	<label index="ext.title">Zeiterfassung</label>
 	<label index="title">Zeiterfassung</label>
 	<label index="noTracksYet">Noch keine Zeiterfassungen.</label>
+	<label index="chargeable">Verrechenbar</label>
 	<label index="attr.date_create">Datum</label>
 	<label index="attr.date_track">Datum</label>
 	<label index="attr.workload_tracked">Arbeitsaufwand</label>
