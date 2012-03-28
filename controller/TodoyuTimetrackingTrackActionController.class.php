@@ -76,10 +76,6 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 
 
 
-
-
-
-
 	/**
 	 * Start timetracking for task
 	 *
@@ -114,6 +110,21 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 		TodoyuTimetracking::stopTask();
 	}
 
+
+
+	/**
+	 * Render given track of task
+	 *
+	 * @param	Array	$params
+	 */
+	public function updateAction(array $params) {
+		$idTask	= intval($params['task']);
+		$idTrack= intval($params['track']);
+
+		TodoyuProjectTaskRights::restrictSee($idTask);
+
+		return TodoyuTimetrackingRenderer::renderTrack($idTrack);
+	}
 }
 
 ?>

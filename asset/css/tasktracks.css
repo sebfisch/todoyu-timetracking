@@ -28,7 +28,7 @@
 	margin-right:5px;
 }
 
-.task .timetracks .tracksList .track.edit:hover > .link > span.icon {
+.task .timetracks .tracksList .track.edit {
 	background:url(../../../../core/asset/img/icons.png) no-repeat 3px -776px;
 }
 
