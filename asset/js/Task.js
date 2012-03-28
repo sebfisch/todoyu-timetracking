@@ -375,7 +375,7 @@ Todoyu.Ext.timetracking.Task = {
 	 * @param	{Ajax.Response}	response
 	 */
 	onTrackSaved: function(idTask, idTrack, response) {
-		this.updateTab(idTask);
+		this.updateTrack(idTask, idTrack);
 	},
 
 
