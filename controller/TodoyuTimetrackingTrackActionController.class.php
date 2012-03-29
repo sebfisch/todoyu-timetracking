@@ -95,7 +95,6 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 
 		TodoyuHeader::sendTodoyuHeader('trackedTotal', $trackedTotal);
 		TodoyuHeader::sendTodoyuHeader('trackedToday', $trackedToday);
-
 		TodoyuHeader::sendTodoyuHeader('taskData', $task->getTemplateData());
 	}
 
@@ -116,6 +115,7 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 	 * Render given track of task
 	 *
 	 * @param	Array	$params
+	 * @return	String
 	 */
 	public function updateAction(array $params) {
 		$idTask	= intval($params['task']);
@@ -125,6 +125,7 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 
 		return TodoyuTimetrackingRenderer::renderTrack($idTrack);
 	}
+
 }
 
 ?>
