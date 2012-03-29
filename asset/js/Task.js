@@ -382,11 +382,18 @@ Todoyu.Ext.timetracking.Task = {
 	},
 
 
+
+	/**
+	 * Update chargable time value
+	 *
+	 * @param	{Number}	idTask
+	 * @param	{Number}	time
+	 */
 	updateChargeableTime: function(idTask, time) {
 		var valueElement		= $('task-' + idTask + '-timetrack-chargeabletime');
 
 		if( valueElement ) {
-			valueElement.update(Todoyu.Time.timeFormatSeconds(totalChargeableTime));
+			valueElement.update(Todoyu.Time.timeFormatSeconds(time));
 		}
 	},
 
