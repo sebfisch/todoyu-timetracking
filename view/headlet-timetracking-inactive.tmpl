@@ -9,7 +9,7 @@
 					<div class="taskTitle" title="{Label project.ext.project}: {htmlencode $task.project.title} (ID: {$task.id_project}) / {Label project.task.task}: {htmlencode $task.title}">
 						{htmlencode $task.projecttitle|truncate:45} - <strong>{htmlencode(truncate($task.title, 40, '...', true))}</strong>
 					</div>
-					<div class="taskTime" title="{Label timetracking.ext.tasktab.time_elapsed}">
+					<div class="taskTime" title="{Label timetracking.ext.totalTrackedTime}">
 						{HourMinSec $task.trackedtime}
 					</div>
 				</div>

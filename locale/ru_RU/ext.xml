@@ -11,7 +11,7 @@
 	<label index="search.label">Учёт времени</label>
 	<label index="task.attr.overtimed">Задача перегружена</label>
 	<label index="headlet.label">Учёт времени</label>
-	<label index="tasktab.time_elapsed">Всего учтено времени</label>
+	<label index="totalTrackedTime">Всего учтено времени</label>
 	<label index="tasktab.edit">Нажмите тут для редактирования</label>
 	<label index="start">Начать учёт времени</label>
 	<label index="stop">Остановить учёт времени</label>

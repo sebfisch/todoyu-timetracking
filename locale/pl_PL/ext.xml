@@ -11,7 +11,7 @@
 	<label index="search.label">Śledzenie czasu</label>
 	<label index="task.attr.overtimed">Zadanie zawyżone</label>
 	<label index="headlet.label">Śledzenie czasu</label>
-	<label index="tasktab.time_elapsed">Całkowity prześledzonyc czas</label>
+	<label index="totalTrackedTime">Całkowity prześledzonyc czas</label>
 	<label index="tasktab.edit">Kliknij tu, aby edytować ten zapis</label>
 	<label index="start">Rozpocznij śledzenie czasu</label>
 	<label index="stop">Zakończ śledzenie czasu</label>

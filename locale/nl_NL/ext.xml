@@ -11,7 +11,7 @@
 	<label index="search.label">Urenregistratie</label>
 	<label index="task.attr.overtimed">Taak is overboekt</label>
 	<label index="headlet.label">Urenregistratie</label>
-	<label index="tasktab.time_elapsed">Totaal geregistreerde uren</label>
+	<label index="totalTrackedTime">Totaal geregistreerde uren</label>
 	<label index="tasktab.edit">Klik hier om het record te bewerken</label>
 	<label index="start">Urenregistratie starten</label>
 	<label index="stop">Urenregistratie stoppen</label>

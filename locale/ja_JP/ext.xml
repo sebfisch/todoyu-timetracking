@@ -11,7 +11,7 @@
 	<label index="search.label">作業時間の記録</label>
 	<label index="task.attr.overtimed">タスクの衝突</label>
 	<label index="headlet.label">作業時間の記録</label>
-	<label index="tasktab.time_elapsed">作業時間の合計</label>
+	<label index="totalTrackedTime">作業時間の合計</label>
 	<label index="tasktab.edit">レコードを編集する</label>
 	<label index="start">作業時間を記録する</label>
 	<label index="stop">作業時間の記録を停止する</label>

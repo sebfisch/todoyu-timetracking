@@ -11,7 +11,7 @@
 	<label index="search.label">Tracciamento temporale</label>
 	<label index="task.attr.overtimed">Durata eccessiva attività</label>
 	<label index="headlet.label">Tracciamento temporale</label>
-	<label index="tasktab.time_elapsed">Tempo totale tracciato</label>
+	<label index="totalTrackedTime">Tempo totale tracciato</label>
 	<label index="tasktab.edit">Cliccare qui per modificare questo record</label>
 	<label index="start">Avvia il tracciamento temporale</label>
 	<label index="stop">Arresta il tracciamento temporale</label>

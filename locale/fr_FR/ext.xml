@@ -9,7 +9,7 @@
 	<label index="attr.workload_chargeable">Imputable</label>
 	<label index="attr.comment">Commentaire</label>
 	<label index="task.attr.overtimed">Tâche en sur-réservation</label>
-	<label index="tasktab.time_elapsed">Temps total suivi</label>
+	<label index="totalTrackedTime">Temps total suivi</label>
 	<label index="tasktab.edit">Cliquez ici pour modifier l'enregistrement</label>
 	<label index="start">Démarrer le suivi du temps</label>
 	<label index="stop">Arrêter le suivi du temps</label>

@@ -11,7 +11,7 @@
 	<label index="search.label">Забељежавање времена</label>
 	<label index="task.attr.overtimed">Време прекорачено</label>
 	<label index="headlet.label">Забељежавање времена</label>
-	<label index="tasktab.time_elapsed">Тотално забељежено време</label>
+	<label index="totalTrackedTime">Тотално забељежено време</label>
 	<label index="tasktab.edit">Кликни овде да би изменуо забељежено</label>
 	<label index="start">Покрени забељежавање времена</label>
 	<label index="stop">Заустави забељежавање времена</label>

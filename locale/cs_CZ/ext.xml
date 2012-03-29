@@ -11,7 +11,7 @@
 	<label index="search.label">Sledování času</label>
 	<label index="task.attr.overtimed">Úkol Overbooked</label>
 	<label index="headlet.label">Sledování času</label>
-	<label index="tasktab.time_elapsed">Celkový zaznamenaný čas</label>
+	<label index="totalTrackedTime">Celkový zaznamenaný čas</label>
 	<label index="tasktab.edit">Pro úpravu záznamu klikněte zde</label>
 	<label index="start">Začít sletovat čas</label>
 	<label index="stop">Ukončít sledování času</label>

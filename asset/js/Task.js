@@ -375,7 +375,19 @@ Todoyu.Ext.timetracking.Task = {
 	 * @param	{Ajax.Response}	response
 	 */
 	onTrackSaved: function(idTask, idTrack, response) {
+		var totalChargeableTime = response.getTodoyuHeader('chargeableTime');
+
+		this.updateChargeableTime(idTask, totalChargeableTime);
 		this.updateTrack(idTask, idTrack);
+	},
+
+
+	updateChargeableTime: function(idTask, time) {
+		var valueElement		= $('task-' + idTask + '-timetrack-chargeabletime');
+
+		if( valueElement ) {
+			valueElement.update(Todoyu.Time.timeFormatSeconds(totalChargeableTime));
+		}
 	},
 
 

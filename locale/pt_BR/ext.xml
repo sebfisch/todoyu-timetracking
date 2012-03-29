@@ -11,7 +11,7 @@
 	<label index="search.label">Gestão de Horas</label>
 	<label index="task.attr.overtimed">Tarefa Overbooked</label>
 	<label index="headlet.label">Gestão de Horas</label>
-	<label index="tasktab.time_elapsed">Total de Horas</label>
+	<label index="totalTrackedTime">Total de Horas</label>
 	<label index="tasktab.edit">Click Aqui para Editar Este Registro</label>
 	<label index="start">Iniciar Gestão de Horas</label>
 	<label index="stop">Parar Gestão de Horas</label>

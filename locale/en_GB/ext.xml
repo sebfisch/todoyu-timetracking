@@ -12,7 +12,8 @@
 	<label index="search.label">Time Tracking</label>
 	<label index="task.attr.overtimed">Task Overbooked</label>
 	<label index="headlet.label">Time Tracking</label>
-	<label index="tasktab.time_elapsed">Total Tracked Time</label>
+	<label index="totalTrackedTime">Total Tracked Time</label>
+	<label index="totalChargeableTime">Total Chargeable Time</label>
 	<label index="tasktab.edit">Click here to edit this record</label>
 	<label index="start">Start Time Tracking</label>
 	<label index="stop">Stop Time Tracking</label>

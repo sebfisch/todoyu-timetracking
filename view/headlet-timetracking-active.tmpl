@@ -8,8 +8,8 @@
 		</a>
 	</div>
 	<div class="taskTime">
-		<div class="tracking" title="{Label LLL:timetracking.ext.tasktab.time_elapsed}">
-			{Label LLL:timetracking.ext.tasktab.time_elapsed} {HourMinSec $tracked} + <span id="{$name}-tracking" class="currentTracking">{HourMinSec $tracking}</span>
+		<div class="tracking">
+			{Label LLL:timetracking.ext.totalTrackedTime} {HourMinSec $tracked} + <span id="{$name}-tracking" class="currentTracking">{HourMinSec $tracking}</span>
 		</div>
 		<div class="percent">
 			<span class="number" id="{$name}-percent">{$percent}%</span>

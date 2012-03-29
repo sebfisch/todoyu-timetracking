@@ -3,23 +3,25 @@
 {/if}
 
 <div class="trackingInfo">
+
 	<span class="trackedTime">
 		{if $totalTrackedTime > 0}
-			<span class="label">{Label timetracking.ext.tasktab.time_elapsed}</span>
+			<span class="label">{Label timetracking.ext.totalTrackedTime}</span>
 			<span id="task-{$idTask}-timetrack-trackedtime" class="time">{HourMinSec $totalTrackedTime}</span>
 		{else}
 			<span>{Label timetracking.ext.noTracksYet}</span>
 		{/if}
 	</span>
+
 	<span class="currentTime">
 		<span class="label">| +</span>
 		<span id="task-{$idTask}-timetrack-currentsession" class="time">{HourMinSec $trackedTime}</span>
 	</span>
-	{if $totalChargeableTime}
+
 	<span class="totalChargeableTime">
-		<span class="label">{Label timetracking.ext.chargeable}:</span>
-		<span class="time">{HourMinSec $totalChargeableTime}</span>
+		<span class="label">{Label timetracking.ext.totalChargeableTime}:</span>
+		<span class="time" id="task-{$idTask}-timetrack-chargeabletime">{HourMinSec $totalChargeableTime}</span>
 	</span>
-	{/if}
+	
 </div>
 <div class="clear"><!-- //--></div>
