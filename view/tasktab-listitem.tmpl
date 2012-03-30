@@ -1,4 +1,4 @@
-<span class="link" {if $track.editable}onclick="Todoyu.Ext.timetracking.Task.editTrack({$idTask}, {$track.id})"{/if}">
+<span {if $track.editable}class="link" onclick="Todoyu.Ext.timetracking.Task.editTrack({$idTask}, {$track.id})"{/if}>
 	<span class="icon"></span>
 	<span class="date">{dateFormat $track.date_track D2M2Y2}</span>
 	<span class="trackedTime{if $track.workload_chargeable} hasChargeableTime{/if}">{HourMinSec $track.workload_tracked}</span>
