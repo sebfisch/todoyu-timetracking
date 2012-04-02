@@ -138,30 +138,6 @@ class TodoyuTimetrackingManager {
 
 
 	/**
-	 * Get project task info icons
-	 *
-	 * @param	Array		$icons
-	 * @param	Integer		$idTask
-	 * @return	Array
-	 */
-	public static function getTaskIcons(array $icons, $idTask) {
-		$idTask	= intval($idTask);
-
-		if( self::isTaskOvertimed($idTask) ) {
-			$icons['overtimed'] = array(
-				'id'		=> 'task-' . $idTask . '-overtimed',
-				'class'		=> 'overtimed',
-				'label'		=> 'timetracking.ext.task.attr.overtimed',
-				'position'	=> 20
-			);
-		}
-
-		return $icons;
-	}
-
-
-
-	/**
 	 * Check whether task is over-timed
 	 *
 	 * @param	Integer		$idTask
