@@ -17,7 +17,7 @@
 }
 
 .task .timetracks .tracksList .track span.link {
-	cursor: pointer;
+	cursor:pointer;
 }
 
 .task .timetracks .tracksList .track span {
@@ -39,14 +39,14 @@
 
 .task .timetracks .tracksList .track span.trackedTime {
 	width:45px;
-	margin-right: 4px;
+	margin-right:4px;
 }
 .task .timetracks .tracksList .track span.trackedTime.hasChargeableTime {
-	color: #999;
+	color:#999;
 }
 .task .timetracks .tracksList .track span.chargeableTime {
 	width:45px;
-	margin-right: 10px;
+	margin-right:10px;
 }
 
 .task .timetracks .tracksList .track span.name {

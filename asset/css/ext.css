@@ -82,7 +82,7 @@ span.notracksyet {
 }
 
 .taskTabs .trackingControl .trackingInfo span {
-	display: inline-block;
+	display:inline-block;
 }
 
 .taskTabs .trackingControl .trackingInfo span .label {
@@ -90,7 +90,7 @@ span.notracksyet {
 }
 
 .taskTabs .trackingControl .trackingInfo .time {
-	font-weight: bold;
+	font-weight:bold;
 }
 .taskTabs .trackingControl .trackingInfo .totalChargeableTime {
 	margin-left:20px;
