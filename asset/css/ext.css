@@ -115,7 +115,7 @@ span.notracksyet {
 .task .taskTabs .tabs .timetracking .icon {
 	background:url(../img/icons.png) no-repeat 0 -205px;
 }
-.task.running > .details .taskTabs .tabs  .timetracking .icon {
+.task.running > .details .taskTabs .tabs .timetracking .icon {
 	background-position:0 5px;
 }
 
