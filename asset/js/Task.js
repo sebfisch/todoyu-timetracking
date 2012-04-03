@@ -274,6 +274,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Handle track list updated
 	 *
+	 * @method	onTrackListUpdated
 	 * @param	{Number}		idTask
 	 * @param	{Ajax.Response}	response
 	 */
@@ -386,6 +387,7 @@ Todoyu.Ext.timetracking.Task = {
 	/**
 	 * Update chargable time value
 	 *
+	 * @method	updateChargeableTime
 	 * @param	{Number}	idTask
 	 * @param	{Number}	time
 	 */
