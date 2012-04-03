@@ -65,12 +65,20 @@ class TodoyuTimetrackingHeadletTracking extends TodoyuHeadletTypeOverlay {
 		$totalTracked	= TodoyuTimetracking::getTrackedTaskTimeTotal($task->getID(), false, true);
 
 		$tmpl	= 'ext/timetracking/view/headlet-timetracking-active.tmpl';
+
+		$estimatedWorkload	= $task->getEstimatedWorkload();
+		if( $estimatedWorkload > 0 ) {
+			$percentTracked = round(($totalTracked / $estimatedWorkload) * 100, 0);
+		} else {
+			$percentTracked	= 0;
+		}
+
 		$data	= array(
 			'name'		=> $this->getName(),
 			'task'		=> $task->getTemplateData(2),
 			'tracked'	=> TodoyuTimetracking::getTrackedTaskTimeTotal($task->getID()),
 			'tracking'	=> TodoyuTimetracking::getTrackedTime(),
-			'percent'	=> round(($totalTracked/$task->getEstimatedWorkload())*100, 0)
+			'percent'	=> $percentTracked
 		);
 
 		return Todoyu::render($tmpl, $data);
