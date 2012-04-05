@@ -39,6 +39,10 @@
 	height:15px;
 }
 
+#todoyutimetrackingheadlettracking .tracking .taskDetails a:hover {
+	background-color:#E2E2E2;
+}
+
 #todoyutimetrackingheadlettracking .tracking .taskTime {
 	width:240px;
 	margin-left:5px;
