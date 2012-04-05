@@ -212,6 +212,7 @@ Todoyu.Ext.timetracking.Task = {
 	},
 
 
+
 	/**
 	 * @method	updateTrack
 	 * @param	{Integer}	idTask
@@ -269,6 +270,7 @@ Todoyu.Ext.timetracking.Task = {
 
 		Todoyu.Ui.update(target, url, options);
 	},
+
 
 
 	/**
