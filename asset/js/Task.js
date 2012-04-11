@@ -429,19 +429,6 @@ Todoyu.Ext.timetracking.Task = {
 
 
 	/**
-	 * Check whether given task exists in current view
-	 *
-	 * @method	isTaskInCurrentView
-	 * @param	{Number}	idTask
-	 * @return	{Boolean}
-	 */
-	isTaskInCurrentView: function(idTask) {
-		return Todoyu.exists('task-' + idTask);
-	},
-
-
-
-	/**
 	 * Scroll to given task if in current page, otherwise show in project area. Optionally close headlet before going to task
 	 *
 	 * @method	goToTask
@@ -457,12 +444,28 @@ Todoyu.Ext.timetracking.Task = {
 			Todoyu.Headlets.getHeadlet('todoyutimetrackingheadlettracking').hide();
 			Todoyu.Headlets.submitOpenStatus(this.goToTask.bind(this, idProject, idTask, false));
 		} else {
-			if( this.isTaskInCurrentView(idTask) ) {
-				$('task-' + idTask).scrollToElement();
+			if( 	(Todoyu.getArea() !== 'project' && Todoyu.Ext.project.Task.isTaskInCurrentView(idTask))
+				||	(Todoyu.getArea() === 'project' && Todoyu.Ext.project.Task.isProjectOfTaskVisible(idTask))
+			) {
+				Todoyu.Ext.project.Task.scrollTo(idTask);
 			} else {
 				Todoyu.Ext.project.goToTaskInProject(idTask, idProject);
 			}
 		}
+	},
+
+
+
+	/**
+	 * Check whether task element exists within current view
+	 * Wrapper for backwards compatibility
+	 *
+	 * @deprecated
+	 * @method	isTaskInCurrentView
+	 * @return	{Boolean}
+	 */
+	isTaskInCurrentView: function(idTask) {
+		return Todoyu.Ext.project.Task.isTaskInCurrentView(idTask);
 	}
 
 };
