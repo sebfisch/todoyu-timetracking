@@ -8,6 +8,9 @@
 	padding:2px;
 	padding-top:3px;
 }
+	#todoyutimetrackingheadlettracking .content li {
+		min-height:18px;
+	}
 
 
 /* ----------------------------------------------
@@ -136,6 +139,9 @@
 	width:50px;
 }
 
+#todoyutimetrackingheadlettracking .startTracking {
+	margin:2px;
+}
 #todoyutimetrackingheadlettracking .inactive .startTracking {
 	position:absolute;
 	top:0;
