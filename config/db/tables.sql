@@ -16,7 +16,7 @@ CREATE TABLE `ext_timetracking_track` (
 	 KEY `task` (`id_task`),
 	 KEY `persondate` (`date_track`,`id_person_create`),
 	 KEY `multi` (`id_person_create`,`date_track`,`id_task`,`date_create`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -43,4 +43,4 @@ CREATE TABLE `ext_timetracking_active` (
 CREATE TABLE `ext_project_taskpreset` (
 	`ext_timetracking_start_tracking` tinyint(1) unsigned NOT NULL default '0',
 	`ext_timetracking_workload_done` int(10) unsigned NOT NULL default '0'
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
