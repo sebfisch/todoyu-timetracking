@@ -26,9 +26,6 @@
  * @see			TodoyuTimetrackingManager::hookLoadContactFilterConfig
  */
 
-if( ! Todoyu::allowed('contact', 'general:area') ) {
-	return;
-}
 
 	// Persons tracked time in project
 Todoyu::$CONFIG['FILTERS']['PERSON']['widgets']['trackedinproject'] = array(
