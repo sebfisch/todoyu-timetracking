@@ -135,25 +135,19 @@ Todoyu.Ext.timetracking.PageTitle = {
 	 *
 	 * @method	update
 	 * @param	{Boolean}		show			Show time tracking info
-	 * @param	{String}		taskNumber		Task number (incl. project)
-	 * @param	{String}		taskTitle		Task title
-	 * @param	{Number}		time			Seconds of current tracking
-	 * @param	{Number}		percent
+	 * @param	{String}		[taskNumber]	Task number (incl. project)
+	 * @param	{String}		[taskTitle]		Task title
+	 * @param	{Number}		[time]			Seconds of current tracking
+	 * @param	{Number}		[percent]
 	 */
 	update: function(show, taskNumber, taskTitle, time, percent) {
-		if( taskNumber.indexOf('undefined') != -1 ) {
-			taskNumber	= 'TASK MISSING';
-		}
-		taskTitle	= taskTitle || '';
-
 		var blankTitle	= Todoyu.Ui.getTitle().split(' - [').first();
 		var trackInfo	= '';
 
 		if( show === true ) {
-			var timeStr		= time !== undefined ? Todoyu.Time.timeFormatSeconds(time) : '';
-			var percentStr	= percent !== undefined ? ' - ' + percent + '%' : '';
-
-			trackInfo	= ' - [' + taskNumber + taskTitle.substr(0, 50) + ' [' + timeStr + percentStr + ']';
+			var timeStr		= Todoyu.Time.timeFormatSeconds(time);
+			var percentStr	= percent + '%';
+			trackInfo		= ' - [' + taskNumber + ': ' +  taskTitle.substr(0, 50) + ' | ' + timeStr + ' | ' + percentStr + ']';
 		}
 
 		Todoyu.Ui.setTitle(blankTitle + trackInfo);
