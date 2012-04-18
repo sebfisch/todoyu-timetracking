@@ -8,9 +8,6 @@
 	padding:2px;
 	padding-top:3px;
 }
-	#todoyutimetrackingheadlettracking .content li {
-		min-height:18px;
-	}
 
 
 /* ----------------------------------------------
@@ -113,6 +110,7 @@
 	padding:5px;
 	background-color:#fff;
 	position:relative;
+	height:15px;
 }
 
 #todoyutimetrackingheadlettracking .inactive > li > div {
@@ -140,7 +138,7 @@
 }
 
 #todoyutimetrackingheadlettracking .startTracking {
-	margin:2px;
+	margin-top:1px;
 }
 #todoyutimetrackingheadlettracking .inactive .startTracking {
 	position:absolute;
