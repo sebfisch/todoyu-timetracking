@@ -87,12 +87,13 @@
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>css=div#content-body div.taskList div#tasks.tasks div#task-33.task span.bcStatus2</td>
+	<td>//div[@id=&quot;task-33&quot;]</td>
 	<td></td>
 </tr>
+<!--activate timetracking tab of task 33-->
 <tr>
 	<td>click</td>
-	<td>//p[@id='task-33-tab-timetracking-label']/span[3]</td>
+	<td>//p[@id='task-33-tab-timetracking-label']/span[2]</td>
 	<td></td>
 </tr>
 <tr>
@@ -105,11 +106,13 @@
 	<td>selenium.browserbot.getUserWindow().Ajax.activeRequestCount == 0</td>
 	<td>10000</td>
 </tr>
+<!--active?-->
 <tr>
 	<td>assertElementPresent</td>
-	<td>css=div#task-33-timetrack-control.timetrackform div.tabBlock button#task-33-timetracking-button.startTracking</td>
+	<td>//li[@id=&quot;task-35-tab-timetracking&quot;][contains(@class,&quot;active&quot;)]</td>
 	<td></td>
 </tr>
+<!--Start tracking-->
 <tr>
 	<td>click</td>
 	<td>task-33-timetracking-button</td>
@@ -127,12 +130,7 @@
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>css=div#task-33-timetrack-control.timetrackform div.tabBlock button#task-33-timetracking-button.stopTracking</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertElementPresent</td>
-	<td>css=a#todoyutimetrackingheadlettracking-button.button</td>
+	<td>//button[@id=&quot;task-33-timetracking-button&quot;][contains(@class,&quot;stopTracking&quot;)]</td>
 	<td></td>
 </tr>
 <!--open headlet content, assert that the task runs, stop it here-->
@@ -152,13 +150,24 @@
 	<td>10000</td>
 </tr>
 <tr>
+	<td>assertTextPresent</td>
+	<td>Total Tracked Time</td>
+	<td></td>
+</tr>
+<tr>
 	<td>assertElementPresent</td>
-	<td>css=ul#todoyutimetrackingheadlettracking-content.content li.tracking span.trackingContainer span.stop button.stopTracking</td>
+	<td>//ul[@id=&quot;todoyutimetrackingheadlettracking-content&quot;]/li/div[@class=&quot;stop&quot;]/button[contains(@class,&quot;stopTracking&quot;)]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=ul#todoyutimetrackingheadlettracking-content.content li.tracking span.trackingContainer span.stop button.stopTracking</td>
+	<td>//ul[@id=&quot;todoyutimetrackingheadlettracking-content&quot;]/li/div[@class=&quot;stop&quot;]/button[contains(@class,&quot;stopTracking&quot;)]</td>
+	<td></td>
+</tr>
+<!--tracking headlet shown?-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>//ul[@id=&quot;todoyutimetrackingheadlettracking-content&quot;]</td>
 	<td></td>
 </tr>
 <!--close headlet content-->
@@ -176,6 +185,11 @@
 	<td>waitForCondition</td>
 	<td>selenium.browserbot.getUserWindow().Ajax.activeRequestCount == 0</td>
 	<td>10000</td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>//ul[@id=&quot;todoyutimetrackingheadlettracking-content&quot;]</td>
+	<td></td>
 </tr>
 <!--collapse task 33 again, assert it's status is now: in progress-->
 <tr>
@@ -195,7 +209,7 @@
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>css=div#content-body div.taskList div#tasks.tasks div#task-33.task span.bcStatus3</td>
+	<td>//div[@id=&quot;task-33&quot;][contains(@class,&quot;bcStatus3&quot;)]</td>
 	<td></td>
 </tr>
 <!--open task 33 contextmenu > status > click "open"-->
@@ -256,7 +270,7 @@
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>css=div#content-body div.taskList div#tasks.tasks div#task-33.task span.bcStatus2</td>
+	<td>//div[@id=&quot;task-33&quot;][contains(@class,&quot;bcStatus2&quot;)]</td>
 	<td></td>
 </tr>
 </tbody></table>
