@@ -121,14 +121,15 @@ class TodoyuTimetrackingRenderer {
 	 */
 	public static function renderTaskTabForm($idTrack) {
 		$idTrack	= intval($idTrack);
-		$track		= TodoyuTimetracking::getTrackData($idTrack);
+		$track		= TodoyuTimetracking::getTrack($idTrack);
+		$trackData	= $track->getTemplateData();
 
 			// Construct form object
 		$xmlPath= PATH_EXT_TIMETRACKING . '/config/form/track.xml';
 		$form	= TodoyuFormManager::getForm($xmlPath, $idTrack);
 
 			// Load form data
-		$formData	= TodoyuFormHook::callLoadData($xmlPath, $track, $idTrack);
+		$formData	= TodoyuFormHook::callLoadData($xmlPath, $trackData, $idTrack);
 
 			// Set form data
 		$form->setFormData($formData);
@@ -148,12 +149,11 @@ class TodoyuTimetrackingRenderer {
 	 */
 	public static function renderTrack($idTrack) {
 		$idTrack	= intval($idTrack);
-
-		$tmpl	= 'ext/timetracking/view/tasktab-listitem.tmpl';
-
-		$trackData	= TodoyuTimetracking::getTrackData($idTrack);
+		$track		= TodoyuTimetracking::getTrack($idTrack);
+		$trackData	= $track->getTemplateData();
 		$trackData['editable']	= TodoyuTimeTrackingManager::isTrackEditable($idTrack);
 
+		$tmpl	= 'ext/timetracking/view/tasktab-listitem.tmpl';
 		$data	= array(
 			'idTask'	=> $trackData['id_task'],
 			'track'		=> $trackData,

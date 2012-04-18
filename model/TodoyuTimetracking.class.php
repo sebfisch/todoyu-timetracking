@@ -117,17 +117,6 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Get data array of current tracked task
-	 *
-	 * @return	Array
-	 */
-	public static function getTaskArray() {
-		return TodoyuProjectTaskManager::getTaskData(self::getTaskID());
-	}
-
-
-
-	/**
 	 * Get starttime of current time tracking
 	 *
 	 * @return	Integer
@@ -379,18 +368,6 @@ class TodoyuTimetracking {
 		$startTime	= self::getCurrentTrackingStart();
 
 		return $startTime === 0 ? 0 : NOW - $startTime;
-	}
-
-
-
-	/**
-	 * Get tracking record
-	 *
-	 * @param	Integer		$idTrack
-	 * @return	Array
-	 */
-	public static function getTrackData($idTrack) {
-		return TodoyuRecordManager::getRecordData(self::TABLE, $idTrack);
 	}
 
 
