@@ -3,6 +3,7 @@ todoyu timetracking changelog
 timetracking 1.2.0 - not released yet
 	* Added: Person filter widgets: has tracked time in project, tracked time for customer
 	* Added: Show info about chargeable workload in track in the tracks list
+	* Changed: Made headlet content wider, allowing unwrapped display up to 6 digits of time percent
 	* Changed: After jumping to task from headlet the headlet popout is now closed
 	* Changed: Show chargeable time in tracking list
 

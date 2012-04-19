@@ -33,6 +33,8 @@ class TodoyuTimetrackingPersonFilter extends TodoyuSearchFilterBase implements T
 	 */
 	const TABLE = 'ext_contact_person';
 
+
+
 	/**
 	 * Init filter object
 	 *
