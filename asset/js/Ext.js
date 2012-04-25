@@ -366,7 +366,7 @@ Todoyu.Ext.timetracking = {
 	 * @return	{Number}
 	 */
 	getTaskID: function() {
-		return Todoyu.Helper.intval(this.task.id);
+		return Todoyu.Number.intval(this.task.id);
 	},
 
 
@@ -463,7 +463,7 @@ Todoyu.Ext.timetracking = {
 	 * @return	{Number}
 	 */
 	getEstimatedTime: function() {
-		return Todoyu.Helper.intval(this.task.estimated_workload);
+		return Todoyu.Number.intval(this.task.estimated_workload);
 	},
 
 
