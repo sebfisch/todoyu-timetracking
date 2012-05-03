@@ -1,17 +1,15 @@
 todoyu timetracking changelog
 
-timetracking 1.2.0 - not released yet
+timetracking 1.2.0 - 2012-05-03
 	* Added: Person filter widgets: has tracked time in project, tracked time for customer
 	* Added: Show info about chargeable workload in track in the tracks list
+	* Added: Starting first tracking of task of person in current day immediately stores a 0:00 track, visible for other persons as well (was previously stored not until stopping the tracking)
 	* Changed: Made headlet content wider, allowing unwrapped display up to 6 digits of time percent
 	* Changed: After jumping to task from headlet the headlet popout is now closed
 	* Changed: Show chargeable time in tracking list
-
-timetracking 1.1.4 - not released yet
 	* Changed: made also status "rejected" and "waiting" trackable
 	* Changed: on starting timetracking, task status is always updated to "in progress"
-	* Added: Starting first tracking of task of person in current day immediately stores a 0:00 track, visible for other persons as well (was previously stored not until stopping the tracking) 
-	* Bugfix: Progress bar inside timetracking headlet was not updated in realtime
+
 
 timetracking 1.1.3 - 2011-12-13
 	* Bugfix: Sub tasks were marked as running too
