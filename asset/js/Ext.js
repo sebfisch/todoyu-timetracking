@@ -176,7 +176,7 @@ Todoyu.Ext.timetracking = {
 	 * @method	sendRequest
 	 * @param	{Number}	idTask
 	 * @param	{Boolean}	start
-	 * @param	{Function}	onComplete
+	 * @param	{Function}	[onComplete]
 	 */
 	sendRequest: function(idTask, start, onComplete) {
 		var requestData = this.fireOnToggle(idTask, start);
