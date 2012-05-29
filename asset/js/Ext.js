@@ -140,7 +140,7 @@ Todoyu.Ext.timetracking = {
 	 *
 	 * @method	start
 	 * @param	{Number}	idTask
-	 * @param	{Boolean}	noRequest
+	 * @param	{Boolean}	[noRequest]
 	 */
 	start: function(idTask, noRequest) {
 		if( noRequest === true ) {
