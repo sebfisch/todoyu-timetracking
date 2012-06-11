@@ -1,3 +1,7 @@
+@import "../../../../core/config/theme.scss";
+
+
+
 #todoyutimetrackingheadlettracking a.button {
 	background:url(../img/icons.png) no-repeat 1px -235px;
 }
@@ -28,7 +32,7 @@
 #todoyutimetrackingheadlettracking .tracking .taskDetails {
 	width:270px;
 	overflow:hidden;
-	border-right:1px solid #ddd;
+	border-right:1px solid $grey02;
 	margin-left:3px;
 }
 
@@ -67,7 +71,7 @@
 	height:12px;
 	display:block;
 	float:left;
-	border:1px solid #ddd;
+	border:1px solid $grey02;
 	background-color:#e3eace;
 }
 
@@ -105,10 +109,10 @@
 	border-left-style:solid;
 	border-bottom-width:1px;
 	border-bottom-style:solid;
-	border-bottom-color:#ddd;
+	border-bottom-color:$grey02;
 	display:block;
 	padding:5px;
-	background-color:#fff;
+	background-color:$white;
 	position:relative;
 	height:15px;
 }

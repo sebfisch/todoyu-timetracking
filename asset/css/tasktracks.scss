@@ -1,15 +1,19 @@
+@import "../../../../core/config/theme.scss";
+
+
+
 /* -------------------------
 	Task time tracks
    ------------------------- */
 .task .timetracks {
 	padding-top:5px;
-	background:#fff;
+	background:$white;
 }
 
 .task .timetracks .tracksList {
 	margin:0;
 	padding:0;
-	border-top:1px solid #ddd;
+	border-top:1px solid $grey02;
 }
 
 .task .timetracks .tracksList .track {
@@ -42,7 +46,7 @@
 	margin-right:4px;
 }
 .task .timetracks .tracksList .track span.trackedTime.hasChargeableTime {
-	color:#999;
+	color:$grey06;
 }
 .task .timetracks .tracksList .track span.chargeableTime {
 	width:45px;
@@ -64,7 +68,7 @@
 	Track Form
    -------------------- */
 .task .tabContent .formTimetrack {
-	background:#fff;
+	background:$white;
 	padding:5px 5px 10px 5px;
 }
 .task .tabContent .formTimetrack legend {
