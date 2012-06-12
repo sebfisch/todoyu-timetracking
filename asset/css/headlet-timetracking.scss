@@ -14,6 +14,7 @@
 }
 
 
+
 /* ----------------------------------------------
 	Active tracking
    ---------------------------------------------- */
@@ -32,7 +33,7 @@
 #todoyutimetrackingheadlettracking .tracking .taskDetails {
 	width:270px;
 	overflow:hidden;
-	border-right:1px solid $grey02;
+	border-right:1px solid $colorNeutral02;
 	margin-left:3px;
 }
 
@@ -44,7 +45,7 @@
 }
 
 #todoyutimetrackingheadlettracking .tracking .taskDetails a:hover {
-	background-color:#E2E2E2;
+	background-color:$colorNeutral01;
 }
 
 #todoyutimetrackingheadlettracking .tracking .taskTime {
@@ -71,12 +72,12 @@
 	height:12px;
 	display:block;
 	float:left;
-	border:1px solid $grey02;
-	background-color:#e3eace;
+	border:1px solid $colorNeutral02;
+	background-color:$colorCorporate02;
 }
 
 #todoyutimetrackingheadlettracking .tracking .taskTime .percent .bar .progress {
-	background-color:#d0ddcf;
+	background-color:$colorApprove04;
 	display:inline-block;
 	height:100%;
 }
@@ -109,7 +110,7 @@
 	border-left-style:solid;
 	border-bottom-width:1px;
 	border-bottom-style:solid;
-	border-bottom-color:$grey02;
+	border-bottom-color:$colorNeutral02;
 	display:block;
 	padding:5px;
 	background-color:$white;

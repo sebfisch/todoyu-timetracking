@@ -13,7 +13,7 @@
 .task .timetracks .tracksList {
 	margin:0;
 	padding:0;
-	border-top:1px solid $grey02;
+	border-top:1px solid $colorNeutral02;
 }
 
 .task .timetracks .tracksList .track {
@@ -46,7 +46,7 @@
 	margin-right:4px;
 }
 .task .timetracks .tracksList .track span.trackedTime.hasChargeableTime {
-	color:$grey06;
+	color:$colorNeutral06;
 }
 .task .timetracks .tracksList .track span.chargeableTime {
 	width:45px;
