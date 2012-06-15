@@ -54,7 +54,7 @@ Todoyu::$CONFIG['EXT']['timetracking']['assets'] = array(
 	),
 	'css' => array(
 		array(
-			'file'		=> 'ext/timetracking/asset/css/ext.css',
+			'file'		=> 'ext/timetracking/asset/css/ext.scss',
 			'position'	=> 100
 		),
 		array(
