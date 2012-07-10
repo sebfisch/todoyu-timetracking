@@ -48,7 +48,7 @@ class TodoyuTimetrackingTrackActionController extends TodoyuActionController {
 
 		$start	= intval($params['start']) === 1;
 		$idTask	= intval($params['task']);
-		$data	= json_decode($params['data'], true);
+		$data	= TodoyuArray::assureFromJSON($params['data']);
 
 		TodoyuTimetrackingRights::restrictTrack($idTask);
 

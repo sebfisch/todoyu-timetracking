@@ -174,9 +174,9 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 *
 	 * @method	onClockTick
 	 * @param	{Number}	idTask
-	 * @param	{Time}		trackedTotal
-	 * @param	{Time}		trackedToday
-	 * @param	{Time}		trackedCurrent
+	 * @param	{Number}	trackedTotal
+	 * @param	{Number}	trackedToday
+	 * @param	{Number}	trackedCurrent
 	 */
 	onClockTick: function(idTask, trackedTotal, trackedToday, trackedCurrent) {
 		this.updateTime(trackedCurrent);
@@ -201,7 +201,7 @@ Todoyu.Ext.timetracking.Headlet.Timetracking = Class.create(Todoyu.Headlet, {
 	 * Update displayed tracked time count inside headlet
 	 *
 	 * @method	updateTime
-	 * @param	{Time}  	time
+	 * @param	{Number}  	time
 	 */
 	updateTime: function(time) {
 		var divCurrentTime = $(this.name + '-tracking');
