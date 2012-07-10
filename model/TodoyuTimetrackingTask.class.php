@@ -86,6 +86,32 @@ class TodoyuTimetrackingTask extends TodoyuProjectTask {
 		return TodoyuTimetracking::isTaskRunning($this->getID());
 	}
 
+
+
+	/**
+	 * Check whether task is trackable
+	 * - Is a task (not a container)
+	 * - Is not deleted
+	 * - Has a trackable status
+	 * - Is not locked
+	 *
+	 * @return	Boolean
+	 */
+	public function isTrackable() {
+		return $this->isTask() && !$this->isDeleted() && $this->hasTrackableStatus() && !$this->isLocked();
+	}
+
+
+
+	/**
+	 * Check whether task has a trackable status
+	 *
+	 * @return	Boolean
+	 */
+	public function hasTrackableStatus() {
+		return TodoyuTimetracking::isTrackableStatus($this->getStatus());
+	}
+
 }
 
 ?>

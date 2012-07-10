@@ -528,6 +528,21 @@ class TodoyuTimetracking {
 
 
 	/**
+	 * Check whether task is trackable
+	 *
+	 * @param	Integer		$idTask
+	 * @return	Boolean
+	 */
+	public static function isTaskTrackable($idTask) {
+		$idTask	= intval($idTask);
+		$task	= TodoyuTimetrackingTaskManager::getTask($idTask);
+
+		return $task->isTrackable();
+	}
+
+
+
+	/**
 	 * Save currently tracked task in session
 	 *
 	 * @param	Integer		$idTask
