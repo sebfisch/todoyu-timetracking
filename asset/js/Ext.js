@@ -488,7 +488,7 @@ Todoyu.Ext.timetracking = {
 	 */
 	getPercentOfTime: function() {
 		if( this.hasEstimatedTime() ) {
-			return Math.round((this.getTotalTime()/this.getEstimatedTime())*100);
+			return Math.round((this.getTotalTime() / this.getEstimatedTime()) * 100);
 		} else {
 			return 0;
 		}
