@@ -215,8 +215,8 @@ Todoyu.Ext.timetracking.Task = {
 
 	/**
 	 * @method	updateTrack
-	 * @param	{Integer}	idTask
-	 * @param	{Integer}	idTrack
+	 * @param	{Number}	idTask
+	 * @param	{Number}	idTrack
 	 */
 	updateTrack: function(idTask, idTrack) {
 		var target	= 'task-' + idTask + '-track-' + idTrack;
@@ -252,7 +252,7 @@ Todoyu.Ext.timetracking.Task = {
 
 
 	/**
-	 * Update timetracking list of given task
+	 * Update time tracking list of given task
 	 *
 	 * @method	updateTrackList
 	 * @param	{Number}	idTask
