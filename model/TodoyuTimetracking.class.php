@@ -336,14 +336,18 @@ class TodoyuTimetracking {
 	 * Get all tracks of a person in a date range
 	 *
 	 * @param	Integer		$dateStart
-	 * @param	Integer		$dateEnd
-	 * @param	Integer		$idPerson
+	 * @param	Integer		$dateEnd			Optional, if not given: end of day $dateStart
+	 * @param	Integer		$idPerson			Optional, default: logged-in person
 	 * @return	Array
 	 */
-	public static function getPersonTracks($dateStart, $dateEnd, $idPerson = 0) {
+	public static function getPersonTracks($dateStart, $dateEnd = 0, $idPerson = 0) {
 		$dateStart	= intval($dateStart);
 		$dateEnd	= intval($dateEnd);
 		$idPerson	= Todoyu::personid($idPerson);
+		
+		if( $dateEnd === 0 ) {
+			$dateEnd	= TodoyuTime::getDayEnd($dateStart);
+		}
 
 		$fields	= ' track.*, task.deleted is_task_deleted';
 		$tables	=	self::TABLE		. ' track,
