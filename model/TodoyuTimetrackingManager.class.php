@@ -77,8 +77,10 @@ class TodoyuTimetrackingManager {
 		$idTask	= intval($idTask);
 
 			// Is task? (there's no timetracking for containers)
-		if( TodoyuProjectTaskManager::getTask($idTask)->isTask() ) {
-			if( self::isTaskOvertimed($idTask) ) {
+		$task = TodoyuTimetrackingTaskManager::getTask($idTask);
+
+		if( $task->isTask() ) {
+			if( TodoyuTimetrackingTaskManager::isOverTolerance($task->getEstimatedWorkload(), $task->getTrackedTime()) ) {
 				$taskInfos['estimated_workload']['className'] .= ' overtimed';
 			}
 		}
