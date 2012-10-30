@@ -49,6 +49,8 @@ if( Todoyu::allowed('timetracking', 'general:use') ) {
 		TodoyuContextMenuManager::addFunction('task', 'TodoyuTimetracking::getContextMenuItems', 100);
 		TodoyuHookManager::registerHook('core', 'logout', 'TodoyuTimetracking::onLogout');
 	}
+
+	TodoyuHookManager::registerHook('project', 'taskIcons', 'TodoyuTimetrackingTaskManager::hookGetTaskIcons');
 }
 
 

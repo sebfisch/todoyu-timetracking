@@ -24,4 +24,5 @@
 	<label index="jumpToTask">Click here to jump to this task</label>
 	<label index="jumpToProject">Click here to jump to this project</label>
 	<label index="extconf.stopOnLogout">Stop time tracking when logging out</label>
+	<label index="extconf.tolerance">Tolerance for tracked time (in %)</label>
 </labels>

@@ -144,6 +144,57 @@ class TodoyuTimetrackingTaskManager {
 		return $data;
 	}
 
+
+
+	/**
+	 * @param	Array		$icons
+	 * @param	Integer		$idTask
+	 * @return	Array
+	 */
+	public static function hookGetTaskIcons(array $icons, $idTask) {
+		$idTask	= intval($idTask);
+
+		$task = self::getTask($idTask);
+		$trackedTime = $task->getTrackedTime();
+
+		if( TodoyuTimetrackingSysmanagerManager::getExtConfTolerance() > 0 &&
+				self::isOverTolerance($task->getEstimatedWorkload(), $trackedTime) ) {
+
+			$overtimeFactor = TodoyuNumeric::ratio($trackedTime, $task->getEstimatedWorkload(), true, true);
+
+			$icons['timetracking'] = array(
+				'id'		=> 'task-' . $idTask . '-timetrackingOvertimed',
+				'class'		=> 'iconBackground overtimed',
+				'label'		=> Todoyu::Label('timetracking.ext.task.attr.overtimed') . ': ' . $overtimeFactor . '%',
+				'position'	=> 100
+			);
+		};
+
+		return $icons;
+	}
+
+
+
+	/**
+	 * @param	Integer		$estimatedWorkload
+	 * @param	Integer		$trackedTime
+	 * @return	Boolean
+	 */
+	public static function isOverTolerance($estimatedWorkload, $trackedTime) {
+		return	self::getToleranceFactor() * $estimatedWorkload < $trackedTime;
+	}
+
+
+
+	/**
+	 * @return	Float
+	 */
+	public static function getToleranceFactor() {
+		$tolerance = TodoyuTimetrackingSysmanagerManager::getExtConfTolerance();
+
+		return 1 + $tolerance / 100;
+	}
+
 }
 
 ?>

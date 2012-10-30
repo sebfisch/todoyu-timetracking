@@ -42,6 +42,26 @@ class TodoyuTimetrackingSysmanagerManager {
 		return $form;
 	}
 
+
+
+	/**
+	 * @return	Float
+	 */
+	public static function getExtConfTolerance() {
+		$extConf	= self::getExtConf();
+
+		return floatval($extConf['tolerance']);
+	}
+
+
+
+	/**
+	 * @return	Array
+	 */
+	protected static function getExtConf() {
+		return TodoyuSysmanagerExtConfManager::getExtConf('timetracking');
+	}
+
 }
 
 ?>
