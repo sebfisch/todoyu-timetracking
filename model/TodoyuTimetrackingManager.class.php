@@ -80,7 +80,7 @@ class TodoyuTimetrackingManager {
 		$task = TodoyuTimetrackingTaskManager::getTask($idTask);
 
 		if( $task->isTask() ) {
-			if( TodoyuTimetrackingTaskManager::isOverTolerance($task->getEstimatedWorkload(), $task->getTrackedTime()) ) {
+			if( TodoyuTimetrackingTaskManager::isTrackedTimeOverTolerance($task->getEstimatedWorkload(), $task->getTrackedTime()) ) {
 				$taskInfos['estimated_workload']['className'] .= ' overtimed';
 			}
 		}

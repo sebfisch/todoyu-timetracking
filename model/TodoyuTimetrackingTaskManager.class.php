@@ -147,6 +147,8 @@ class TodoyuTimetrackingTaskManager {
 
 
 	/**
+	 * Hook to add taskicons from extension
+	 *
 	 * @param	Array		$icons
 	 * @param	Integer		$idTask
 	 * @return	Array
@@ -158,7 +160,7 @@ class TodoyuTimetrackingTaskManager {
 		$trackedTime = $task->getTrackedTime();
 
 		if( TodoyuTimetrackingSysmanagerManager::getExtConfTolerance() > 0 &&
-				self::isOverTolerance($task->getEstimatedWorkload(), $trackedTime) ) {
+				self::isTrackedTimeOverTolerance($task->getEstimatedWorkload(), $trackedTime) ) {
 
 			$overtimeFactor = TodoyuNumeric::ratio($trackedTime, $task->getEstimatedWorkload(), true, true);
 
@@ -176,17 +178,21 @@ class TodoyuTimetrackingTaskManager {
 
 
 	/**
+	 * Check if tracked time is over the tolerated estimated workload
+	 *
 	 * @param	Integer		$estimatedWorkload
 	 * @param	Integer		$trackedTime
 	 * @return	Boolean
 	 */
-	public static function isOverTolerance($estimatedWorkload, $trackedTime) {
+	public static function isTrackedTimeOverTolerance($estimatedWorkload, $trackedTime) {
 		return	self::getToleranceFactor() * $estimatedWorkload < $trackedTime;
 	}
 
 
 
 	/**
+	 * Calculate the tolerance factor
+	 *
 	 * @return	Float
 	 */
 	public static function getToleranceFactor() {

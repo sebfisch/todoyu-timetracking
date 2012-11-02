@@ -1,6 +1,7 @@
 todoyu timetracking changelog
 
 timetracking 1.3.0 - not released yet
+	* Removed: Maximum boundaries for tolerance
 	* Changed: Change overtime rule in task details (added tolerance)
 	* Added: Icon for overtime tasks
 	* Added: UnittestRunner

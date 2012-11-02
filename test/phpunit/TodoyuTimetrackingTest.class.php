@@ -82,6 +82,9 @@ class TodoyuTimetrackingTest extends PHPUnit_Framework_TestCase {
 
 		TodoyuSysmanagerExtConfManager::setExtConf('timetracking', array('tolerance' => 60.5));
 		$this->assertEquals(60.5, TodoyuTimetrackingSysmanagerManager::getExtConfTolerance());
+
+		TodoyuSysmanagerExtConfManager::setExtConf('timetracking', array('tolerance' => 120));
+		$this->assertEquals(120, TodoyuTimetrackingSysmanagerManager::getExtConfTolerance());
 	}
 
 
@@ -104,6 +107,9 @@ class TodoyuTimetrackingTest extends PHPUnit_Framework_TestCase {
 
 		TodoyuSysmanagerExtConfManager::setExtConf('timetracking', array('tolerance' => 60.5));
 		$this->assertEquals(1.605, TodoyuTimetrackingTaskManager::getToleranceFactor());
+
+		TodoyuSysmanagerExtConfManager::setExtConf('timetracking', array('tolerance' => 120));
+		$this->assertEquals(2.2, TodoyuTimetrackingTaskManager::getToleranceFactor());
 	}
 
 
@@ -113,12 +119,21 @@ class TodoyuTimetrackingTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function getIsOverTolerance() {
 		TodoyuSysmanagerExtConfManager::setExtConf('timetracking', array('tolerance' => 19.99));
-		$this->assertEquals(true, TodoyuTimetrackingTaskManager::isOverTolerance(100, 120));
-		$this->assertEquals(true, TodoyuTimetrackingTaskManager::isOverTolerance(14400, 17280));
+		$this->assertTrue(TodoyuTimetrackingTaskManager::isTrackedTimeOverTolerance(100, 120));
+		$this->assertTrue(TodoyuTimetrackingTaskManager::isTrackedTimeOverTolerance(14400, 17280));
 
 		TodoyuSysmanagerExtConfManager::setExtConf('timetracking', array('tolerance' => 20.01));
-		$this->assertEquals(false, TodoyuTimetrackingTaskManager::isOverTolerance(100, 120));
-		$this->assertEquals(false, TodoyuTimetrackingTaskManager::isOverTolerance(14400, 17280));
+		$this->assertFalse(TodoyuTimetrackingTaskManager::isTrackedTimeOverTolerance(100, 120));
+		$this->assertFalse(TodoyuTimetrackingTaskManager::isTrackedTimeOverTolerance(14400, 17280));
+
+		TodoyuSysmanagerExtConfManager::setExtConf('timetracking', array('tolerance' => 119.99));
+		$this->assertTrue(TodoyuTimetrackingTaskManager::isTrackedTimeOverTolerance(100, 220));
+		$this->assertTrue(TodoyuTimetrackingTaskManager::isTrackedTimeOverTolerance(14400, 31680));
+
+		TodoyuSysmanagerExtConfManager::setExtConf('timetracking', array('tolerance' => 120.01));
+		$this->assertFalse(TodoyuTimetrackingTaskManager::isTrackedTimeOverTolerance(100, 220));
+		$this->assertFalse(TodoyuTimetrackingTaskManager::isTrackedTimeOverTolerance(14400, 31680));
+
 	}
 
 

@@ -20,9 +20,8 @@
 				<field type="text" name="tolerance">
 					<label>timetracking.ext.extconf.tolerance</label>
 					<validate>
-						<range>
-							<value>0,100</value>
-						</range>
+						<isDecimal />
+						<min>0</min>
 					</validate>
 				</field>
 			</elements>
