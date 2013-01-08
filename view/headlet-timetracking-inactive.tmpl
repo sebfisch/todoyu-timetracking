@@ -7,10 +7,7 @@
 						{$task.id_project}.{$task.tasknumber}
 					</div>
 					<div class="taskTitle" title="{Label project.ext.project}: {htmlencode $task.projecttitle} (ID: {$task.id_project}) / {Label project.task.task}: {htmlencode $task.title}">
-						{$projectTitle = truncate($task.projecttitle,28,'..',true)}
-						{$projectTitleLength = strlen($projectTitle)}
-						{math '61-$projectTitleLength' assign='taskTitleLength'}
-						{htmlencode $projectTitle} - <strong>{htmlencode(truncate($task.title, $taskTitleLength, '..', true))}</strong>
+						<span class="project">{htmlencode $task.projecttitle}</span> - <span class="task">{htmlencode($task.title)}</span>
 					</div>
 					<div class="taskTime" title="{Label timetracking.ext.totalTrackedTime}">
 						{HourMinSec $task.trackedtime}

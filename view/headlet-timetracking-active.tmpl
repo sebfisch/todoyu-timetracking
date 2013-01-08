@@ -1,10 +1,10 @@
 <li class="tracking">
 	<div class="taskDetails">
 		<a href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.goToTask({$task.project.id}, 0, true)" title="{Label LLL:timetracking.ext.jumpToProject}" class="project">
-			{htmlencode(truncate($task.company.shortname, 25))}: {htmlencode(truncate($task.project.title, 40))}
+			{htmlencode($task.company.shortname)}: {htmlencode($task.project.title)}
 		</a>
 		<a href="javascript:void(0)" onclick="Todoyu.Ext.timetracking.Task.goToTask({$task.project.id}, {$task.id}, true)" title="{htmlencode $task.title}" class="title">
-			{$task.id_project}.{$task.tasknumber}: <strong>{htmlencode(truncate($task.title, 37, '...', true))}</strong>
+			{$task.id_project}.{$task.tasknumber}: <strong>{htmlencode($task.title)}</strong>
 		</a>
 	</div>
 	<div class="taskTime">

@@ -1,6 +1,7 @@
 todoyu timetracking changelog
 
 timetracking 1.3.0 - not released yet
+	* Changed: Replaced explicit truncating of text with css & css clean-up
 	* Removed: Maximum boundaries for tolerance
 	* Changed: Change overtime rule in task details (added tolerance)
 	* Added: Icon for overtime tasks

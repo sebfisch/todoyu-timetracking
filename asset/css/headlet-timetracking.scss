@@ -2,156 +2,176 @@
 
 
 
-#todoyutimetrackingheadlettracking a.button {
-	background:url(../img/icons.png) no-repeat 1px -235px;
-}
+#todoyutimetrackingheadlettracking {
 
-#todoyutimetrackingheadlettracking .content {
-	margin-left:-380px;
-	width:575px;
-	padding:2px;
-	padding-top:3px;
-}
+	& a.button {
+		background:url(../img/icons.png) no-repeat 1px -235px;
+	}
 
+	& .content {
+		margin-left:-380px;
+		width:575px;
+		padding:2px;
+		padding-top:3px;
+	}
 
+	& .startTracking {
+		margin-top:1px;
+	}
 
-/* ----------------------------------------------
-	Active tracking
-   ---------------------------------------------- */
-#todoyutimetrackingheadlettracking > a.button.tracking {
-	background-position:1px -55px;
-}
+	/* ----------------------------------------------
+		Active tracking
+	   ---------------------------------------------- */
 
-#todoyutimetrackingheadlettracking .tracking {
+	& > a.button.tracking {
+		background-position:1px -55px;
+	}
 
-}
+	& .tracking {
 
-#todoyutimetrackingheadlettracking .tracking > div {
-	display:inline-block;
-}
+		& > div {
+			display:inline-block;
+		}
 
-#todoyutimetrackingheadlettracking .tracking .taskDetails {
-	width:270px;
-	overflow:hidden;
-	border-right:1px solid $colorNeutral02;
-	margin-left:3px;
-}
+		& .taskDetails {
+			width:270px;
+			overflow:hidden;
+			border-right:1px solid $colorNeutral02;
+			margin-left:3px;
 
-#todoyutimetrackingheadlettracking .tracking .taskDetails a {
-	display:inline-block !important;
-	width:100%;
-	padding:0;
-	height:15px;
-}
+			& a {
+				display:inline-block !important;
+				width:100%;
+				padding:0;
+				height:15px;
+				overflow: hidden;
+				text-overflow: ellipsis;
 
-#todoyutimetrackingheadlettracking .tracking .taskDetails a:hover {
-	background-color:$colorNeutral01;
-}
+				&:hover {
+					background-color:$colorNeutral01;
+				}
+			}
+		}
 
-#todoyutimetrackingheadlettracking .tracking .taskTime {
-	width:260px;
-	margin-left:5px;
-}
+		& .taskTime {
+			width:260px;
+			margin-left:5px;
 
-#todoyutimetrackingheadlettracking .tracking .taskTime > div {
-	display:inline-block;
-	height:15px;
-}
+			& > div {
+				display:inline-block;
+				height:15px;
+			}
 
-#todoyutimetrackingheadlettracking .tracking .taskTime .currentTracking {
-	font-weight:bold;
-}
+			& .currentTracking {
+				font-weight:bold;
+			}
 
-#todoyutimetrackingheadlettracking .tracking .taskTime .percent .number {
-	float:left;
-	margin-right:5px;
-}
+			& .estimatedWorkload {
+				float:left;
+				margin-left:5px;
+			}
 
-#todoyutimetrackingheadlettracking .tracking .taskTime .percent .bar {
-	width:100px;
-	height:12px;
-	display:block;
-	float:left;
-	border:1px solid $colorNeutral02;
-	background-color:$colorCorporate02;
-}
+			& .percent {
+				& .number {
+					float:left;
+					margin-right:5px;
+				}
 
-#todoyutimetrackingheadlettracking .tracking .taskTime .percent .bar .progress {
-	background-color:$colorApprove04;
-	display:inline-block;
-	height:100%;
-}
+				& .bar {
+					width:100px;
+					height:12px;
+					display:block;
+					float:left;
+					border:1px solid $colorNeutral02;
+					background-color:$colorCorporate02;
 
-#todoyutimetrackingheadlettracking .tracking .taskTime .estimatedWorkload {
-	float:left;
-	margin-left:5px;
-}
+					& .progress {
+						background-color:$colorApprove04;
+						display:inline-block;
+						height:100%;
+					}
+				}
+			}
+		}
 
-#todoyutimetrackingheadlettracking .tracking .stop {
-	position:absolute;
-	top:6px;
-	right:4px;
-}
+		& .stop {
+			position:absolute;
+			top:6px;
+			right:4px;
 
-#todoyutimetrackingheadlettracking .tracking .stop .icon {
-	background-position:5px 1px;
-}
+			& .icon {
+				background-position:5px 1px;
+			}
+		}
+	}
 
+	/* ----------------------------------------------
+		Inactive tracking
+	   ---------------------------------------------- */
+	& .inactive {
+		padding:2px;
 
-/* ----------------------------------------------
-	Inactive tracking
-   ---------------------------------------------- */
-#todoyutimetrackingheadlettracking .inactive {
-	padding:2px;
-}
+		& > li {
+			border-left-width:4px;
+			border-left-style:solid;
+			border-bottom-width:1px;
+			border-bottom-style:solid;
+			border-bottom-color:$colorNeutral02;
+			display:block;
+			padding:5px;
+			background-color:$white;
+			position:relative;
+			height:15px;
 
-#todoyutimetrackingheadlettracking .inactive > li {
-	border-left-width:4px;
-	border-left-style:solid;
-	border-bottom-width:1px;
-	border-bottom-style:solid;
-	border-bottom-color:$colorNeutral02;
-	display:block;
-	padding:5px;
-	background-color:$white;
-	position:relative;
-	height:15px;
-}
+			& > div {
+				display:inline-block;
+				width:500px;
+			}
 
-#todoyutimetrackingheadlettracking .inactive > li > div {
-	display:inline-block;
-	width:500px;
-}
+			& .title {
+				cursor:pointer;
 
-#todoyutimetrackingheadlettracking .inactive > li > .title {
-	cursor:pointer;
-}
+				& > div {
+					display: inline-block;
+				}
 
-#todoyutimetrackingheadlettracking .inactive > li > .title > div {
-	display:inline-block;
-}
+				& .taskNumber {
+					width:60px;
+				}
 
-#todoyutimetrackingheadlettracking .inactive > li > .title .taskNumber {
-	width:60px;
-}
-#todoyutimetrackingheadlettracking .inactive > li > .title .taskTitle {
-	width:380px;
-}
+				& .taskTitle {
+					width:380px;
+					
+					& .project,
+					& .task {
+						display: inline-block;
+						width: 48%;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
 
-#todoyutimetrackingheadlettracking .inactive > li > .title .taskTime {
-	width:50px;
-}
+					& .task {
+						font-weight: bold;
+						margin-left: 5px;
+					}
+				}
 
-#todoyutimetrackingheadlettracking .startTracking {
-	margin-top:1px;
-}
-#todoyutimetrackingheadlettracking .inactive .startTracking {
-	position:absolute;
-	top:0;
-	right:4px;
-	width:32px;
-}
+				& .taskTime {
+					width:50px;
+				}
+			}
+		}
 
-#todoyutimetrackingheadlettracking .inactive .startTracking .label {
-	display:none;
+		& .startTracking {
+			position:absolute;
+			top:0;
+			right:4px;
+			width:32px;
+
+			& .label {
+				display:none;
+			}
+		}
+	}
 }
