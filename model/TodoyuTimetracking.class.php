@@ -168,14 +168,20 @@ class TodoyuTimetracking {
 			self::stopTask();
 		}
 
-		$task	= TodoyuProjectTaskManager::getTask($idTask);
-		$status	= $task->getStatus();
+		TodoyuHookManager::callHook('timetracking', 'tracking.beforeStart', array($idTask));
+
+		$task	= TodoyuTimetrackingTaskManager::getTask($idTask);
 
 			// Check if current task status allows timetracking
-		if( self::isTrackableStatus($status) ) {
+		if( $task->isTrackable() ) {
 				// Update trackable task status to progress
-			if( $status !== STATUS_PROGRESS ) {
-				TodoyuProjectTaskManager::updateTaskStatus($idTask, STATUS_PROGRESS);
+			if( $task->getStatus() !== STATUS_PROGRESS ) {
+					// Check whether status should be changed
+				$statusChangeIsWanted	= TodoyuTimetrackingTaskManager::isStatusChangeOnTrackingStartWanted($idTask);
+
+				if( $statusChangeIsWanted ) {
+					TodoyuProjectTaskManager::updateTaskStatus($idTask, STATUS_PROGRESS);
+				}
 			}
 				// Register task as tracked in session
 			self::setRunningTask($idTask);
@@ -203,6 +209,9 @@ class TodoyuTimetracking {
 	public static function stopTask() {
 		if( self::isTrackingActive() ) {
 			$idTask		= self::getTaskID();
+
+			TodoyuHookManager::callHook('timetracking', 'tracking.beforeStop', array($idTask));
+
 				// Get today's tracked time of task
 			$dayWorkload= self::getDayWorkloadRecord($idTask, NOW);
 			$trackedTime= self::getTrackedTime();

@@ -99,9 +99,11 @@ Todoyu.Ext.timetracking.Task = {
 
 				// Update task status
 			if( Todoyu.Ext.project.Task.isLoaded(idTask) ) {
-				if( Todoyu.Ext.project.Task.getStatus(idTask) != 3 ) { // Not In progress
-					Todoyu.Ext.project.Task.setStatus(idTask, 3); // In progress
-				}
+				var oldStatus	= Todoyu.Ext.project.Task.getStatus(idTask);
+
+				this.enforceTaskProgressStatusOnTrackingStart(idTask, oldStatus);
+
+				Todoyu.Hook.exec('timetracking.tracking.toggleStart', idTask, oldStatus);
 			}
 
 			if( this.isTaskTrackingTabLoaded(idTask) ) {
@@ -118,6 +120,20 @@ Todoyu.Ext.timetracking.Task = {
 		}
 
 		return info;
+	},
+
+
+
+	/**
+	 * Enforce task progress status
+	 *
+	 * @param	{Number}	idTask
+	 * @param	{Number}	oldStatus
+	 */
+	enforceTaskProgressStatusOnTrackingStart: function(idTask, oldStatus) {
+		if( oldStatus != 3 ) { // Not In progress
+			Todoyu.Ext.project.Task.setStatus(idTask, 3); // In progress
+		}
 	},
 
 

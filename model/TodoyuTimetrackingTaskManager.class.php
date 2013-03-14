@@ -201,6 +201,20 @@ class TodoyuTimetrackingTaskManager {
 		return 1 + $tolerance / 100;
 	}
 
+
+
+	/**
+	 * Use a hook voting to decide if status of task should be changed on tracking start
+	 *
+	 * @param	Integer		$idTask
+	 * @return	Boolean
+	 */
+	public static function isStatusChangeOnTrackingStartWanted($idTask) {
+		$idTask	= intval($idTask);
+
+		return TodoyuHookManager::callHookVoting('timetracking', 'task.voteChangeStatusOnTrackingStart', array($idTask));
+	}
+
 }
 
 ?>
