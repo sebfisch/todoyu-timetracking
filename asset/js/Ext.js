@@ -375,7 +375,7 @@ Todoyu.Ext.timetracking = {
 	 * Get task data (all or single value)
 	 *
 	 * @method	getTaskData
-	 * @param	{String}		key
+	 * @param	{String}		[key]
 	 * @return	{String|Object}
 	 */
 	getTaskData: function(key) {

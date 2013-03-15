@@ -450,7 +450,7 @@ Todoyu.Ext.timetracking.Task = {
 	 * @method	goToTask
 	 * @param	{Number}	idProject
 	 * @param	{Number}	idTask
-	 * @param	{Boolean}	closeHeadletBefore
+	 * @param	{Boolean}	[closeHeadletBefore]
 	 */
 	goToTask: function(idProject, idTask, closeHeadletBefore) {
 		closeHeadletBefore	= closeHeadletBefore || false;
