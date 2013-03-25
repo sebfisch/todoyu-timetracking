@@ -1,6 +1,6 @@
 todoyu timetracking changelog
 
-timetracking 1.3.0 - not released yet
+timetracking 1.3.0 - 2013-03-27
 	* Added: Icon for overtime tasks
 	* Added: UnittestRunner
 	* Added: TodoyuTimetrackingTask->isTrackable() and ->hasTrackableStatus()
@@ -9,7 +9,6 @@ timetracking 1.3.0 - not released yet
 	* Changed: Replaced explicit truncating of text with css & css clean-up
 	* Changed: Change overtime rule in task details (added tolerance)
 	* Removed: Maximum boundaries for tolerance
-
 
 timetracking 1.2.0 - 2012-05-03
 	* Added: Person filter widgets: has tracked time in project, tracked time for customer
@@ -20,7 +19,6 @@ timetracking 1.2.0 - 2012-05-03
 	* Changed: Show chargeable time in tracking list
 	* Changed: made also status "rejected" and "waiting" trackable
 	* Changed: on starting timetracking, task status is always updated to "in progress"
-
 
 timetracking 1.1.3 - 2011-12-13
 	* Bugfix: Sub tasks were marked as running too
