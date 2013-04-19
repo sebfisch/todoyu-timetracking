@@ -245,9 +245,10 @@ class TodoyuTimetrackingManager {
 		unset($data['workload_done']);
 
 			// 'Start tracking' checked? set status accordingly
-		if( $workloadDone > 0 || intval($data['start_tracking']) === 1 ) {
+		if( intval($data['start_tracking']) === 1 ) {
 			$data['status'] = STATUS_PROGRESS;
 		}
+
 		unset($data['start_tracking']);
 
 		return $data;
