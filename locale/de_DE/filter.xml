@@ -5,4 +5,5 @@
 	<label index="timetrackedRoles">Rollen haben Zeit erfasst</label>
 	<label index="person.trackedinproject">Hat Zeit in Projekt erfasst</label>
 	<label index="person.trackedforcustomer">Hat Zeit in Projekt von Firma erfasst</label>
+	<label index="overbookedAbsolute">Überbuchte Aufgaben (Absolut in Minuten)</label>
 </labels>

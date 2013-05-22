@@ -55,4 +55,12 @@ Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['timetrackedRoles'] = array(
 	)
 );
 
+Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['overbookedAbsolute'] = array(
+	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_overbookedAbsolute',
+	'label'		=> 'timetracking.filter.overbookedAbsolute',
+	'optgroup'	=> 'timetracking.ext.search.label',
+	'widget'	=> 'text',
+	'require'	=> 'timetracking.general:use'
+);
+
 ?>

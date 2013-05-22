@@ -5,4 +5,5 @@
 	<label index="timetrackedRoles">Roles have tracked time</label>
 	<label index="person.trackedinproject">Tracked time in project</label>
 	<label index="person.trackedforcustomer">Tracked time in project of customer</label>
+	<label index="overbookedAbsolute">Overbooked tasks (absolute in minutes)</label>
 </labels>

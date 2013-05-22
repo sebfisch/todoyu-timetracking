@@ -93,6 +93,39 @@ class TodoyuTimetrackingTaskFilter {
 		return $queryParts;
 	}
 
+
+
+	/**
+	 * @param	Integer			$min
+	 * @param	Boolean			$negate
+	 * @return	Array | Boolean
+	 */
+	public static function Filter_overbookedAbsolute($min, $negate = false) {
+		if( ! is_numeric($min) ) {
+			return false;
+		}
+
+		$min = intval($min);
+		$sec = $min * 60;
+
+		$tables = array(
+			'ext_project_task',
+			'ext_timetracking_track'
+		);
+
+		$where = 'ext_timetracking_track.workload_tracked > (ext_project_task.estimated_workload + ' . $sec . ')';
+
+		$join = array(
+			'ext_timetracking_track.id_task = ext_project_task.id'
+		);
+
+		return array(
+			'tables' => $tables,
+			'where'	=> $where,
+			'join' => $join
+		);
+	}
+
 }
 
 ?>
