@@ -54,10 +54,18 @@ Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['timetrackedRoles'] = array(
 		'FuncRef'	=> 'TodoyuRoleDatasource::getRoleOptions'
 	)
 );
-
+	// Overbooking in minutes
 Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['overbookedAbsolute'] = array(
 	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_overbookedAbsolute',
 	'label'		=> 'timetracking.filter.overbookedAbsolute',
+	'optgroup'	=> 'timetracking.ext.search.label',
+	'widget'	=> 'text',
+	'require'	=> 'timetracking.general:use'
+);
+	// Overbooking in percent
+Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['overbookedPercent'] = array(
+	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_overbookedPercent',
+	'label'		=> 'timetracking.filter.overbookedPercent',
 	'optgroup'	=> 'timetracking.ext.search.label',
 	'widget'	=> 'text',
 	'require'	=> 'timetracking.general:use'

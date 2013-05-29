@@ -120,9 +120,42 @@ class TodoyuTimetrackingTaskFilter {
 		);
 
 		return array(
-			'tables' => $tables,
+			'tables'=> $tables,
 			'where'	=> $where,
-			'join' => $join
+			'join'	=> $join
+		);
+	}
+
+
+
+	/**
+	 * @param	Integer			$percent
+	 * @param	Boolean			$negate
+	 * @return	Array | Boolean
+	 */
+	public static function Filter_overbookedPercent($percent, $negate = false) {
+		if( ! is_numeric($percent) ) {
+			return false;
+		}
+
+		$percent = intval($percent);
+
+		$tables = array(
+			'ext_project_task',
+			'ext_timetracking_track'
+		);
+
+		$where = '	   ext_timetracking_track.workload_tracked '
+				.'	   > ('. (1 + intval($percent / 100)) . ' * ext_project_task.estimated_workload ) ';
+
+		$join = array(
+			'ext_timetracking_track.id_task = ext_project_task.id'
+		);
+
+		return array(
+			'tables'=> $tables,
+			'where'	=> $where,
+			'join'	=> $join
 		);
 	}
 
