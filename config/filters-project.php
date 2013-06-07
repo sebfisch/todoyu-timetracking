@@ -26,6 +26,24 @@
  * @see			TodoyuTimetrackingManager::hookLoadProjectFilterConfig
  */
 
+	// -------------------------------- Project Filter ---------------------- */
+
+	// Project with tasks where currently time is being tracked
+Todoyu::$CONFIG['FILTERS']['PROJECT']['widgets']['isBeingTracked'] = array(
+	'funcRef'	=> 'TodoyuTimetrackingProjectFilter::Filter_isBeingTracked',
+	'label'		=> 'timetracking.filter.isBeingTracked',
+	'optgroup'	=> 'timetracking.ext.search.label',
+	'widget'	=> 'checkbox',
+	'internal'	=> true,
+	'wConf'		=> array(
+		'checked'	=> true
+	)
+);
+
+
+
+	// -------------------------------- Task Filter ------------------------- */
+
 	// Task where a person has tracked time
 Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['timetrackedPerson'] = array(
 	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_timetrackedPerson',
