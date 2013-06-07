@@ -7,4 +7,5 @@
 	<label index="person.trackedforcustomer">Hat Zeit in Projekt von Firma erfasst</label>
 	<label index="overbookedAbsolute">Überbuchte Aufgaben, absolut in Minuten</label>
 	<label index="overbookedPercent">Überbuchte Aufgaben, Prozent (Minimum)</label>
+	<label index="isBeingTracked">Aktuell wird Zeit erfasst</label>
 </labels>

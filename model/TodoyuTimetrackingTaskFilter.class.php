@@ -159,6 +159,33 @@ class TodoyuTimetrackingTaskFilter {
 		);
 	}
 
+
+
+	/**
+	 * Filter for tasks being currently tracked
+	 *
+	 * @param	Integer		$value
+	 * @param	Boolean		$negate
+	 * @return	Array					Query parts
+	 */
+	public static function Filter_isBeingTracked($value, $negate = false) {
+		$tables	= array(
+			'ext_project_task',
+			'ext_timetracking_active'
+		);
+
+		$where		= !$negate ?
+			'	 ext_project_task.id	= ext_timetracking_active.id_task' :
+			'NOT ext_project_task.id	= ext_timetracking_active.id_task';
+
+		$queryParts	= array(
+			'tables'	=> $tables,
+			'where'		=> $where
+		);
+
+		return $queryParts;
+	}
+
 }
 
 ?>
