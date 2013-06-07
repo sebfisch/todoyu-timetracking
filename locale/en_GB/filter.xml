@@ -7,6 +7,5 @@
 	<label index="person.trackedforcustomer">Tracked time in project of customer</label>
 	<label index="overbookedAbsolute">Overbooked tasks absolute in minutes</label>
 	<label index="overbookedPercent">Overbooked tasks in percent (minimum)</label>
-	<label index="isBeingTracked">Is currently being tracked</label>
-	<label index="isNotTracked">Is not tracked</label>
+	<label index="isBeingTracked">Is currently being tracked</label> 
 </labels>
