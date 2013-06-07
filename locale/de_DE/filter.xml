@@ -8,4 +8,5 @@
 	<label index="overbookedAbsolute">Überbuchte Aufgaben, absolut in Minuten</label>
 	<label index="overbookedPercent">Überbuchte Aufgaben, Prozent (Minimum)</label>
 	<label index="isBeingTracked">Aktuell wird Zeit erfasst</label>
+	<label index="isNotTracked">Keine Zeit erfasst</label>
 </labels>

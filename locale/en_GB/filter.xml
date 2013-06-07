@@ -8,4 +8,5 @@
 	<label index="overbookedAbsolute">Overbooked tasks absolute in minutes</label>
 	<label index="overbookedPercent">Overbooked tasks in percent (minimum)</label>
 	<label index="isBeingTracked">Is currently being tracked</label>
+	<label index="isNotTracked">Is not tracked</label>
 </labels>
