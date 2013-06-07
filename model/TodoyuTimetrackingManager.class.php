@@ -50,8 +50,10 @@ class TodoyuTimetrackingManager {
 		
 			// Is task? (there's no timetracking for containers)
 		if( $task->isTask() ) {
-			if( $task->isRunning() ) {
+			if( $task->isTrackedByMe() ) {
 				$taskData['class'] .= ' running';
+			} elseif( $task->isTrackedByOthers() ) {
+				$taskData['class'] .= ' runningother';
 			}
 
 			if( $infoLevel >= 3 ) {
@@ -194,7 +196,7 @@ class TodoyuTimetrackingManager {
 				// Check if task has a trackable status
 			if( TodoyuTimetracking::isTrackable($task->getType(), $task->getStatus(), $idTask) && Todoyu::allowed('timetracking', 'task:track') ) {
 					// Add stop or start button
-				if( TodoyuTimetracking::isTaskRunning($idTask) ) {
+				if( TodoyuTimetracking::isTaskTrackedByMe($idTask) ) {
 					$items['timetrackstop'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstop'];
 				} else {
 					$items['timetrackstart'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstart'];

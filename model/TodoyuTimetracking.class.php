@@ -44,7 +44,7 @@ class TodoyuTimetracking {
 
 
 	/**
-	 * Get current tracking record
+	 * Get current tracking record of current user
 	 *
 	 * @return	Array		Or FALSE if no task is tracked
 	 */
@@ -61,6 +61,33 @@ class TodoyuTimetracking {
 		TodoyuCache::enable();
 
 		return $record;
+	}
+
+
+
+	/**
+	 * Get all currently active tracking records
+	 *
+	 * @param	Boolean	$excludeCurrentUser	Only those tracked by other users?
+	 * @return	Array
+	 */
+	private static function getCurrentTrackingTaskIDs($excludeCurrentUser = false) {
+		TodoyuCache::disable();
+
+		$field	= 'id_task';
+		if( $excludeCurrentUser ) {
+			$where	= 'NOT id_person_create = ' . TodoyuAuth::getPersonID();
+		} else {
+			$where	= '';
+		}
+		$table	= 'ext_timetracking_active';
+		$order	= 'date_create DESC';
+
+		$records	= Todoyu::db()->getColumn($field, $table, $where, '', $order);
+
+		TodoyuCache::enable();
+
+		return $records;
 	}
 
 
@@ -128,18 +155,39 @@ class TodoyuTimetracking {
 	}
 
 
+	/**
+	 * @deprecated		wrapper
+	 * @param	Integer	$idTask
+	 * @return	Boolean
+	 */
+	public static function isTaskRunning($idTask) {
+		return self::isTaskTrackedByMe($idTask);
+	}
 
 	/**
-	 * Check whether task is currently being tracked
+	 * Check whether task is currently being tracked by the current user
 	 *
 	 * @param	Integer		$idTask
 	 * @return	Boolean
 	 */
-	public static function isTaskRunning($idTask) {
+	public static function isTaskTrackedByMe($idTask) {
 		$idTask		= intval($idTask);
 		$idCurrent	= self::getTaskID();
 
 		return $idTask === $idCurrent;
+	}
+
+
+	/**
+	 * Check whether task is currently being tracked by someone else (than the current user)
+	 *
+	 * @param	Integer		$idTask
+	 * @return	Boolean
+	 */
+	public static function isTaskTrackedByOthers($idTask) {
+		$idTask	= intval($idTask);
+
+		return in_array($idTask, self::getCurrentTrackingTaskIDs(true));
 	}
 
 
@@ -281,7 +329,7 @@ class TodoyuTimetracking {
 		}
 
 			// If task is running, add
-		if( $addCurrentTracking && ($idTask === 0 || self::isTaskRunning($idTask)) ) {
+		if( $addCurrentTracking && ($idTask === 0 || self::isTaskTrackedByMe($idTask)) ) {
 			$time += self::getTrackedTime();
 		}
 
@@ -607,7 +655,7 @@ class TodoyuTimetracking {
 		}
 
 		if( $task->isTask() && ! $task->isLocked() && self::isTrackableStatus($task->getStatus()) ) {
-			if( self::isTaskRunning($idTask) ) {
+			if( self::isTaskTrackedByMe($idTask) ) {
 				$items['timetrackstop'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstop'];
 			} else {
 				$items['timetrackstart'] = Todoyu::$CONFIG['EXT']['timetracking']['ContextMenu']['Task']['timetrackstart'];

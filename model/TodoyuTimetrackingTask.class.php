@@ -78,12 +78,30 @@ class TodoyuTimetrackingTask extends TodoyuProjectTask {
 
 
 	/**
-	 * Check whether tracking is currently running for this task
+	 * Check whether the current user currently tracks time on this task
 	 *
 	 * @return	Boolean
 	 */
+	public function isTrackedByMe() {
+		return TodoyuTimetracking::isTaskTrackedByMe($this->getID());
+	}
+
+	/**
+	 * @deprecated
+	 */
 	public function isRunning() {
-		return TodoyuTimetracking::isTaskRunning($this->getID());
+		return $this->isTrackedByMe();
+	}
+
+
+
+	/**
+	 * Check whether someone else is tracking time on this task currently
+	 *
+	 * @return	Boolean
+	 */
+	public function isTrackedByOthers() {
+		return TodoyuTimeTracking::isTaskTrackedByOthers($this->getID());
 	}
 
 

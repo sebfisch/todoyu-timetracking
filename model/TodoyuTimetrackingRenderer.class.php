@@ -67,7 +67,9 @@ class TodoyuTimetrackingRenderer {
 			'trackable'				=> TodoyuTimetracking::isTrackableStatus($task->getStatus())
 		);
 
-		if( TodoyuTimetracking::isTaskRunning($idTask) ) {
+			// Task is being tracked by the current user?
+		$trackingForMe	= TodoyuTimetracking::isTaskTrackedByMe($idTask);
+		if( $trackingForMe ) {
 			$data['buttonLabel']	= 'core.global.stop';
 			$data['function']		= 'stop';
 			$data['class']			= 'stopTracking';
@@ -79,6 +81,10 @@ class TodoyuTimetrackingRenderer {
 			$data['class']			= 'startTracking';
 			$data['running']		= false;
 			$data['trackedTime']	= 0;
+
+			if( TodoyuTimeTracking::isTaskTrackedByOthers($idTask) ) {
+				$data['runningother']	= true;
+			}
 		}
 
 		return Todoyu::render($tmpl, $data);

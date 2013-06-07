@@ -57,20 +57,30 @@ button {
 		background:url(../img/icons.png) no-repeat 0 -297px;
 		width:14px !important;
 	}
-}
 
-.task.running > h3 {
-	background-color:$colorHighlight02;
-}
+	&.running {
+		> h3 {
+			background-color:$colorHighlight02;
+		}
 
-.task.running.expanded > h3 {
-	background-color:$colorHighlight02;
+		&.expanded > h3 {
+			background-color:$colorHighlight02;
 
-	.headLabel span {
-		font-weight:bold;
+			.headLabel span {
+				font-weight:bold;
+			}
+		}
+	}
+
+	&.runningother {
+		> h3 {
+			background-color:#F0F0FF;
+		}
+		&.expanded > h3 {
+			background-color:#F0F0FF;
+		}
 	}
 }
-
 
 
 /* --------------------

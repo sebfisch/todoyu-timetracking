@@ -89,7 +89,7 @@ class TodoyuTimetrackingRights {
 		}
 
 		$idTask	= intval($idTask);
-		$running= TodoyuTimetracking::isTaskRunning($idTask);
+		$running= TodoyuTimetracking::isTaskTrackedByMe($idTask);
 
 		if( $running ) {
 			return true;
