@@ -169,14 +169,12 @@ class TodoyuTimetrackingTaskFilter {
 	 * @return	Array					Query parts
 	 */
 	public static function Filter_isBeingTracked($value, $negate = false) {
-		$tables	= array(
-			'ext_project_task',
-			'ext_timetracking_active'
-		);
+		$trackedTaskIDs	= TodoyuTimetracking::getCurrentTrackingTaskIDs();
+		$trackedTaskIDs	= TodoyuArray::intImplode($trackedTaskIDs, ',');
 
-		$where		= !$negate ?
-			'	 ext_project_task.id	= ext_timetracking_active.id_task' :
-			'NOT ext_project_task.id	= ext_timetracking_active.id_task';
+		$tables	= array('ext_project_task');
+
+		$where	= ($negate ? ' NOT ' : '') . ' ext_project_task.id	IN (' . $trackedTaskIDs . ')';
 
 		$queryParts	= array(
 			'tables'	=> $tables,

@@ -71,7 +71,7 @@ class TodoyuTimetracking {
 	 * @param	Boolean	$excludeCurrentUser	Only those tracked by other users?
 	 * @return	Array
 	 */
-	private static function getCurrentTrackingTaskIDs($excludeCurrentUser = false) {
+	public static function getCurrentTrackingTaskIDs($excludeCurrentUser = false) {
 		TodoyuCache::disable();
 
 		$field	= 'id_task';

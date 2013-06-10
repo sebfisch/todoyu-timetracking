@@ -52,7 +52,7 @@ class TodoyuTimetrackingManager {
 		if( $task->isTask() ) {
 			if( $task->isTrackedByMe() ) {
 				$taskData['class'] .= ' running';
-			} elseif( $task->isTrackedByOthers() ) {
+			} elseif( TodoyuRightsManager::isAllowed('timetracking', 'general:use') && $task->isTrackedByOthers() ) {
 				$taskData['class'] .= ' runningother';
 			}
 
