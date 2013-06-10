@@ -108,21 +108,23 @@ class TodoyuTimetrackingTaskFilter {
 		$min = intval($min);
 		$sec = $min * 60;
 
+		$table = '(SELECT id_task, SUM(ext_timetracking_track.workload_tracked) as sum_tracked_time FROM ext_timetracking_track GROUP BY ext_timetracking_track.id_task) as track';
+
 		$tables = array(
 			'ext_project_task',
-			'ext_timetracking_track'
+			$table
 		);
 
-		$where = 'ext_timetracking_track.workload_tracked > (ext_project_task.estimated_workload + ' . $sec . ')';
+		$where = 'track.sum_tracked_time > (ext_project_task.estimated_workload + ' . $sec . ')';
 
 		$join = array(
-			'ext_timetracking_track.id_task = ext_project_task.id'
+			'track.id_task = ext_project_task.id'
 		);
 
 		return array(
 			'tables'=> $tables,
 			'where'	=> $where,
-			'join'	=> $join
+			'join'	=> $join,
 		);
 	}
 
@@ -139,17 +141,18 @@ class TodoyuTimetrackingTaskFilter {
 		}
 
 		$percent = intval($percent);
+		$table = '(SELECT id_task, SUM(ext_timetracking_track.workload_tracked) as sum_tracked_time FROM ext_timetracking_track GROUP BY ext_timetracking_track.id_task) as track';
 
 		$tables = array(
 			'ext_project_task',
-			'ext_timetracking_track'
+			$table
 		);
 
-		$where = '	   ext_timetracking_track.workload_tracked '
+		$where = '	   track.sum_tracked_time '
 				.'	   >= ('. (1 + intval($percent / 100)) . ' * ext_project_task.estimated_workload ) ';
 
 		$join = array(
-			'ext_timetracking_track.id_task = ext_project_task.id'
+			'track.id_task = ext_project_task.id'
 		);
 
 		return array(
