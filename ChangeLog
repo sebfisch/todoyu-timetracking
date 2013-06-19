@@ -1,6 +1,7 @@
 todoyu timetracking changelog
 
 timetracking 1.3.1 - not released yet
+	* Added: Separate right for Tasks currently being tracked
 	* Added: (Headers of) Tasks currently being tracked by other users are hilighted light-blue
 	* Added: Filter for projects with tasks that are currently begin tracked
 	* Added: Filter for tasks being currently tracked

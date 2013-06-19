@@ -79,6 +79,7 @@ Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['isBeingTracked'] = array(
 	'label'		=> 'timetracking.filter.isBeingTracked',
 	'optgroup'	=> 'timetracking.ext.search.label',
 	'widget'	=> 'checkbox',
+	'require'	=> 'timetracking.task:seeCurrentTracking',
 	'internal'	=> true,
 	'wConf'		=> array(
 		'checked'	=> true
@@ -93,6 +94,7 @@ Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['overbookedAbsolute'] = array(
 	'widget'	=> 'text',
 	'require'	=> 'timetracking.general:use'
 );
+
 	// Overbooking in percent
 Todoyu::$CONFIG['FILTERS']['TASK']['widgets']['overbookedPercent'] = array(
 	'funcRef'	=> 'TodoyuTimetrackingTaskFilter::Filter_overbookedPercent',

@@ -13,6 +13,7 @@
 		<right name="editOwnChargeable" require="task:track" />
 		<right name="editAll" require="task:editOwn" />
 		<right name="editAllChargeable" require="task:editOwnChargeable" />
+		<right name="seeCurrentTracking" />
 	</section>
 
 </rights>
