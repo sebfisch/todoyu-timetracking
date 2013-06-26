@@ -298,7 +298,7 @@ class TodoyuTimetracking {
 		$dateEnd	= intval($dateEnd);
 		$idPerson	= intval($idPerson);
 
-		if( $dateEnd === 0 || $dateEnd >= $dateStart ) {
+		if( $dateEnd === 0 || $dateEnd < $dateStart ) {
 			$dateEnd = NOW;
 		}
 
