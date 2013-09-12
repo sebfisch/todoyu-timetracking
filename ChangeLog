@@ -7,6 +7,7 @@ timetracking 1.3.1 - not released yet
 	* Added: Filter for tasks being currently tracked
 	* Added: Filter for overbooked tasks (in percent)
 	* Added: Filter for overbooked tasks (absolute in minutes)
+	* Added: Catalan language. Credits to Carles Baiges Camprubí LaCol (www.lacol.org)
 	* Bugfix: Fixed quicktask-handling (task_done flag was ignored / wrongly overwritten)
 	* Bugfix: Fixed filter for overbooked tasks. Calculation is now over the summed tracked workload
 	* Bugfix: Fixed wrong check
