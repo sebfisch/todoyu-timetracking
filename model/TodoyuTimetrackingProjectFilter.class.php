@@ -34,7 +34,16 @@ class TodoyuTimetrackingProjectFilter {
 	 * @return	Array					Query parts
 	 */
 	public static function Filter_isBeingTracked($value, $negate = false) {
-		$trackedTaskIDs	= TodoyuArray::intImplode(TodoyuTimetracking::getCurrentTrackingTaskIDs(), ',');
+		$trackedTaskIDs = TodoyuTimetracking::getCurrentTrackingTaskIDs();
+
+
+		if( ! (sizeof($trackedTaskIDs) > 0)) {
+			return array(
+				'where'	=> $negate ? '1 = 1' : '0 = 1'
+			);
+		}
+
+		$trackedTaskIDs	= TodoyuArray::intImplode($trackedTaskIDs, ',');
 
 		$tables	= array(
 			'ext_project_project',

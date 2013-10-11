@@ -173,20 +173,23 @@ class TodoyuTimetrackingTaskFilter {
 	 */
 	public static function Filter_isBeingTracked($value, $negate = false) {
 		$trackedTaskIDs	= TodoyuTimetracking::getCurrentTrackingTaskIDs();
-		$trackedTaskIDs	= TodoyuArray::intImplode($trackedTaskIDs, ',');
 
+		if( ! (sizeof($trackedTaskIDs) > 0)) {
+			return array(
+				'where'	=> $negate ? '1 = 1' : '0 = 1'
+			);
+		}
+
+		$trackedTaskIDs	= TodoyuArray::intImplode($trackedTaskIDs, ',');
 		$tables	= array('ext_project_task');
 
-		$where	= ($negate ? ' NOT ' : '') . ' ext_project_task.id	IN (' . $trackedTaskIDs . ')';
+		$where	=  ($negate ? ' NOT ' : '') . ' ext_project_task.id IN (' . $trackedTaskIDs . ')';
 
-		$queryParts	= array(
+		return array(
 			'tables'	=> $tables,
 			'where'		=> $where
 		);
-
-		return $queryParts;
 	}
-
 }
 
 ?>
