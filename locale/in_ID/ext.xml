@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<labels>
+	<label index="ext.title">Waktu Pelacakan</label>
+	<label index="title">Pelacakan Waktu</label>
+	<label index="noTracksYet">Tidak ada waktu lagi dilacak</label>
+	<label index="chargeable">Dibebankan</label>
+	<label index="attr.date_create">Tanggal</label>
+	<label index="attr.date_track">Tanggal</label>
+	<label index="attr.workload_tracked">Waktu Terlacak</label>
+	<label index="attr.workload_chargeable">Waktu Dibebankan</label>
+	<label index="attr.comment">Komen</label>
+	<label index="search.label">Pelacakan Waktu</label>
+	<label index="task.attr.overtimed">Tugas Padat</label>
+	<label index="headlet.label">Waktu Pelacakan</label>
+	<label index="totalTrackedTime">Total Waktu Dilacak</label>
+	<label index="totalChargeableTime">Jumlah Dibebankan Waktu</label>
+	<label index="tasktab.edit">Klik di sini untuk mengedit catatan ini</label>
+	<label index="start">Pelacakan Waktu Mulai</label>
+	<label index="stop">Hentikan Pelacakan Waktu</label>
+	<label index="currentTask">Tugas saat ini</label>
+	<label index="showCurrentTaskInProject">Tampilkan tugas dalam proyek</label>
+	<label index="quicktask.workload_done">Waktu Sudah Bekerja</label>
+	<label index="estimated_workload">estimasi</label>
+	<label index="jumpToTask">Klik di sini untuk melompat ke tugas ini</label>
+	<label index="jumpToProject">Klik di sini untuk melompat ke proyek ini</label>
+	<label index="extconf.stopOnLogout">Menghentikan pelacakan ketika log out</label>
+	<label index="extconf.tolerance">Toleransi waktu dilacak (in %)</label>
+</labels>

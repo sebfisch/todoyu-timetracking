@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<labels>
+	<label index="general">Pengaturan Umum</label>
+	<label index="general.use">Gunakan Pelacakan Waktu</label>
+	<label index="task">Pelacakan Tugas</label>
+	<label index="task.track">Lacak Waktu</label>
+	<label index="task.editOwn">Dapat mengubah waktu dilacak lagu sendiri</label>
+	<label index="task.editOwnChargeable">Dapat mengedit waktu dikenakan biaya trek sendiri</label>
+	<label index="task.editAll">Dapat mengedit waktu dilacak dari semua pengguna</label>
+	<label index="task.editAllChargeable">Dapat mengedit waktu dikenakan biaya dari semua pengguna</label>
+</labels>

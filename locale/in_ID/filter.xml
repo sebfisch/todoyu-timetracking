@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<labels>
+	<label index="optgroup">Pelacakan Waktu</label>
+	<label index="timetrackedPerson">Orang telah melacak waktu</label>
+	<label index="timetrackedRoles">Peran telah melacak waktu</label>
+	<label index="person.trackedinproject">Dilacak waktu dalam proyek</label>
+	<label index="person.trackedforcustomer">Dilacak waktu dalam proyek pelanggan</label>
+</labels>
